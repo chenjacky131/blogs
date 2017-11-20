@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1511179860290,
+  "last_modify": 1511182614037,
   "user_name": "rewgt",
   "imported_repos": [
     [
@@ -12,8 +12,26 @@
   "repos_desc": "Blog",
   "doc_list": [
     {
+      "path": "md/D171120-03.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "React使用antd的快捷方法",
+      "modify_at": 1511182568899,
+      "create_at": 1511182448089,
+      "desc": "by jacky at 2017/11/20<br>````\n    {\n    \"presets\":[\n        \"es2015\",\n        \"react\",\n        \"stage-2\"\n    ],\n    \"plugins\":["
+    },
+    {
+      "path": "md/D171120-02.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "React使用的webpack配置",
+      "modify_at": 1511182390332,
+      "create_at": 1511182080718,
+      "desc": "by jacky at 2017/11/20<br>````\nvar path = require(\"path\");\nconst webpack = require(\"webpack\");\nmodule.exports = {\n    entry: [\"babel-polyfill\", \"./src/entry.js\"],// babell-polyfill 为旧版本浏览器提供es6环境支持\n    output:{\n        path:path.resolve(\"dist\"),\n        filename:\"bundle.js\""
+    },
+    {
       "path": "md/D171120-01.txt",
-      "tag": "",
+      "tag": ".教程",
       "markdown": true,
       "title": "Hbuilder 编译scss",
       "modify_at": 1511179860290,

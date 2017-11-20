@@ -1,0 +1,29 @@
+React使用的webpack配置
+----------
+
+by jacky at 2017/11/20
+
+&nbsp;
+
+````
+var path = require("path");
+const webpack = require("webpack");
+module.exports = {
+	entry: ["babel-polyfill", "./src/entry.js"],// babell-polyfill 为旧版本浏览器提供es6环境支持
+	output:{
+		path:path.resolve("dist"),
+		filename:"bundle.js"
+	},
+	module:{
+		loaders:[
+			{ test: /\.js[x]?$/, loader: "babel-loader?presets[]=es2015&presets[]=react", include: /src/},
+	       	        { test: /\.css$/, loader: "style-loader!css-loader"},
+	       	        {test:/\.scss$/,loader:"style-loader!css-loader!sass-loader"}
+		]
+	}	
+}
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
