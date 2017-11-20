@@ -1,39 +1,68 @@
-一级标题
+Hbuilder 编译scss
 ----------
 
 by jacky at 2017/11/20
 
 &nbsp;
 
-摘要。。。
+sass/scss依赖ruby环境，请先安装ruby，官网下载地址
 
-&nbsp;
+[http://rubyinstaller.org/downloads](http://rubyinstaller.org/downloads "下载地址")。 
 
-测试博客内容1!
-<div $=".body.auto1.draw"></div>
+ruby安装步骤： 
+
+1.选择语言，英文和日语 
+
+![img1](md/res/D171120-01/img1.png)
+
+2.同意授权 
+
+![img2](md/res/D171120-01/img2.png)
+
+3.安装文件 
+
+![img3](md/res/D171120-01/img3.png)
+
+安装完成之后，找到如下文件， 
+
+![img4](md/res/D171120-01/img4.png)
+
+然后再命令行中直接输入：
+
+![img5](md/res/D171120-01/img5.png)
+
+按回车，等待一段时间会提示安装完成，如下图： 
+
+![img6](md/res/D171120-01/img6.png)
+
+如果安装错误的话，请参考：[http://www.w3cplus.com/sassguide/install.html](http://www.w3cplus.com/sassguide/install.html "下载地址")；
+
+# 这个时候我们的sass已经安装完成，接下来就是怎么在Hbuilder中配置sass的运行环境；
+
+在工具->预编译器设置，如果没有.sass,.scss可以新建一个，
+
+![img7](md/res/D171120-01/img7.png)
+
+点击编辑： 
+
+![img8](md/res/D171120-01/img8.png)
+
+注意：1处的标记为ruby下面的安装位置，如果使用sass选择sass.bat。使用scss的话选择scss.bat,否则会报错。2 高亮显示命令 –no-cache %FileName% ../css/%FileBaseName%.css –style compact 
+运行会在该文件同层目录中生成.css文件 
+
+
+![img9](md/res/D171120-01/img9.png)
+
+
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
-<div $=ScenePage key='auto0'></div>
+<div $=ScenePage key='default'></div>
+<div $=ScenePage key='auto4' no-show='1'>
+  <div $=P key='draw' klass='default-large-small hidden-visible-auto' data-group.optid='rewgt/shadow-slide/steps' left='{-403}' top='{-275}'>
+    <span $=Img src='md/res/D171120-01/img7.png' sty__='{{"width":"635px","height":"561px"}}'></span>
+  </div>
+</div>
 <div $=ScenePage key='auto1' no-show='1'>
-  <div $=P key='draw' width='{300}' height='{260}' data-dsn-sizes='line1' $for='' left='{-7}' top='{-255}' data-group.optid='pinp/blogs/step1'>
-    <span $=".pinp.charts.line" key='line1' $style='{width:duals(-1).width+&#39;px&#39;,height:duals(-1).height+&#39;px&#39;}'>labels=One,Two,Three,Four,Five,Six,Seven
-title.text=
-legend.display=true
-scales.yAxes.0.stacked=false
-scales.yAxes.0.gridLines.display=true
-scales.xAxes.0.gridLines.display=true
----
-
-label=Item A
-fill=true
-lineTension=0.4
-borderWidth=2
-65 59 80 81 56 55 40
----
-label=Item B
-fill=false
-lineTension=0
-borderWidth=2
-75 89 70 91 40 48 32
-</span>
+  <div $=P key='draw' klass='default-large-small hidden-visible-auto' data-group.optid='rewgt/shadow-slide/steps' left='{-341}' top='{-277}'>
+    <span $=Img sty__='{{"width":"559px","height":"472px"}}' src='md/res/D171120-01/img8.png'></span>
   </div>
 </div>

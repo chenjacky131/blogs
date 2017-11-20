@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1511150283180,
+  "last_modify": 1511179860290,
   "user_name": "rewgt",
   "imported_repos": [
     [
@@ -12,23 +12,13 @@
   "repos_desc": "Blog",
   "doc_list": [
     {
-      "path": "md/D171120-02.txt",
-      "tag": "",
-      "markdown": false,
-      "title": "胶片页标题",
-      "modify_at": 1511149603087,
-      "create_at": 1511144749002,
-      "desc": "Abstract of the slide ...",
-      "thumb": "lib/res/slideshow.jpg"
-    },
-    {
       "path": "md/D171120-01.txt",
       "tag": "",
       "markdown": true,
-      "title": "一级标题",
-      "modify_at": 1511150283180,
-      "create_at": 1511143526054,
-      "desc": "by jacky at 2017/11/20<br>摘要。。。"
+      "title": "Hbuilder 编译scss",
+      "modify_at": 1511179860290,
+      "create_at": 1511171144021,
+      "desc": "by jacky at 2017/11/20<br>sass/scss依赖ruby环境，请先安装ruby，官网下载地址"
     }
   ]
 }
