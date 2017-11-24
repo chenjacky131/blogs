@@ -1,0 +1,18 @@
+常用npm脚本
+------
+
+by jacky at 2017/11/24
+
+---
+
+````
+    // 删除目录
+    "clean":"rimraf dist/*",
+    // 本地搭建一个http服务
+    "server":"http-server -p 8080 dist/",
+    // 打开浏览器
+    "open:dev":"opener http://localhost:8080"
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

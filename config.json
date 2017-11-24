@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1511182614037,
+  "last_modify": 1511487736472,
   "user_name": "rewgt",
   "imported_repos": [
     [
@@ -11,6 +11,15 @@
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D171124-01.txt",
+      "tag": ".常用",
+      "markdown": true,
+      "title": "常用npm脚本",
+      "modify_at": 1511487705758,
+      "create_at": 1511486271959,
+      "desc": "by jacky at 2017/11/24<br>````\n    // 删除目录\n    \"clean\":\"rimraf dist/*\",\n    // 本地搭建一个http服务\n    \"server\":\"http-server -p 8080 dist/\",\n    // 打开浏览器\n    \"open:dev\":\"opener http://localhost:8080\""
+    },
     {
       "path": "md/D171120-03.txt",
       "tag": ".教程",
