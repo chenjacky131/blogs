@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1511487736472,
+  "last_modify": 1511495203145,
   "user_name": "rewgt",
   "imported_repos": [
     [
@@ -11,6 +11,15 @@
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D171124-02.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "Webpack 提取公共代码，分离第三方插件",
+      "modify_at": 1511495203145,
+      "create_at": 1511495005988,
+      "desc": "by jakcy at 2017/11/24<br>```javascript\nvar path = require('path');\nvar webpack = require('webpack');\nmodule.exports = {\n    entry:{\n        bundle:'./entry.js',\n        vendors:['jquery']// 第三方插件\n    },"
+    },
     {
       "path": "md/D171124-01.txt",
       "tag": ".常用",

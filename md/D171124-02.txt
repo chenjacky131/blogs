@@ -1,0 +1,36 @@
+Webpack 提取公共代码，分离第三方插件
+----------
+
+by jakcy at 2017/11/24
+
+&nbsp;
+
+```javascript
+var path = require('path');
+var webpack = require('webpack');
+module.exports = {
+	entry:{
+		bundle:'./entry.js',
+		vendors:['jquery']// 第三方插件
+	},
+	output:{
+		path:path.resolve('./out'),
+		filename:'[name].js' // name对应entery里面的key
+	},
+	module:{
+		loaders:[
+		{test:/\.js$/,loader:'babel-loader?presets[]=es2015', include: /src/}			
+		]
+	},
+	plugins:[
+		new webpack.optimize.CommonsChunkPlugin({
+			name:'vendors',// 要提取的入口
+			minChunks:Infinity
+		})
+	]
+}
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
