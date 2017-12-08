@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1511495203145,
+  "last_modify": 1512722157839,
   "user_name": "rewgt",
   "imported_repos": [
     [
@@ -11,6 +11,15 @@
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D171208-01.txt",
+      "tag": "Sass注释中文报错问题.常用",
+      "markdown": true,
+      "title": "Sass注释中文报错问题",
+      "modify_at": 1512722157839,
+      "create_at": 1512722120309,
+      "desc": "by jacky at 2017/12/08<br>找到ruby的安装目录，里面也有sass模块，如这个路径："
+    },
     {
       "path": "md/D171124-02.txt",
       "tag": ".教程",

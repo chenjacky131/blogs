@@ -1,0 +1,18 @@
+Sass注释中文报错问题
+----------
+
+by jacky at 2017/12/08
+
+&nbsp;
+
+找到ruby的安装目录，里面也有sass模块，如这个路径：
+
+C:\Ruby\lib\ruby\gems\1.9.1\gems\sass-3.3.14\lib\sass
+
+在这个文件里面engine.rb，添加一行代码（同方法1）
+
+Encoding.default_external = Encoding.find('utf-8')
+放在所有的require XXXX 之后即可。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
