@@ -1,0 +1,50 @@
+Canvas实现放大镜功能
+----------
+
+by jacky at 2017/12/12
+
+&nbsp;
+
+#### 注意事项
+
+设置canvas的宽高应该设置在属性里面，而不是样式里面。不然会出现缩放的问题。
+##### JavaScript 语法：
+	context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+##### 参数值对应的含义
+
+|参数   	|描述                                     |
+|:-----         |:-----                    |
+|img	|规定要使用的图像、画布或视频。	 |
+|sx	|可选。开始剪切的 x 坐标位置。|
+|sy	|可选。开始剪切的 y 坐标位置。|
+|swidth	|可选。被剪切图像的宽度。|
+|sheight	|可选。被剪切图像的高度。|
+|x	|在画布上放置图像的 x 坐标位置。|
+|y	|在画布上放置图像的 y 坐标位置。|
+|width	|可选。要使用的图像的宽度（伸展或缩小图像）。|
+|height	|可选。要使用的图像的高度（伸展或缩小图像）。|
+#### 代码
+````html
+	<img src="opus.jpg" id="img2" width="181"/><!-- 小图片 -->
+	<img src="opus.jpg" id="img1" style="display: none;"/> <!-- 大图片 -->
+	<canvas id="myCanvas" style="border: 1px solid #000;"></canvas>
+        <script src="jquery.min.js"></script>
+        <script type="text/javascript">
+	    var c = $("#myCanvas")[0];
+	    var sx,sy=0;
+	    $(c).attr({width:200,height:100}); // 设置canvas的宽高时用属性的方式代替样式的方式
+	    var ctx = c.getContext("2d");
+	    var img1 = $("#img1")[0];
+	    var img2 = $("#img2")[0];
+	    $(img2).on("mousemove",function(e){
+		    console.log(e.clientX,e.clientY); // 获取鼠标悬浮时的坐标
+		    sx = e.clientX*2-100; // 小图片的坐标乘以倍数差(小图片与原始图片的宽度差距的倍数)，从而获取得模拟的大图片悬浮时的坐标
+		    sy = e.clientY*2-50;
+		    ctx.clearRect(0,0,200,100);  // 绘制图像时，先清除上次绘制的图
+	             ctx.drawImage(img1,sx,sy,200,100,0,0,200,100);		
+	});
+</script>
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
