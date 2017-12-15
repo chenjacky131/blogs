@@ -1,0 +1,25 @@
+网易移动端自适应方案
+----------
+
+by jacky at 2017/12/15
+
+&nbsp;
+
+以设计稿为640的宽度来计算。动态设置html的fontSize为
+
+````javascript
+
+document.documentElement.style.fontSize  = document.documentElement.clientWidth/6.4+"px";
+
+````
+元素的尺寸为设计稿上的尺寸除以100来设置。比如设计稿上body的宽度为640px。
+则style里面的样式为设计稿上的尺寸除以100rem。
+```css
+
+body{width:6.4rem}
+
+```
+样式可以用scss动态计算，所以直接写对应的设计图尺寸就可以了。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
