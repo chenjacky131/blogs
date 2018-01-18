@@ -1,0 +1,43 @@
+下拉刷新示例
+----------
+
+by jacky at 2018/01/18
+
+&nbsp;
+
+代码
+
+```javascript
+        var isLoading = 0; // 定义一个请求时候在加载的变量，防止滚动一次触发多个请求。
+        $(window).on('scroll',function () {
+            if($(window).scrollTop()+$(window).height() > $(target).offset().top){ // 当滚动到目标元素时触发请求
+                if(isLoading==0){
+                    var firstPage = Number($('#game-page').attr('data-firstpageNumber')),lastPage = Number($('#game-page').attr('data-lastPageNumber')); // 定义起始页和结束页变量
+                    var moreUrl = $("._vr_itemCasino ._vr_tabs").find("li.active a").data("href");
+                    $(".g_loading").show(); // 加载时的加载层
+                    if(firstPage < lastPage){ // 如果还有数据没显示，第一页变量加1
+                        firstPage += 1;
+                    }else{ // 否则显示全部数据加载完成，直接退出函数
+                        $('.g_all_game_loaded').show();
+                        return ;
+                    }
+                    $('#game-page').attr('data-firstpageNumber',firstPage); // 新的第一页变量赋值给页面的隐藏钩子元素
+                    $.ajax({
+                        url:moreUrl + '&pageNumber=' + firstPage,
+                        type: 'post',
+                        success: function (data) {
+                            var afterData = $(data).find('._vr_casino_game').children();
+                            $('div._vr_casino_game').append(afterData);
+                            var first = $('#game-page').attr('data-firstPageNumber');
+                            $('.g_loading').hide();
+                            isLoading = 0; // 请求成功后恢复允许请求变量
+                        }
+                    })
+                    isLoading = 1; // 发起一次请求后把变量设为请求状态，禁止多次请求。
+                }
+            }
+        });
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
