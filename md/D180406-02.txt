@@ -1,0 +1,12 @@
+事件监听的even
+----------
+
+by jacky at 2018/4/6
+
+&nbsp;
+
+
+event.target 是触发事件的元素，而 event.currentTarget 是事件绑定的元素。也就是说，大部分情况下，当使用事件代理时，event.target 是子元素，而 event.currentTarget 是父级元素。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

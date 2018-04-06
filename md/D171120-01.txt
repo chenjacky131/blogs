@@ -47,7 +47,7 @@ ruby安装步骤： 
 
 ![img8](md/res/D171120-01/img8.png)
 
-注意：1处的标记为ruby下面的安装位置，如果使用sass选择sass.bat。使用scss的话选择scss.bat,否则会报错。2 高亮显示命令 –no-cache %FileName% ../css/%FileBaseName%.css –style compact 
+注意：1处的标记为ruby下面的安装位置，如果使用sass选择sass.bat。使用scss的话选择scss.bat,否则会报错。2 高亮显示命令 --no-cache %FileName% ../css/%FileBaseName%.css --style compact 
 运行会在该文件同层目录中生成.css文件 
 
 
