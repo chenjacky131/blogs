@@ -1,0 +1,32 @@
+创建图片热点链接
+----------
+
+
+有时候需要在一张图片上设置几个区域，鼠标点击图片的不同区域可以进入不同的页面，或者是点击图片的某一块区域进入某一个页面，这就是网页的热点链接。
+````html
+1 <img src="test.jpg"  usemap="#testmap" alt="test" />
+2 <map name="testmap" id="testmap">
+3   <area shape="circle" coords="180,139,14" href ="test1.html" alt="test1" />
+4   <area shape="circle" coords="129,161,10" href ="test2.html" alt="test2" />
+5   <area shape="rect" coords="0,0,110,260" href ="test3.html" alt="test3" />
+6 </map>
+````
+注释：<img> 中的 usemap 属性可引用 <map> 中的 id 或 name 属性（由浏览器决定），所以我们需要同时向 <map> 添加 id 和 name 两个属性
+
+那么，如何获取这个坐标值呢？
+
+方法一：.新建一个html页面，在body里面插入如下代码：
+
+````html
+<a href="#"><img src="test.jpg" ismap="ismap"></a>
+````
+注意这个“ismap=’ismap‘”，有了这个属性后，然后打开这个html页面，把光标移到图片上任意位置，网页的左下角状态栏会显示当前坐标值
+
+
+
+
+
+这样即可获取坐标值了。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
