@@ -1,0 +1,15 @@
+修改npm安装的全局路径和配置环境变量的坑
+----------
+
+
+&nbsp;
+
+1.要在你需要存放模块的文件夹里建两个文件夹我是在node目录下建了两个文件夹分别叫node_global和node_cache。
+2.修改npm文件夹下的npmrc文件，打开修改里面的内容，原来的内容删掉，写入
+prefix=D:\node\node_global
+cache=D:\node\node_cache
+这个是配置安装模块的路径为步骤一新建的文件夹。然后可以随便找个模块安装一下。模块就会出现在node_global文件夹里面
+3.当安装完模块后还不能用，因为改变了默认的路径，需要修改系统的环境变量配置去让命令行识别命令，这里分为用户变量和系统变量。先在用户变量里面新建明为PATH的变量，值为D:\node\node_global,这个值是你在步骤一种新建的文件夹的路径。然后在系统变量里面新建一个叫NODE_PATH的变量，值为D:\node\node_global\node_modules，这个值是步骤一中新建的node_global下的node_modules文件夹的路径，以后安装的全局模块就在这里，（这个文件夹是安装完任何一个模块后才会出现，所以配置环境变量前要随便先安装一个模块）
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

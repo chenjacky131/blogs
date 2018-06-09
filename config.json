@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1527753257430,
+  "last_modify": 1528536088670,
   "user_name": "rewgt",
   "imported_repos": [
     [
@@ -11,6 +11,15 @@
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D180609-01.txt",
+      "tag": "",
+      "markdown": true,
+      "title": "修改npm安装的全局路径和配置环境变量的坑",
+      "modify_at": 1528536088670,
+      "create_at": 1528536040837,
+      "desc": "1.要在你需要存放模块的文件夹里建两个文件夹我是在node目录下建了两个文件夹分别叫node_global和node_cache。\n2.修改npm文件夹下的npmrc文件，打开修改里面的内容，原来的内容删掉，写入\nprefix=D:\\node\\node_global\ncache=D:\\node\\node_cache\n这个是配置安装模块的路径为步骤一新建的文件夹。然后可以随便找个模块安装一下。模块就会出现在node_global文件夹里面"
+    },
     {
       "path": "md/D180531-01.txt",
       "tag": ".教程",
