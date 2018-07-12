@@ -1,19 +1,23 @@
 {
   "version": "1.0",
-  "last_modify": 1528536088670,
+  "last_modify": 1531389349425,
   "user_name": "rewgt",
-  "imported_repos": [
-    [
-      "https://pinp.github.io/blogs/",
-      "Online help"
-    ]
-  ],
+  "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
     {
+      "path": "md/D180712-01.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "比较数组和对象相等",
+      "modify_at": 1531389177617,
+      "create_at": 1531388949760,
+      "desc": "by jack at 2018/07/12<br>````\nArray.prototype.equals = function (array) {\n    // if the other array is a falsy value, return\n    if (!array)\n        return false;"
+    },
+    {
       "path": "md/D180609-01.txt",
-      "tag": "",
+      "tag": ".教程",
       "markdown": true,
       "title": "修改npm安装的全局路径和配置环境变量的坑",
       "modify_at": 1528536088670,
