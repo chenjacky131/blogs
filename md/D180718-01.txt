@@ -1,0 +1,82 @@
+Cash Register
+----------
+
+by jacky at 2018/07/18
+
+&nbsp;
+freecodecamp地址:
+https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register
+```javascript
+    function checkCashRegister(price, cash, cid) {
+      var change;
+      var priceInDrawArr = [// 收银机里面的面额的张数
+        {"price":100,"priceName":"ONE HUNDRED","num":Math.floor(cid[8][1]/100)},
+        {"price":20,"priceName":"TWENTY","num":Math.floor(cid[7][1]/20)},
+        {"price":10,"priceName":"TEN","num":Math.floor(cid[6][1]/10)},
+        {"price":5,"priceName":"FIVE","num":Math.floor(cid[5][1]/5)},
+        {"price":1,"priceName":"ONE","num":Math.floor(cid[4][1]/1)},
+        {"price":0.25,"priceName":"QUARTER","num":Math.floor(cid[3][1]/0.25)},
+        {"price":0.1,"priceName":"DIME","num":Math.floor(cid[2][1]/0.1)},
+        {"price":0.05,"priceName":"NICKEL","num":Math.floor(cid[1][1]/0.05)},
+        {"price":0.01,"priceName":"PENNY","num":Math.floor(cid[0][1]/0.01)}
+    ]
+
+      let cidTotal = 0;// 收银机里面的总额
+      cid.map(val=>{
+        cidTotal+=val[1];
+      });
+      cidTotal = cidTotal.toFixed(2);
+
+      change = cash - price;// 需要找回的零钱
+
+      let changeObj = {// 需要返回的对象
+        status:"",
+        change:[]
+      };
+
+      if(cidTotal==change){// 如果找零刚好和收银机里的钱相等
+        changeObj.status="CLOSED";
+        changeObj.change = cid;
+      }else if(cidTotal<change){// 如果找零大于收银机里的钱
+        changeObj.status="INSUFFICIENT_FUNDS";
+      }else{// 如果收银机里的钱够找，还得判断能不能找得开（有零钱找）
+        priceInDrawArr.map((val,i)=>{
+          switch(val["price"]){
+            case 100:changeF(change,100,val,i);break;
+            case 20:changeF(change,20,val,i);break;
+            case 10:changeF(change,10,val,i);break;
+            case 5:changeF(change,5,val,i);break;
+            case 1: changeF(change,1,val,i);break;
+            case 0.25:changeF(change,0.25,val,i);break;
+            case 0.1:changeF(change,0.1,val,i);break;
+            case 0.05:changeF(change,0.05,val,i);break;
+            case 0.01:changeF(change,0.01,val,i);break;
+          }
+        });
+        if(change==0){// 收银机里的钱刚好找得开
+          changeObj.status="OPEN";
+        }else{ // 收银机里的钱找不开
+          changeObj.status="INSUFFICIENT_FUNDS";
+          changeObj.change=[];
+        }
+      } 
+      console.log(changeObj);
+      function changeF(chan,pri,val,i){// 判断要给出的面额的价钱
+        var n = 0;// 面额张数
+        n = Math.floor(chan/pri);
+        if(n!=0&&n<=val["num"]){// 如果零钱超过该面值且小于收银机里面该面值的总价钱
+          changeObj.change.push([val["priceName"],n*pri]);
+          change-=(n*pri);
+          change=change.toFixed(2);
+        }else if(n!=0&&n>val["num"]){// 如果零钱超过该面值且大于收银机里面该面值的总价钱，返回该面值的所有钱
+          changeObj.change.push([val["priceName"],val["num"]*pri]);
+          change-=(val["num"]*pri);
+          change=change.toFixed(2);
+        }
+      }
+      }
+      checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
+```
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

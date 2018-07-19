@@ -1,0 +1,78 @@
+ Roman Numeral Converter
+----------
+
+by jacky at 2018/07/18
+
+&nbsp;
+freecodecamp地址：https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter
+```javascript
+function convertToRoman(num) {
+    let tho = Math.floor(num / 1000);
+    let hun = Math.floor(num % 1000 / 100);
+    let ten = Math.floor(num % 1000 % 100 / 10);
+    let ind = Math.floor(num % 1000 % 100 % 10);
+
+    function convTho(num) {
+        switch (num) {
+            case 1:return "M";break;
+			case 2:return "MM";break;
+			case 3:return "MMM";break;
+			case 4:return "MMMM";break;
+			case 5:return "MMMMM";break;
+			case 6:return "MMMMMM";break;
+			case 7:return "MMMMMMM";break;
+			case 8:return "MMMMMMMM";break;
+			case 9:return "MMMMMMMMM";break;
+			default:return '';        
+			}              
+	}      
+	function convHun(num){        
+		switch(num){          
+			case 1:return "C";break;          
+			case 2:return "CC";break;          
+			case 3:return "CCC";break;          
+			case 4:return "CD";break;          
+			case 5:return "D";break;          
+			case 6:return "DC";break;          
+			case 7:return "DCC";break;          
+			case 8:return "DCCC";break;          
+			case 9:return "CM";break;          
+			default:return '';
+		}
+	}
+	function convTen(num){
+        switch(num){
+			case 1:return "X";break;
+			case 2:return "XX";break;
+			case 3:return "XXX";break;
+			case 4:return "XL";break;
+			case 5:return "L";break;
+			case 6:return "LX";break;
+			case 7:return "LXX";break;
+			case 8:return "LXXX";break;
+			case 9:return "XC";break;
+			default:return '';
+		}
+	}
+	function convInd(num){
+        switch(num){
+			case 1:return "I";break;
+			case 2:return "II";break;
+			case 3:return "III";break;
+			case 4:return "IV";break;
+			case 5:return "V";break;
+			case 6:return "VI";break;
+			case 7:return "VII";break;
+			case 8:return "VIII";break;
+			case 9:return "IX";break;
+			default:return '';
+		}
+	}
+	return convTho(tho)+convHun(hun)+convTen(ten)+convInd(ind);
+    }
+	convertToRoman(36);
+
+```
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

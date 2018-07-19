@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1531389349425,
+  "last_modify": 1531898561180,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D180718-02.txt",
+      "tag": ".算法题",
+      "markdown": true,
+      "title": "Roman Numeral Converter",
+      "modify_at": 1531898561180,
+      "create_at": 1531898474225,
+      "desc": "by jacky at 2018/07/18<br>freecodecamp地址：https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter\n```javascript\nfunction convertToRoman(num) {\n    let tho = Math.floor(num / 1000);\n    let hun = Math.floor(num % 1000 / 100);\n    let ten = Math.floor(num % 1000 % 100 / 10);\n    let ind = Math.floor(num % 1000 % 100 % 10);"
+    },
+    {
+      "path": "md/D180718-01.txt",
+      "tag": ".算法题",
+      "markdown": true,
+      "title": "Cash Register",
+      "modify_at": 1531897097816,
+      "create_at": 1531896883156,
+      "desc": "by jacky at 2018/07/18<br>freecodecamp地址:\nhttps://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register\n```javascript\n    function checkCashRegister(price, cash, cid) {\n      var change;\n      var priceInDrawArr = [// 收银机里面的面额的张数\n        {\"price\":100,\"priceName\":\"ONE HUNDRED\",\"num\":Math.floor(cid[8][1]/100)},\n        {\"price\":20,\"priceName\":\"TWENTY\",\"num\":Math.floor(cid[7][1]/20)},"
+    },
     {
       "path": "md/D180712-01.txt",
       "tag": ".教程",
