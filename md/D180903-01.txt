@@ -1,0 +1,55 @@
+SwfObject Api参数说明
+----------
+
+by jacky at 2018/09/03
+
+SWFObject简介
+SWFObject是一个用于在HTML中方面插入Adobe Flash媒体资源（*.swf文件）的独立、敏捷的JavaScript模块。该模块中的JavaScript脚本能够自动检测PC、Mac机器上各种主流浏览器对Flash插件的支持情况。它使得插入Flash媒体资源尽量简捷、安全。而且它是非常符合搜索引擎优化的原则的。此外，它能够避免您的HTML、XHTML中出现object、embed等非标准标签，从而符合更加标准。(即：通过text/html应答页面， 而非application/xhtml+xml)。
+
+
+语法介绍
+swfobject.embedSWF(swfUrl, id, width, height, version,
+expressInstallSwfurl, flashvars, params, attributes, callbackFn)
+一共10个参数，其中前5个为必须，后5个为可选，各参数说明如下：
+1、swfUrl：（字符类型，必选）要加载的 swf 文件的 URL 地址；
+2、id ：（字符类型，必选）加载 swf 文件的 HTML 容器（div）的id 标识，必须页面唯一；
+3、width（字符类型，必选）加载 swf 文件的 HTML容器（div）的宽度
+4、height：（字符类型，必选）加载 swf 文件的 HTML容器（div）的高度
+5、version：（字符类型，必选）指定加载 swf 文件的最低 Flash Player 版本号，格式：”major.minor.release” or “major”；
+6、expressInstallSwfurl：（字符类型，可选）当版本低于要求时，执行该swf文件，这里利用这个flash跳转到官方下载最新版本的flash插件；
+7、flashvars：（对象类型，可选）使用 name:value 的形式指定 swf 文件的入口参数；
+8、params：（对象类型，可选）使用 name:value 的形式指定加载 swf 文件时的 Flash 参数；
+9、attributes：（对象类型，可选）使用 name:value 的形式指定 swf 对象的属性；
+10、callbackFn：（Javascript函数，可选）指定一个回调函数，这个回调函数无论加载 swf 文件成功或失败都会调用；
+
+常用的 Flash 参数
+1、play：是否立即自动播放，当加载完毕后，可选值：true、false；
+2、loop：是否循环播放，可选值：true、false；
+3、menu：是否启用右键菜单，可选值：true、false；
+4、quality：指定影片质量，可选值：low、autolow、autohigh、medium、high、high；
+5、scale：当 width 和 height 值是百分比时，定义应用程序如何放置在浏览器窗口中，可选值：showall、noborder、exactfit；
+6、salign：（可选）指定缩放的 Flash SWF 文件在由 width 和 height 设置定义的区域内的位置，可选值：L、R、T、B、TL、TR、BL、BR；
+7、wmode：（可选）允许使用 Internet Explorer 4.0 中的透明 Flash 内容、绝对定位和分层显示功能。此标记/属性仅在带有 Flash Player ActiveX 控件的 Windows 中有效，可选值：Window、Opaque、Transparent；
+8、bgcolor：背景颜色，格式：#RRGGhttp://randi0624.iteye.com/admin/blogs/newBB；
+9、base：基准连接地址；
+10、allowscriptaccess ：使用 allowscriptaccess 使 Flash 应用程序可与其所在的 HTML 页通信。此参数是必需的，因为 fscommand() 和 getURL() 操作可能导致 JavaScript 使用 HTML 页的权限，而该权限可能与 Flash 应用程序的权限不同。这与跨域安全性有着重要关系，可选值：always、never、samedomain；
+11、seamlesstabbing：（可选）允许设置 ActiveX 控件执行无缝跳格，从而使用户能跳出 Flash 应用程序。该参数只能在安装 Flash Player ActiveX 控件版本 7 及更高版本的 Windows 中使用。可选值：true、false；
+
+使用实例
+<div id="player" ></div>
+<script type="text/javascript" src="${BaseURL}front/js/swfobject.js" />
+<script type="text/javascript">
+    var videoURL = "../../front/video/demo.swf";
+    var w = 458;
+    var h = 305;
+    var logoURL = "";
+    if (videoURL != null&& videoURL != "") {
+        swfobject.embedSWF("${BaseURL}front/video/playerPortal.swf",
+        'player',w, h, '10.0.0', '',
+        {videoURL : videoURL,W : w,H : h, logoURL:logoURL},
+        {allowfullscreen : 'true',wmode : 'opaque'});
+    }
+</script>
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
