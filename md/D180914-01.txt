@@ -1,0 +1,38 @@
+域名测速
+----------
+
+by jacky at 2018/09/14
+
+&nbsp;
+
+````
+    <script> 
+    var timeInit = timeCount = 1;
+    var timer = null;
+    timer = setInterval(function(){
+        timeCount++;
+        if(timeCount>300){
+            clearInterval(timer);
+        }
+    },100);
+    function onError(timepass,item){
+        var ms = timepass*10;
+        var site = item.src;
+        // if(ms>100){// 100毫秒
+        //     console.log('站点超时->站点:'+site);
+        // }else if(ms<1){// 1毫秒
+        //     console.log('反应极快->站点:'+site);
+        // }else{
+        // }
+        console.log(ms+'ms->站点:'+site);
+    }
+    </script>
+    <h1>这是标题h1</h1>
+    <img class="testS" style="display: none;" src="https://www.quanjing.com/" onerror="onError(timeCount-timeInit,this)">
+    <img class="testS" style="display: none;" src="http://www.nipic.com/" onerror="onError(timeCount-timeInit,this)">
+    <img class="testS" style="display: none;" src="http://www.daimg.com/" onerror="onError(timeCount-timeInit,this)">
+    <img class="testS" style="display: none;" src="http://www.ivsky.com/" onerror="onError(timeCount-timeInit,this)">
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

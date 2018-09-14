@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1536378097864,
+  "last_modify": 1536891422983,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D180914-01.txt",
+      "tag": "1.教程",
+      "markdown": true,
+      "title": "域名测速",
+      "modify_at": 1536891422983,
+      "create_at": 1536891345936,
+      "desc": "by jacky at 2018/09/14<br>````\n     \n    var timeInit = timeCount = 1;\n    var timer = null;\n    timer = setInterval(function(){\n        timeCount++;\n        if(timeCount&gt;300){\n            clearInterval(timer);</p>"
+    },
     {
       "path": "md/D180908-01.txt",
       "tag": ".教程",
