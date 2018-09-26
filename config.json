@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1536891422983,
+  "last_modify": 1537931804475,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -38,7 +38,7 @@
       "tag": "SwfObjectApi参数说明.API",
       "markdown": true,
       "title": "SwfObject Api参数说明",
-      "modify_at": 1535956363057,
+      "modify_at": 1537931804475,
       "create_at": 1535956312998,
       "desc": "by jacky at 2018/09/03<br>SWFObject简介\nSWFObject是一个用于在HTML中方面插入Adobe Flash媒体资源（*.swf文件）的独立、敏捷的JavaScript模块。该模块中的JavaScript脚本能够自动检测PC、Mac机器上各种主流浏览器对Flash插件的支持情况。它使得插入Flash媒体资源尽量简捷、安全。而且它是非常符合搜索引擎优化的原则的。此外，它能够避免您的HTML、XHTML中出现object、embed等非标准标签，从而符合更加标准。(即：通过text/html应答页面， 而非application/xhtml+xml)。"
     },

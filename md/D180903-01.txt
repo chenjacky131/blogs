@@ -36,6 +36,7 @@ expressInstallSwfurl, flashvars, params, attributes, callbackFn)
 11、seamlesstabbing：（可选）允许设置 ActiveX 控件执行无缝跳格，从而使用户能跳出 Flash 应用程序。该参数只能在安装 Flash Player ActiveX 控件版本 7 及更高版本的 Windows 中使用。可选值：true、false；
 
 使用实例
+````html
 <div id="player" ></div>
 <script type="text/javascript" src="${BaseURL}front/js/swfobject.js" />
 <script type="text/javascript">
@@ -50,6 +51,8 @@ expressInstallSwfurl, flashvars, params, attributes, callbackFn)
         {allowfullscreen : 'true',wmode : 'opaque'});
     }
 </script>
+````
+插件下载链接:https://drive.google.com/open?id=1ifJurQQSG4ZbmSRrXvu1NSShbiNUVZVO
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
