@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1538534992088,
+  "last_modify": 1538557605977,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181003-02.txt",
+      "tag": ".遇见的问题",
+      "markdown": true,
+      "title": "文件BOM头的坑",
+      "modify_at": 1538557605977,
+      "create_at": 1538557277424,
+      "desc": "by jacky at 2018/10/03<br>1.存在的问题\n虽然BOM字符起到了标记文件编码的作用但是他并不属于文件的内容部分，所以会产生一些问题："
+    },
     {
       "path": "md/D181003-01.txt",
       "tag": ".教程",
