@@ -1,0 +1,13 @@
+css3的border-image属性
+----------
+
+by jacky at 2018/10/17
+
+&nbsp;
+
+border-image:border-image-source border-image-slice/ border-image-width/ border-image-outlet stretch(默认)|repeat|round;
+
+border-image-slice边框图片裁切，border-iamge-width根据这个值来缩放边框图片，border-image-outlet边框图片偏离边框的位置，不能为负值。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

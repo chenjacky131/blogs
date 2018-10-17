@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1538557605977,
+  "last_modify": 1539743798677,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181017-01.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "css3的border-image属性",
+      "modify_at": 1539743798677,
+      "create_at": 1539743394875,
+      "desc": "by jacky at 2018/10/17<br>border-image:border-image-source border-image-slice/ border-image-width/ border-image-outlet stretch(默认)|repeat|round;"
+    },
     {
       "path": "md/D181003-02.txt",
       "tag": ".遇见的问题",
