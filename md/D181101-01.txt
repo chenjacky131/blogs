@@ -1,0 +1,17 @@
+引用对象的赋值问题
+----------
+
+by jakcy at 2018/11/1
+
+&nbsp;
+
+会改变原始数组的几个方法：1.shift,2.unshift,3.pop,4.push,5.reverse,6.sort,7.splice
+
+遇到的坑：
+var a = [1,2,3];
+var b = a;
+a.splice(0);
+console.log(b）;// b = [],原始数组被修改了，所以b的值也变了
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
