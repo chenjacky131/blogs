@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1541062012834,
+  "last_modify": 1541138394726,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181102-01.txt",
+      "tag": ".遇见的问题",
+      "markdown": true,
+      "title": "Windows 安装node-sass包失败的解决方案",
+      "modify_at": 1541138394726,
+      "create_at": 1541138329082,
+      "desc": "by jacky at 2018/11/02"
+    },
     {
       "path": "md/D181101-01.txt",
       "tag": ".遇见的问题",

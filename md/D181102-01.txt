@@ -1,0 +1,9 @@
+Windows 安装node-sass包失败的解决方案
+----------
+
+by jacky at 2018/11/02
+
+window安装node-sass失败，需要安装这两个模块node-gyp,windows-build-tools
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
