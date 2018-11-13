@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1541138394726,
+  "last_modify": 1542094125090,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181113-02.txt",
+      "tag": ".Vue遇到的问题",
+      "markdown": true,
+      "title": "Vue里面应用资源的一些便捷写法",
+      "modify_at": 1542094125090,
+      "create_at": 1542093994725,
+      "desc": "by jack at 2018/11/13<br>引入样式时用~开头引入alia(引用资源路径时的缩写)里面的缩写地址"
+    },
+    {
+      "path": "md/D181113-01.txt",
+      "tag": ".Vue遇到的问题",
+      "markdown": true,
+      "title": "获取渲染后的dom高度",
+      "modify_at": 1542093965631,
+      "create_at": 1542093885243,
+      "desc": "by jacky at 2018/11/13<br>winRank:数据对应的变量\n```javascript\n    watch:{\n      winRank:function(){//监听win_list数据\n        this.$nextTick(()=>{// 数据渲染后再执行相应的方法\n          this.function()\n        });\n      }\n    }"
+    },
     {
       "path": "md/D181102-01.txt",
       "tag": ".遇见的问题",
