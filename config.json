@@ -1,17 +1,26 @@
 {
   "version": "1.0",
-  "last_modify": 1542174771884,
+  "last_modify": 1542181840309,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
     {
+      "path": "md/D181114-02.txt",
+      "tag": ".Vue遇到的问题",
+      "markdown": true,
+      "title": "当data里面的属性需要依赖其它属性时",
+      "modify_at": 1542181840309,
+      "create_at": 1542181564908,
+      "desc": "by jacky at 2018/11/14<br>当data里面的属性需要依赖其它属性时，请把它设计为计算属性,比如下面的newNumber"
+    },
+    {
       "path": "md/D181114-01.txt",
       "tag": ".函数库",
       "markdown": true,
       "title": "常用函数",
-      "modify_at": 1542174771884,
+      "modify_at": 1542181553045,
       "create_at": 1542174673854,
       "desc": "by jacky at 2018/11/14<br>```javascript\n    function m_isString(obj){\n      return Object.prototype.toString.call(obj) === '[object String]';\n    }\n    function m_isNumber(obj){\n      return Object.prototype.toString.call(obj) === '[object Number]';\n    }\n    function m_isBoolean(obj){"
     },

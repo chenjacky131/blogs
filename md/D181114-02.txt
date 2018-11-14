@@ -1,0 +1,23 @@
+当data里面的属性需要依赖其它属性时
+----------
+
+by jacky at 2018/11/14
+
+&nbsp;
+当data里面的属性需要依赖其它属性时，请把它设计为计算属性,比如下面的newNumber
+
+````javascript
+data(){
+    return {
+        num:20
+    }
+},
+computed:{
+   newNumber(){
+    return this.num+20;
+   }
+}
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
