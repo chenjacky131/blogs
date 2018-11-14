@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1542094125090,
+  "last_modify": 1542174771884,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181114-01.txt",
+      "tag": ".函数库",
+      "markdown": true,
+      "title": "常用函数",
+      "modify_at": 1542174771884,
+      "create_at": 1542174673854,
+      "desc": "by jacky at 2018/11/14<br>```javascript\n    function m_isString(obj){\n      return Object.prototype.toString.call(obj) === '[object String]';\n    }\n    function m_isNumber(obj){\n      return Object.prototype.toString.call(obj) === '[object Number]';\n    }\n    function m_isBoolean(obj){"
+    },
     {
       "path": "md/D181113-02.txt",
       "tag": ".Vue遇到的问题",

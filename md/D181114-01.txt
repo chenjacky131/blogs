@@ -1,0 +1,35 @@
+常用函数
+----------
+
+by jacky at 2018/11/14
+
+#### 1.判断类型函数
+```javascript
+    function m_isString(obj){
+      return Object.prototype.toString.call(obj) === '[object String]';
+    }
+    function m_isNumber(obj){
+      return Object.prototype.toString.call(obj) === '[object Number]';
+    }
+    function m_isBoolean(obj){
+      return Object.prototype.toString.call(obj) === '[object Boolean]';
+    }
+    function m_isUndefined(obj){
+      return Object.prototype.toString.call(obj) === '[object Undefined]';
+    }
+    function m_isNull(obj){
+      return Object.prototype.toString.call(obj) === '[object Null]';
+    }
+    function m_isFunction(obj){
+      return Object.prototype.toString.call(obj) === '[object Function]';
+    }
+    function m_isArray(obj){
+      return Object.prototype.toString.call(obj) === '[object Array]';
+    }
+    function m_isObject(obj){
+      return Object.prototype.toString.call(obj) === '[object Object]';
+    }
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
