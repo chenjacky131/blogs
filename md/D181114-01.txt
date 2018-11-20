@@ -199,6 +199,39 @@ function Base64() {
         console.log(1);
       },500);
 ```
+#### 5.分时节流
+```javascript
+
+      var arr = [];
+      for(var i = 1;i<=1000;i++){
+        arr.push(i);
+      }
+      var timeChunk = function(arr,fn,count){// arr要循环的数据，fn循环执行的逻辑，count每次执行的条数
+        var obj,
+            t;
+        var len = arr.length;
+        var start = function(){
+          for(var i = 0; i = Math.min(count||1,arr.length); i++){
+            var obj = arr.shift();
+            fn(obj);
+          }
+        }
+        return function(){
+          t = setInterval(function(){
+            if(arr.length === 0){// 如果全部节点都已经创建好
+              clearInterval(t);
+            }
+            start();
+          },200);// 分批执行的时间间隔,也可以用参数传入。
+        }
+      }
+      var renderList = timeChunk(arr,function(n){
+        var div = document.createElement('div');
+        div.innerHTML = n;
+        document.body.appendChild(div);
+      },10);
+      renderList()
+```
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
