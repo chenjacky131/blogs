@@ -1,0 +1,53 @@
+记住密码登录简单例子
+----------
+
+by jacky at 2018/11/20
+
+&nbsp;
+原理：将密码存储在cookie里面，读取cookie里面的密码，然后复制给输入款
+```javascript
+    // 免密登陆
+    var form = document.getElementById('LoginForm');
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+    var rememberPwd = document.getElementById('rememberPwd');
+    if(username&&password&&rememberPwd){// 登录前判断
+      if(getCookie('user')&&getCookie('pswd')){
+        username.value = getCookie('user');
+        password.value = getCookie('pswd');
+        rememberPwd.checked = true;
+      }   
+      form.onsubmit = function(){
+        if(rememberPwd.checked){
+          setCookie('user',username.value,7)
+          setCookie('pswd',password.value,7)        
+        }
+      }
+      rememberPwd.onchange = function(){
+        if(!this.checked){
+          delCookie('user');
+          delCookie('pswd');
+        }
+      }   
+    }
+    function getCookie(name){
+      var reg = new RegExp(name+"=([^;]+)");
+      var arr = document.cookie.match(reg);
+      if(arr){
+        return arr[1];
+      }else{
+        return '';
+      }
+    }
+    function setCookie(name,value,day){
+      var date = new Date();
+      date.setDate(date.getDate()+day);
+      document.cookie = name + '=' + value +';expires=' + date;
+    }
+    function delCookie(name){
+      setCookie(name,null,-1);
+    }
+```
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
