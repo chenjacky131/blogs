@@ -146,6 +146,32 @@ function Base64() {
 // base.encode(string);
 // base.decode(encodestring);
 ````
+
+#### 3.函数柯里化(function currying)
+```javascript
+      var currying  = function(fn){
+        var args = [];
+        return function(){
+          if (arguments.length == 0) {
+            return fn.apply(this,args);
+          } else {
+            [].push.apply(args,arguments);
+            return arguments.callee;// 返回被执行的函数对象
+          }
+        }
+      }
+      var cost = (function(){
+        var money = 0;
+        return function(){
+          for(var i = 0,l = arguments.length; i<l; i++){
+            money += arguments[i];
+          }
+          return money;
+        }
+      })();
+      var costCurry = currying(cost);
+      console.log(costCurry(100)(200)(300)());
+```
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
