@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1542699691878,
+  "last_modify": 1542783639013,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181121-02.txt",
+      "tag": ".js设计模式",
+      "markdown": true,
+      "title": "策略模式",
+      "modify_at": 1542783639013,
+      "create_at": 1542783542953,
+      "desc": "by jacky at 2018/11/21<br>```javascript\n      // 例子为年终奖的计算简单例子，传入绩效等级和薪资，算出年终奖\n      // 策略模式：将一系列算法封装起来，将算法的实现和使用分离开来\n      var strategies = {\n        \"S\" : function ( salary ) {\n          return salary * 4;\n        },\n        \"A\" : function ( salary ) {"
+    },
+    {
+      "path": "md/D181121-01.txt",
+      "tag": ".js设计模式",
+      "markdown": true,
+      "title": "单例模式",
+      "modify_at": 1542781488337,
+      "create_at": 1542781418849,
+      "desc": "by jacky at 2018/11/21<br>```javascript\n      var Singleton = function(fn){\n        var result;\n        return function(){\n          return result || (result = fn.apply(this,arguments));\n        }\n      };\n      var createDiv = function(){"
+    },
     {
       "path": "md/D181120-01.txt",
       "tag": ".教程",
@@ -38,7 +56,7 @@
       "tag": ".函数库",
       "markdown": true,
       "title": "常用函数",
-      "modify_at": 1542699691878,
+      "modify_at": 1542783526601,
       "create_at": 1542174673854,
       "desc": "by jacky at 2018/11/14<br>```javascript\n    function m_isString(obj){\n      return Object.prototype.toString.call(obj) === '[object String]';\n    }\n    function m_isNumber(obj){\n      return Object.prototype.toString.call(obj) === '[object Number]';\n    }\n    function m_isBoolean(obj){"
     },
