@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1542783639013,
+  "last_modify": 1542867954406,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181122-01.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "利用策略模式，封装一个表单验证插件",
+      "modify_at": 1542867954406,
+      "create_at": 1542857522654,
+      "desc": "by jacky at 2018/11/22"
+    },
     {
       "path": "md/D181121-02.txt",
       "tag": ".js设计模式",

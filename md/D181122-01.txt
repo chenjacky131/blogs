@@ -1,0 +1,106 @@
+利用策略模式，封装一个表单验证插件
+----------
+
+by jacky at 2018/11/22
+
+&nbsp;
+```html
+
+  <form action="#" id="registerForm" method="POST">
+    请输入用户名：<input type="text" name="userName">
+    请输入密码：<input type="password" name="password">
+    请输入手机号：<input type="text" name="phoneNumber">
+    <button>提交</button>
+  </form>
+
+```
+
+```javascript
+
+/*! jacky v1.0.0 | (c)  2018 */
+var _strategies = {
+  isNonEmpty: function( value, errMsg ){  //  不为空
+    if ( value === '' ) {
+      return errMsg;
+    }
+  },
+  minLength: function( value, length, errMsg ){  //  限制最小长度
+    if ( value.length < length ){
+      return errMsg;
+    }
+  },
+  isMobile: function( value, errMsg ){  //  手机号码格式
+    if ( !/(^1[358]\d{9}$)/.test( value ) ){
+      return errMsg;
+    }
+  }
+}
+var ja_Validator = function(){
+  this.cache = [];  //  保存校验规则
+}
+ja_Validator.prototype.add = function( dom, rules ){
+  var self = this;
+  for( var i = 0, rule; rule = rules[i++]; ){
+    (function( rule ){
+      var strategyAry = rule.strategy.split(':');  //  把strategies和参数分开
+      var errorMsg = rule.errorMsg;
+      self.cache.push(function(){  //  把校验步骤用空函数包装起来，并且放入cache
+        var strategy = strategyAry.shift();  //  用户挑选的strategy
+        strategyAry.unshift( dom.value );  //  把input的value添加进参数列表
+        strategyAry.push( errorMsg );  //  把errorMsg添加进参数列表
+        return _strategies[ strategy ].apply( dom, strategyAry );
+      });      
+    })( rule );
+  }
+}
+ja_Validator.prototype.start = function(){
+  for( var i = 0,validateFunc; validateFunc = this.cache[i++]; ){
+    var msg = validateFunc();  //  开始校验，并取得校验后的返回信息
+    if( msg ){
+      return msg;
+    }
+  }
+}
+  var validateFunc = function(){  //  校验函数
+    var validator = new ja_Validator();  //  创建一个validator对象
+    /******* 添加一些校验规则 *******/
+    validator.add( registerForm.userName, [
+      {
+        strategy: 'isNonEmpty',
+        errorMsg: '用户名不能为空'
+      },
+      {
+        strategy: 'minLength:10',
+        errorMsg: '用户名不能少于10位'
+      },
+    ] );
+    validator.add( registerForm.password, [
+      {
+        strategy: 'minLength:6',
+        errorMsg: '密码长度不能少于6位'
+      }
+    ] );
+    validator.add( registerForm.phoneNumber, [
+      {
+        strategy: 'isMobile',
+        errorMsg: '手机号码格式不正确'
+      }
+    ] );
+    var errMsg = validator.start();  //  获得校验结果
+    return errMsg;  //  返回校验结果
+  }
+  var registerForm = document.getElementById( 'registerForm' );
+  registerForm.onsubmit = function(){
+    var errMsg = validateFunc();
+    if( errMsg ){
+      alert( errMsg );
+      return false;  //  阻止表单提交
+    }
+    alert( '提交成功' );
+    return false;
+  }
+
+```
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
