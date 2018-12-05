@@ -1,0 +1,70 @@
+异步的一些写法
+----------
+
+by jacky at 2018/12/05
+
+&nbsp;
+#### JQuery deferred 
+````javascript
+
+    function waitHandle(){
+      var dtd = $.Deferred();  //  创建一个deferred对象
+      var wait = function(dtd){  //  要求传入一个deferred对象
+        var task = function(){
+          console.log('执行完成');
+          dtd.resolve();  //  表示异步任务完成
+          //  dtd.reject(); //  表示异步任务失败或者出错
+        }
+        setTimeout(task, 2000);
+        return dtd.promise();  //  要求返回deferred对象
+      }
+      //  注意，这里一定要有返回值
+      return wait(dtd);
+    }
+    var w = waitHandle();
+    w.then(function(){
+      console.log('ok 1');
+    },function(){
+      console.log('error 1');
+    }).then(function(){
+      console.log('ok 2');
+    },function(){
+      console.log('error 2');
+    });
+
+````
+#### ES6 简单promise例子
+````javascript
+
+// promise封装一个异步加载图片的方法
+function loadImg(src) {
+  var promise = new Promise(function(resolve,reject){
+    var img = document.createElement('img');
+    img.onload = function(){
+      resolve(img)
+    }
+    img.onerror = function(){
+      reject('图片加载失败')
+    }
+    img.src = src;
+  })
+  return promise;
+}
+
+````
+#### ES7 async/await
+````javascript
+
+// 伪代码
+const load = async function(){
+  const result1 = await loadImg(src1);
+  console.log(result1);
+  const result2 = await loadImg(src2);
+  console.log(result2);
+}
+load();
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

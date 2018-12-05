@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1542867954406,
+  "last_modify": 1543975753759,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181205-01.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "异步的一些写法",
+      "modify_at": 1543975753759,
+      "create_at": 1543975532033,
+      "desc": "by jacky at 2018/12/05<br>````javascript"
+    },
     {
       "path": "md/D181122-01.txt",
       "tag": ".教程",
