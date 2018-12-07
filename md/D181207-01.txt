@@ -1,0 +1,82 @@
+日历js写法
+----------
+
+by xxx at 2018/12/07
+
+##### 转自无名氏
+&nbsp;
+
+````javascript
+
+//日历
+
+//获取当前月份最大天数
+const weekDays = 7;
+const monthLarge = [1, 3, 5, 7, 8, 10, 12]
+
+
+class Sign {
+  constructor(number) {
+    this.date = number
+  }
+}
+
+export function maxMonthDays(year, month) {
+  let monthDate_max,//当月的最后一天是几号
+    week_day_first,//第一天星期几
+    week_day_last,//最后一天星期几
+    actual_calendarList = [],//实际天数数组
+    new_calendarList = [],//具有添加的数组
+    calendarList = [];//盛放处理好日期的数组
+  if (month === 2) {
+    //判断当前是否为闰年
+    if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
+      monthDate_max = 29;
+    } else {
+      monthDate_max = 28;
+    }
+  } else if (monthLarge.includes(month)) {
+    monthDate_max = 31;
+  } else {
+    monthDate_max = 30;
+  }
+  //当月的时间天数
+  for (let i = 1; i <= monthDate_max; i++) {
+    actual_calendarList.push(i)
+  }
+  //获取当月的第一天和最后一天是星期几
+  week_day_first = new Date(year, month - 1, 1).getDay();
+  //生成空数组
+  let first_undefined_week = new Array(week_day_first).fill('')
+  week_day_last = new Date(year, month - 1, monthDate_max).getDay()
+  let last_undefined_week = new Array(weekDays - week_day_last - 1).fill('')
+  //形成一个能被七整除数组
+  new_calendarList = [...first_undefined_week, ...actual_calendarList, ...last_undefined_week];
+  //将数字实例化
+  calendarList = new_calendarList.map((item) => {
+    return new Sign(item)
+  })
+  return calendarList
+}
+
+//将数组等分
+export function average_Arr(arr) {
+  let a, new_arr = []
+  arr.forEach((item, index) => {
+    let i = Math.floor(index / weekDays)
+    if (a !== i) {
+      a = i
+      new_arr[i] = new Array()
+    }
+    new_arr[i].push(item)
+  })
+  arr = new_arr
+  return arr;
+}
+// 使用方法 maxMonthDays(year, month) 返回日历数组
+// average_Arr(arr) arr为日历数组，返回排好的日历数组
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
