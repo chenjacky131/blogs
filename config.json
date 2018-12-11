@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1544166799027,
+  "last_modify": 1544511313169,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181211-02.txt",
+      "tag": ".js设计模式",
+      "markdown": true,
+      "title": "代理模式",
+      "modify_at": 1544511313169,
+      "create_at": 1544511154139,
+      "desc": "by jacky at 2018/12/11<br>````javascript"
+    },
+    {
+      "path": "md/D181211-01.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "利用代理模式实现图片的预加载",
+      "modify_at": 1544507362586,
+      "create_at": 1544498116098,
+      "desc": "by jacky at 2018/12/11<br>````javascript\n      var myImage = (function () {\n        var imgNode = document.createElement('img');\n        document.body.appendChild(imgNode);\n        return {\n          setSrc: function (src) {\n            imgNode.src = src;\n          }"
+    },
     {
       "path": "md/D181207-01.txt",
       "tag": ".教程",

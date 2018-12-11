@@ -1,0 +1,75 @@
+代理模式
+----------
+
+by jacky at 2018/12/11
+
+&nbsp;
+
+#### 虚拟代理
+````javascript
+
+      var myImage = (function () {
+        var imgNode = document.createElement('img');
+        document.body.appendChild(imgNode);
+        return {
+          setSrc: function (src) {
+            imgNode.src = src;
+          }
+        }
+      })();
+      var proxyImage = (function(){
+        var img = new Image;
+        img.onload = function(){
+          myImage.setSrc(this.src);
+        }
+        return {
+          setSrc:function(src){
+            myImage.setSrc('loading.gif');
+            img.src = src;
+          }
+        }
+      })();
+      proxyImage.setSrc('1.jpg');
+
+````
+
+#### 缓存代理
+当需要进行高效率计算的运算时，可以用次模式，避免重复执行计算
+````javascript
+
+      var mult = (function(){
+        var a = 1;
+        return function(){
+          for(var i = 0;i<arguments.length;i++){
+            a*=arguments[i];
+          }
+          return a;
+        }
+      })();
+      var plus = (function(){
+        var sum = 0;
+        return function(){
+          for(var i = 0;i<arguments.length;i++){
+            sum+=arguments[i];
+          }
+          return sum;
+        }
+      })();
+      var proxyFactory = function(fn){
+        var cache = {};
+        return function(){
+          var args = Array.prototype.join.call(arguments, ',');
+          if(args in cache){
+            return cache[args];
+          }
+          return cache[args] = fn.apply(this,arguments);
+        }
+      }
+      var plusProxy = proxyFactory(plus);
+      console.log(plusProxy(1,2,3));
+      console.log(plusProxy(1,2,3));
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
