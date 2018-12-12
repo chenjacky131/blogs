@@ -1,0 +1,61 @@
+迭代器模式
+----------
+
+by jacky at 2018/12/11
+
+&nbsp;
+
+#### 内部迭代器
+````javascript
+
+        var each = function(arr, callback){
+          for(var i = 0;i<arr.length; i++){
+            callback.apply(arr[i],[i,arr[i]]);
+          }
+        }
+        each([1,2,4],function(i,n){
+          console.log('下标:'+i,'元素:'+n);
+        })
+
+````
+
+#### 外部迭代器
+比较灵活，但是使用起来比较麻烦 
+````javascript
+
+      var iterator = function(obj){
+        var current = 0;
+        var getCurent = function(){
+          return obj[current];
+        }
+        var next = function(){
+          current++;
+        }
+        var isDone = function(){
+          return current >= obj.length;
+        }
+        return {
+          current: getCurent,
+          next: next,
+          isDone: isDone
+        }
+      }
+      var iterator1 = iterator([1,2,3]);
+      var iterator2 = iterator([1,2,4]);
+      var compare = function(iterator1, iterator2){
+        while( !iterator1.isDone() &&  !iterator2.isDone() ){
+          if(iterator1.current()!=iterator2.current()){
+            alert('不相等:'+iterator1.current()+' : '+iterator2.current());
+            return false;
+          }
+          iterator1.next();
+          iterator2.next();
+        }
+        alert('相等')
+      }
+      compare(iterator1, iterator2);
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

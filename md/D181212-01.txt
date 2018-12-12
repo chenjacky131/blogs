@@ -1,0 +1,72 @@
+订阅者模式
+----------
+
+by jacky at 2018/12/12
+
+&nbsp;
+等待异步请求完成后，要进行的一些逻辑，可以用回调函数的形式，也可以用发布订阅者模式来进行。
+回调函数的形式，如果需要增加多个逻辑条件，需要一直追加，不利于解耦。
+发布订阅者模式，只需要在异步成功后发布一条订阅，在各个模块里面进行listen就能执行相应的回调函数和获取参数。
+更利于开发者直接的协作。
+````javascript
+
+
+      var event = {
+        clientList: [],
+        listen: function(key, fn){
+          if(!this.clientList[key]){
+            this.clientList[key] = [];
+          }
+          this.clientList[key].push(fn);  //  订阅的消息添加进缓存列表
+        },
+        trigger: function(){
+          var key = Array.prototype.shift.apply(arguments);
+          fns = this.clientList[key];
+          if(!fns || fns.length ===0){
+            return false;
+          }
+          for(var i = 0,fn;fn = fns[i++];){
+            fn.apply(this, arguments);
+          }
+        }
+      }
+      event.remove = function(key, fn){  //  增加取消订阅的方法
+        var fns = this.clientList[key];
+        if(!fns){
+          return false;
+        }
+        if(!fn){
+          fns && (fns.length = 0);
+        }
+        for(var l = fns.length - 1; l>=0; l--){
+          var _fn = fns[l];
+          if( _fn === fn){
+            fns.splice(l,1);  //  删除订阅的回调函数
+          }
+        }
+      }
+      var installEvent = function(obj){  //  动态安装发布订阅功能
+        for(var i in event){
+          obj[i] = event[i];
+        }        
+      }
+      var salesOffices = {};
+      installEvent(salesOffices);
+      salesOffices.listen('xiaoming', fn1 = function(price, squareMeter){
+        console.log('小明要的房子大小为：'+squareMeter);
+        console.log('售价为：'+price);
+      });
+      salesOffices.listen('xiaohong', fn2 = function(price, squareMeter, face ){
+        console.log('小红要的房子大小为：'+squareMeter);
+        console.log('朝向为：'+ face);
+        console.log('售价为:'+price);
+      });
+      salesOffices.remove('xiaoming', fn1);  // 取消小明的订阅
+      salesOffices.trigger('xiaoming','150万','80平');
+      salesOffices.trigger('xiaoming','200万','100平');
+      salesOffices.trigger('xiaohong','200万','100平','朝南');
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

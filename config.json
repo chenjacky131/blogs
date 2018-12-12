@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1544511313169,
+  "last_modify": 1544606808917,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181212-01.txt",
+      "tag": ".js设计模式",
+      "markdown": true,
+      "title": "订阅者模式",
+      "modify_at": 1544606808917,
+      "create_at": 1544605194310,
+      "desc": "by jacky at 2018/12/12<br>等待异步请求完成后，要进行的一些逻辑，可以用回调函数的形式，也可以用发布订阅者模式来进行。\n回调函数的形式，如果需要增加多个逻辑条件，需要一直追加，不利于解耦。\n发布订阅者模式，只需要在异步成功后发布一条订阅，在各个模块里面进行listen就能执行相应的回调函数和获取参数。\n更利于开发者直接的协作。\n````javascript"
+    },
+    {
+      "path": "md/D181211-03.txt",
+      "tag": ".js设计模式",
+      "markdown": true,
+      "title": "迭代器模式",
+      "modify_at": 1544518194140,
+      "create_at": 1544514465840,
+      "desc": "by jacky at 2018/12/11<br>````javascript"
+    },
     {
       "path": "md/D181211-02.txt",
       "tag": ".js设计模式",
