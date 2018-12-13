@@ -1,0 +1,36 @@
+移动端适配方案
+----------
+
+by jacky at 2018/12/13
+
+&nbsp;
+
+rem的换算，设计稿上的尺寸除以/baseFontSize 
+即比如设计稿上的宽度为750，转换成rem就是   750rem / 75
+````javascript
+(function (baseFontSize) {
+    var _baseFontSize = baseFontSize || 75;
+    var ua = navigator.userAgent;
+    var matches = ua.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i);
+    var isIos = navigator.appVersion.match(/(iphone|ipad|ipod)/gi);
+    var dpr = window.devicePixelRatio || 1;
+    if (!isIos && !(matches && matches[1] > 534)) {
+        // 如果非iOS, 非Android4.3以上, dpr设为1;
+        dpr = 1;
+    }
+    var scale = 1 / dpr;
+    var metaEl = document.querySelector('meta[name="viewport"]');
+    if (!metaEl) {
+        metaEl = document.createElement('meta');
+        metaEl.setAttribute('name', 'viewport');
+        window.document.head.appendChild(metaEl);
+    }
+    metaEl.setAttribute('content', 'width=device-width,user-scalable=no,initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale);
+
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / (750 / _baseFontSize) + 'px';
+})();
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
