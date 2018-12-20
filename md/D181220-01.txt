@@ -1,0 +1,19 @@
+auido音频的一些操作技巧
+----------
+
+by jacky at 2018/12/20
+
+&nbsp;
+
+````javascript
+
+    // 多次点击停止上一次，播放当前的点击
+    so.pause();
+    so.currentTime=0;
+    so.play();
+    //  多次点击多次发声
+    so.cloneNode().play();
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
