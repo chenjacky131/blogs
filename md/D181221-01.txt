@@ -1,0 +1,34 @@
+锚链接平滑跳转的一些技巧
+----------
+
+by jacky at 2018/12/21
+
+&nbsp;
+
+````javascript
+
+
+      // 锚链接
+      $('.navbar>ul>li').on('click','a',function(){
+        var hash = $(this).attr('href')
+        if(hash.indexOf('#') != -1){
+          scrollAnchor(hash)
+        }
+      });
+      var hash = window.location.hash;
+      if(hash.length > 0){
+        scrollAnchor(hash);  //  从其它页面跳过来的时候并且带有hash时执行
+      }
+
+    // 平滑锚点跳转
+    function scrollAnchor(hash){   
+      if($(hash).length> 0 ){
+        $('html,body').animate({scrollTop:$(hash).offset().top},'normal','linear');
+      }
+    }
+
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

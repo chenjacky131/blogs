@@ -1,0 +1,27 @@
+返回页面顶部的效果
+----------
+
+by jacky at 2018/12/21
+
+&nbsp;
+
+````javascript
+
+
+      // 返回顶部
+      $('#scroll_top').on('click',function(){
+        // animate(style[object], speed['low','normal','fast',number], ease['swing','linear'],callback[function])
+        $('html,body').animate({scrollTop:0},'1000','ease'); 
+      });
+      $(window).on('scroll',function(){
+        if($(window).scrollTop()> 10){
+          $('#scroll_top').show()
+        }else{
+          $('#scroll_top').hide();
+        }
+      });
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
