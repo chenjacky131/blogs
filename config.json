@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1545381166354,
+  "last_modify": 1545549939711,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181223-01.txt",
+      "tag": ".常用",
+      "markdown": true,
+      "title": "编码风格",
+      "modify_at": 1545549939711,
+      "create_at": 1545549244909,
+      "desc": "by jacky at 2018/12/23"
+    },
     {
       "path": "md/D181221-02.txt",
       "tag": ".教程",
