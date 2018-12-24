@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1545619385852,
+  "last_modify": 1545633167805,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -254,9 +254,9 @@
       "tag": ".教程",
       "markdown": true,
       "title": "对象的深拷贝",
-      "modify_at": 1536378097864,
+      "modify_at": 1545633167805,
       "create_at": 1536378070519,
-      "desc": "by xxx at yy/mm/dd<br>var clone = function (obj) { \n    if(obj === null) return null \n    if(typeof obj !== 'object') return obj;\n    if(obj.constructor===Date) return new Date(obj); \n    if(obj.constructor === RegExp) return new RegExp(obj);\n    var newObj = new obj.constructor ();  //保持继承链\n    for (var key in obj) {\n        if (obj.hasOwnProperty(key)) {   //不遍历其原型链上的属性\n            var val = obj[key];"
+      "desc": "by jacky at 2018/12/24<br>````javascript\n// 方法一\nvar clone = function (obj) { \n    if(obj === null) return null\n    if(typeof obj !== 'object') return obj\n    if(obj.constructor===Date) return new Date(obj)\n    if(obj.constructor === RegExp) return new RegExp(obj)\n    var newObj = new obj.constructor ();  //保持继承链"
     },
     {
       "path": "md/D180903-02.txt",
