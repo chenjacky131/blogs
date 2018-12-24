@@ -1,0 +1,25 @@
+css3渐变实现方格色块背景
+----------
+
+by jacky at 2018/12/24
+
+&nbsp;
+
+````css
+    background: linear-gradient(45deg,#ccc 25%,transparent 25%),
+                linear-gradient(-45deg,#fff 25%,transparent 25%),
+                linear-gradient(45deg, transparent 75%,#e8e8e8 75%),
+                linear-gradient(-45deg,transparent 75%,#333 75%);
+    background-size: 100px 100px;
+    background-color: #000;
+
+````
+***
+<hr>
+##### 样式图例
+<img width="400" height="400" src="https://raw.githubusercontent.com/chenjacky131/test/master/linear-gradient-bg.png">
+
+
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
