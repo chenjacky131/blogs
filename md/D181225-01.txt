@@ -1,0 +1,36 @@
+饼图制作
+----------
+
+by jacky at 2018/12/25
+
+&nbsp;
+
+````css
+  /* 背景为绿色,占比的块为红色 */ 
+  .circle{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 100px auto;
+    border-radius: 50%;
+    background-color: #0f0;
+    background-image: linear-gradient(90deg,transparent 50%,#f00 0);
+    overflow: hidden;
+  }
+ 
+  .circle::after{
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    background-color: inherit; /* 当占比大于50%时，设置背景色为红色 */ 
+    border-radius: 0 100% 100% 0/50%;
+    transform: rotate(45deg);
+    transform-origin: left center;
+  }
+
+````
+<img src="https://raw.githubusercontent.com/chenjacky131/test/master/pie_pic.png" alt="饼图">
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1545633167805,
+  "last_modify": 1545729696079,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181225-01.txt",
+      "tag": ".css技巧",
+      "markdown": true,
+      "title": "饼图制作",
+      "modify_at": 1545729696079,
+      "create_at": 1545728346778,
+      "desc": "by jacky at 2018/12/25<br>````css\n  / 背景为绿色,占比的块为红色 / \n  .circle{\n    width: 100px;\n    height: 100px;\n    position: relative;\n    margin: 100px auto;\n    border-radius: 50%;"
+    },
     {
       "path": "md/D181224-01.txt",
       "tag": ".css技巧",
