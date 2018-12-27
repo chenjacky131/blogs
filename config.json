@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1545898593679,
+  "last_modify": 1545903446199,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181227-03.txt",
+      "tag": ".算法题",
+      "markdown": true,
+      "title": "比较数组之间的不同元素",
+      "modify_at": 1545903446199,
+      "create_at": 1545903105899,
+      "desc": "by jacky at 2018/12/27<br>````javascript\n   // sym([1,2,3],[2,3,4]) 将返回[1,4]\n      function sym(args) {\n        if(arguments.length<2){\n          return arguments;\n        }\n        const uniqueArr = [];\n        const comArr = Array.prototype.shift.call(arguments);"
+    },
     {
       "path": "md/D181227-02.txt",
       "tag": ".教程",
