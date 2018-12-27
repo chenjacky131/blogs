@@ -1,0 +1,49 @@
+URL编码的问题
+----------
+
+by jacky at 2018/12/27
+
+&nbsp;
+
+由于各个浏览器以及网页编码的不同，会导致网址的编码也不一样。所以使用网址的时候，建议进行编码后再传给服务器.
+具体编码函数
+````javascript
+
+//  encodeURI()
+/*
+encodeURI()是Javascript中真正用来对URL编码的函数。
+它着眼于对整个URL进行编码，因此除了常见的符号以外，
+对其他一些在网址中有特殊含义的符号"; / ? : @ & = + $ , #"，
+也不进行编码。编码后，它输出符号的utf-8形式，并且在每个字节前加上%。
+*/
+encodeURI('http://www.isp.com/app.cgi?arg1=1&agr2=hello+world')
+返回  "http://www.isp.com/app.cgi?arg1=1&agr2=hello+world"
+
+encodeURI('http://www.isp.com/app.cgi?arg1=1&agr2=hello world')
+返回   "http://www.isp.com/app.cgi?arg1=1&agr2=hello%20world"
+
+//  它对应的解码函数是decodeURI()。
+
+````
+***
+````javascript
+
+//  encodeURIComponent()
+/*
+最后一个Javascript编码函数是encodeURIComponent()。
+与encodeURI()的区别是，它用于对URL的组成部分进行个别编码，
+而不用于对整个URL进行编码。
+
+因此，"; / ? : @ & = + $ , #"，这些在encodeURI()中不被编码的符号，
+在encodeURIComponent()中统统会被编码。至于具体的编码方法，两者是一样。
+*/
+
+encodeURIComponent('mail@example.com')
+返回   "mail%40example.com"
+
+//   它对应的解码函数是decodeURIComponent()。
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
