@@ -1,0 +1,12 @@
+scoped属性style里面样式不生效的情况
+----------
+
+by jacky at 2018/12/28
+
+&nbsp;
+
+当style样式标签包含scoped时，组建的样式会生成相应的key[data-v-key]。
+为了避免生成key，在样式前面加/deep/ ，这样生成的样式就不会带key属性了。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

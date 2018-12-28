@@ -1,0 +1,12 @@
+javascript中每行语句结尾可以不使用分号，但有一些注意事项
+----------
+
+by jakcy at 2018/12/28
+
+&nbsp;
+
+1. 请注意 return 语句。 如果你想返回一些东西，把它添加到与 return 同一行上（同样用于 break ，throw ，continue）。
+2. 永远不要用 (、[、/、+或- 开始一行，这些可能与前一行连接以形成函数调用或数组元素引用。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1545903446199,
+  "last_modify": 1545978877196,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D181228-03.txt",
+      "tag": ".规范",
+      "markdown": true,
+      "title": "javascript中每行语句结尾可以不使用分号，但有一些注意事项",
+      "modify_at": 1545978877196,
+      "create_at": 1545978320864,
+      "desc": "by jakcy at 2018/12/28"
+    },
+    {
+      "path": "md/D181228-02.txt",
+      "tag": ".Vue遇到的问题",
+      "markdown": true,
+      "title": "scoped属性style里面样式不生效的情况",
+      "modify_at": 1545978306496,
+      "create_at": 1545978080246,
+      "desc": "by jacky at 2018/12/28<br>当style样式标签包含scoped时，组建的样式会生成相应的key[data-v-key]。"
+    },
     {
       "path": "md/D181227-03.txt",
       "tag": ".算法题",
@@ -53,7 +71,7 @@
     },
     {
       "path": "md/D181223-01.txt",
-      "tag": ".常用",
+      "tag": ".规范",
       "markdown": true,
       "title": "编码风格",
       "modify_at": 1545549939711,
