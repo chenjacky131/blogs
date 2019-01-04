@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1545978877196,
+  "last_modify": 1546589065054,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D190104-01.txt",
+      "tag": ".css技巧",
+      "markdown": true,
+      "title": "chrome下的滚动条样式",
+      "modify_at": 1546589065054,
+      "create_at": 1546588559499,
+      "desc": "by jacky at 2019/1/4<br>````css"
+    },
     {
       "path": "md/D181228-03.txt",
       "tag": ".规范",
