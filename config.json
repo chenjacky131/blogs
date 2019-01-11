@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1546589065054,
+  "last_modify": 1547177142490,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D190111-02.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "移动端自定义tap事件以及点透的问题",
+      "modify_at": 1547177142490,
+      "create_at": 1547176975551,
+      "desc": "by jacky at 2019/01/11<br>````javascript\n  (function(){\n    // “点透”的问题主要存在于一个元素覆盖在另外一个元素上面时，最常见的就是遮罩层。给上面的遮罩层绑定touchstart之类的事件，在按下手指后，这类touchstart还是touchend都会在click之前发生，就会产生所谓点透。\n    //  由于借助了touchend，要设置meta禁止缩放才能避免点透\n    var obj = {}\n    function trigger(target, eventType){\n      target.dispatchEvent(new CustomEvent(eventType, {// 分发自定义事件，自定义事件协助里面\n        bubbles: true,"
+    },
+    {
+      "path": "md/D190111-01.txt",
+      "tag": ".遇见的问题",
+      "markdown": true,
+      "title": "移动端发生两次点击的情况",
+      "modify_at": 1547176940631,
+      "create_at": 1547176768771,
+      "desc": "by jacky at 2019/01/11<br>移动端由于使用了iscroll滚动插件，会发生click事件点击一次触发两次的情况。\n可以通过iscroll的tap:true，然后click事件改成tap（iscroll自己有定义这个事件）从而避免问题"
+    },
     {
       "path": "md/D190104-01.txt",
       "tag": ".css技巧",

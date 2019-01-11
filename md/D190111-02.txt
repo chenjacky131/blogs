@@ -1,0 +1,61 @@
+移动端自定义tap事件以及点透的问题
+----------
+
+by jacky at 2019/01/11
+
+&nbsp;
+
+````javascript
+  (function(){
+    // “点透”的问题主要存在于一个元素覆盖在另外一个元素上面时，最常见的就是遮罩层。给上面的遮罩层绑定touchstart之类的事件，在按下手指后，这类touchstart还是touchend都会在click之前发生，就会产生所谓点透。
+    //  由于借助了touchend，要设置meta禁止缩放才能避免点透
+    var obj = {}
+    function trigger(target, eventType){
+      target.dispatchEvent(new CustomEvent(eventType, {// 分发自定义事件，自定义事件协助里面
+        bubbles: true,
+        cancelable: true
+      }))
+    }
+    function touchHandler(event){
+      var target = event.target
+      if(event.targetTouches[0] !== undefined){  //   移动端touch
+        var touch = event.targetTouches[0]
+      }
+      switch(event.type){
+        case 'touchstart':
+          obj.timeStart = new Date()
+          obj.startX = touch.pageX
+          obj.startY = touch.pageY
+          break
+        case 'touchend':
+          obj.timeEnd = new Date()
+          if(Math.abs(Number(obj.startX) - Number(obj.endX)) >= 25 ||  // 如果手指发生移动大于25px， 判断为不属于tap事件
+             Math.abs(Number(obj.startY) - Number(obj.endY)) >= 25){
+              obj = {}
+              return
+          }
+          if(Number(obj.timeEnd) - Number(obj.timeStart) < 150){  //  如果点击事件大于150ms，判断为不属于tap事件
+            setTimeout(function(){
+              trigger(target, 'tap')
+            }, 30) //  保证tap在click之后执行，避免发生移动端点透问题
+          }
+          obj = {}
+          break
+        case 'touchmove':
+          obj.endX = touch.pageX
+          obj.endY = touch.pageY
+          break
+      }
+    }
+    window.addEventListener('touchstart', touchHandler, false)
+    window.addEventListener('touchend', touchHandler, false)
+    window.addEventListener('touchmove', touchHandler, false)
+  })()
+  document.addEventListener('tap', function(){
+    console.log('tap')
+  }, false)
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

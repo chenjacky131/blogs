@@ -1,0 +1,12 @@
+移动端发生两次点击的情况
+----------
+
+by jacky at 2019/01/11
+
+&nbsp;
+
+移动端由于使用了iscroll滚动插件，会发生click事件点击一次触发两次的情况。
+可以通过iscroll的tap:true，然后click事件改成tap（iscroll自己有定义这个事件）从而避免问题
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
