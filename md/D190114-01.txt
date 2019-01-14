@@ -1,0 +1,495 @@
+CSS写字母
+----------
+
+by jacky at 2019/01/14
+
+&nbsp;
+
+````html
+
+  <div class="word-wrap">
+    <div class="letter-a"></div>
+    <div class="letter-b"></div>
+    <div class="letter-c"></div>
+    <div class="letter-d"></div>
+    <div class="letter-e"></div>
+    <div class="letter-f"></div>
+    <div class="letter-g"></div>
+    <div class="letter-h"></div>
+    <div class="letter-i"></div>
+    <div class="letter-j"></div>
+    <div class="letter-k"></div>
+    <div class="letter-l"></div>
+    <div class="letter-m"></div>
+    <div class="letter-n"></div>
+    <div class="letter-o"></div>
+    <div class="letter-p"></div>
+    <div class="letter-q"></div>
+    <div class="letter-r"></div>
+    <div class="letter-s"></div>
+    <div class="letter-t"></div>
+    <div class="letter-u"></div>
+    <div class="letter-v"></div>
+    <div class="letter-w"></div>
+    <div class="letter-x"></div>
+    <div class="letter-y"></div>
+    <div class="letter-z"></div>
+  </div>
+
+````
+<hr>
+````css
+$wordColor:#000;
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+.word-wrap{
+  margin: 0 auto;
+  width: 100px;  
+  &>[class^="letter"]{
+    position: relative;
+    margin: 0 auto 10px;
+  }
+}
+.letter-a{
+  width: 10px;
+  height: 60px;    
+  left: -13px;
+  background: $wordColor;
+  transform: skewX(-20deg);
+  margin-left: 10px;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    background: inherit;
+    transform: skewX(40deg) translateX(25px);
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 30px;
+    background: inherit;
+    top: 31px;
+    left: 6px;
+    transform: skewX(20deg);
+  }
+}
+.letter-b{
+  width: 10px;
+  height: 70px;
+  left: -22px;
+  background: $wordColor;
+  &::before,&::after{
+    content: '';
+    position: absolute; 
+    left: 0;
+    width: 55px;
+    height: 40px;
+    border: 10px solid $wordColor;
+    border-radius: 0 20px 20px 0;
+  }
+  &::after{
+    bottom: 0;
+  }
+}
+.letter-c{
+  width: 60px;
+  height: 70px;
+  border-radius: 50%;  
+  border: 10px solid $wordColor;
+  &::before{
+    content:'';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: #fff;    
+    right: -21px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+.letter-d{
+  height: 70px;
+  width: 55px;
+  border: 10px solid $wordColor;
+  border-radius: 0 50% 50% 0;
+}
+.letter-e{
+  width: 55px;  
+  height: 70px;
+  border:10px solid $wordColor;
+  border-right: 0; 
+  &::before{
+    content: '';
+    height: 10px;
+    width: 45px;
+    background: $wordColor;
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.letter-f{
+  width: 55px;  
+  height: 70px;
+  border:10px solid $wordColor;
+  border-right: 0; 
+  border-bottom: 0;
+  &::before{
+    content: '';
+    height: 10px;
+    width: 45px;
+    background: $wordColor;
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.letter-g{
+  height: 70px;
+  width: 60px;
+  border: 10px solid $wordColor;
+  border-radius: 40%;
+  &::before{
+    content:'';
+    position: absolute;
+    top: 7px;
+    right: -22px;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    transform: rotate(45deg);
+  }
+  &::after{
+    content:'';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 10px solid $wordColor;
+    border-bottom: 0;
+    border-left: 0;
+    bottom: 1px;
+    right: -6px;
+  }
+}
+.letter-h{
+  width: 60px;
+  height: 70px;
+  border: 10px solid $wordColor;
+  border-top: 0;
+  border-bottom: 0;
+  &::before{
+    content:'';
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    background: $wordColor;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.letter-i{
+  width: 10px;
+  height: 70px;
+  background: $wordColor;
+}
+.letter-j{
+  width: 10px;
+  border-right: 10px solid $wordColor;
+  height: 35px;
+  margin-bottom: 45px !important;
+  &::before{
+    content:'';
+    position: absolute;
+    width: 50px;
+    border: 10px solid $wordColor;
+    height: 35px;
+    right: -10px;
+    bottom: -35px;
+    border-top: 0;
+    border-radius: 0 0 50% 50%;
+  }
+  &::after{
+    content:'';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    transform: rotate(70deg);
+    left: -64px;
+    bottom: -20px;
+    background: rgb(255, 255, 255);
+  }
+}
+.letter-k{
+  width: 60px;
+  height: 70px;
+  border-left: 10px solid $wordColor;
+  &::before{
+    content:'';
+    width: 15px;
+    height: 35px;
+    background: $wordColor;
+    position: absolute;
+    transform: skewX(-45deg) translateX(7px);
+  }
+  &::after{
+    content:'';
+    width: 15px;
+    height: 40px;
+    background: $wordColor;
+    position: absolute;
+    transform: skewX(41deg) translateY(30px) translateX(-17px);
+  }
+}
+.letter-l{
+  width: 50px;
+  border: 10px solid $wordColor;
+  height: 70px;
+  border-right: 0;
+  border-top: 0;
+}
+.letter-m{
+  width: 70px;
+  height: 70px;
+  border: 10px solid $wordColor;
+  border-bottom: 0;
+  border-top: 0;
+  &::before{
+    content:'';
+    height: 40px;
+    width: 10px;
+    position: absolute;
+    background: $wordColor;
+    transform: skewX(35deg) translateX(5px);
+  }
+  &::after{
+    content:'';
+    height: 40px;
+    width: 10px;
+    position: absolute;
+    background: $wordColor;
+    transform: skewX(-35deg) translateX(33px);
+  }
+}
+.letter-n{
+  width: 60px;
+  height: 70px;
+  border: 10px solid $wordColor;
+  border-top: 0;
+  border-bottom: 0;
+  &::before{
+    content:'';
+    width: 10px;
+    height: 70px;
+    position: absolute;
+    transform: skewX(36deg) translateX(15px);
+    background: $wordColor;
+  }
+}
+.letter-o{
+  width: 70px;
+  height: 80px;
+  border: 10px solid $wordColor;
+  border-radius: 50%;
+}
+.letter-p{
+  width: 60px;
+  height: 75px;
+  border-left: 10px solid $wordColor;
+  &::before{
+    content:'';
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    border: 10px solid $wordColor;
+    border-left: 0;
+    border-radius: 0 50% 50% 0;
+  }
+}
+.letter-q{
+  width: 70px;
+  height: 80px;
+  border: 10px solid $wordColor;
+  border-radius: 50%;
+  margin-bottom: 28px !important;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 24px;
+    border: 10px solid $wordColor;
+    right: -30px;
+    top: 62px;
+    border-radius: 0 0 50% 50%/ 0 0 100% 100%;
+    border-top: 0;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgb(255, 255, 255);
+    right: -37px;
+    top: 60px;
+  }
+}
+.letter-r{
+  width: 60px;
+  height: 75px;
+  border-left: 10px solid $wordColor;
+  &::before{
+    content:'';
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    border: 10px solid $wordColor;
+    border-left: 0;
+    border-radius: 0 50% 50% 0;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 35px;
+    background: $wordColor;
+    bottom: 0;
+    transform: skewX(50deg) translateX(15px);
+  }
+}
+.letter-s{
+  width: 40px;
+  height: 50px;
+  border: 10px solid $wordColor;
+  border-right: 0;
+  border-radius: 200% 0 0 100%/ 100% 0 0 100%;
+  transform: rotate(33deg);
+  margin-bottom: 62px !important;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 10px solid $wordColor;
+    border-right: 0;
+    border-radius: 100% 0 0 100%/ 100% 0 0 100%;
+    transform: rotate(178deg);
+    top: 29px;
+    left: 20px;
+  }
+}
+.letter-t{
+  width: 10px;
+  height: 70px;
+  background: $wordColor;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 10px;
+    background:$wordColor;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.letter-u{
+  width: 60px;
+  height: 75px;
+  border: 10px solid $wordColor;
+  border-top: 0;
+  border-radius: 0 0 50% 50%/ 0 0 40% 40%;
+}
+.letter-v{
+  height: 70px;
+  width: 10px;
+  background: $wordColor;
+  transform: skewX(18deg) translateX(-10px);
+  &::before{
+    content:'';
+    position: absolute;
+    height: 70px;
+    width: 10px;
+    background: $wordColor;
+    transform: skewX(-35deg) translateX(29px);
+  }
+}
+.letter-w{
+  width: 50px;
+  height: 65px;
+  border: 10px solid $wordColor;
+  border-top: 0;
+  border-bottom: 0;
+  transform: skewX(18deg);
+  &::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 65px;
+    border: 10px solid $wordColor;
+    border-top: 0;
+    border-bottom: 0;
+    transform: skewX(-32deg) translateX(10px);
+  }
+}
+.letter-x{
+  width: 10px;
+  height: 75px;
+  background: $wordColor;
+  transform: skewX(30deg) translateX(8px);
+  &::before{
+    content:'';
+    position: absolute;
+    width: 10px;
+    height: 75px;
+    background: $wordColor;
+    transform: skewX(-50deg) translateX(0px);
+  }
+}
+.letter-y{
+  height: 35px;
+  width: 12px;
+  background: $wordColor;
+  transform: skewX(40deg) translateX(-10px);
+  margin-bottom: 46px !important;
+  &::before{
+    content:'';
+    position: absolute;
+    height: 35px;
+    width: 12px;
+    background: $wordColor;
+    transform: skewX(-60deg) translateX(30px);
+  }
+  &::after{
+    content:'';
+    position: absolute;
+    width: 11px;
+    height: 35px;
+    background: $wordColor;
+    transform: skewX(-40deg) translateX(15px) translateY(35px);
+  }
+}
+.letter-z{
+  width: 60px;
+  height: 75px;
+  border: 10px solid $wordColor;
+  border-left: 0;
+  border-right: 0;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 55px;
+    background: $wordColor;
+    transform: skewX(140deg) translateX(24px);
+  }
+}
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
