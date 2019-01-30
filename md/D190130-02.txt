@@ -1,0 +1,20 @@
+一个页面书写两个window.onload的方法，防止覆盖之前的onload方法
+----------
+
+by jacky at 2019/01/30
+
+&nbsp;
+````javascript
+    window.onload = function () {
+      console.log(1)
+    }
+    var oldOnload = window.onload
+    window.onload = function(){
+      oldOnload()
+      console.log(22222)
+    }
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

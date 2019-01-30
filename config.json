@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1547448873095,
+  "last_modify": 1548833403474,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D190130-02.txt",
+      "tag": ".遇见的问题",
+      "markdown": true,
+      "title": "一个页面书写两个window.onload的方法，防止覆盖之前的onload方法",
+      "modify_at": 1548833403474,
+      "create_at": 1548833191578,
+      "desc": "by jacky at 2019/01/30<br>````javascript\n    window.onload = function () {\n      console.log(1)\n    }\n    var oldOnload = window.onload\n    window.onload = function(){\n      oldOnload()\n      console.log(22222)"
+    },
     {
       "path": "md/D190114-01.txt",
       "tag": ".css技巧",
