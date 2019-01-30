@@ -1,0 +1,121 @@
+移动端上拉加载更多实例，基于iscroll
+----------
+
+by jacky at 2019/01/30
+
+&nbsp;
+##### 样式Scss
+````css
+/* scss */
+#wrapper{
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+  ul{
+    margin: 0;
+    background: #fff;
+  }
+  .pull-up-refresh{
+    position: absolute;
+    display: none;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    text-align:center;
+    line-height:40px;
+    background: #0f0;
+  }
+}
+
+````
+<hr>
+##### HTML
+````html
+  <div id="wrapper">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+      <li>19</li>
+      <li>20</li>
+    </ul>
+    <!-- 这边可以加两种状态的提示层，还可以加的是到达刷新边界提示松开刷新 -->
+    <div class="pull-up-refresh">
+      上拉加载更多...
+    </div>
+  </div>
+  <!-- 目前这个版本（5.2.0）的iscroll文件才支持scroll事件，后面可能会加入到iscroll.js中 -->
+  <script src="../iscroll-master/build/iscroll-probe.js"></script> 
+
+````
+<hr>
+##### Javascript
+````javascript
+
+    window.onload = function () {// 初始化写在load时间里面能准确计算滚动块里面的高度，避免图片没加载出来时，计算出错。
+      var myScroll = new IScroll('#wrapper', {
+        probeType: 3
+      })
+      var index = 0, executeRefresh = false,loadingSign = false
+      //  executeRefresh：标记是否达到了刷新的界限， loadingSign: 避免第一次请求没有结束时，重复请求
+      myScroll.on('scrollEnd', function(){
+        if(executeRefresh){  
+          executeRefresh = false//  重置刷新界限
+          if(index > 3){// 模拟没数据时就不刷新了
+            alert('没有更多数据')
+            return;
+          }        
+          if(!loadingSign){
+            loadingSign = true
+            setTimeout(() => {//  模拟数据的加载
+              loadingSign = false
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              $('#wrapper>ul').append('<li>' + index + '</li>')
+              index++
+              setTimeout(function(){
+                myScroll.refresh()// 数据更新后，需要重新计算滚动的高度
+                myScroll.scrollTo(0, myScroll.maxScrollY)// 滚动到底部，便于查看新加载的数据
+              }, 200)//  这个值可以是0, 100, 200看浏览器，渲染的数据越多建议值写大一点         
+            }, 3000);            
+          }
+        }
+      })
+      myScroll.on('scroll', function(){
+        if(Math.abs(myScroll.y) - Math.abs(myScroll.maxScrollY) >= 40){
+          executeRefresh = true
+          $('.pull-up-refresh').show()
+        }else{
+          $('.pull-up-refresh').hide()
+        }
+      })
+    }
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
