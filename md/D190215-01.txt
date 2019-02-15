@@ -1,0 +1,65 @@
+包装对象的深拷贝
+----------
+
+by jacky at 2019/02/15
+
+&nbsp;
+
+包装对象例如Number,String,Boolean,以及正则对象RegExp和Date对象。
+<hr>
+````javascript
+// 对于原始值或者包装类
+function baseClone(base){
+ return base.valueOf();
+}
+
+//Number
+var num=new Number(1);
+var newNum=baseClone(num);
+//newNum->1
+
+//String
+var str=new String('hello');
+var newStr=baseClone(str);
+// newStr->"hello"
+
+//Boolean
+var bol=new Boolean(true);
+var newBol=baseClone(bol);
+//newBol-> true
+
+
+````
+<hr>
+````javascript
+// Date类型
+Date.prototype.clone=function(){
+  return new Date(this.valueOf());
+}
+
+var date=new Date('2010');
+var newDate=date.clone();
+// newDate->  Fri Jan 01 2010 08:00:00 GMT+0800 
+
+````
+<hr>
+````javascript
+// 正则RegExp类型
+RegExp.prototype.clone = function() {
+var pattern = this.valueOf();
+var flags = '';
+flags += pattern.global ? 'g' : '';
+flags += pattern.ignoreCase ? 'i' : '';
+flags += pattern.multiline ? 'm' : '';
+return new RegExp(pattern.source, flags);
+};
+
+var reg=new RegExp('/111/');
+var newReg=reg.clone();
+//newReg->  /\/111\//
+
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
