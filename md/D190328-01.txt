@@ -1,0 +1,16 @@
+data数据为对象或者数组时候的问题
+----------
+
+by jacky at 2019/03/28
+
+&nbsp;
+
+<p>当data数据为对象或者数组时，更改对象的属性或者进行数组操作不触发响应式更新时，是应为Object.defineProperty监听不到这些变化，需要用以下方法</p>
+````javascript
+
+this.$set(this.someObject,'b',2)// vue的set实例方法Vue.set(object, key, value)
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

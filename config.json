@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1550221579405,
+  "last_modify": 1553762465261,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D190328-01.txt",
+      "tag": ".Vue遇到的问题",
+      "markdown": true,
+      "title": "data数据为对象或者数组时候的问题",
+      "modify_at": 1553762465261,
+      "create_at": 1553762112674,
+      "desc": "by jacky at 2019/03/28<br>当data数据为对象或者数组时，更改对象的属性或者进行数组操作不触发响应式更新时，是应为Object.defineProperty监听不到这些变化，需要用以下方法"
+    },
     {
       "path": "md/D190215-01.txt",
       "tag": ".教程",
