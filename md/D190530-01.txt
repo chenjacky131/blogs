@@ -1,0 +1,28 @@
+new Date(str)返回 Invalid date问题
+----------
+
+by jacky at 2019/05/30
+
+&nbsp;
+```javascript
+
+var time="2014-08-12 09:25:24 ";
+
+var time1 = new Date(time);
+
+chrome    time1:  Tue Aug 12 2014 09:25:24 GMT+0800 (中国标准时间)
+
+safari    time1 :  Invalid Date
+
+// 使用这种形式的可以兼容
+new  Date(yyyy,mth,dd,hh,mm,ss);// mth 从0开始到11 ,0 是一月份
+var timeStr = time.replace(/-/g,':').replace(' ',':');// "2014:08:12:09:25:24 "
+var timeArr = timeStr.split(':');
+
+new Date(timeArr[0],timeArr[1] - 1,timeArr[2],timeArr[3],timeArr[4],timeArr[5]);// Tue Aug 12 2014 09:25:24 GMT+0800 (中国标准时间)
+
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

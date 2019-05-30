@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1553762465261,
+  "last_modify": 1559207013967,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D190530-01.txt",
+      "tag": ".遇见的问题",
+      "markdown": true,
+      "title": "new Date(str)返回 Invalid date问题",
+      "modify_at": 1559207013967,
+      "create_at": 1559206305484,
+      "desc": "by jacky at 2019/05/30<br>```javascript"
+    },
     {
       "path": "md/D190328-01.txt",
       "tag": ".Vue遇到的问题",
