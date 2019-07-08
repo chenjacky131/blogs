@@ -1,0 +1,16 @@
+常用的js函数
+----------
+
+by 2019 at 2019/07/08
+
+&nbsp;
+
+##### 1.返回from到to直接的随机整数
+````javascript
+
+return Math.floor(Math.random()*(to-from+1))+from
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

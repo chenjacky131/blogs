@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1560933530852,
+  "last_modify": 1562565290978,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D190708-01.txt",
+      "tag": ".函数库",
+      "markdown": true,
+      "title": "常用的js函数",
+      "modify_at": 1562565290978,
+      "create_at": 1562565200612,
+      "desc": "by 2019 at 2019/07/08"
+    },
     {
       "path": "md/D190619-01.txt",
       "tag": ".教程",
