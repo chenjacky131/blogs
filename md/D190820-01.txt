@@ -1,0 +1,18 @@
+jq属性选择器的兼容问题
+----------
+
+by jacky at 2019/08/20
+
+&nbsp;
+
+ios上属性选择器不能单独使用[attr]这种形式，需要加上class或者id之类的 。
+````javascript
+
+.class[attr="val"]
+
+#id[attr="val"] 
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1562565290978,
+  "last_modify": 1566270275195,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D190820-01.txt",
+      "tag": ".遇见的问题",
+      "markdown": true,
+      "title": "jq属性选择器的兼容问题",
+      "modify_at": 1566270275195,
+      "create_at": 1566270126927,
+      "desc": "by jacky at 2019/08/20<br>ios上属性选择器不能单独使用[attr]这种形式，需要加上class或者id之类的 。\n````javascript"
+    },
     {
       "path": "md/D190708-01.txt",
       "tag": ".函数库",
