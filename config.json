@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1569641311411,
+  "last_modify": 1569641842493,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D190928-02.txt",
+      "tag": ".遇见的问题",
+      "markdown": true,
+      "title": "ios阻止双击页面缩放",
+      "modify_at": 1569641842493,
+      "create_at": 1569641638399,
+      "desc": "by jacky at 2019/09/28<br>禁用双指缩放："
+    },
     {
       "path": "md/D190928-01.txt",
       "tag": ".遇见的问题",
