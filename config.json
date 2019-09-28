@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1566270275195,
+  "last_modify": 1569641311411,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D190928-01.txt",
+      "tag": ".遇见的问题",
+      "markdown": true,
+      "title": "ios端click事件不生效的情况",
+      "modify_at": 1569641311411,
+      "create_at": 1569641116540,
+      "desc": "by jacky at 2019/09/28<br>1.用touchstart事件代替\n2.把点击的地方设置cursor:pointer;ios除了button和a标签好像不让点击"
+    },
     {
       "path": "md/D190820-01.txt",
       "tag": ".遇见的问题",

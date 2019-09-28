@@ -1,0 +1,13 @@
+ios端click事件不生效的情况
+----------
+
+by jacky at 2019/09/28
+
+&nbsp;
+
+1.用touchstart事件代替
+2.把点击的地方设置cursor:pointer;ios除了button和a标签好像不让点击
+设置了cursor:pointer好像也可以阻止ios9双击缩放的问题（待验证）
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
