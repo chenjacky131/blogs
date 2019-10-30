@@ -4,17 +4,29 @@
 by jacky at 2019/10/30
 
 面试问题：
-Css3有常用到哪些属性，css3动画有没有写过，简述一些写过的一个动画
-Css预处理器熟不熟悉（sass,less）,有用到哪些特性
-Es6有常用到哪些特性，promise函数有没有使用过
-之前有接触的移动端响应式用的是什么方式实现的（rem还是百分比什么的）
-页面性能优化（代码压缩，雪碧图减少请求，本地存储localStorage,sessionStorage）
-数据转换json与字符串互转的函数
-代码调试一般怎么调试，移动端的真机调试（werien,vConsole，fiddler抓包）
-Vue的熟悉程度，使用过程中有踩过哪些坑（对象和数组的赋值，key元素的复用）
-Websocket有没有用到过，用在什么地方
-版本控制工具有用过哪些？基本操作冲突解决什么的（svn,git）
-平时学习新技能，知识扩展的渠道是通过什么方式（论坛、视频教程网站）
+
+1. Css3有常用到哪些属性，css3动画有没有写过，简述一些写过的一个动画
+<br>
+2. Css预处理器熟不熟悉（sass,less）,有用到哪些特性
+<br>
+3. Es6有常用到哪些特性，promise函数有没有使用过
+<br>
+4. 之前有接触的移动端响应式用的是什么方式实现的（rem还是百分比什么的）
+<br>
+5. 页面性能优化（代码压缩，雪碧图减少请求，本地存储localStorage,sessionStorage）
+<br>
+6. 数据转换json与字符串互转的函数
+<br>
+7. 代码调试一般怎么调试，移动端的真机调试（werien,vConsole，fiddler抓包）
+<br>
+8. Vue的熟悉程度，使用过程中有踩过哪些坑（对象和数组的赋值，key元素的复用）
+<br>
+9. Websocket有没有用到过，用在什么地方
+<br>
+10. 版本控制工具有用过哪些？基本操作冲突解决什么的（svn,git）
+<br>
+11. 平时学习新技能，知识扩展的渠道是通过什么方式（论坛、视频教程网站）
+<br>
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
