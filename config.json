@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1569641842493,
+  "last_modify": 1572406091971,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D191030-01.txt",
+      "tag": ".常用",
+      "markdown": true,
+      "title": "前端知识体系概括",
+      "modify_at": 1572406091971,
+      "create_at": 1572406042587,
+      "desc": "by jacky at 2019/10/30<br>面试问题：\nCss3有常用到哪些属性，css3动画有没有写过，简述一些写过的一个动画\nCss预处理器熟不熟悉（sass,less）,有用到哪些特性\nEs6有常用到哪些特性，promise函数有没有使用过\n之前有接触的移动端响应式用的是什么方式实现的（rem还是百分比什么的）\n页面性能优化（代码压缩，雪碧图减少请求，本地存储localStorage,sessionStorage）\n数据转换json与字符串互转的函数\n代码调试一般怎么调试，移动端的真机调试（werien,vConsole，fiddler抓包）\nVue的熟悉程度，使用过程中有踩过哪些坑（对象和数组的赋值，key元素的复用）"
+    },
     {
       "path": "md/D190928-02.txt",
       "tag": ".遇见的问题",
