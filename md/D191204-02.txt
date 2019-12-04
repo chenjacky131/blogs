@@ -1,0 +1,40 @@
+个人网站搭建流程
+----------
+
+by jacky at 2019/12/04
+
+1. 购买服务器 https://www.vultr.com/ 购买10$美元的服务器，5$的shell里面输命令会卡
+
+2. 购买域名 https://www.namecheap.com/ 购买域名
+
+3. 域名解析 https://www.cloudflare.com/ 免费域名解析
+
+    a. 添加域名
+
+    b. 点击域名条目的manage，domain下面的NAMESERVERS选择NameCheap BasicDNS
+
+    c. Advanced DNS选项卡HOST RECORDS项只保留两条记录，第一条Type:A Record,Host:@,Value:（填服务器ip）。第二条Type:CNAME Record,Host:www,Value:（填购买的域名）,然后等待生效.
+
+
+4. 显示静态页
+
+    a. 安装nginx, 按照nginx.org官网流程安装就可以。
+
+    b. 配置nginx, 进入/etc/nginx/conf.d/增加一个*.conf的文件，名字随意，
+
+    ````
+    server {
+        listen 80;
+        server_name www.***.com; #配置域名
+        location / {
+                root /usr/share/nginx/html;#指向静态页，向用nginx默认的一个静态页面
+                index index.html index.htm;
+        }
+    }
+    ````
+
+    c. 开启80端口，参加服务器相关分类里面的开启80端口
+
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

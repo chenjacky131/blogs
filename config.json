@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1572406295255,
+  "last_modify": 1575428315445,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D191204-02.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "个人网站搭建流程",
+      "modify_at": 1575428315445,
+      "create_at": 1575427476360,
+      "desc": "by jacky at 2019/12/04<br>购买服务器 https://www.vultr.com/ 购买10$美元的服务器，5$的shell里面输命令会卡"
+    },
+    {
+      "path": "md/D191204-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Linux Centos 7 开启80端口",
+      "modify_at": 1575427341543,
+      "create_at": 1575427155146,
+      "desc": "by jacky at 2019/12/04<br>查看版本：firewall-cmd --version"
+    },
     {
       "path": "md/D191030-01.txt",
       "tag": ".常用",
