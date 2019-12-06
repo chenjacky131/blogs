@@ -1,0 +1,11 @@
+Linux 卸载php
+----------
+
+by jacky at 2019/12/05
+
+1. ```` rpm -qa|grep php ```` :查看安装的php软件包
+
+2. ```` rmp -e php-common-5.1.6-27.el5_5.3 (对应的软件包名) ```` 如果提示有依赖，那就先删除依赖
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

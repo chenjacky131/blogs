@@ -1,0 +1,42 @@
+Linux 安装 php7
+----------
+
+by jacky at 2019/12/05
+
+1. 下载php包 ```` wget  http://cn2.php.NET/distributions/php-7.0.4.tar.gz
+tar zxvf php-7.0.4.tar.gz
+cd  php-7.0.4</pre> ````
+
+2. 编译  
+
+ ```` ./configure --enable-fpm --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --with-fpm-user=nginx --with-fpm-group=nginx --with-bz2 --with-curl --with-gd --with-mcrypt --with-openssl --with-mhash --with-jpeg-dir --with-png-dir --with-freetype-dir --with-iconv-dir=/usr/local/libiconv --with-gettext --with-libxml-dir --with-zlib --with-xmlrpc --with-pcre-regex --with-pear --with-pdo-mysql=mysqlnd --with-mysqli=mysqlnd --with-libdir=lib64 --enable-dom --enable-xml --enable-fpm --enable-bcmath --enable-ftp --enable-sockets --disable-ipv6 --enable-mbregex --enable-mbstring --enable-calendar --enable-gd-native-ttf --enable-static --enable-fpm --enable-bcmath --enable-libxml --enable-inline-optimization --enable-mbregex --enable-opcache --enable-pcntl --enable-shmop --enable-soap --enable-sockets --enable-sysvsem --enable-zip ````
+
+ 如果提示报错：如果没有gcc，安装 ``` yum install gcc ```
+
+ 如果提示xml2-config 安装 ```` yum install libxml2-devel ````
+
+3. 安装 ```` make && make install ```` 。 
+
+ 如果提示make无法使用，安装make： ```` yum -y install gcc automake autoconf libtool make ```` 
+
+ 安装gcc: ```` yum install gcc gcc-c++ ````  
+
+ Cannot find OpenSSL's <evp.h>”，缺少openssl相关的库，直接安装即可,```` sudo yum install openssl openssl-devel ````
+
+ configure: error: Please reinstall the BZip2 distribution: ```` yum install bzip2-devel ````
+
+ configure: error: Please reinstall the libcurl distribution -
+    easy.h should be in /include/curl/: 安装 ```` yum install curl curl-devel ````
+
+ configure: error: jpeglib.h not found. 安装 ```` yum -y install libjpeg-devel ````
+
+ configure: error: png.h not found. 安装 ```` yum -y install libpng*  ````
+
+ configure: error: freetype-config not found. 安装：```` yum install freetype-devel ````
+
+ configure: error: mcrypt.h not found. Please reinstall libmcrypt. 安装```` yum install -y epel-release
+
+ yum install -y libmcrypt-devel ```` 按顺序安装
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

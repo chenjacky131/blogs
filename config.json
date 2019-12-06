@@ -1,11 +1,38 @@
 {
   "version": "1.0",
-  "last_modify": 1575428315445,
+  "last_modify": 1575536789379,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D191205-03.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Linux 卸载php",
+      "modify_at": 1575529855543,
+      "create_at": 1575529734916,
+      "desc": "by jacky at 2019/12/05"
+    },
+    {
+      "path": "md/D191205-02.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Centos8安装MySQL 8.0",
+      "modify_at": 1575529334426,
+      "create_at": 1575528761362,
+      "desc": "by jacky at 2019/12/05<br>安装MySQL及其所有依赖：sudo dnf install @mysql"
+    },
+    {
+      "path": "md/D191205-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Linux 卸载mysql",
+      "modify_at": 1575526809422,
+      "create_at": 1575526529277,
+      "desc": "by jacky at 2019/12/05<br>源码安装卸载"
+    },
     {
       "path": "md/D191204-02.txt",
       "tag": ".服务器相关",

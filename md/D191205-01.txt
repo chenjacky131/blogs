@@ -1,0 +1,23 @@
+Linux 卸载mysql
+----------
+
+by jacky at 2019/12/05
+
+1. 源码安装卸载
+
+  虽然源码安装时相对复杂，但是它的卸载却很简单。
+  只要在安装目录下直接执行 make uninstall这个命令，就可以卸载源码安装的mysql，前提是你在这之前没有执行过make clean。
+  如果执行过make clean，也没关系，那就直接删除mysql安装文件就行。
+
+2. rpm安装卸载
+
+ 查看一下是否是已经用rpm或yum安装了老版本的mysql: rpm -qa | grep -i mysql
+ 卸载对应的安装版本:rpm -e --nodeps MySQL-(安装的版本).x86_64
+ 查看卸载情况:rpm -qa | grep -i mysql 如果卸载了就没有任何输出
+
+3. 找到包含mysql的目录
+
+  find / -name mysql 然后用rm -rf 删除
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,0 +1,22 @@
+Centos8安装MySQL 8.0
+----------
+
+by jacky at 2019/12/05
+
+1. 安装MySQL及其所有依赖：```` sudo dnf install @mysql ````
+
+2. 启动MySQL服务并使其在启动时自动启动:```` sudo systemctl enable --now mysqld ````。如果有报错，按修复提示加参数运行
+
+3. 要检查MySQL服务器是否正在运行:```` sudo systemctl status mysqld ````
+
+4. 保护MySQL：```` sudo mysql_secure_installation ````，该脚本执行一些与安全性相关的操作并设置MySQL根密码。将要求您配置 VALIDATE PASSWORD PLUGIN ，该工具用于测试MySQL用户密码的强度并提高安全性。密码验证策略分为三个级别：低，中和强。如果您不想设置验证密码插件，请按ENTER。在下一个提示符下，将要求您为MySQL根用户设置密码。完成此操作后，脚本还将要求您删除匿名用户，限制root用户对本地计算机的访问，并删除测试数据库。您应该对所有问题回答“是”。
+
+5. 登录mysql:```` mysql -u root -p ````
+
+6. 身份验证方法。由于CentOS 8中的某些客户端工具和库与caching_sha2_password方法不兼容，CentOS 8存储库中包含的MySQL 8.0服务器被设置为使用旧的mysql_native_password身份验证插件。上游MySQL 8.0版本。
+mysql_native_password方法适用于大多数设置。但是，如果您想将默认身份验证插件更改为caching_sha2_password，这会更快并提供更好的安全性，请打开以下配置文件：
+  ```` sudo vim /etc/my.cnf.d/mysql-default-authentication-plugin.cnf ```` 将default_authentication_plugin的值更改为caching_sha2_password：
+  ```` [mysqld] default_authentication_plugin=caching_sha2_password  ```` 关闭并保存文件，然后重新启动MySQL服务器以使更改生效：```` sudo systemctl restart mysqld ````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
