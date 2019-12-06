@@ -1,0 +1,19 @@
+Linux Centos 8 安装 php7
+----------
+
+by jacky at 2019/12/06
+
+1. 下载php： ```` wget http://cn2.php.net/distributions/php-7.1.2.tar.gz ```` 建一个临时文件夹，放里头
+
+2. 解压： ```` tar -zxvf php-7.1.2.tar.gz ````
+
+3. 编译安装：```` cd php-7.1.2 ````
+
+  ```` ./configure --prefix=/usr/local/php7 --with-curl --with-freetype-dir --with-gd --with-gettext --with-iconv-dir --with-kerberos --with-libdir=lib64 --with-libxml-dir --with-mysqli --with-openssl --with-pcre-regex --with-pdo-mysql --with-pdo-sqlite --with-pear --with-png-dir --with-xmlrpc --with-xsl --with-zlib --enable-fpm --enable-bcmath --enable-libxml --enable-inline-optimization --enable-gd-native-ttf --enable-mbregex --enable-mbstring --enable-opcache --enable-pcntl --enable-shmop --enable-soap --enable-sockets --enable-sysvsem --enable-xml --enable-zip ````
+
+4.安装： ```` make && make install ````
+
+有报错安装相应的模块
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

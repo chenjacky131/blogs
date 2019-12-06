@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1575536789379,
+  "last_modify": 1575621263661,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D191206-02.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "访问php页面出现直接下载文件的情况",
+      "modify_at": 1575621263661,
+      "create_at": 1575621204718,
+      "desc": "by jacky at 2019/12/06\nnginx配置里面增加下面的东西\n    location ~ .php$ {\n        try_files $uri =404;\n        fastcgi_pass 127.0.0.1:9000;\n        fastcgi_index index.php;\n        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;\n        include fastcgi_params;"
+    },
+    {
+      "path": "md/D191206-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Linux Centos 8 安装 php7",
+      "modify_at": 1575600540817,
+      "create_at": 1575600226375,
+      "desc": "by jacky at 2019/12/06<br>下载php： wget http://cn2.php.net/distributions/php-7.1.2.tar.gz 建一个临时文件夹，放里头"
+    },
     {
       "path": "md/D191205-03.txt",
       "tag": ".服务器相关",
