@@ -13,13 +13,13 @@ by jacky at 2019/10/30
 <br>
 4. 之前有接触的移动端响应式用的是什么方式实现的（rem还是百分比什么的）
 <br>
-5. 页面性能优化（代码压缩，雪碧图减少请求，本地存储localStorage,sessionStorage）
+5. 页面性能优化（代码压缩，雪碧图减少请求,首屏优化，减少不必要的数据渲染，本地存储localStorage,sessionStorage）
 <br>
-6. 数据转换json与字符串互转的函数
+6. 数据转换json与字符串互转的函数.JSON.parse, JSON.stringify eval
 <br>
 7. 代码调试一般怎么调试，移动端的真机调试（werien,vConsole，fiddler抓包）
 <br>
-8. Vue的熟悉程度，使用过程中有踩过哪些坑（对象和数组的赋值，key元素的复用）
+8. Vue的熟悉程度，v-show和v-if什么什么区别，computed和watch区别，循环里面的key有什么作用。
 <br>
 9. Websocket有没有用到过，用在什么地方
 <br>
