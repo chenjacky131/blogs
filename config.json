@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1575795659951,
+  "last_modify": 1575855917095,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D191209-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "安装WordPress主题及插件需要输入FTP问题",
+      "modify_at": 1575855917095,
+      "create_at": 1575855787068,
+      "desc": "by jacky at 2019/12/09<br>修改wp-config.php，增加下面3行\n```` \ndefine(\"FS_METHOD\",\"direct\");\ndefine(\"FS_CHMOD_DIR\", 0777);\ndefine(\"FS_CHMOD_FILE\", 0777);"
+    },
     {
       "path": "md/D191206-02.txt",
       "tag": ".服务器相关",

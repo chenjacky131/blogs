@@ -1,0 +1,14 @@
+安装WordPress主题及插件需要输入FTP问题
+----------
+
+by jacky at 2019/12/09
+
+修改wp-config.php，增加下面3行
+```` 
+define("FS_METHOD","direct");
+define("FS_CHMOD_DIR", 0777);
+define("FS_CHMOD_FILE", 0777); 
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
