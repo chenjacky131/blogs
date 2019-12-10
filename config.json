@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1575855917095,
+  "last_modify": 1575962433138,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D191210-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "更改完WordPress固定链接后404的问题",
+      "modify_at": 1575962433138,
+      "create_at": 1575962299527,
+      "desc": "by jackyk at 2019/12/10<br>打开nginx的配置文件，在server {}大括号里面添加下面的代码：\n````\nlocation / {    index index.html index.php;    if (-f $request_filename/index.html){        rewrite (.) $1/index.html break;    }    if (-f $request_filename/index.php){        rewrite (.) $1/index.php;"
+    },
     {
       "path": "md/D191209-01.txt",
       "tag": ".服务器相关",

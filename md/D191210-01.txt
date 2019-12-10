@@ -1,0 +1,26 @@
+更改完WordPress固定链接后404的问题
+----------
+
+by jackyk at 2019/12/10
+
+打开nginx的配置文件，在server {}大括号里面添加下面的代码：
+````
+location / {  
+    index index.html index.php;   
+    if (-f $request_filename/index.html){   
+        rewrite (.*) $1/index.html break;   
+    }   
+    if (-f $request_filename/index.php){   
+        rewrite (.*) $1/index.php;   
+    }   
+    if (!-f $request_filename){   
+        rewrite (.*) /index.php;   
+    }   
+}   
+  
+rewrite /wp-admin$ $scheme://$host$uri/ permanent;  
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
