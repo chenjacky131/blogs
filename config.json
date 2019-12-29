@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1575962433138,
+  "last_modify": 1577612346640,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D191229-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Centos安装最新版nodejs",
+      "modify_at": 1577612346640,
+      "create_at": 1577612205090,
+      "desc": "by jacky at 2019/12/29<br>服务器端命令，如果权限不足，开头加上 sudo"
+    },
     {
       "path": "md/D191210-01.txt",
       "tag": ".服务器相关",
