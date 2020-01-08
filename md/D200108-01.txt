@@ -1,0 +1,40 @@
+Python3.8安装Scrapy爬虫框架(Windows)
+----------
+
+by jacky at 2020/01/08
+
+1. 升级pip
+
+````python
+  python -m pip install --upgrade pip
+
+````
+
+2. 安装wheel
+
+````python
+  pip install wheel
+
+````
+
+测试是否成功命令行输入wheel
+
+3. 下载安装Lxml和Twisted
+
+在（[Unofficial Windows Binaries of Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml)）里面下载Lxml和Twisted扩展包，cp后面的是对应的Python版本，win后面的是安装的Python是几位的
+
+4. 安装这两个扩展
+````python
+pip install C:\Users\*\Downloads\lxml-*.whl
+pip install C:\Users\*\Downloads\Twisted-*.whl
+````
+
+5. 安装Scrapy
+````python
+pip install scrapy
+````
+
+测试是否安装成功命令行输入scrapy
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1577612346640,
+  "last_modify": 1578473486139,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D200108-01.txt",
+      "tag": ".Python",
+      "markdown": true,
+      "title": "Python3.8安装Scrapy爬虫框架(Windows)",
+      "modify_at": 1578473486139,
+      "create_at": 1578472888290,
+      "desc": "by jacky at 2020/01/08<br>测试是否成功命令行输入wheel"
+    },
     {
       "path": "md/D191229-01.txt",
       "tag": ".服务器相关",
