@@ -1,0 +1,31 @@
+移动端响应式函数
+----------
+
+by jacky at 2020/01/12
+
+````javascript
+(function(){
+    //  响应式代码
+    /*
+      sass里面设置转换函数$px为设计图里面的尺寸
+      @function p2r($px)
+      @return $px/100 + rem
+      //  const pixelRatio = window.devicePixelRatio ? window.devicePixelRatio : 1; 设置完initial后好像不需要考虑pixelRatio的值
+    */
+    window.addEventListener('resize', function(){
+        setHtmlFontSize();
+    }, false);
+    function setHtmlFontSize(){
+        const psdWidth = 750 //  设计图尺寸
+        const maxWidth = 375 //  最大尺寸
+        const minWidth = 320 //  最小尺寸
+        let clientWidth = document.documentElement.clientWidth || window.innerWidth;
+        clientWidth = clientWidth > maxWidth ? maxWidth : (clientWidth < minWidth ? minWidth: clientWidth);
+        document.querySelector('html').style.fontSize =  clientWidth / psdWidth * 100 + 'px'// 样式里面的rem单位设置需要除以100是因为chrome字体不能小于6px，为了兼容这个。
+    }
+    setHtmlFontSize();
+}());
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

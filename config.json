@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1578803240041,
+  "last_modify": 1578812811667,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D200112-02.txt",
+      "tag": ".React",
+      "markdown": true,
+      "title": "create-react-app中使用sass全局变量（不需要eject暴露环境）",
+      "modify_at": 1578812057007,
+      "create_at": 1578810607693,
+      "desc": "by jacky at 2020/01/12<br>安装3个模块: yarn add   react-app-rewired    customize-cra    sass-resources-loader  --save-dev"
+    },
+    {
+      "path": "md/D200112-01.txt",
+      "tag": ".函数库",
+      "markdown": true,
+      "title": "移动端响应式函数",
+      "modify_at": 1578810098125,
+      "create_at": 1578807160283,
+      "desc": "by jacky at 2020/01/12<br>````javascript\n(function(){\n    //  响应式代码\n    /\n      sass里面设置转换函数$px为设计图里面的尺寸\n      @function p2r($px)\n      @return $px/100 + rem\n      //  const pixelRatio = window.devicePixelRatio ? window.devicePixelRatio : 1; 设置完initial后好像不需要考虑pixelRatio的值\n    /"
+    },
     {
       "path": "md/D200108-01.txt",
       "tag": ".Python",
