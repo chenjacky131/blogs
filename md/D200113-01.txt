@@ -1,0 +1,30 @@
+create-react-app不暴露配置文件设置代理
+----------
+
+by jacky at 2020/01/13
+
+1. 安装http代理相关包http-proxy-middleware
+
+  ````
+  yarn add http-proxy-middleware -D
+  ````
+
+2. 在src目录下新建文件setupProxy.js
+
+  ````
+    const proxy = require('http-proxy-middleware')
+    module.exports = function(app) {
+      app.use(
+        proxy('/api', {
+        target: 'http://xx.xx.xx.xx:8000/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      })
+    )}
+
+  ````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

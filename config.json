@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1578812811667,
+  "last_modify": 1578896378469,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D200113-01.txt",
+      "tag": ".React",
+      "markdown": true,
+      "title": "create-react-app不暴露配置文件设置代理",
+      "modify_at": 1578896378469,
+      "create_at": 1578896148761,
+      "desc": "by jacky at 2020/01/13<br>安装http代理相关包http-proxy-middleware"
+    },
     {
       "path": "md/D200112-02.txt",
       "tag": ".React",
