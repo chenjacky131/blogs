@@ -15,7 +15,6 @@ by jacky at 2019/12/04
 
     c. Advanced DNS选项卡HOST RECORDS项只保留两条记录，第一条Type:A Record,Host:@,Value:（填服务器ip）。第二条Type:CNAME Record,Host:www,Value:（填购买的域名）,然后等待生效.
 
-
 4. 显示静态页
 
     a. 安装nginx, 按照nginx.org官网流程安装就可以。
@@ -35,6 +34,7 @@ by jacky at 2019/12/04
 
     c. 开启80端口，参加服务器相关分类里面的开启80端口
 
+5. 或者直接安装Vultr里面的LEMP程序（linux, nginx发音engine-X所以用E，mysql，php）
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

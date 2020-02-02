@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1578896378469,
+  "last_modify": 1580629497990,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -119,7 +119,7 @@
       "tag": ".服务器相关",
       "markdown": true,
       "title": "个人网站搭建流程",
-      "modify_at": 1575428315445,
+      "modify_at": 1580629497990,
       "create_at": 1575427476360,
       "desc": "by jacky at 2019/12/04<br>购买服务器 https://www.vultr.com/ 购买10$美元的服务器，5$的shell里面输命令会卡"
     },
