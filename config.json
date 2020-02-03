@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1580696919055,
+  "last_modify": 1580697884517,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D200203-02.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "centos 7 mysql 连接不上报2003 10038错误的问题",
+      "modify_at": 1580697884517,
+      "create_at": 1580697794392,
+      "desc": "by jack at 2020/02/03<br>iptables配置文件\n开启3306端口\n````"
+    },
     {
       "path": "md/D200203-01.txt",
       "tag": ".服务器相关",
