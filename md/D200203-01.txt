@@ -1,0 +1,40 @@
+CentOS7安装和配置iptables防火墙
+----------
+
+by jacky at 2020/02/03
+
+1. 停止和禁用自带的防火墙
+ ````
+ systemctl stop firewalld
+ systemctl mask firewalld
+ ````
+2. 使用如下命令安装iptables
+ ````
+yum install -y iptables
+yum update iptables 
+yum install iptables-services
+ ````
+3. 规则设定
+ ````
+iptables -P INPUT ACCEPT
+iptables -F
+iptables -X
+iptables -Z
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A INPUT  -p tcp -j LOG --log-prefix "iptables denied"
+iptables -P INPUT   DROP
+iptables -P OUTPUT  ACCEPT
+iptables -P FORWARD ACCEPT
+ ````
+4. 重启防火墙
+ ````
+service iptables save
+service iptables restart
+ ````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
