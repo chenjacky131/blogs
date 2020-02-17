@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1580697884517,
+  "last_modify": 1581843670523,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D200216-01.txt",
+      "tag": ".Vue遇到的问题",
+      "markdown": true,
+      "title": "管理全局组件",
+      "modify_at": 1581843670523,
+      "create_at": 1581843527124,
+      "desc": "by jacky at 2020/02/16<br>```` \n// 1 - globalComponent.js"
+    },
     {
       "path": "md/D200203-02.txt",
       "tag": ".服务器相关",

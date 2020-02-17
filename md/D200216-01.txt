@@ -1,0 +1,53 @@
+管理全局组件
+----------
+
+by jacky at 2020/02/16
+
+```` 
+// 1 - globalComponent.js
+
+import Vue from 'vue' // 引入vue
+
+// 处理首字母大写 abc => Abc
+function changeStr(str){
+    return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+/*
+    require.context(arg1,arg2,arg3)
+        arg1 - 读取文件的路径
+        arg2 - 是否遍历文件的子目录
+        arg3 - 匹配文件的正则
+    关于这个Api的用法，建议小伙伴们去查阅一下，用途也比较广泛
+*/
+const requireComponent = require.context('.', false, /\.vue$/)
+console.log('requireComponent.keys():',requireComponent.keys())  // 打印
+requireComponent.keys().forEach(fileName => {
+    const config = requireComponent(fileName)
+    console.log('config:',config)  // 打印
+    const componentName = changeStr(
+        fileName.replace(/^\.\//, '').replace(/\.\w+$/, '')   // ./child1.vue => child1
+    )
+    
+    Vue.component(componentName, config.default || config) // 动态注册该目录下的所有.vue文件
+})
+
+// 2 - 将globalComponent.js引入main.js
+
+import global from './components/globalComponent'
+
+// 3 - 使用这类组件不再需要引入和注册，直接标签使用即可
+
+<template>
+  <div>
+    <h1>I am HelloWorld</h1>
+    <Child1></Child1>
+  </div>
+</template>
+
+
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
