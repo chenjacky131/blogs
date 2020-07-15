@@ -1,0 +1,77 @@
+用队列实现树的广度遍历（Breadth First Search）
+----------
+
+by jacky at 2020/07/15
+
+````html
+// html
+  <div class="root">
+    <div class="container">
+        <section class="sidebar">
+            <ul class="menu"></ul>
+        </section>
+        <section class="main">
+            <article class="post"></article>
+            <p class="copyright"></p>
+        </section>
+    </div>
+</div>
+````
+
+````javascript
+//javascript
+      function Queue(){
+          this.dataStore = [];       
+      }
+      Queue.prototype.enqueue = function(element) { //入队
+        this.dataStore.push(element)
+      }
+      Queue.prototype.dequeue = function(){//出队
+        if(this.empty()){
+          return 'queue is empty'
+        }else{
+          return this.dataStore.shift();
+        }
+      }
+      Queue.prototype.front = function(){//查看队首元素
+        if(this.empty()){
+          return 'queue is empty'
+        }else{
+          return this.dataStore[0]
+        }
+      }
+      Queue.prototype.back = function(){//查看队尾元素
+        if(this.empty()){
+          return 'queue is empty'
+        }else{
+          return this.dataStore[this.dataStore.length - 1]
+        }
+      }
+      Queue.prototype.toString = function(){//显示队列所有元素
+        return this.dataStore
+      }
+      Queue.prototype.clear = function(){//清空当前队列
+        this.dataStore = []
+      }
+      Queue.prototype.empty = function(){//判断当前队列是否为空
+        return this.dataStore.length === 0
+      }
+      var queue1 = new Queue()
+      var root = document.querySelector('.root')
+      queue1.enqueue(root)
+      var arr = [];
+      (function(){
+        while(!queue1.empty()){
+          var outNode = queue1.dequeue()
+          arr.push(outNode)
+          if(outNode.children.length > 0){
+            for(var i = 0; i < outNode.children.length; i++){
+              queue1.enqueue(outNode.children[i])
+            }       
+          }
+        }
+      })()
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
