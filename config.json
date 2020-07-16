@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1594804150279,
+  "last_modify": 1594884117856,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D200716-01.txt",
+      "tag": ".函数库",
+      "markdown": true,
+      "title": "promise函数的实现",
+      "modify_at": 1594884117856,
+      "create_at": 1594884050268,
+      "desc": "by jacky at 2020/07/16\n转自：https://juejin.im/post/5b2f02cd5188252b937548ab\n````javascript\nclass Promise{\n  constructor(executor){\n    this.state = 'pending';\n    this.value = undefined;\n    this.reason = undefined;\n    this.onResolvedCallbacks = [];\n    this.onRejectedCallbacks = [];"
+    },
     {
       "path": "md/D200715-01.txt",
       "tag": ".算法题",
