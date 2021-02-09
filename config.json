@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1612857562431,
+  "last_modify": 1612876585754,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D210209-02.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Linux配置环境变量(建立软连接)",
+      "modify_at": 1612876045751,
+      "create_at": 1612875905825,
+      "desc": "by jack at 2021/02/09<br>````\nln -s 原链接 /usr/local/bin/"
+    },
+    {
+      "path": "md/D210209-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Linux安装node",
+      "modify_at": 1612874403228,
+      "create_at": 1612873907686,
+      "desc": "by jacky at 2021/02/09<br>1.复制Linux Binaries (x64)的下载连接"
+    },
     {
       "path": "md/D210207-06.txt",
       "tag": ".服务器相关",
@@ -47,7 +65,7 @@
       "tag": ".服务器相关",
       "markdown": true,
       "title": "Linux常用命令",
-      "modify_at": 1612857562431,
+      "modify_at": 1612876585754,
       "create_at": 1612629499313,
       "desc": "by jacky at 2021/02/07<br>1.查找文件位置"
     },

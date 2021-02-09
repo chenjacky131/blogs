@@ -36,6 +36,27 @@ wq
 ````
 q!
 ````
+
+8.移动文件
+````
+mv source_file(文件) dest_file(文件)
+````
+
+9.解压文件
+
+````
+tar -xvf file.tar //解压 tar包
+
+tar -xzvf file.tar.gz //解压tar.gz
+
+tar -xjvf file.tar.bz2   //解压 tar.bz2
+
+tar -xZvf file.tar.Z   //解压tar.Z
+
+unrar e file.rar //解压rar
+
+unzip file.zip //解压zip
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

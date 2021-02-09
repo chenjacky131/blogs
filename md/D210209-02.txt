@@ -1,0 +1,11 @@
+Linux配置环境变量(建立软连接)
+----------
+
+by jack at 2021/02/09
+
+````
+ln -s 原链接 /usr/local/bin/
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

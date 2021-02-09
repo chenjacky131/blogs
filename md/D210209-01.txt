@@ -1,0 +1,26 @@
+Linux安装node
+----------
+
+by jacky at 2021/02/09
+
+1.复制Linux Binaries (x64)的下载连接
+
+2.wget 链接
+
+3.解压tar -xvf 压缩包
+
+4.进入解压文件的bin文件夹验证./node -v是否生效
+
+5.配置node文件安装路径
+````
+mkdir node_global
+
+mkdir node_cache
+
+npm config set prefix "node_global"
+
+npm config set cache "node_cache"
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
