@@ -1,0 +1,9 @@
+破解navicat
+----------
+
+by jacky at 2021/02/07
+
+https://www.cnblogs.com/Kathrine/p/12844846.html
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

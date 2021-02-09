@@ -1,0 +1,25 @@
+Putty免密登录
+----------
+
+by jacky at 2021/02/07
+
+1.使用puttygen进行生成秘钥
+
+2、将生成的公钥内容复制到linux系统的用户/home目录的.ssh/authorized_keys文件（如果是root用户，即/root/.ssh/authorized_keys）
+
+3.关闭selinux,修改文件权限
+````
+[root@fudanwuxinginxb .ssh]# vi /etc/sysconfig/selinux 
+SELINUX=disabled
+
+[root@fudanwuxinginxb .ssh]# setenforce 0
+
+[root@fudanwuxinginxb .ssh]# chmod 700 authorized_keys
+````
+
+4.connection->ssh->auth载入私钥
+
+5.登录，如果有密码字段需要输入密码字段
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,0 +1,17 @@
+LEMP的一些路径
+----------
+
+by jacky at 2021/02/07
+
+1.sbing目录
+````
+/usr/sbin/
+````
+
+2.nginx目录
+````
+/usr/nginx
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

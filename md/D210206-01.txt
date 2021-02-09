@@ -1,0 +1,56 @@
+安装Wordpress详细教程
+----------
+
+by jacky at 2021/02/06
+
+1.配置数据库
+````
+首先登陆MariaDB为WordPress建立数据库及用户
+
+mysql -u root -p
+这里进入了MariaDB，按行执行下面代码:
+
+CREATE DATABASE wordpressdb //新建的数据库为wordpressdb
+CREATE USER wordpressuser@localhost IDENTIFIED BY '123456' //用户为wordpressuser，密码为123456
+
+GRANT ALL PRIVILEGES ON wordpressdb.* TO wordpressuser@localhost
+FLUSH PRIVILEGES //更改用户权限
+exit //保存并退出
+````
+
+2.安装wordpress
+````
+下载WordPress
+
+cd /home/www/demo
+yum -y install wget unzip net-tools
+wget http://wordpress.org/latest.zip
+解压文件，并且将其复制到/home/www/demo目录下
+
+unzip -q latest.zip
+cp -rf wordpress/* /home/www/demo
+上面你也可以用windows下载好再传到服务器解压，我就是这样直接解压wordpress文件夹到demo目录。
+
+修改文件夹权限
+
+chown -R root:root /home/www/demo
+编辑配置文件
+
+cd /home/www/demo/wordpress  // 假定你wordpress解压到当前目录
+cp wp-config-sample.php wp-config.php 
+vi wp-config.php
+往下找到需要修改的内容，修改三个部分：其中wordpressdb为数据库名称，wordpressuser为数据库用户名，123456为数据库密码
+
+/** WordPress数据库的名称 */
+define('DB_NAME', 'wordpressdb');
+
+/** MySQL数据库用户名 */
+define('DB_USER', 'wordpressuser');
+
+/** MySQL数据库密码 */
+define('DB_PASSWORD', '123456');
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

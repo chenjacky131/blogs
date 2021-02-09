@@ -1,11 +1,74 @@
 {
   "version": "1.0",
-  "last_modify": 1594884117856,
+  "last_modify": 1612857562431,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D210207-06.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "wordpress安装主题无法创建目录",
+      "modify_at": 1612636962290,
+      "create_at": 1612636894135,
+      "desc": "by jacky at 2021/02/07<br>wordpress的安装目录权限改成777\n````\n chmod -R 777 demo/"
+    },
+    {
+      "path": "md/D210207-05.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "navicat 1130 错误",
+      "modify_at": 1612633299578,
+      "create_at": 1612633201747,
+      "desc": "by jacky at 2021/02/07<br>1.登录数据库mysql"
+    },
+    {
+      "path": "md/D210207-04.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "破解navicat",
+      "modify_at": 1612631172808,
+      "create_at": 1612631132377,
+      "desc": "by jacky at 2021/02/07<br>https://www.cnblogs.com/Kathrine/p/12844846.html"
+    },
+    {
+      "path": "md/D210207-03.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "LEMP的一些路径",
+      "modify_at": 1612636251627,
+      "create_at": 1612629772481,
+      "desc": "by jacky at 2021/02/07<br>1.sbing目录"
+    },
+    {
+      "path": "md/D210207-02.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Linux常用命令",
+      "modify_at": 1612857562431,
+      "create_at": 1612629499313,
+      "desc": "by jacky at 2021/02/07<br>1.查找文件位置"
+    },
+    {
+      "path": "md/D210207-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Putty免密登录",
+      "modify_at": 1612629277140,
+      "create_at": 1612629047827,
+      "desc": "by jacky at 2021/02/07<br>1.使用puttygen进行生成秘钥"
+    },
+    {
+      "path": "md/D210206-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "安装Wordpress详细教程",
+      "modify_at": 1612629037904,
+      "create_at": 1612625768013,
+      "desc": "by jacky at 2021/02/06<br>1.配置数据库\n````\n首先登陆MariaDB为WordPress建立数据库及用户"
+    },
     {
       "path": "md/D200716-01.txt",
       "tag": ".函数库",
