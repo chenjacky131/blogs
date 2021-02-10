@@ -1,0 +1,26 @@
+nginx配置多个端口
+----------
+
+by jack at 2021/02/10
+
+1.增加一个*.conf的nginx配置
+
+2.*.conf里面的代码
+````
+server {
+	listen 8098;
+	
+	location / {
+		proxy_pass http://localhost:3000;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection keep-alive;
+		proxy_set_header Hst $host;
+		proxy_cache_bypass $http_upgrade;
+	}
+}
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

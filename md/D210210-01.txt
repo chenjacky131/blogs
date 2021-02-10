@@ -1,0 +1,13 @@
+关闭已开启的node服务器进程
+----------
+
+by jack at 2021/02/10
+
+````
+打开终端输入
+ps -ax | grep node //找出所有node应用
+sudo kill :pid //找到你要杀死node进程的pid
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

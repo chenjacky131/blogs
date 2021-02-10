@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1612876585754,
+  "last_modify": 1612961598887,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D210210-02.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "nginx配置多个端口",
+      "modify_at": 1612961598887,
+      "create_at": 1612961465428,
+      "desc": "by jack at 2021/02/10<br>1.增加一个*.conf的nginx配置"
+    },
+    {
+      "path": "md/D210210-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "关闭已开启的node服务器进程",
+      "modify_at": 1612948165304,
+      "create_at": 1612948102493,
+      "desc": "by jack at 2021/02/10<br>````\n打开终端输入\nps -ax | grep node //找出所有node应用\nsudo kill :pid //找到你要杀死node进程的pid"
+    },
     {
       "path": "md/D210209-02.txt",
       "tag": ".服务器相关",
@@ -65,7 +83,7 @@
       "tag": ".服务器相关",
       "markdown": true,
       "title": "Linux常用命令",
-      "modify_at": 1612876585754,
+      "modify_at": 1612950690347,
       "create_at": 1612629499313,
       "desc": "by jacky at 2021/02/07<br>1.查找文件位置"
     },
