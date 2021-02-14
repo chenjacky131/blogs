@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1612961598887,
+  "last_modify": 1613298785260,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D210214-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "nginx配置二级域名映射到服务器本地端口",
+      "modify_at": 1613298785260,
+      "create_at": 1613298226708,
+      "desc": "by jack at 2021/02/14<br>在域名解析的地方添加一条A记录blog,添加完后就可以blog.*.com访问服务器"
+    },
     {
       "path": "md/D210210-02.txt",
       "tag": ".服务器相关",
