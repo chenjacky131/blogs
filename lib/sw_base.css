@@ -482,3 +482,21 @@ hr.rewgt-unit {
 .col-default-row_hover td:hover {
   background-color:#f4f4f4;
 }
+/* fixed style*/
+@media screen and (max-width: 1366px) {
+  .diy-detail{
+    top: 36px !important;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .diy-detail{
+    top: 70px !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .diy-detail{
+    top: 240px !important;
+  }
+}

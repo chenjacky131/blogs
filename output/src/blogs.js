@@ -983,7 +983,7 @@ main.$$onLoad.push( function(callback) {
   if (!indexItemEle_)
     indexItemEle_ = utils.loadElement(['H3',{key:'index_item',$id__:'.pinp.index_item',nodeTag:'h3',subType:'a'}]);
   if (!indexListEle_)
-    indexListEle_ = utils.loadElement(['Panel',{key:'index_list',className:'rewgt-panel col-reverse',$id__:'.pinp.index_list',subType:'a'}]);
+    indexListEle_ = utils.loadElement(['Panel',{key:'index_list',className:'rewgt-panel col-reverse diy-detail',$id__:'.pinp.index_list',subType:'a'}]);
   
   if (!docDefElement_) {
     docDefElement_ = utils.loadElement( [['Div',{key:'doc_info'}],
