@@ -388,6 +388,11 @@ hr.rewgt-unit {
   text-align: right;
 }
 
+.right-default-align_center>button{
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
 .left-align_center-right {
   text-align: left;
 }

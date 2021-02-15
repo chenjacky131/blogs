@@ -1068,3 +1068,21 @@
 .tbl_56 td {
   border: 1px solid gray;
 }
+/* fixed style*/
+@media screen and (max-width: 1366px) {
+  .diy-cont{
+    padding-top: 36px !important;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .diy-cont{
+    padding-top: 70px !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .diy-cont{
+    padding-top: 240px !important;
+  }
+}
