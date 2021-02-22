@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1613298785260,
+  "last_modify": 1613879916162,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D210221-01.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Linux更改文件及目录权限问题",
+      "modify_at": 1613879916162,
+      "create_at": 1613879760161,
+      "desc": "by jack at 2021/02/21<br>1.快速实例学习："
+    },
     {
       "path": "md/D210214-01.txt",
       "tag": ".服务器相关",
