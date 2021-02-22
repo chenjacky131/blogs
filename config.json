@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1613879916162,
+  "last_modify": 1613984180015,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D210222-01.txt",
+      "tag": ".遇见的问题",
+      "markdown": true,
+      "title": "Failed to connect to github.com port 443: Timed out(Windows)",
+      "modify_at": 1613984180015,
+      "create_at": 1613984126423,
+      "desc": "by jack at 2021/02/22<br>````\ngit config --global http.proxy 127.0.0.1:1080 为全局的 git 项目都设置代理"
+    },
     {
       "path": "md/D210221-01.txt",
       "tag": ".服务器相关",

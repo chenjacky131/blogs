@@ -1,0 +1,13 @@
+Failed to connect to github.com port 443: Timed out(Windows)
+----------
+
+by jack at 2021/02/22
+
+````
+git config --global http.proxy 127.0.0.1:1080 为全局的 git 项目都设置代理
+
+git config --local http.proxy 127.0.0.1:1080 为某个 git 项目单独设置代理
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
