@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1614481935100,
+  "last_modify": 1614482358500,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -11,9 +11,9 @@
       "tag": ".遇见的问题",
       "markdown": true,
       "title": "git每次提交都需要登录的解决方法",
-      "modify_at": 1614481935100,
+      "modify_at": 1614482358500,
       "create_at": 1614481907038,
-      "desc": "by jack at 2021/02/28"
+      "desc": "by jack at 2021/02/28<br>2.移除https缓存ssh\n````\ngit remote rm origin\ngit remote add origin git地址(git开头的仓库地址)"
     },
     {
       "path": "md/D210228-01.txt",

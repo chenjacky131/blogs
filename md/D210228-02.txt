@@ -3,6 +3,16 @@ git每次提交都需要登录的解决方法
 
 by jack at 2021/02/28
 
+1. 查看远程仓库是否为https的形式
+````
+git remote -v
+````
+
+2.移除https缓存ssh
+````
+git remote rm origin
+git remote add origin git地址(git开头的仓库地址)
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
