@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1613984180015,
+  "last_modify": 1614481433222,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Blog",
   "doc_list": [
+    {
+      "path": "md/D210228-01.txt",
+      "tag": ".小程序",
+      "markdown": true,
+      "title": "字体图标在苹果手机上不显示",
+      "modify_at": 1614481433222,
+      "create_at": 1614481328534,
+      "desc": "by jack at 2021/02/28<br>原因：iconfont 之前下载下来是把 woff 文件转成 base64，项目中也一直使用 woff 转成的 base64；目前 iconfont 下载下来后的 iconfont.css中是把 woff2文件转成 base64。"
+    },
     {
       "path": "md/D210222-01.txt",
       "tag": ".遇见的问题",

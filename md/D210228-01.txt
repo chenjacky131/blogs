@@ -1,0 +1,13 @@
+字体图标在苹果手机上不显示
+----------
+
+by jack at 2021/02/28
+
+原因：iconfont 之前下载下来是把 woff 文件转成 base64，项目中也一直使用 woff 转成的 base64；目前 iconfont 下载下来后的 iconfont.css中是把 woff2文件转成 base64。
+
+
+解决方法：使用https://transfonter.org/将 woff 文件转成 base64就可以了。
+
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
