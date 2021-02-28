@@ -1,0 +1,8 @@
+git每次提交都需要登录的解决方法
+----------
+
+by jack at 2021/02/28
+
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
