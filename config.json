@@ -1,10 +1,10 @@
 {
   "version": "1.0",
-  "last_modify": 1614482358500,
+  "last_modify": 1615086806966,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
-  "repos_desc": "Blog",
+  "repos_desc": "Jack's Blog",
   "doc_list": [
     {
       "path": "md/D210228-02.txt",
@@ -773,7 +773,7 @@
     },
     {
       "path": "md/D180903-01.txt",
-      "tag": "SwfObjectApi参数说明.API",
+      "tag": "SwfObjectApi参数说明.插件文档",
       "markdown": true,
       "title": "SwfObject Api参数说明",
       "modify_at": 1537931804475,
@@ -887,15 +887,6 @@
       "modify_at": 1513072399786,
       "create_at": 1513069319376,
       "desc": "by jacky at 2017/12/12<br>设置canvas的宽高应该设置在属性里面，而不是样式里面。不然会出现缩放的问题。"
-    },
-    {
-      "path": "md/D171211-01.txt",
-      "tag": ".常见面试题",
-      "markdown": true,
-      "title": "JavaScript 面试题",
-      "modify_at": 1512984760618,
-      "create_at": 1512984323320,
-      "desc": "by jacky at 2017/12/11<br>转载自链接：https://juejin.im/post/5a0c170c6fb9a0451c39eff2 来源：掘金"
     },
     {
       "path": "md/D171208-01.txt",
