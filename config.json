@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1616148093181,
+  "last_modify": 1616148410443,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -10,8 +10,8 @@
       "path": "md/D210319-01.txt",
       "tag": ".服务器相关",
       "markdown": true,
-      "title": "自动化部署",
-      "modify_at": 1616148093181,
+      "title": "服务端自动化部署git",
+      "modify_at": 1616148410443,
       "create_at": 1616147971856,
       "desc": "by jack at 2021/03/19<br>````javascript\n// webhooks.js\nvar http = require('http');\nvar createHandler = require('/home/node/node_global/lib/node_modules/github-webhook-handler');\nvar handler = createHandler({\n    path: '/',\n    secret: 'Fx6MvYm5j@97bUH'\n});"
     },
