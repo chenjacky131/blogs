@@ -1,0 +1,69 @@
+自动化部署
+----------
+
+by jack at 2021/03/19
+
+
+````javascript
+// webhooks.js
+var http = require('http');
+var createHandler = require('/home/node/node_global/lib/node_modules/github-webhook-handler');
+var handler = createHandler({
+    path: '/',
+    secret: 'Fx6MvYm5j@97bUH'
+});
+
+function run_cmd(cmd, args, callback) {
+    var spawn = require('child_process').spawn;
+    var child = spawn(cmd, args);
+    var resp = "";
+
+    child.stdout.on('data', function (buffer) {
+        resp += buffer.toString();
+    });
+    child.stdout.on('end', function () {
+        callback(resp)
+    });
+}
+
+http.createServer(function (req, res) {
+    handler(req, res, function (err) {
+        res.statusCode = 404
+        res.end('no such location')
+    })
+}).listen(7777) // 启动服务的端口，需要开放安全组
+
+handler.on('error', function (err) {
+    console.error('Error:', err.message)
+})
+
+handler.on('push', function (event) {
+    console.log('Received a push event for %s to %s',
+        event.payload.repository.name,
+        event.payload.ref);
+    run_cmd('sh', ['./webhooks.sh', event.payload.repository.name], function (text) {
+        console.log(text)
+    });
+})
+
+````
+
+
+````
+#webhooks.sh
+#!/bin/bash
+WEB_PATH='/home/blogs'
+
+
+echo "开始执行shell"
+cd $WEB_PATH
+echo "pulling source code..."
+git pull
+echo "changing permissions..."
+#chown -R $WEB_USER:$WEB_USERGROUP $WEB_PATH
+echo " git pull 完成."
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
