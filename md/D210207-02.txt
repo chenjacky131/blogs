@@ -78,6 +78,12 @@ unrar e file.rar //解压rar
 
 unzip file.zip //解压zip
 ````
+
+10.复制文件
+
+````
+cp source_file dest_file
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

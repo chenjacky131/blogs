@@ -1,0 +1,18 @@
+Linux查看端口占用以及清除占用
+----------
+
+by jack at 2021/03/19
+
+查看端口占用
+
+````
+lsof -i:端口号
+````
+
+清除端口占用
+````
+sudo kill -9 $(lsof -i:端口号 -t)
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

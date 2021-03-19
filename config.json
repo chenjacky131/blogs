@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1616149765666,
+  "last_modify": 1616155842040,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210319-02.txt",
+      "tag": ".服务器相关",
+      "markdown": true,
+      "title": "Linux查看端口占用以及清除占用",
+      "modify_at": 1616155842040,
+      "create_at": 1616155751221,
+      "desc": "by jack at 2021/03/19<br>查看端口占用"
+    },
     {
       "path": "md/D210319-01.txt",
       "tag": ".服务器相关",
@@ -137,7 +146,7 @@
       "tag": ".服务器相关",
       "markdown": true,
       "title": "Linux常用命令",
-      "modify_at": 1612950690347,
+      "modify_at": 1616155036802,
       "create_at": 1612629499313,
       "desc": "by jacky at 2021/02/07<br>1.查找文件位置"
     },
