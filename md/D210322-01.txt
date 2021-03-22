@@ -1,0 +1,9 @@
+报vue-cli模块未找到的错误
+----------
+
+by jack at 2021/03/22
+
+升级@vue/cli插件 
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
