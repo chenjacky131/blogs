@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1617689394330,
+  "last_modify": 1617690640928,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -398,7 +398,7 @@
       "tag": ".JS",
       "markdown": true,
       "title": "常用的js函数",
-      "modify_at": 1617689394330,
+      "modify_at": 1617690640928,
       "create_at": 1562565200612,
       "desc": "by 2019 at 2019/07/08"
     },
