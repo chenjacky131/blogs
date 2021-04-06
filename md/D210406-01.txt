@@ -1,0 +1,38 @@
+Git常用命令
+----------
+
+by jack at 2021/04/06
+
+##### 1. git切换原
+
+````
+git remote set-url origin git://****.git
+````
+
+##### 2.git拉取代码
+
+````
+git pull origin branch
+````
+
+##### 3.git恢复staged的修改
+
+````
+git checkout fileath
+
+````
+
+##### 4.git切换分支
+
+````
+git checkout -b branch
+````
+
+##### 5.git从另一个分支合并内容
+
+````
+git merge branch
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

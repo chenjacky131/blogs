@@ -1,14 +1,23 @@
 {
   "version": "1.0",
-  "last_modify": 1616406620868,
+  "last_modify": 1617673532185,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
     {
+      "path": "md/D210406-01.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "Git常用命令",
+      "modify_at": 1617672168038,
+      "create_at": 1617671829107,
+      "desc": "by jack at 2021/04/06"
+    },
+    {
       "path": "md/D210322-01.txt",
-      "tag": ".遇见的问题",
+      "tag": ".Vue",
       "markdown": true,
       "title": "报vue-cli模块未找到的错误",
       "modify_at": 1616406620868,
@@ -17,7 +26,7 @@
     },
     {
       "path": "md/D210319-02.txt",
-      "tag": ".服务器相关",
+      "tag": ".Linux",
       "markdown": true,
       "title": "Linux查看端口占用以及清除占用",
       "modify_at": 1616158517556,
@@ -26,7 +35,7 @@
     },
     {
       "path": "md/D210319-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Git",
       "markdown": true,
       "title": "服务端自动化部署github",
       "modify_at": 1616158128456,
@@ -35,7 +44,7 @@
     },
     {
       "path": "md/D210228-02.txt",
-      "tag": ".遇见的问题",
+      "tag": ".Git",
       "markdown": true,
       "title": "git每次提交都需要登录的解决方法",
       "modify_at": 1614482358500,
@@ -53,7 +62,7 @@
     },
     {
       "path": "md/D210222-01.txt",
-      "tag": ".遇见的问题",
+      "tag": ".Git",
       "markdown": true,
       "title": "Failed to connect to github.com port 443: Timed out(Windows)",
       "modify_at": 1613984180015,
@@ -62,7 +71,7 @@
     },
     {
       "path": "md/D210221-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Linux",
       "markdown": true,
       "title": "Linux更改文件及目录权限问题",
       "modify_at": 1613879916162,
@@ -71,7 +80,7 @@
     },
     {
       "path": "md/D210214-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Nginx",
       "markdown": true,
       "title": "nginx配置二级域名映射到服务器本地端口",
       "modify_at": 1613298785260,
@@ -80,7 +89,7 @@
     },
     {
       "path": "md/D210210-02.txt",
-      "tag": ".服务器相关",
+      "tag": ".Nginx",
       "markdown": true,
       "title": "nginx配置多个端口",
       "modify_at": 1612961598887,
@@ -89,7 +98,7 @@
     },
     {
       "path": "md/D210210-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Node",
       "markdown": true,
       "title": "关闭已开启的node服务器进程",
       "modify_at": 1612948165304,
@@ -98,7 +107,7 @@
     },
     {
       "path": "md/D210209-02.txt",
-      "tag": ".服务器相关",
+      "tag": ".Linux",
       "markdown": true,
       "title": "Linux配置环境变量(建立软连接)",
       "modify_at": 1612876045751,
@@ -107,7 +116,7 @@
     },
     {
       "path": "md/D210209-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Linux",
       "markdown": true,
       "title": "Linux安装node",
       "modify_at": 1612874403228,
@@ -116,7 +125,7 @@
     },
     {
       "path": "md/D210207-06.txt",
-      "tag": ".服务器相关",
+      "tag": ".Wordpress",
       "markdown": true,
       "title": "wordpress安装主题无法创建目录",
       "modify_at": 1612636962290,
@@ -125,7 +134,7 @@
     },
     {
       "path": "md/D210207-05.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "navicat 1130 错误",
       "modify_at": 1612633299578,
@@ -134,7 +143,7 @@
     },
     {
       "path": "md/D210207-04.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "破解navicat",
       "modify_at": 1612631172808,
@@ -143,7 +152,7 @@
     },
     {
       "path": "md/D210207-03.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "LEMP的一些路径",
       "modify_at": 1612636251627,
@@ -152,7 +161,7 @@
     },
     {
       "path": "md/D210207-02.txt",
-      "tag": ".服务器相关",
+      "tag": ".Linux",
       "markdown": true,
       "title": "Linux常用命令",
       "modify_at": 1616155036802,
@@ -161,7 +170,7 @@
     },
     {
       "path": "md/D210207-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "Putty免密登录",
       "modify_at": 1612629277140,
@@ -170,7 +179,7 @@
     },
     {
       "path": "md/D210206-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Wordpress",
       "markdown": true,
       "title": "安装Wordpress详细教程",
       "modify_at": 1612629037904,
@@ -179,7 +188,7 @@
     },
     {
       "path": "md/D200716-01.txt",
-      "tag": ".函数库",
+      "tag": ".JS",
       "markdown": true,
       "title": "promise函数的实现",
       "modify_at": 1594884117856,
@@ -197,7 +206,7 @@
     },
     {
       "path": "md/D200216-01.txt",
-      "tag": ".Vue遇到的问题",
+      "tag": ".Vue",
       "markdown": true,
       "title": "管理全局组件",
       "modify_at": 1581843670523,
@@ -206,7 +215,7 @@
     },
     {
       "path": "md/D200203-02.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "centos 7 mysql 连接不上报2003 10038错误的问题",
       "modify_at": 1580697884517,
@@ -215,7 +224,7 @@
     },
     {
       "path": "md/D200203-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "CentOS7安装和配置iptables防火墙",
       "modify_at": 1580696919055,
@@ -242,7 +251,7 @@
     },
     {
       "path": "md/D200112-01.txt",
-      "tag": ".函数库",
+      "tag": ".移动端",
       "markdown": true,
       "title": "移动端响应式函数",
       "modify_at": 1578810098125,
@@ -260,7 +269,7 @@
     },
     {
       "path": "md/D191229-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "Centos安装最新版nodejs",
       "modify_at": 1577612346640,
@@ -269,7 +278,7 @@
     },
     {
       "path": "md/D191210-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Wordpress",
       "markdown": true,
       "title": "更改完WordPress固定链接后404的问题",
       "modify_at": 1575962433138,
@@ -278,7 +287,7 @@
     },
     {
       "path": "md/D191209-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Wordpress",
       "markdown": true,
       "title": "安装WordPress主题及插件需要输入FTP问题",
       "modify_at": 1575855917095,
@@ -287,7 +296,7 @@
     },
     {
       "path": "md/D191206-02.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "访问php页面出现直接下载文件的情况",
       "modify_at": 1575621263661,
@@ -296,7 +305,7 @@
     },
     {
       "path": "md/D191206-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "Linux Centos 8 安装 php7",
       "modify_at": 1575600540817,
@@ -305,7 +314,7 @@
     },
     {
       "path": "md/D191205-03.txt",
-      "tag": ".服务器相关",
+      "tag": ".Linux",
       "markdown": true,
       "title": "Linux 卸载php",
       "modify_at": 1575529855543,
@@ -314,7 +323,7 @@
     },
     {
       "path": "md/D191205-02.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "Centos8安装MySQL 8.0",
       "modify_at": 1575529334426,
@@ -323,7 +332,7 @@
     },
     {
       "path": "md/D191205-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Linux",
       "markdown": true,
       "title": "Linux 卸载mysql",
       "modify_at": 1575526809422,
@@ -332,7 +341,7 @@
     },
     {
       "path": "md/D191204-02.txt",
-      "tag": ".服务器相关",
+      "tag": ".服务器",
       "markdown": true,
       "title": "个人网站搭建流程",
       "modify_at": 1580629497990,
@@ -341,7 +350,7 @@
     },
     {
       "path": "md/D191204-01.txt",
-      "tag": ".服务器相关",
+      "tag": ".Linux",
       "markdown": true,
       "title": "Linux Centos 7 开启80端口",
       "modify_at": 1575427341543,
@@ -350,7 +359,7 @@
     },
     {
       "path": "md/D191030-01.txt",
-      "tag": ".常用",
+      "tag": ".前端",
       "markdown": true,
       "title": "前端知识体系概括",
       "modify_at": 1578803240041,
@@ -359,7 +368,7 @@
     },
     {
       "path": "md/D190928-02.txt",
-      "tag": ".遇见的问题",
+      "tag": ".移动端",
       "markdown": true,
       "title": "ios阻止双击页面缩放",
       "modify_at": 1569641842493,
@@ -368,7 +377,7 @@
     },
     {
       "path": "md/D190928-01.txt",
-      "tag": ".遇见的问题",
+      "tag": ".移动端",
       "markdown": true,
       "title": "ios端click事件不生效的情况",
       "modify_at": 1569641311411,
@@ -377,7 +386,7 @@
     },
     {
       "path": "md/D190820-01.txt",
-      "tag": ".遇见的问题",
+      "tag": ".遇到的问题",
       "markdown": true,
       "title": "jq属性选择器的兼容问题",
       "modify_at": 1566270275195,
@@ -386,7 +395,7 @@
     },
     {
       "path": "md/D190708-01.txt",
-      "tag": ".函数库",
+      "tag": ".JS",
       "markdown": true,
       "title": "常用的js函数",
       "modify_at": 1562565290978,
@@ -395,7 +404,7 @@
     },
     {
       "path": "md/D190619-01.txt",
-      "tag": ".教程",
+      "tag": ".JS",
       "markdown": true,
       "title": "binery数据的转换，字符串转为ArrayBuffer",
       "modify_at": 1560933530852,
@@ -404,7 +413,7 @@
     },
     {
       "path": "md/D190530-01.txt",
-      "tag": ".遇见的问题",
+      "tag": ".遇到的问题",
       "markdown": true,
       "title": "new Date(str)返回 Invalid date问题",
       "modify_at": 1559207013967,
@@ -413,7 +422,7 @@
     },
     {
       "path": "md/D190328-01.txt",
-      "tag": ".Vue遇到的问题",
+      "tag": ".Vue",
       "markdown": true,
       "title": "data数据为对象或者数组时候的问题",
       "modify_at": 1553762465261,
@@ -422,7 +431,7 @@
     },
     {
       "path": "md/D190215-01.txt",
-      "tag": ".教程",
+      "tag": ".JS",
       "markdown": true,
       "title": "包装对象的深拷贝",
       "modify_at": 1550221579405,
@@ -431,7 +440,7 @@
     },
     {
       "path": "md/D190130-03.txt",
-      "tag": ".教程",
+      "tag": ".移动端",
       "markdown": true,
       "title": "移动端上拉加载更多实例，基于iscroll",
       "modify_at": 1548840192479,
@@ -440,7 +449,7 @@
     },
     {
       "path": "md/D190130-02.txt",
-      "tag": ".遇见的问题",
+      "tag": ".JS",
       "markdown": true,
       "title": "一个页面书写两个window.onload的方法，防止覆盖之前的onload方法",
       "modify_at": 1548833403474,
@@ -449,7 +458,7 @@
     },
     {
       "path": "md/D190114-01.txt",
-      "tag": ".css技巧",
+      "tag": ".CSS",
       "markdown": true,
       "title": "CSS写字母",
       "modify_at": 1547448873095,
@@ -458,7 +467,7 @@
     },
     {
       "path": "md/D190111-02.txt",
-      "tag": ".教程",
+      "tag": ".移动端",
       "markdown": true,
       "title": "移动端自定义tap事件以及点透的问题",
       "modify_at": 1547177142490,
@@ -467,7 +476,7 @@
     },
     {
       "path": "md/D190111-01.txt",
-      "tag": ".遇见的问题",
+      "tag": ".移动端",
       "markdown": true,
       "title": "移动端发生两次点击的情况",
       "modify_at": 1547176940631,
@@ -476,7 +485,7 @@
     },
     {
       "path": "md/D190104-01.txt",
-      "tag": ".css技巧",
+      "tag": ".CSS",
       "markdown": true,
       "title": "chrome下的滚动条样式",
       "modify_at": 1546589065054,
@@ -494,7 +503,7 @@
     },
     {
       "path": "md/D181228-02.txt",
-      "tag": ".Vue遇到的问题",
+      "tag": ".Vue",
       "markdown": true,
       "title": "scoped属性style里面样式不生效的情况",
       "modify_at": 1545978306496,
@@ -512,7 +521,7 @@
     },
     {
       "path": "md/D181227-02.txt",
-      "tag": ".教程",
+      "tag": ".JS",
       "markdown": true,
       "title": "获取iframe的内容",
       "modify_at": 1545898593679,
@@ -521,7 +530,7 @@
     },
     {
       "path": "md/D181227-01.txt",
-      "tag": ".教程",
+      "tag": ".遇到的问题",
       "markdown": true,
       "title": "URL编码的问题",
       "modify_at": 1545880586610,
@@ -530,7 +539,7 @@
     },
     {
       "path": "md/D181225-01.txt",
-      "tag": ".css技巧",
+      "tag": ".CSS",
       "markdown": true,
       "title": "饼图制作",
       "modify_at": 1545729696079,
@@ -539,7 +548,7 @@
     },
     {
       "path": "md/D181224-01.txt",
-      "tag": ".css技巧",
+      "tag": ".CSS",
       "markdown": true,
       "title": "css3渐变实现方格色块背景",
       "modify_at": 1545619385852,
@@ -551,13 +560,13 @@
       "tag": ".规范",
       "markdown": true,
       "title": "编码风格",
-      "modify_at": 1545549939711,
+      "modify_at": 1617673440193,
       "create_at": 1545549244909,
       "desc": "by jacky at 2018/12/23"
     },
     {
       "path": "md/D181221-02.txt",
-      "tag": ".教程",
+      "tag": ".JS",
       "markdown": true,
       "title": "返回页面顶部的效果",
       "modify_at": 1545381166354,
@@ -586,14 +595,14 @@
       "path": "md/D181213-01.txt",
       "tag": ".教程",
       "markdown": true,
-      "title": "移动端适配方案",
-      "modify_at": 1544693740660,
+      "title": "多端适配方案",
+      "modify_at": 1617671673179,
       "create_at": 1544692524887,
-      "desc": "by jacky at 2018/12/13<br>rem的换算，设计稿上的尺寸除以/baseFontSize \n即比如设计稿上的宽度为750，转换成rem就是   750rem / 75\n````javascript\n(function (baseFontSize) {\n    var _baseFontSize = baseFontSize || 75;\n    var ua = navigator.userAgent;\n    var matches = ua.match(/Android[\\S\\s]+AppleWebkit\\/(\\d{3})/i);\n    var isIos = navigator.appVersion.match(/(iphone|ipad|ipod)/gi);"
+      "desc": "by jacky at 2018/12/13<br>````javascript\n(function (baseFontSize) {\n    var _baseFontSize = baseFontSize || 75;\n    var ua = navigator.userAgent;\n    var matches = ua.match(/Android[\\S\\s]+AppleWebkit\\/(\\d{3})/i);\n    var isIos = navigator.appVersion.match(/(iphone|ipad|ipod)/gi);"
     },
     {
       "path": "md/D181212-01.txt",
-      "tag": ".js设计模式",
+      "tag": ".设计模式",
       "markdown": true,
       "title": "订阅者模式",
       "modify_at": 1544606808917,
@@ -602,7 +611,7 @@
     },
     {
       "path": "md/D181211-03.txt",
-      "tag": ".js设计模式",
+      "tag": ".设计模式",
       "markdown": true,
       "title": "迭代器模式",
       "modify_at": 1544518194140,
@@ -611,7 +620,7 @@
     },
     {
       "path": "md/D181211-02.txt",
-      "tag": ".js设计模式",
+      "tag": ".设计模式",
       "markdown": true,
       "title": "代理模式",
       "modify_at": 1544511313169,
@@ -629,7 +638,7 @@
     },
     {
       "path": "md/D181207-01.txt",
-      "tag": ".教程",
+      "tag": ".JS",
       "markdown": true,
       "title": "日历js写法",
       "modify_at": 1544166799027,
@@ -638,7 +647,7 @@
     },
     {
       "path": "md/D181205-01.txt",
-      "tag": ".教程",
+      "tag": ".JS",
       "markdown": true,
       "title": "异步的一些写法",
       "modify_at": 1543975753759,
@@ -656,7 +665,7 @@
     },
     {
       "path": "md/D181121-02.txt",
-      "tag": ".js设计模式",
+      "tag": ".设计模式",
       "markdown": true,
       "title": "策略模式",
       "modify_at": 1542783639013,
@@ -665,7 +674,7 @@
     },
     {
       "path": "md/D181121-01.txt",
-      "tag": ".js设计模式",
+      "tag": ".设计模式",
       "markdown": true,
       "title": "单例模式",
       "modify_at": 1542781488337,
@@ -692,7 +701,7 @@
     },
     {
       "path": "md/D181114-02.txt",
-      "tag": ".Vue遇到的问题",
+      "tag": ".Vue",
       "markdown": true,
       "title": "当data里面的属性需要依赖其它属性时",
       "modify_at": 1542181840309,
@@ -701,7 +710,7 @@
     },
     {
       "path": "md/D181114-01.txt",
-      "tag": ".函数库",
+      "tag": ".JS",
       "markdown": true,
       "title": "常用函数",
       "modify_at": 1542783526601,
@@ -710,7 +719,7 @@
     },
     {
       "path": "md/D181113-02.txt",
-      "tag": ".Vue遇到的问题",
+      "tag": ".Vue",
       "markdown": true,
       "title": "Vue里面应用资源的一些便捷写法",
       "modify_at": 1542094125090,
@@ -719,7 +728,7 @@
     },
     {
       "path": "md/D181113-01.txt",
-      "tag": ".Vue遇到的问题",
+      "tag": ".Vue",
       "markdown": true,
       "title": "获取渲染后的dom高度",
       "modify_at": 1542093965631,
@@ -728,7 +737,7 @@
     },
     {
       "path": "md/D181102-01.txt",
-      "tag": ".遇见的问题",
+      "tag": ".Node",
       "markdown": true,
       "title": "Windows 安装node-sass包失败的解决方案",
       "modify_at": 1541138394726,
@@ -737,7 +746,7 @@
     },
     {
       "path": "md/D181101-01.txt",
-      "tag": ".遇见的问题",
+      "tag": ".遇到的问题",
       "markdown": true,
       "title": "引用对象的赋值问题",
       "modify_at": 1541062012834,
@@ -746,7 +755,7 @@
     },
     {
       "path": "md/D181017-01.txt",
-      "tag": ".教程",
+      "tag": ".CSS",
       "markdown": true,
       "title": "css3的border-image属性",
       "modify_at": 1539743798677,
@@ -755,7 +764,7 @@
     },
     {
       "path": "md/D181003-02.txt",
-      "tag": ".遇见的问题",
+      "tag": ".遇到的问题",
       "markdown": true,
       "title": "文件BOM头的坑",
       "modify_at": 1538557605977,
@@ -791,7 +800,7 @@
     },
     {
       "path": "md/D180903-02.txt",
-      "tag": ".常用",
+      "tag": ".教程",
       "markdown": true,
       "title": "IE支持HTML5和媒体查询",
       "modify_at": 1535957340947,
@@ -836,7 +845,7 @@
     },
     {
       "path": "md/D180609-01.txt",
-      "tag": ".教程",
+      "tag": ".Node",
       "markdown": true,
       "title": "修改npm安装的全局路径和配置环境变量的坑",
       "modify_at": 1528536088670,
@@ -854,7 +863,7 @@
     },
     {
       "path": "md/D180406-02.txt",
-      "tag": "",
+      "tag": ".JS",
       "markdown": true,
       "title": "事件监听的even",
       "modify_at": 1523006541310,
@@ -863,7 +872,7 @@
     },
     {
       "path": "md/D180406-01.txt",
-      "tag": "全屏的监听",
+      "tag": "全屏的监听.JS",
       "markdown": true,
       "title": "全屏的监听",
       "modify_at": 1523006412655,
@@ -881,7 +890,7 @@
     },
     {
       "path": "md/D171227-02.txt",
-      "tag": ".常用",
+      "tag": ".JS",
       "markdown": true,
       "title": "localStorage、sessionStorage、cookie的区别",
       "modify_at": 1514365445304,
@@ -890,7 +899,7 @@
     },
     {
       "path": "md/D171227-01.txt",
-      "tag": ".常用",
+      "tag": ".JS",
       "markdown": true,
       "title": "判断IE的js",
       "modify_at": 1514359589451,
@@ -908,7 +917,7 @@
     },
     {
       "path": "md/D171212-01.txt",
-      "tag": ".教程",
+      "tag": ".JS",
       "markdown": true,
       "title": "Canvas实现放大镜功能",
       "modify_at": 1513072399786,
@@ -917,7 +926,7 @@
     },
     {
       "path": "md/D171208-01.txt",
-      "tag": "Sass注释中文报错问题.常用",
+      "tag": "Sass注释中文报错问题.CSS",
       "markdown": true,
       "title": "Sass注释中文报错问题",
       "modify_at": 1512722157839,
@@ -926,7 +935,7 @@
     },
     {
       "path": "md/D171124-02.txt",
-      "tag": ".教程",
+      "tag": ".JS",
       "markdown": true,
       "title": "Webpack 提取公共代码，分离第三方插件",
       "modify_at": 1511495203145,
@@ -935,7 +944,7 @@
     },
     {
       "path": "md/D171124-01.txt",
-      "tag": ".常用",
+      "tag": ".Node",
       "markdown": true,
       "title": "常用npm脚本",
       "modify_at": 1511487705758,
@@ -944,7 +953,7 @@
     },
     {
       "path": "md/D171120-03.txt",
-      "tag": ".教程",
+      "tag": ".React",
       "markdown": true,
       "title": "React使用antd的快捷方法",
       "modify_at": 1511182568899,

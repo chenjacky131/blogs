@@ -1,12 +1,13 @@
-移动端适配方案
+多端适配方案
 ----------
 
 by jacky at 2018/12/13
 
 &nbsp;
 
-rem的换算，设计稿上的尺寸除以/baseFontSize 
+1. rem的换算，设计稿上的尺寸除以/baseFontSize 
 即比如设计稿上的宽度为750，转换成rem就是   750rem / 75
+
 ````javascript
 (function (baseFontSize) {
     var _baseFontSize = baseFontSize || 75;
@@ -30,6 +31,43 @@ rem的换算，设计稿上的尺寸除以/baseFontSize
     document.documentElement.style.fontSize = document.documentElement.clientWidth / (750 / _baseFontSize) + 'px';
 })();
 
+````
+
+2. 固定一个尺寸大小，然后根据不同的屏幕进行transform缩放
+
+````
+
+    window.addEventListener("resize", this.$debounce(this.setScale));
+    getScale() {
+      const baseHeight = 1080;//  以1920 * 1080 的设计稿为基准，所有尺寸可用像素或者百分比，其它屏幕根据屏幕宽度进行缩放
+      const baseWidth = 1920;
+      let wh = window.innerHeight / baseHeight;
+      let ww = window.innerWidth / baseWidth;
+      if(window.innerWidth === 3840){//  大屏时不进行缩放
+        document.querySelector('.ScaleBox').style.width="3840px";
+        return 1;
+      }else{
+        document.querySelector('.ScaleBox').style.width="1920px";
+        return wh > ww ? ww : wh; // 哪个比例小，按哪个显示，就不会出现屏幕被导航栏和状态栏挡住的情况
+      }
+    },
+    setScale() {
+      this.scale = this.getScale();
+      this.$refs.ScaleBox&&this.$refs.ScaleBox.style.setProperty("--scale", this.scale);//  设置--scale变量，从而在样式里面引用，进行缩放
+    }
+
+
+.ScaleBox {
+  --scale: 1;
+  transform: scale(var(--scale)) translate(-50%, -50%) ;
+  transform-origin: 0 0;
+  width: 1920px;
+  height: 1080px;
+  border-bottom: 1px solid #0f3c72;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
