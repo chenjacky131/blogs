@@ -1,0 +1,9 @@
+Vue自定义加载层注意事项
+----------
+
+by jack at 2021/04/09
+
+在axios的拦截器里面设置loading，用vuex来控制显示隐藏。当有多个请求时，只有在第一个请求时显示loading，利用变量记录请求的次数，当请求完成时，隐藏定时器。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

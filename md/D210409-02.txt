@@ -1,0 +1,27 @@
+Vue3.0定义全局函数
+----------
+
+by jack at 2021/04/09
+
+````
+// global.js 通过app.config.globalProperties这个对象挂载全局属性
+export default {
+    install: (app, options) => {//  以插件的形式引入全局方法
+      app.config.globalProperties.$fun= (fn, delay) => {
+
+        };
+      }
+    }
+  }
+// main.js
+import globalFunc from './global.js'
+app.use(globalFunc)从而可以全局引用
+
+// Vue3中使用this(ctx全局上下文)
+
+import { getCurrentInstance} from "vue";
+const { ctx } = getCurrentInstance();
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

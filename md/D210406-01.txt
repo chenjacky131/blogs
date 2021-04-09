@@ -22,7 +22,7 @@ git checkout fileath
 
 ````
 
-##### 4.git切换分支
+##### 4.git新建分支
 
 ````
 git checkout -b branch
@@ -32,6 +32,18 @@ git checkout -b branch
 
 ````
 git merge branch
+````
+
+##### 6.查看当前分支所有
+
+````
+git branch -a
+````
+
+##### 7.切换分支
+
+````
+git checkout branch
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>

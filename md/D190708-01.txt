@@ -9,6 +9,45 @@ by 2019 at 2019/07/08
 return Math.floor(Math.random()*(to-from+1))+from
 
 ````
+##### 2.节流函数
+
+````
+const debounce = (fn, delay) => {// 节流函数
+        let delays = delay || 500;
+        let timer;
+        return function() {
+            let th = this;
+            let args = arguments;
+            if (timer) {
+            clearTimeout(timer);
+            }
+            timer = setTimeout(function() {
+            timer = null;
+            fn.apply(th, args);
+            }, delays);
+        };
+ }
+````
+
+##### 3.判断一个元素是否为另一个元素的父元素
+
+````
+const isParent = (obj, parentObj) => {//  判断一个元素是否为另一个元素的子元素，obj为需要判断的元素，parentObj为父元素
+        while (
+          obj != undefined &&
+          obj != null &&
+          (obj.tagName && obj.tagName.toUpperCase()) != "BODY"
+        ) {
+          if (obj == parentObj) {
+            return true;
+          }
+          obj = obj.parentNode;
+        }
+        return false;
+      }
+      app.config.globalProperties.$moment = moment
+    }
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

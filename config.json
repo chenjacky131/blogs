@@ -1,17 +1,35 @@
 {
   "version": "1.0",
-  "last_modify": 1617690640928,
+  "last_modify": 1617953873038,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
     {
+      "path": "md/D210409-02.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "Vue3.0定义全局函数",
+      "modify_at": 1617953594090,
+      "create_at": 1617953314278,
+      "desc": "by jack at 2021/04/09<br>````\n// global.js 通过app.config.globalProperties这个对象挂载全局属性\nexport default {\n    install: (app, options) => {//  以插件的形式引入全局方法\n      app.config.globalProperties.$fun= (fn, delay) => {"
+    },
+    {
+      "path": "md/D210409-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "Vue自定义加载层注意事项",
+      "modify_at": 1617953251726,
+      "create_at": 1617953113823,
+      "desc": "by jack at 2021/04/09<br>在axios的拦截器里面设置loading，用vuex来控制显示隐藏。当有多个请求时，只有在第一个请求时显示loading，利用变量记录请求的次数，当请求完成时，隐藏定时器。"
+    },
+    {
       "path": "md/D210406-01.txt",
       "tag": ".Git",
       "markdown": true,
       "title": "Git常用命令",
-      "modify_at": 1617672168038,
+      "modify_at": 1617691393068,
       "create_at": 1617671829107,
       "desc": "by jack at 2021/04/06"
     },
@@ -398,9 +416,9 @@
       "tag": ".JS",
       "markdown": true,
       "title": "常用的js函数",
-      "modify_at": 1617690640928,
+      "modify_at": 1617953873038,
       "create_at": 1562565200612,
-      "desc": "by 2019 at 2019/07/08"
+      "desc": "by 2019 at 2019/07/08<br>````\nconst debounce = (fn, delay) => {// 节流函数\n        let delays = delay || 500;\n        let timer;"
     },
     {
       "path": "md/D190619-01.txt",
@@ -506,9 +524,9 @@
       "tag": ".Vue",
       "markdown": true,
       "title": "scoped属性style里面样式不生效的情况",
-      "modify_at": 1545978306496,
+      "modify_at": 1617937857518,
       "create_at": 1545978080246,
-      "desc": "by jacky at 2018/12/28<br>当style样式标签包含scoped时，组建的样式会生成相应的key[data-v-key]。"
+      "desc": "by jacky at 2018/12/28<br>当style样式标签包含scoped时，组建的样式会生成相应的key[data-v-key]。\n为了避免生成key，在样式前面加/deep/ ，这样生成的样式就不会带key属性了。"
     },
     {
       "path": "md/D181227-03.txt",
