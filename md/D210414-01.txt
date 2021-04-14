@@ -1,0 +1,10 @@
+Vue组件封装注意点
+----------
+
+by jack at 2021/04/14
+
+1. 组件的操作数据逻辑提取到父组件，组件只保留公共的部分
+2. name属性在vue Devtools里面可以显示组件名字，未填写显示为匿名组件
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,11 +1,38 @@
 {
   "version": "1.0",
-  "last_modify": 1617953873038,
+  "last_modify": 1618370650052,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210414-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "Vue组件封装注意点",
+      "modify_at": 1618370650052,
+      "create_at": 1618370530570,
+      "desc": "by jack at 2021/04/14"
+    },
+    {
+      "path": "md/D210413-02.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "组件接收而外的参数",
+      "modify_at": 1618302976532,
+      "create_at": 1618302890590,
+      "desc": "by jack at 2021/04/13<br>````\nfun(...arguments, arg);// arg为额外参数"
+    },
+    {
+      "path": "md/D210413-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "使用scss时出现this.getOptions is not a function",
+      "modify_at": 1618296070900,
+      "create_at": 1618295992688,
+      "desc": "by jack at 2021/04/13<br>版本的问题，安装低版本的插件可以解决"
+    },
     {
       "path": "md/D210409-02.txt",
       "tag": ".Vue",
@@ -29,7 +56,7 @@
       "tag": ".Git",
       "markdown": true,
       "title": "Git常用命令",
-      "modify_at": 1617691393068,
+      "modify_at": 1618295999435,
       "create_at": 1617671829107,
       "desc": "by jack at 2021/04/06"
     },

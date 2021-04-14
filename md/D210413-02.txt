@@ -1,0 +1,11 @@
+组件接收而外的参数
+----------
+
+by jack at 2021/04/13
+
+````
+fun(...arguments, arg);// arg为额外参数
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

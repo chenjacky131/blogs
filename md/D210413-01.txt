@@ -1,0 +1,14 @@
+使用scss时出现this.getOptions is not a function
+----------
+
+by jack at 2021/04/13
+
+版本的问题，安装低版本的插件可以解决
+
+````
+cnpm install sass-loader@8.0.2 node-sass@4.14.1
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
