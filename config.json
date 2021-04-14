@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1618372190362,
+  "last_modify": 1618372454394,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210414-02.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "Git Warning: LF will be replaced by CRLF",
+      "modify_at": 1618372454394,
+      "create_at": 1618372407778,
+      "desc": "by jack at 2021/04/14<br>````\ngit config --global core.autocrlf false"
+    },
     {
       "path": "md/D210414-01.txt",
       "tag": ".Vue",

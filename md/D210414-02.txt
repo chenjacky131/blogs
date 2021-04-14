@@ -1,0 +1,11 @@
+Git Warning: LF will be replaced by CRLF
+----------
+
+by jack at 2021/04/14
+
+````
+git config --global core.autocrlf false
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
