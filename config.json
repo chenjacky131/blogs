@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1618370650052,
+  "last_modify": 1618372190362,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -11,9 +11,9 @@
       "tag": ".Vue",
       "markdown": true,
       "title": "Vue组件封装注意点",
-      "modify_at": 1618370650052,
+      "modify_at": 1618372190362,
       "create_at": 1618370530570,
-      "desc": "by jack at 2021/04/14"
+      "desc": "by jacky at 2021/04/14"
     },
     {
       "path": "md/D210413-02.txt",
