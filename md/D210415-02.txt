@@ -1,0 +1,28 @@
+当一个文件中涉及多个模块，可以利用mixin来减少单个文件的代码量
+----------
+
+by jack at 2021/04/15
+
+````
+// mixin.js
+const mixin = {
+  data(){
+    return {
+      test: '测试'
+    }
+  }
+}
+export default mixin
+````
+
+````
+// a.vue
+import mixinName from './mixin.js'; 
+
+export defalut {
+  mixins: [mixinName]
+}
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

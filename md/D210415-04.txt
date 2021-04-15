@@ -1,0 +1,52 @@
+CommonJS和ES6 Module的一些区别
+----------
+
+by jack at 2021/04/15
+
+#### CommonJS
+````
+// 导出模块内容可以用以下两种方式，效果一样，但是不能混用
+1. 第一种
+module.exports = {
+  name: 'test'
+}
+2. 第二种
+exports.name = 'test'
+// 使用
+const obj = require('commonJS_exports');
+obj.name; // 'test'
+
+````
+
+#### ES6 Module
+````
+1. 命名导出
+
+  a: export const name = 'test'
+  b: const name = 'test';
+     export { name }
+
+2.默认导出
+const name = 'test';
+export default name;
+
+// 使用
+命名导入：import {name} from './es6_export.js';  //  import { name as diyName } from ...;
+
+默认导入: import diyName from './es6_export.js';  // import { default as diyName} from ...;
+
+````
+
+#### 区别
+````
+commonjs为动态的，es6module为静态的
+
+es6module:ES6 Module的导入、导出语句都是声明式，它不支持导入的路径是一个表达式，并且导入、导出语句必须位于模块的顶层作用域（比如不能放在if语句中）
+
+commonjs:require的模块路径可以动态指定，支持传入一个表达式，我们甚至可以通过if语句判断是否加载某个模块
+
+commonjs为值拷贝，es6module为动态映射，并且是只读的。
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

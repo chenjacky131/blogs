@@ -1,11 +1,38 @@
 {
   "version": "1.0",
-  "last_modify": 1618372454394,
+  "last_modify": 1618476395158,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210415-04.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "CommonJS和ES6 Module的一些区别",
+      "modify_at": 1618476395158,
+      "create_at": 1618475189810,
+      "desc": "by jack at 2021/04/15<br>````\n// 导出模块内容可以用以下两种方式，效果一样，但是不能混用"
+    },
+    {
+      "path": "md/D210415-02.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "当一个文件中涉及多个模块，可以利用mixin来减少单个文件的代码量",
+      "modify_at": 1618475023188,
+      "create_at": 1618474828427,
+      "desc": "by jack at 2021/04/15<br>````\n// mixin.js\nconst mixin = {\n  data(){\n    return {\n      test: '测试'\n    }\n  }\n}"
+    },
+    {
+      "path": "md/D210415-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "如何让iview的Modal弹窗点击确定时保持不关闭状态",
+      "modify_at": 1618467292039,
+      "create_at": 1618467194918,
+      "desc": "by jack at 2021/04/15"
+    },
     {
       "path": "md/D210414-02.txt",
       "tag": ".Git",
@@ -614,9 +641,9 @@
       "tag": ".规范",
       "markdown": true,
       "title": "编码风格",
-      "modify_at": 1617673440193,
+      "modify_at": 1618391755103,
       "create_at": 1545549244909,
-      "desc": "by jacky at 2018/12/23"
+      "desc": "by jack at 2018/12/23"
     },
     {
       "path": "md/D181221-02.txt",

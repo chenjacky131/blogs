@@ -1,0 +1,9 @@
+如何让iview的Modal弹窗点击确定时保持不关闭状态
+----------
+
+by jack at 2021/04/15
+
+通过自定义底部footer，然后在确定的回调中返回false就能避免弹窗关闭
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
