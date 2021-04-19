@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1618545363832,
+  "last_modify": 1618645530971,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -14,6 +14,15 @@
       "modify_at": 1618545363832,
       "create_at": 1618545255587,
       "desc": "by jack at 2021/04/16<br>````\n /(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)/;  //  省份证正则15位或者18位"
+    },
+    {
+      "path": "md/D210417-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "Vue3项目打包上生产后，const { ctx } = getCurrentInstance()无法获取全局对象的问题",
+      "modify_at": 1618645530971,
+      "create_at": 1618645364184,
+      "desc": "by jack at 2021/04/17<br>````\n   const { proxy } = getCurrentInstance() // 使用proxy代替ctx，因为ctx只在开发环境有效\n    console.log(proxy.$root.$route, proxy.$root.$router) // 路由信息\n    console.log(proxy.$systemName) // 全局挂载对象"
     },
     {
       "path": "md/D210415-04.txt",
@@ -350,7 +359,7 @@
     },
     {
       "path": "md/D200108-01.txt",
-      "tag": ".Python",
+      "tag": ".遇到的问题",
       "markdown": true,
       "title": "Python3.8安装Scrapy爬虫框架(Windows)",
       "modify_at": 1578473486139,

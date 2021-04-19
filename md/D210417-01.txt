@@ -1,0 +1,14 @@
+Vue3项目打包上生产后，const { ctx } = getCurrentInstance()无法获取全局对象的问题
+----------
+
+by jack at 2021/04/17
+
+````
+   const { proxy } = getCurrentInstance() // 使用proxy代替ctx，因为ctx只在开发环境有效
+    console.log(proxy.$root.$route, proxy.$root.$router) // 路由信息
+    console.log(proxy.$systemName) // 全局挂载对象
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
