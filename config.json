@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1618476395158,
+  "last_modify": 1618545363832,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210416-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "常用正则表达式",
+      "modify_at": 1618545363832,
+      "create_at": 1618545255587,
+      "desc": "by jack at 2021/04/16<br>````\n /(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)/;  //  省份证正则15位或者18位"
+    },
     {
       "path": "md/D210415-04.txt",
       "tag": ".JS",
