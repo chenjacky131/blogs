@@ -1,0 +1,23 @@
+uniapp禁用原生导航栏后内容被覆盖的问题
+----------
+
+by jack at 2021/04/21
+
+在那日容顶部增加一个占位的标签
+````
+<view :style="{ height: iStatusBarHeight + 'px'}"></view>
+````
+在页面的方法里面获取导航栏的高度并赋值给占位标签
+````
+data() {
+  return {
+    iStatusBarHeight: 0
+  }
+},
+onLoad() {
+  this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
+}
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

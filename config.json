@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1618645530971,
+  "last_modify": 1619079919463,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210422-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "Vue中全局使用Scss变量",
+      "modify_at": 1619079919463,
+      "create_at": 1619079848902,
+      "desc": "by jack at 2021/04/22<br>```\nmodule.exports = {\n  css: {\n    // css预设器配置项\n    loaderOptions: {\n      scss: {\n        prependData:@import \"~@/common/css/var.scss\";@import \"~@/common/css/mixin.scss\";`\n      }\n    }"
+    },
+    {
+      "path": "md/D210421-02.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "uniapp禁用原生导航栏后内容被覆盖的问题",
+      "modify_at": 1618976094770,
+      "create_at": 1618975540130,
+      "desc": "by jack at 2021/04/21<br>在那日容顶部增加一个占位的标签"
+    },
     {
       "path": "md/D210416-01.txt",
       "tag": ".JS",

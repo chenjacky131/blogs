@@ -1,0 +1,21 @@
+Vue中全局使用Scss变量
+----------
+
+by jack at 2021/04/22
+
+````
+module.exports = {
+  css: {
+    // css预设器配置项
+    loaderOptions: {
+      scss: {
+        prependData: `@import "~@/common/css/var.scss";@import "~@/common/css/mixin.scss";`
+      }
+    }
+  }
+};
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
