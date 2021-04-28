@@ -1,0 +1,9 @@
+uni-app easycom组件坑
+----------
+
+by jack at 2021/04/27
+
+需要通过鼠标右键，新建组件的才能生效，自己创建的文件夹无法自动引入
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

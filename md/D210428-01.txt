@@ -1,0 +1,10 @@
+transform样式的坑
+----------
+
+by jack at 2021/04/28
+
+
+对于inline元素不生效
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

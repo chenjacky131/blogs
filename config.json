@@ -1,11 +1,38 @@
 {
   "version": "1.0",
-  "last_modify": 1619079919463,
+  "last_modify": 1619602696118,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210428-02.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "自用表单验证",
+      "modify_at": 1619602696118,
+      "create_at": 1619601185446,
+      "desc": "by jack at 2021/04/28<br>````\n/*\nvalidator.js"
+    },
+    {
+      "path": "md/D210428-01.txt",
+      "tag": ".CSS",
+      "markdown": true,
+      "title": "transform样式的坑",
+      "modify_at": 1619575093865,
+      "create_at": 1619575045790,
+      "desc": "by jack at 2021/04/28"
+    },
+    {
+      "path": "md/D210427-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "uni-app easycom组件坑",
+      "modify_at": 1619488557698,
+      "create_at": 1619488483614,
+      "desc": "by jack at 2021/04/27"
+    },
     {
       "path": "md/D210422-01.txt",
       "tag": ".Vue",
