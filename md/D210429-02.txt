@@ -1,0 +1,9 @@
+编写代码时的规范
+----------
+
+by jack at 2021/04/29
+
+1. ajax每条请求写在配置文件里面，请求时只需要写请求名字和参数就行,请求的地址也当杜写在配置文件里面，方便本地开发切开发环境时的操作，只需要修改地址和参数就可以了。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

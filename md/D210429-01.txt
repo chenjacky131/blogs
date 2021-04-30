@@ -1,0 +1,12 @@
+切页面时的注意事项
+----------
+
+by jack at 2021/04/29
+
+&nbsp;
+
+1. 登录注册页面的样式可以统一用一个，减少代码量
+2. 很多常用的css属性或者布局可以写成scss的mixin在需要的地方引入，或者写成通用的class直接使用
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

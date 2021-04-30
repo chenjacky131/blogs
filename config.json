@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1619602696118,
+  "last_modify": 1619687125099,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210429-02.txt",
+      "tag": ".规范",
+      "markdown": true,
+      "title": "编写代码时的规范",
+      "modify_at": 1619687125099,
+      "create_at": 1619686902703,
+      "desc": "by jack at 2021/04/29"
+    },
+    {
+      "path": "md/D210429-01.txt",
+      "tag": ".规范",
+      "markdown": true,
+      "title": "切页面时的注意事项",
+      "modify_at": 1619683207722,
+      "create_at": 1619683081874,
+      "desc": "by jack at 2021/04/29"
+    },
     {
       "path": "md/D210428-02.txt",
       "tag": ".JS",
