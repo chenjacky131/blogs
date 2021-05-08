@@ -1,0 +1,10 @@
+页面的权限问题
+----------
+
+by jack at 2021/05/07
+
+
+可以用router.beforeEach方法来拦截路由访问，从而进行相应的跳转，比如没有登录无法访问特定的页面。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

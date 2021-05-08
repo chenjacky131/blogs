@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1619687125099,
+  "last_modify": 1620459316005,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210508-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "简单的文件下载功能",
+      "modify_at": 1620459316005,
+      "create_at": 1620459226401,
+      "desc": "by jack at 2021/05/08<br>````\n      //定义文件内容，类型必须为Blob 否则createObjectURL会报错 this.codeEditor.getValue为编辑器里的文本\n      const content = new Blob([this.codeEditor.getValue()])"
+    },
+    {
+      "path": "md/D210507-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "页面的权限问题",
+      "modify_at": 1620351413431,
+      "create_at": 1620351315231,
+      "desc": "by jack at 2021/05/07"
+    },
     {
       "path": "md/D210429-02.txt",
       "tag": ".规范",

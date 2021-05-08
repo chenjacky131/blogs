@@ -1,0 +1,25 @@
+简单的文件下载功能
+----------
+
+by jack at 2021/05/08
+
+````
+      //定义文件内容，类型必须为Blob 否则createObjectURL会报错 this.codeEditor.getValue为编辑器里的文本
+      const content = new Blob([this.codeEditor.getValue()])
+
+      //生成url对象
+      const urlObject = window.URL || window.webkitURL || window
+      const url = urlObject.createObjectURL(content)
+      //生成<a></a>DOM元素
+      const el = document.createElement('a')
+      //链接赋值
+      el.href = url
+      el.download = 'strategy.js'
+      //必须点击否则不会下载
+      el.click()
+      //移除链接释放资源
+      urlObject.revokeObjectURL(url)
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
