@@ -1,0 +1,185 @@
+Leaflet中文文档
+----------
+
+by jack at 2021/05/11
+
+
+1.引入资源
+````
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+````
+
+2.地图容器
+````
+  <div id="mapid"></div>
+  <style>
+    #mapid { height: 180px; }
+  </style>
+````
+
+3.初始化
+
+````
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+````
+
+4.添加图层
+
+````
+  // 用的是mapbox的地图图层，需要去它们那里注册个账号，取得access token.这只是其中一个地图图层提供商， 也可以使用其它的。
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'your.mapbox.access.token'
+  }).addTo(mymap);
+
+````
+
+5.添加标记
+
+````
+var marker = L.marker([51.5, -0.09]).addTo(mymap);
+````
+
+6.添加圆形
+
+````
+var circle = L.circle([51.508, -0.11], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(mymap);
+````
+
+7.添加多边形
+
+````
+var polygon = L.polygon([
+    [51.509, -0.08],
+    [51.503, -0.06],
+    [51.51, -0.047]
+]).addTo(mymap);
+````
+
+8.在元素上添加提示框
+
+````
+marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+polygon.bindPopup("I am a polygon.");
+````
+9.在地图上添加独立的提示框层
+````
+    // 这里使用openOn而不使用addTo是应为openOn会自动关闭地图上已经打开的提示框，用户体验比较好。
+    var popup = L.popup()
+    .setLatLng([51.5, -0.099])
+    .setContent("I am a standalone popup.")
+    .openOn(mymap);  
+````
+
+10.事件监听
+````
+function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+
+mymap.on('click', onMapClick);
+````
+11.自定义标记图标
+````
+// 1.1自定义标记图标通常由两张图组成，一张标记图片，另一张标记的阴影
+var greenIcon = L.icon({
+    iconUrl: 'leaf-green.png',
+    shadowUrl: 'leaf-shadow.png',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+L.marker([51.5, -0.09], {icon: greenIcon}).addTo(mymap);
+
+// 1.2定义自定义标记图标类，从而更方便的创建多个同类型的图标
+var LeafIcon = L.Icon.extend({
+    options: {
+        shadowUrl: 'leaf-shadow.png',
+        iconSize:     [38, 95],
+        shadowSize:   [50, 64],
+        iconAnchor:   [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor:  [-3, -76]
+    }
+});
+var greenIcon = new LeafIcon({iconUrl: 'leaf-green.png'}),
+    redIcon = new LeafIcon({iconUrl: 'leaf-red.png'}),
+    orangeIcon = new LeafIcon({iconUrl: 'leaf-orange.png'});
+````
+12.图层组和图层控制组件
+
+````
+      var l1 =L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: false,
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoiY2hlbmphY2t5MTMxIiwiYSI6ImNrbnBic3Z6ZTAxbjUydm51c2t1eDV3aXoifQ.jGcoMhAq6utjY-yjQmF9pw'
+      });
+
+      var l2 =L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: false,
+        maxZoom: 18,
+        id: 'mapbox/satellite-v9',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoiY2hlbmphY2t5MTMxIiwiYSI6ImNrbnBic3Z6ZTAxbjUydm51c2t1eDV3aXoifQ.jGcoMhAq6utjY-yjQmF9pw'
+      });
+
+      var robison = L.marker([24.471603596781833, 118.1072759628296]).bindPopup('This is robison'),
+      railway    = L.marker([24.470256015545903, 118.11115980148317]).bindPopup('This is railway station');
+
+      var building = L.layerGroup([robison, railway]);  //  图层组
+      var baseMaps = {
+        "<span style='color:#0f0;'>Streets</span>": l1,
+        "Satellite": l2
+      }
+      var overlayMaps = {
+        "Buildings": building
+      }
+      L.control.layers(baseMaps, overlayMaps).addTo(mymap);  // 图层控制
+````
+
+13.leafletAPI包含的内容
+````
+Map:
+UI Layers:
+Other Layers:
+Utility:
+Base Classes:
+Map Methods:
+Raster Layers:
+Basic Types:
+DOM Utility:
+Misc:
+Map Misc:
+Vector Layers:
+Controls:
+````
+
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

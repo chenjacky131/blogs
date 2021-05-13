@@ -1,0 +1,149 @@
+Leaflet Map类
+----------
+
+by jack at 2021/05/11
+
+##### API的核心，从来创建地图和操作地图
+
+1.用法示例
+````
+// 使用给定的中心和缩放在id为"map"的div上初始化地图
+var map = L.map('map', {
+    center: [51.505, -0.09],
+    zoom: 13
+});
+````
+2.创建
+````
+// 通过传入id创建地图实例
+a.L.map(<String> id, <Map options> options?)
+// 通过传入html元素创建地图实例
+b.L.map(<HTMLElement> el, <Map options> options?)
+````
+
+3.Options配置项
+````
+preferCanvas:path(绘制的路径还是什么还没用到，暂不清楚)是通过canvas画布来渲染还是用svg来渲染。默认是画布渲染。
+attributionControl:是否显示版权，默认为true显示
+zoomControl:是否显示缩放控制的按钮，默认为true显示
+closePopupOnClick:点击地图是否关闭弹出层，默认为true关闭
+zoomSnap:缩放的临界值，默认为1。数值越大，鼠标滚轮滚动时，缩放的范围也越大。数值为0时，鼠标滚轮和双指捏合缩放不起作用
+zoomDelta:也是缩放的临界值，默认为1。效果和上面这个类似，但是它控制的是键盘上的+-时的缩放和地图上的+-按钮的缩放临界。
+trackResize:窗口大小改变时，是否重新渲染地图。默认为true是
+boxZoom:当按住shift键时，在拖动鼠标会出现一块长方形区域，地图会根据长方形区域进行缩放。默认为true开启
+doubleClickZoom:双击鼠标是否缩放，默认true开启
+dragging:是否可以用鼠标或者手指拖拽地图，默认true开启
+center:制定地图的初始的中心点
+crs:需要使用的坐标参考系统，默认为L.CRS.EPSG3857，一般不进行修改
+minZoom:缩放的最小级别，如果未指定，并且地图上有至少一个gird层或者tile层，最小缩放级将使用为图层中缩放级别最小的那个(1，再小了就没图片了)
+maxZoom:缩放的最大级别，效果同上(18,再大了就不清晰了)
+layers:创建地图时需要添加上去的图层，类型为数组类型
+maxBounds:限制区域，鼠标拖动地图离开这个区域时，会自动返回到限制的区域内。类型为LatLngBounds。
+renderer:绘制矢量图形的方法，默认为canvas画布L.Canvas()，可选为 L.SVG()
+zoomAnimation:缩放动画，默认为true开启
+zoomAnimationThreshold: 没试出来干嘛用的
+fadeAnimation:没看出来
+markerZoomAnimation:是否开启标记点
+transform3DLimit:一般使用不到
+inertia:拖动惯性，默认true开启。
+inertiaDeceleration: 惯性减速的数值，默认值3000。数值月大，越快停下来。
+inertiaMaxSpeed:惯性最大移动速度，默认值Infinity无穷快。数值越大越快。
+easeLinearity:减速缓动的值，默认值0.2。数值越大，需要停下来的时间越久。
+worldCopyJump:世界地图拖动时，会拷贝多份以开启无限拖动的效果。开启这个值，拖动时地图上的标记和图形那些也会跟着拷贝过去。默认为false关闭状态
+maxBoundsViscosity:限制区域的粘度。默认为0.0，最小粘度，就是可以拖出限制区域比较多。最大值为1.0，就是可以拖出限制区域很小一片区域。
+keyboard:键盘-+缩放地图，已经上下左右箭头移动地图，默认true开启状态。
+keyboardPanDelta:键盘箭头移动的距离。默认为80像素。
+scrollWheelZoom:鼠标滚轮缩放。默认true开启。
+wheelDebounceTime:鼠标滚轮缩放的频率，默认40ms。既每40ms可以缩放一次。
+wheelPxPerZoomLevel:鼠标滚轮缩放的范围，默认60。数值越小，鼠标缩放的范围越大。
+tap:手指点击相关的东西，没试出来效果。
+tapTolerance:手指点击相关的东西，没试出来效果。
+touchZoom:手指捏合缩放地图，默认true开启。如果值为'center'，不管手指在屏幕的哪个区域捏合，都是从中心缩放。
+bounceAtZoomLimits:超过缩放限制后的回弹效果。默认true开启。
+````
+4.Events事件
+
+````
+baselayerchange: 基础图层变化时触发的事件
+overlayadd:覆盖层添加时触发的事件
+overlayremove:覆盖成移除时触发的事件
+layeradd:当有新图层添加到地图时触发
+layerremove:当图层从地图中移除时触发
+zoomlevelschange:添加或者移除层时，这个时间将被触发
+resize:窗口变化时触发
+unload: 当地图被remove方法移除时触发
+viewreset:暂时不知道干嘛的
+load:没试出来
+zoomstart:当缩放开始时触发
+movestart:当移动地图或者缩放时都会触发
+zoom:缩放时触发
+move:只要地图在移动都会触发
+zoomend:缩放完成时触发
+moveend:移动完成时触发
+popupopen:提示框弹出时触发
+popupclose:提示框关闭时触发
+autopanstart:没试出来
+tooltipopen：提示工具显示时触发
+tooltipclose: 提示工具隐藏时触发
+locationfound:当调用locate()方法成功时触发
+locationerror:当调用locate()方法失败时触发
+click,dblclick,mousedown,mouseup,mouseover,mouseout,mousemove,contextmenul,preclick:鼠标一系列的事件
+keypress,keydown,keyup:键盘的一些事件
+zoomanim:缩放动画完成时触发
+````
+
+5.Methods方法
+
+````
+getRenderer:取得渲染器
+addControl:添加控制地图的控件
+removeControl:移除控制地图的控件
+addLayer:添加图层
+removeLayer:移除图层
+hasLayer:判断是否存在这个图层
+eachLayer:遍历当前已经添加的图层，参数为图层对象
+openPopup:打开弹层，参数可以为弹层对象。或者第一个参数为弹层内容，第二个为弹层坐标，第三个为弹层配置
+closePopup:关闭弹层，参数为需要关闭的弹层
+openTooltip:和popup类似
+closeTooltip:和popup类似
+setView:设置图层的显示区域。第一个参数为坐标，第二个参数为缩放级别，第三个参数为缩放的一些配置
+setZoom:设置图层的缩放级别。第一个参数为缩放级别数值，第二个为缩放配置
+zoomIn，zoomOut:缩放
+setZoomAround:暂不清楚什么效果
+fitBounds:设置地图显示区域。不大明白
+fitWorld:显示整个世界地图。不太明白
+panTo:跳到地图知道区域
+panBy:按给定的像素点在地图上跳转[x,y]单位为像素
+flyTo:带动画效果的飞到制定的坐标点
+flyToBounds:飞到边界。不太明白
+setMaxBounds:设置最大的边界。不太明白
+setMinZoom:设置可以缩放的最小级别
+panInsideBounds:不太懂啥意思，好像暂时用不到
+panInside:不太懂什么意思，好像暂时用不到
+invalidateSize:检测地图容器是否更改了尺寸，如果更改了尺寸则自动更新地图。
+stop:停止正在进行的panTo或者flyTo
+locate:定位用户的位置
+stopLocate:停止定位
+addHandler:添加处理程序，暂时不知道啥意思
+remove:销毁地图和清除绑定过的处理事件
+createPane:添加一个地图窗格，好像可以往里面加东西，暂时没用到。
+getPane:获取窗格
+getPanes:获取所有的窗格
+getContainer:获取地图容器元素
+whenReady:地图初始化完成后调用。第一参数为调用要调用的函数，第二个参数为函数的上下文。
+getCenter:返回地图的中心点。
+getZoom:返回地图当前的缩放等级。
+getBounds:返回可视区域地图的边界。
+getMinZoom:返回地图的最小缩放级别，如果地图上没有设定，则返回图层的最小缩放级别。
+getMaxZoom:同上。
+getBoundsZoom:不大清楚，好像还用不到。
+getSize:返回当前地图的尺寸，单位为像素。
+getPixelBounds:没搞懂啥意思。
+getPixelOrigin:没搞懂啥意思。
+getPixelWorldBounds:没搞懂啥意思。
+getZoomScale:获取从一个缩放级别到另一个缩放级别需要缩放的数值，可用在缩放动画的地方。第一参数为需要缩放到的哪个级别，第二个参数为从哪个级别开始缩放。
+getScaleZoom:从当前缩放级别缩放几倍后，得到的另一个缩放级别。第一个参数为倍数，第二个参数为当前的缩放级别。
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

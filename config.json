@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1620459316005,
+  "last_modify": 1620877470208,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210511-02.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet Map类",
+      "modify_at": 1620877470208,
+      "create_at": 1620719627108,
+      "desc": "by jack at 2021/05/11<br>1.用法示例"
+    },
+    {
+      "path": "md/D210511-01.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet中文文档",
+      "modify_at": 1620802342332,
+      "create_at": 1620695821764,
+      "desc": "by jack at 2021/05/11<br>1.引入资源\n````"
+    },
     {
       "path": "md/D210508-01.txt",
       "tag": ".JS",
@@ -29,9 +47,9 @@
       "tag": ".规范",
       "markdown": true,
       "title": "编写代码时的规范",
-      "modify_at": 1619687125099,
+      "modify_at": 1620627770967,
       "create_at": 1619686902703,
-      "desc": "by jack at 2021/04/29"
+      "desc": "by jack at 2021/04/29<br>ajax每条请求写在配置文件里面，请求时只需要写请求名字和参数就行,请求的地址也当杜写在配置文件里面，方便本地开发切开发环境时的操作，只需要修改地址和参数就可以了。"
     },
     {
       "path": "md/D210429-01.txt",
