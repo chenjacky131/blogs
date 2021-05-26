@@ -1,0 +1,33 @@
+Leaflet LayerGroup层
+----------
+
+by jack at 2021/05/21
+
+
+批量管理多个图层，当把图层组加入到地图后，在图层组里面添加或者移除图层都会从地图上也添加或者移除。
+
+1. 使用例子
+````
+L.layerGroup([marker1, marker2])
+    .addLayer(polyline)
+    .addTo(map);
+````
+
+2. 选项
+````
+pane:要添加的窗格位置，默认为overlayPane窗格。
+attribution:版权信息
+````
+
+3. 事件
+````
+add:向图层组里面添加图层，图层组添加到地图后才生效。
+remove:向图层组里面移除图层，图层组添加到地图后才生效。
+popupopen:弹出层打开。
+popupclose:弹出层关闭。
+tooltipopen:提示层打开。
+tooltipclose:提示层关闭。
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

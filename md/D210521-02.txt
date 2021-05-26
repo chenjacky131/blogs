@@ -1,0 +1,27 @@
+Leaflet FeatureGroup层
+----------
+
+by jack at 2021/05/21
+
+可以多图层做相同操作
+
+1. 使用例子
+````
+L.featureGroup([marker1, marker2, polyline])
+    .bindPopup('Hello world!')
+    .on('click', function() { alert('Clicked on a member of the group!'); })
+    .addTo(map);
+````
+2. 选项
+````
+pane:要添加的窗格位置，默认为overlayPane窗格。
+attribution:版权信息
+````
+3. 事件
+````
+layeradd:往里添加图层时触发
+layerremove:往里移除图层时触发
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

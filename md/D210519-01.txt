@@ -1,0 +1,11 @@
+uni-app在APP端不支持的东西
+----------
+
+by jack at 2021/05/19
+
+1. 没有document
+2. body标签使用page代替
+3. 没有浏览器专用的js对象，比如document、xmlhttp、cookie、window、location、navigator、localstorage、websql、indexdb、webgl等对象。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

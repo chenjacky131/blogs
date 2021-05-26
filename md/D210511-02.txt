@@ -110,7 +110,7 @@ setView:设置图层的显示区域。第一个参数为坐标，第二个参数
 setZoom:设置图层的缩放级别。第一个参数为缩放级别数值，第二个为缩放配置
 zoomIn，zoomOut:缩放
 setZoomAround:暂不清楚什么效果
-fitBounds:设置地图显示区域。不大明白
+fitBounds:设置地图显示区域。就是类似跳转到指定的区域，然后缩放级别尽可能大。
 fitWorld:显示整个世界地图。不太明白
 panTo:跳到地图知道区域
 panBy:按给定的像素点在地图上跳转[x,y]单位为像素
@@ -126,7 +126,7 @@ locate:定位用户的位置
 stopLocate:停止定位
 addHandler:添加处理程序，暂时不知道啥意思
 remove:销毁地图和清除绑定过的处理事件
-createPane:添加一个地图窗格，好像可以往里面加东西，暂时没用到。
+createPane:添加一个地图窗格,体现在div上。不同的窗格，里面放的东西也不同
 getPane:获取窗格
 getPanes:获取所有的窗格
 getContainer:获取地图容器元素

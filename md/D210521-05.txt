@@ -1,0 +1,12 @@
+The emulator process for AVD *** was killed的解决方法
+----------
+
+by jack at 2021/05/21
+
+1. 打开虚拟机安装的根目录，找到config.ini,用文本编辑器打开
+2. 找到文本中"hw.gpu.enabled=yes hw.gpu.mode=auto"这两条
+3. 分别修改属性为"hw.gpu.enabled = no hw.gpu.mode = off"
+4. 成功
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

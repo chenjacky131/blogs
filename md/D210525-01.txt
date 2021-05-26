@@ -1,0 +1,104 @@
+Typescript的知识点
+----------
+
+by jack at 2021/05/25
+
+1.基础类型
+
+````
+任意类型: any
+数字类型：number
+字符串类型: string
+布尔类型: boolean
+数组类型: 在元素类型后面加[] var a:number[] = [1,2]。泛型 var a:Array<number> = [1,2]
+元组类型: lex x:[string, number] = ['a', 1]
+枚举类型: enum Color {Red, Blue, Green};let c:Color = Color.Blue; //c 为1
+void: 标识方法的返回值类型
+null: 表示对象值缺失
+undefined: 用于初始化变量为未定义的值
+never: 是其它类型(null, undefined)的子类型，代表从不会出现的值
+````
+2.函数相关
+
+````
+// ?为可选参数
+function test(x:number,y?:number):number{
+  if(y){
+    return x + y
+  }else{
+    return x
+  }
+}
+//  y:number = 10为参数 默认值
+function test1(x:number, y:number = 10):number{
+  return x + y
+}
+// ...y:string[]为剩余参数
+function test1(x:string, ...y:string[]):string{
+  return x + ' ' + y.join(' ')
+}
+````
+
+3.Map对象
+
+````
+let myMap = new Map([
+  ["key1", "value1"],
+  ["key2", "value2"]
+])
+map.clear() – 移除 Map 对象的所有键/值对 。
+map.set() – 设置键值对，返回该 Map 对象。
+map.get() – 返回键对应的值，如果不存在，则返回 undefined。
+map.has() – 返回一个布尔值，用于判断 Map 中是否包含键对应的值。
+map.delete() – 删除 Map 中的元素，删除成功返回 true，失败返回 false。
+map.size – 返回 Map 对象键/值对的数量。
+map.keys() - 返回一个 Iterator 对象， 包含了 Map 对象中每个元素的键 。
+map.values() – 返回一个新的Iterator对象，包含了Map对象中每个元素的值 。
+````
+
+4.元组
+
+````
+元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同
+var a:[string,number]
+````
+
+5.联合类型
+
+````
+联合类型（Union Types）可以通过管道(|)将变量设置多种类型，赋值时可以根据设置的类型来赋值。
+注意：只能赋值指定的类型，如果赋值其它类型就会报错。
+var a:string|number =1
+````
+
+6.接口
+
+````
+interface IPerson{
+  firstName: string,
+  lastName: string,
+  sayHi: ()=>string
+}
+var customer:IPerson = {
+  firstName: 'tom',
+  lastName: 'chan',
+  sayHi: ():string => {return 'Hi there'} 
+}
+console.log(customer)
+
+// 接口继承
+interface IParent1{
+  v1: number
+}
+interface IParent2{
+  v2: string
+}
+interface Child extends IParent1,IParent2{}
+var a = <Child>{}
+a.v1 = 1
+a.v2 = 'tom'
+console.log(a)
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

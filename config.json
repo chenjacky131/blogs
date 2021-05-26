@@ -1,17 +1,98 @@
 {
   "version": "1.0",
-  "last_modify": 1620877470208,
+  "last_modify": 1622016723781,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
     {
+      "path": "md/D210525-01.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "Typescript的知识点",
+      "modify_at": 1622016723781,
+      "create_at": 1621905154993,
+      "desc": "by jack at 2021/05/25<br>1.基础类型"
+    },
+    {
+      "path": "md/D210521-05.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "The emulator process for AVD * was killed的解决方法",
+      "modify_at": 1621588958290,
+      "create_at": 1621587706222,
+      "desc": "by jack at 2021/05/21"
+    },
+    {
+      "path": "md/D210521-04.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet LatLng",
+      "modify_at": 1621586029296,
+      "create_at": 1621583613075,
+      "desc": "by jack at 2021/05/21<br>表示具有经纬度的一个地理点，所有接受LatLng参数的方法都接受下面形式的地理点表示"
+    },
+    {
+      "path": "md/D210521-03.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet GeoJSON",
+      "modify_at": 1621580435824,
+      "create_at": 1621580325274,
+      "desc": "by jack at 2021/05/21"
+    },
+    {
+      "path": "md/D210521-02.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet FeatureGroup层",
+      "modify_at": 1621581016678,
+      "create_at": 1621580055326,
+      "desc": "by jack at 2021/05/21<br>可以多图层做相同操作"
+    },
+    {
+      "path": "md/D210521-01.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet LayerGroup层",
+      "modify_at": 1621579710913,
+      "create_at": 1621578041102,
+      "desc": "by jack at 2021/05/21<br>批量管理多个图层，当把图层组加入到地图后，在图层组里面添加或者移除图层都会从地图上也添加或者移除。"
+    },
+    {
+      "path": "md/D210520-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "画布canvas的getImageData的应用",
+      "modify_at": 1621497905624,
+      "create_at": 1621497633546,
+      "desc": "by jack at 2021/05/20<br>通过getImageData获取到的矩阵图片信息，可以对图片做矩阵处理。比如用像素点的形式画出图片"
+    },
+    {
+      "path": "md/D210519-01.txt",
+      "tag": ".uni-app",
+      "markdown": true,
+      "title": "uni-app在APP端不支持的东西",
+      "modify_at": 1621394412233,
+      "create_at": 1621393860601,
+      "desc": "by jack at 2021/05/19"
+    },
+    {
+      "path": "md/D210518-02.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "浏览器弹出需要授权的登陆弹窗",
+      "modify_at": 1621329127714,
+      "create_at": 1621328911809,
+      "desc": "by jack at 2021/05/18<br>如果弹出这个弹窗，说明请求需要授权。"
+    },
+    {
       "path": "md/D210511-02.txt",
       "tag": ".插件文档",
       "markdown": true,
       "title": "Leaflet Map类",
-      "modify_at": 1620877470208,
+      "modify_at": 1621578704966,
       "create_at": 1620719627108,
       "desc": "by jack at 2021/05/11<br>1.用法示例"
     },
@@ -47,9 +128,9 @@
       "tag": ".规范",
       "markdown": true,
       "title": "编写代码时的规范",
-      "modify_at": 1620627770967,
+      "modify_at": 1621907516378,
       "create_at": 1619686902703,
-      "desc": "by jack at 2021/04/29<br>ajax每条请求写在配置文件里面，请求时只需要写请求名字和参数就行,请求的地址也当杜写在配置文件里面，方便本地开发切开发环境时的操作，只需要修改地址和参数就可以了。"
+      "desc": "by jack at 2021/04/29"
     },
     {
       "path": "md/D210429-01.txt",
@@ -80,7 +161,7 @@
     },
     {
       "path": "md/D210427-01.txt",
-      "tag": ".Vue",
+      "tag": ".uni-app",
       "markdown": true,
       "title": "uni-app easycom组件坑",
       "modify_at": 1619488557698,
@@ -98,7 +179,7 @@
     },
     {
       "path": "md/D210421-02.txt",
-      "tag": ".遇到的问题",
+      "tag": ".uni-app",
       "markdown": true,
       "title": "uniapp禁用原生导航栏后内容被覆盖的问题",
       "modify_at": 1618976094770,

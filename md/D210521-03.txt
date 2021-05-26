@@ -1,0 +1,10 @@
+Leaflet GeoJSON
+----------
+
+by jack at 2021/05/21
+
+
+表示一个GeoJSON对象或者一组GeoJSON对象，可以解析GeoJSON数据并且展示在地图上。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

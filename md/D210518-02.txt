@@ -1,0 +1,10 @@
+浏览器弹出需要授权的登陆弹窗
+----------
+
+by jack at 2021/05/18
+
+如果弹出这个弹窗，说明请求需要授权。
+请求头需要加Authorization这个字段。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
