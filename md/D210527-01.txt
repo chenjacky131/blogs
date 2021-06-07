@@ -1,0 +1,18 @@
+上拉加载的一些问题
+----------
+
+by jack at 2021/05/27
+
+1.上拉加载更多没有触发触底的函数
+````
+上拉加载没有触底，有可能是滚动组件scroll-view的高度设置成了100%导致滚动一直不能触底。
+````
+
+2.上拉加载更多可以使用扩展组件来配合触底函数来使用
+````
+uni-load-more:加载更多扩展组件
+onReachBottom:触底函数，和其它生命周期函数同层级
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

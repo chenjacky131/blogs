@@ -1,0 +1,12 @@
+字符串的升降序排列
+----------
+
+by jack at 2021/05/31
+
+````
+// 字符串的升降序排列需要使用到localeCompare函数
+str.sort (function(a,b){return a.localeCompare(b)})
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

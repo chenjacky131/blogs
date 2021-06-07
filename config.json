@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1622016723781,
+  "last_modify": 1622424474315,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210531-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "字符串的升降序排列",
+      "modify_at": 1622424474315,
+      "create_at": 1622424337891,
+      "desc": "by jack at 2021/05/31<br>````\n// 字符串的升降序排列需要使用到localeCompare函数\nstr.sort (function(a,b){return a.localeCompare(b)})"
+    },
+    {
+      "path": "md/D210527-01.txt",
+      "tag": ".uni-app",
+      "markdown": true,
+      "title": "上拉加载的一些问题",
+      "modify_at": 1622086720490,
+      "create_at": 1622086439920,
+      "desc": "by jack at 2021/05/27<br>1.上拉加载更多没有触发触底的函数"
+    },
     {
       "path": "md/D210525-01.txt",
       "tag": ".教程",
