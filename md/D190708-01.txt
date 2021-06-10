@@ -48,6 +48,22 @@ const isParent = (obj, parentObj) => {//  判断一个元素是否为另一个�
       app.config.globalProperties.$moment = moment
     }
 ````
+
+##### 4.把对象转换成地址栏里的query参数形式
+
+````
+$bodyParse = (json) => {
+	if(!json){
+		return ''
+	}
+	let url = '?'
+	const length = Object.keys(json).length;
+	for(let i = 0; i < length; i++){
+		url+= `${Object.keys(json)[i]}=${json[Object.keys(json)[i]]}${i === (length - 1) ? '':'&' }`
+	}
+	return url
+}
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
