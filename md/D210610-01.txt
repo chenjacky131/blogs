@@ -1,0 +1,52 @@
+Leaflet TileLayer
+----------
+
+by jack at 2021/06/10
+
+用来在地图上加载和展示图层
+
+使用案例
+````
+L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}',
+   {
+      foo: 'bar', 
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+   }).addTo(map);
+````
+
+URL模板,如下格式的字符串
+````
+'http://{s}.somedomain.com/blabla/{z}/{x}/{y}{r}.png'
+
+//  {s}表示可用的子域名之一，循序地使用来解决浏览器并行请求数的限制，子域名的值在options配置里面指定。默认的子域名值为'abc'
+//  {z}表示缩放层级
+//  {x}{y}表示图层坐标
+//  {r}在地址上表现为@2x用来加载高清的图
+//  也可以使用自定义的字段，在options配置里面指定就可以了
+````
+1.创建
+````
+L.tilelayer(<String> urlTemplate, <TileLayer options> options?)
+````
+2.配置
+````
+minZoom: {Number}默认值为0。最小缩放等级
+maxZoom: {Number}默认值为18。最大缩放等级
+subdomains: {String|String[]}默认值为'abc'。子域名
+errorTileUrl: {String}默认值为''。图层加载失败时候的错误图图层地址
+zoomOffset:{Number}默认值为0。缩放偏移量，暂时不知道干嘛的
+tms:{Boolean}默认值false。什么反转y轴的值(TMS service时需要开启)
+zoomReverse:{Boolean}默认值为false。反正缩放，不知道干嘛的
+detectRetina:{Boolean}默认值为false。什么高清屏检测的东西。如果开启，在高清屏上原本显示一块图的地方会显示4块
+crossOrigin:跨域的东西，不知道干嘛的
+````
+3.方法
+````
+setUrl(<String> url, <Boolean> noRedraw?): 更新图层的模板地址，并且重绘图层，如果noRedraw为false的话
+createTile(<Object> coords, <Function> done?):创建图层，可以替换里面的img标签
+getTileUrl(<Object> coords):此方法可以自定义图层地址模板
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

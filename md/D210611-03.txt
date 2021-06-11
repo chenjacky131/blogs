@@ -1,0 +1,51 @@
+Leaflet Point
+----------
+
+by jack at 2021/06/11
+
+代表一个带有x,y属性的坐标点，单位为像素
+
+使用例子：
+````
+var point = L.point(200, 300);
+````
+
+所有接收Point类的方法或者配置也同时支持简单的数组形式的点(除了特别说明不支持外)，所有下面的表达式是相等的
+````
+map.panBy([200, 300]);
+map.panBy(L.point(200, 300));
+````
+Point没有继承Leaftlet的Class对象
+
+1.创建
+````
+L.point(<Number> x, <Number> y, <Boolean> round?):round为四舍五入，如果为true，x,y的值都会被四舍五入
+L.point(<Number[]> coords)
+L.point(<Object> coords):{x:Number,y:Number}对象格式
+````
+2.方法
+````
+clone() return <Point>:返回当前点的克隆
+add(<Point> otherPoint) return <Point>: 返回所给点相加的结果
+subtract(<Point> otherPoint) return <Point>: 返回所给点相减的结果
+divideBy(<Number> num) return <Point>: 返回所给点相除的结果
+multiplyBy(<Number> num) return <Point>: 返回所给点相乘的结果
+scaleBy(<Point> scale) return <Point>: 缩放
+unscaleBy(<Point> scale) return <Point>: 反缩放
+round() return <Point>: 返回当前点x,y的四舍五入
+floor() return <Point>: 返回当前点x,y的向下取整
+ceil() return <Point>: 返回当前点x,y的向上取整
+trunc() return <Point>: 返回当前点x,y的向0取整
+distanceTo(<Point> otherPoint) return <Number>:返回点与点之间的距离
+equals(<Point> otherPoint) return <Boolean>:两个点是否相等
+contains(<Point> otherPoint) return <Boolean>:如果给的点的x,y都小于当前点(绝对值)，则表示包含，返回true
+toString() return <String>:返回字符串形式，调试用
+````
+3.属性
+````
+x<Number>:x坐标
+y<Number>:y坐标
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

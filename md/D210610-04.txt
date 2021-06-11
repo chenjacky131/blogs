@@ -1,0 +1,11 @@
+uni-app一些独特的地方
+----------
+
+by jack at 2021/06/10
+
+
+1. uni_modules组件可以直接全局应用，不需要再components里面导入
+2. 有自己的路由,配置在pages.json里面
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

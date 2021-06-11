@@ -1,0 +1,20 @@
+本地跨域出现500的情况
+----------
+
+by jack at 2021/06/11
+
+```
+// target要以http://开头就可以了
+    proxy: {
+      "/api": {
+        target: "http://127.0.0.1:8888",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": ""
+        }
+      }
+    }
+```
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

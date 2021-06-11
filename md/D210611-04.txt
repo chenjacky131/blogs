@@ -1,0 +1,29 @@
+创建实例时不使用new关键字
+----------
+
+by jack at 2021/06/11
+
+1.方法1
+````
+class Test{
+}
+test = ()=>{
+  return new Test()
+}
+test()
+````
+2.方法2
+````
+class Test{
+  static getInstance(){  //  返回类实例
+    if(!Test.instance){
+      Test.instance = new Test()
+    }
+    return Test.instance
+  }
+}
+Test.getInstance()
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

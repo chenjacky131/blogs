@@ -1,11 +1,83 @@
 {
   "version": "1.0",
-  "last_modify": 1623289109635,
+  "last_modify": 1623396734397,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210611-04.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "创建实例时不使用new关键字",
+      "modify_at": 1623396734397,
+      "create_at": 1623396452628,
+      "desc": "by jack at 2021/06/11<br>1.方法1"
+    },
+    {
+      "path": "md/D210611-03.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet Point",
+      "modify_at": 1623395871383,
+      "create_at": 1623394429500,
+      "desc": "by jack at 2021/06/11<br>代表一个带有x,y属性的坐标点，单位为像素"
+    },
+    {
+      "path": "md/D210611-02.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet DivIcon",
+      "modify_at": 1623394385349,
+      "create_at": 1623393060433,
+      "desc": "by jack at 2021/06/11<br>从Icon中继承，轻量化的Marker,不支持iconUrl和shadow配置"
+    },
+    {
+      "path": "md/D210611-01.txt",
+      "tag": ".Node",
+      "markdown": true,
+      "title": "本地跨域出现500的情况",
+      "modify_at": 1623381848442,
+      "create_at": 1623381767976,
+      "desc": "by jack at 2021/06/11<br>```\n// target要以http://开头就可以了\n    proxy: {\n      \"/api\": {\n        target: \"http://127.0.0.1:8888\",\n        changeOrigin: true,\n        pathRewrite: {\n          \"^/api\": \"\"\n        }"
+    },
+    {
+      "path": "md/D210610-04.txt",
+      "tag": ".uni-app",
+      "markdown": true,
+      "title": "uni-app一些独特的地方",
+      "modify_at": 1623374163656,
+      "create_at": 1623318949040,
+      "desc": "by jack at 2021/06/10"
+    },
+    {
+      "path": "md/D210610-03.txt",
+      "tag": ".CSS",
+      "markdown": true,
+      "title": "字体图标可以直接在",
+      "modify_at": 1623318314502,
+      "create_at": 1623318062971,
+      "desc": "by jack at 2021/06/10<br>https://www.iconfont.cn/ 阿里妈妈MUX倾力打造的矢量图标管理、交流平台"
+    },
+    {
+      "path": "md/D210610-02.txt",
+      "tag": ".Node",
+      "markdown": true,
+      "title": "版本号的详解",
+      "modify_at": 1623317793362,
+      "create_at": 1623316959570,
+      "desc": "by jack at 2021/06/10<br>1.版本号简介\n````\n1.1.1.20210610-beta\n第一部分为主版本号，表示有了一个不能兼容上个版本的大更改\n第二部分为次版本号，表示增加了新功能，并且可以向后兼容\n第三部分为修订版本号，表示有bug修复，并且可以向后兼容\n第四部分为日期加希腊字母版本号，共有5种，分别为base,alpha,beta,RC,release"
+    },
+    {
+      "path": "md/D210610-01.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet TileLayer",
+      "modify_at": 1623314306012,
+      "create_at": 1623309156759,
+      "desc": "by jack at 2021/06/10<br>用来在地图上加载和展示图层"
+    },
     {
       "path": "md/D210531-01.txt",
       "tag": ".JS",
