@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1623396734397,
+  "last_modify": 1623403591003,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210611-06.txt",
+      "tag": ".uni-app",
+      "markdown": true,
+      "title": "页面的方法",
+      "modify_at": 1623403591003,
+      "create_at": 1623403282488,
+      "desc": "by jack at 2021/06/11<br>````\ngetCurrentPages():函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。\nconst pages = getCurrentPages()\nconst curPage = pages[pates.length - 1]  //  当前页面\ncurPage.$getAppWebview()  // 获取页面的webview实例，仅APP支持此方法"
+    },
+    {
+      "path": "md/D210611-05.txt",
+      "tag": ".uni-app",
+      "markdown": true,
+      "title": "禁用页面的侧滑返回功能",
+      "modify_at": 1623403270423,
+      "create_at": 1623402561640,
+      "desc": "by jack at 2021/06/11<br>````\n  onLoad() {\n    //    在登录页面禁用APP的侧滑返回功能\n    // #ifdef APP-PLUS\n       // this.$scope获取app实例，$getAppWebview得到当前webview的对象实例\n       var page = this.$scope.$getAppWebview();\n       page.setStyle({ popGesture: 'none' });\n    // #endif\n  },"
+    },
     {
       "path": "md/D210611-04.txt",
       "tag": ".JS",

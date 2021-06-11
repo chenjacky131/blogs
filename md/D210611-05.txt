@@ -1,0 +1,18 @@
+禁用页面的侧滑返回功能
+----------
+
+by jack at 2021/06/11
+
+````
+  onLoad() {
+    //	在登录页面禁用APP的侧滑返回功能
+    // #ifdef APP-PLUS
+       // this.$scope获取app实例，$getAppWebview得到当前webview的对象实例
+       var page = this.$scope.$getAppWebview();
+       page.setStyle({ popGesture: 'none' });
+    // #endif
+  },
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

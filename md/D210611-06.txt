@@ -1,0 +1,14 @@
+页面的方法
+----------
+
+by jack at 2021/06/11
+
+````
+getCurrentPages():函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
+const pages = getCurrentPages()
+const curPage = pages[pates.length - 1]  //  当前页面
+curPage.$getAppWebview()  // 获取页面的webview实例，仅APP支持此方法
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
