@@ -4,6 +4,7 @@
 by jack at 2021/06/11
 
 ````
+方法1:
   onLoad() {
     //	在登录页面禁用APP的侧滑返回功能
     // #ifdef APP-PLUS
@@ -11,7 +12,19 @@ by jack at 2021/06/11
        var page = this.$scope.$getAppWebview();
        page.setStyle({ popGesture: 'none' });
     // #endif
-  },
+  }
+方法2:
+{
+  "path": "pages/quantization/createStra", //	添加策略
+  "style": {
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": true,
+    "app-plus": {
+      "titleNView": false, //禁用原生导航栏
+      "popGesture":"none"	//	禁用侧滑返回功能
+    }
+  }
+}
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
