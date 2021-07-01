@@ -1,11 +1,47 @@
 {
   "version": "1.0",
-  "last_modify": 1624001658321,
+  "last_modify": 1624517075222,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210624-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "Syntax Error: Error: Cannot find module 'imagemin-gifsicle'",
+      "modify_at": 1624517075222,
+      "create_at": 1624516990501,
+      "desc": "by jack at 2021/06/24"
+    },
+    {
+      "path": "md/D210623-02.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet Draw 插件文档",
+      "modify_at": 1624503649324,
+      "create_at": 1624441696806,
+      "desc": "by jack at 2021/06/23"
+    },
+    {
+      "path": "md/D210623-01.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet Class",
+      "modify_at": 1624432008257,
+      "create_at": 1624410943299,
+      "desc": "by jack at 2021/06/23<br>L.Class为Leaflet的面向对象提供了支持并且它用来创建Leaflet几乎所有的类。此外，为了实现一个简单的经典继承模式，它还提供了几个特殊的属性。options, includes and statics."
+    },
+    {
+      "path": "md/D210622-01.txt",
+      "tag": ".插件文档",
+      "markdown": true,
+      "title": "Leaflet Polyline",
+      "modify_at": 1624332195786,
+      "create_at": 1624329943208,
+      "desc": "by jack at 2021/06/22<br>画折线的类"
+    },
     {
       "path": "md/D210617-01.txt",
       "tag": ".uni-app",
@@ -416,7 +452,7 @@
       "tag": ".Git",
       "markdown": true,
       "title": "Git常用命令",
-      "modify_at": 1623918600243,
+      "modify_at": 1624247633674,
       "create_at": 1617671829107,
       "desc": "by jack at 2021/04/06"
     },

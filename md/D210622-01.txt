@@ -1,0 +1,49 @@
+Leaflet Polyline
+----------
+
+by jack at 2021/06/22
+
+
+画折线的类
+
+1. 使用例子
+
+````
+// 用一组坐标数组来创建一条红色的折线
+var latlngs = [
+    [45.51, -122.68],
+    [37.77, -122.43],
+    [34.04, -118.2]
+];
+var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+// 缩放地图到折线的范围
+map.fitBounds(polyline.getBounds());
+
+//  也可以一次画多条折线，每条折线为一个数组
+var latlngs = [
+    [[45.51, -122.68],
+     [37.77, -122.43],
+     [34.04, -118.2]],
+    [[40.78, -73.91],
+     [41.83, -87.62],
+     [32.76, -96.72]]
+]
+
+````
+
+2. 创建
+
+````
+L.polyline(<LatLng[]> latlngs, <Polyline options> options?):通过传递一组坐标数组和一个配置对象实例化一个折线对象。
+你也可以传递多组坐标数组来创建多条折线。
+````
+
+3. 配置项
+
+````
+smoothFactor<Number>:默认值1.0。在每个缩放层级下折线的简化程度。数值越大表示性能越好，线条看起来越平滑。越小表示越准确。
+noClip<Boolean>:默认值false。禁用折线裁剪。
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

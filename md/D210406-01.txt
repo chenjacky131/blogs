@@ -63,6 +63,12 @@ git checkout -b localBranchName origin/(remoteBranchName)
 ````
 git remote prune origin
 ````
+
+##### 11.查看本地分支分支对应的远端分支
+
+````
+git remote -vv
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

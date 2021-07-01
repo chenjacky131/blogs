@@ -1,0 +1,9 @@
+Syntax Error: Error: Cannot find module 'imagemin-gifsicle'
+----------
+
+by jack at 2021/06/24
+
+好像是image-webpack-loader版本的问题，重新用cnpm安装一遍就好了
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,0 +1,138 @@
+Leaflet Class
+----------
+
+by jack at 2021/06/23
+
+L.Class为Leaflet的面向对象提供了支持并且它用来创建Leaflet几乎所有的类。此外，为了实现一个简单的经典继承模式，它还提供了几个特殊的属性。options, includes and statics.
+
+1.使用例子
+
+````
+var MyClass = L.Class.extend({
+initialize: function (greeter) {
+    this.greeter = greeter;
+    // 类的构造函数
+},
+greet: function (name) {
+    alert(this.greeter + ', ' + name)
+    }
+});
+// 创建MyClass实例，给构造函数传递"Hello"参数
+var a = new MyClass("Hello");
+// 调用greet方法
+a.greet("World");
+````
+
+2.继承(Inheritance)
+
+````
+你可以使用L.Class.extend来定义一个新的类，你也可以在它创建的类使用同样的方法来实现继承:
+
+var MyChildClass = MyClass.extend({
+    // ... 新的属性和方法
+});
+
+//  你可以在子类里面调用相应父类的方法，通过调用类的原型方法，然后用JavaScript的call或者apply来调用。
+var MyChildClass = MyClass.extend({
+    initialize: function () {
+        MyClass.prototype.initialize.call(this, "Yo");
+    },
+    greet: function (name) {
+        MyClass.prototype.greet.call(this, 'bro ' + name + '!');
+    }
+});
+var a = new MyChildClass();
+a.greet('Jason'); // alerts "Yo, bro Jason!"
+````
+
+3.选项(Options)
+
+````
+//  选项是一个特殊的属性，它不像其它继承属性和方法会完全覆盖掉父类的属性和方法。相反的，它是对父类的属性进行合并
+var MyClass = L.Class.extend({
+    options: {
+        myOption1: 'foo',
+        myOption2: 'bar'
+    }
+});
+var MyChildClass = MyClass.extend({
+    options: {
+        myOption1: 'baz',
+        myOption3: 5
+    }
+});
+var a = new MyChildClass();
+a.options.myOption1; // 'baz'
+a.options.myOption2; // 'bar'
+a.options.myOption3; // 5
+
+//   这个L.Util.setOptions方法方便传递给构造函数的选项和类的默认选项进行合并
+var MyClass = L.Class.extend({
+    options: {
+        foo: 'bar',
+        bla: 5
+    },
+    initialize: function (options) {
+        L.Util.setOptions(this, options);
+        ...
+    }
+});
+var a = new MyClass({bla: 10});
+a.options; // {foo: 'bar', bla: 10}
+````
+
+4.包含(includes)
+
+````
+//  包含(includes)是个特殊的属性，它合并制定的对象到类里面。这种对象叫做混入。
+ var MyMixin = {
+    foo: function () { ... },
+    bar: 5
+};
+var MyClass = L.Class.extend({
+    includes: MyMixin
+});
+var a = new MyClass();
+a.foo();
+
+//  在运行时环境也可以调用include方法:
+
+MyClass.include(MyMixin);
+````
+
+5.静态属性对象(statics)
+
+````
+//  静态属性只是个注入静态属性到类里面的一个方便属性，用来定义类的静态变量很有用
+var MyClass = L.Class.extend({
+    statics: {
+        FOO: 'bar',
+        BLA: 5
+    }
+});
+MyClass.FOO; // 'bar'
+````
+
+6.构造函数钩子(Constructor Hooks)
+
+````
+//  方便向类里面加初始化代码
+MyClass.addInitHook(function () {
+    // ... 在构造函数里面做一些额外的操作
+    // 例如：增加监听事件，设置自定义属性
+});
+//  也可以使用以下的快捷方法
+MyClass.addInitHook('methodName', arg1, arg2, …);
+````
+
+7.方法
+
+````
+extend(<Object> props):返回Function类型。扩展当前的类，把提供的属性和方法混入进去。 返回一个JavaScript的类构造器函数(通过new关键字来调用)。
+include(<Object> properties):返回this。包含一个混入对象到类里面。
+mergeOptions(<Object> options):返回this。合并选项到类的默认选项里。
+addInitHook(<Function> fn):返回this。向类里面添加构造函数的钩子函数。
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
