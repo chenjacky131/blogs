@@ -1,0 +1,14 @@
+Javascript的reduce方法
+----------
+
+by jack at 2021/07/12
+
+````
+如果数组里面的项是对象，需要初始化一个值，然后a就直接是数值的形式
+array.reduce((a,b) => {
+  return a + b.property
+},0)
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,0 +1,19 @@
+过滤器的使用
+----------
+
+by jack at 2021/07/05
+
+````
+/**
+ * @description: 过滤器
+ * @param {String} value: 要处理的数据，为默认参数
+ * @param {Array} arr: 要处理的而外参数，arr为第一个参数
+ * @return {String} 返回处理后在结果
+ */
+ Vue.filter('statusTxt', function (value,arr) {
+  return arr[value]
+})
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

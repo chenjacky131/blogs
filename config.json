@@ -1,11 +1,47 @@
 {
   "version": "1.0",
-  "last_modify": 1624517075222,
+  "last_modify": 1625737174802,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210708-02.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "代码里面使用过滤器",
+      "modify_at": 1625737174802,
+      "create_at": 1625737132005,
+      "desc": "by jack at 2021/07/08<br>````\nVue.filter('myTofixed')(money, 6)"
+    },
+    {
+      "path": "md/D210708-01.txt",
+      "tag": ".uni-app",
+      "markdown": true,
+      "title": "APP端涉及window,navatator等的插件都会报错",
+      "modify_at": 1625735130135,
+      "create_at": 1625734981331,
+      "desc": "by jack at 2021/07/08<br>````\n  //  添加以下代码\n   var modificationNavigator = {\n    appName: 'Netscape',\n    userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46     (KHTML, like       Gecko) Version/9.0 Mobile/13B143 Safari/601.1'\n  };\n   var modificationWindow = {\n    ASN1: null,\n    Base64: null,"
+    },
+    {
+      "path": "md/D210705-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "过滤器的使用",
+      "modify_at": 1625451029571,
+      "create_at": 1625450687713,
+      "desc": "by jack at 2021/07/05<br>````\n/**"
+    },
+    {
+      "path": "md/D210702-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "Javascript的reduce方法",
+      "modify_at": 1625195504797,
+      "create_at": 1625195269976,
+      "desc": "by jack at 2021/07/12<br>````\n如果数组里面的项是对象，需要初始化一个值，然后a就直接是数值的形式\narray.reduce((a,b) => {\n  return a + b.property\n},0)"
+    },
     {
       "path": "md/D210624-01.txt",
       "tag": ".Vue",
@@ -839,7 +875,7 @@
       "tag": ".JS",
       "markdown": true,
       "title": "常用的js函数1",
-      "modify_at": 1623832541225,
+      "modify_at": 1625552183906,
       "create_at": 1562565200612,
       "desc": "by 2019 at 2019/07/08<br>````\nconst debounce = (fn, delay) => {// 节流函数\n        let delays = delay || 500;\n        let timer;"
     },
