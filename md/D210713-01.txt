@@ -1,0 +1,13 @@
+Error from chokidar (D:\): Error: EBUSY: resource busy or locked, lstat ‘D:\pagefile.sys‘
+----------
+
+by jack at 2021/07/13
+
+&nbsp;
+
+1.删除 node_modules，再重新进行安装需要的依赖包(npm install 或者 cnpm install)；
+
+2.删除 node_modules ，然后运行npm cache clean 或者npm cache clean --force;再重新进行安装需要的依赖包\
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

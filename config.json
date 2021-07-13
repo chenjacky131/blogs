@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1625737174802,
+  "last_modify": 1626141148855,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210713-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "Error from chokidar (D:): Error: EBUSY: resource busy or locked, lstat ‘D:\\pagefile.sys‘",
+      "modify_at": 1626141148855,
+      "create_at": 1626140792415,
+      "desc": "by jack at 2021/07/13<br>1.删除 node_modules，再重新进行安装需要的依赖包(npm install 或者 cnpm install)；"
+    },
     {
       "path": "md/D210708-02.txt",
       "tag": ".Vue",
@@ -875,7 +884,7 @@
       "tag": ".JS",
       "markdown": true,
       "title": "常用的js函数1",
-      "modify_at": 1625552183906,
+      "modify_at": 1625738879707,
       "create_at": 1562565200612,
       "desc": "by 2019 at 2019/07/08<br>````\nconst debounce = (fn, delay) => {// 节流函数\n        let delays = delay || 500;\n        let timer;"
     },
