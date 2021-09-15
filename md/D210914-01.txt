@@ -1,0 +1,9 @@
+ref获取不到的问题
+----------
+
+by jack at 2021/09/14
+
+当和v-if配合使用时，需要配合nextTick使用
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,0 +1,13 @@
+报这个错的解决方法module in (webpack)/lib/NormalModule.js
+----------
+
+by jack at 2021/09/14
+
+代码里面多了一行
+````
+import { debug } from 'webpack';
+````
+移除了就正常了
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

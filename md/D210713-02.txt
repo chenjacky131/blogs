@@ -1,0 +1,12 @@
+Git 报 OpenSSL SSL_read: Connection was reset, errno 10054 的错误如何解决
+----------
+
+by jack at 2021/07/13
+
+````
+//  使用以下命令解决
+git config --global http.sslVerify "false"
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

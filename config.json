@@ -1,11 +1,38 @@
 {
   "version": "1.0",
-  "last_modify": 1626141148855,
+  "last_modify": 1631585126427,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D210914-02.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "报这个错的解决方法module in (webpack)/lib/NormalModule.js",
+      "modify_at": 1631585126427,
+      "create_at": 1631585028735,
+      "desc": "by jack at 2021/09/14<br>代码里面多了一行"
+    },
+    {
+      "path": "md/D210914-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "ref获取不到的问题",
+      "modify_at": 1631584408585,
+      "create_at": 1631584323660,
+      "desc": "by jack at 2021/09/14"
+    },
+    {
+      "path": "md/D210713-02.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "Git 报 OpenSSL SSL_read: Connection was reset, errno 10054 的错误如何解决",
+      "modify_at": 1626142644666,
+      "create_at": 1626142581492,
+      "desc": "by jack at 2021/07/13<br>````\n//  使用以下命令解决\ngit config --global http.sslVerify \"false\""
+    },
     {
       "path": "md/D210713-01.txt",
       "tag": ".Vue",
