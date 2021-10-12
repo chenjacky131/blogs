@@ -1,0 +1,19 @@
+打造好用的VsCode
+----------
+
+by jack at 2021/10/12
+
+````
+1:主题-Materia Theme
+2:图标主题-Material Icon Theme
+3:语法提示-Vetur
+4:括号着色-Bracket Pair Colorizer
+5:变量名推荐-Codelf 
+6:Git辅助工具-GitLens
+7:简体中文插件包-Chinese (Simplified)
+8:注释工具-koroFileHeader
+9:实时预览网页-Live Server
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
