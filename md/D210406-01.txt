@@ -69,6 +69,18 @@ git remote prune origin
 ````
 git remote -vv
 ````
+
+##### 12.删除远程分支
+
+````
+git push --delete origin remoteBranchName
+````
+
+##### 13.撤销到某次提交
+
+````
+git reset --hard HEAD^(对应的版本号)
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
