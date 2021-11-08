@@ -13,6 +13,7 @@ by jack at 2021/10/12
 7:简体中文插件包-Chinese (Simplified)
 8:注释工具-koroFileHeader
 9:实时预览网页-Live Server
+10:跳转到定义(支持别名@跳转):别名路径跳转
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
