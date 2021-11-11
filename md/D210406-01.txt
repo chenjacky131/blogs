@@ -92,6 +92,12 @@ git push -u origin [remoteBranchName]
 ````
 git branch --merged
 ````
+
+##### 16.合并某个分支的单次提交
+
+````
+git cherry-pick [log_commit(要合并的分支那次提交的log_commit码)]
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
