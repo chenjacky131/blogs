@@ -101,6 +101,15 @@ function myTofixed(value, number) {
 	}
 }
 ````
+
+##### 6.颜色取反
+````
+  let colorReverse = (color) => { //  反向颜色
+    var oldColor = '0x' + color.replace(/#/g, '')
+    var str = '000000' + (0xFFFFFF - oldColor).toString(16)
+    return str.substring(str.length - 6, str.length)
+  }
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

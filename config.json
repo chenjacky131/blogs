@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1636623154815,
+  "last_modify": 1636710457959,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -443,7 +443,7 @@
       "tag": ".JS",
       "markdown": true,
       "title": "常用正则表达式",
-      "modify_at": 1634020525973,
+      "modify_at": 1636710457959,
       "create_at": 1618545255587,
       "desc": "by jack at 2021/04/16<br>````\n1、手机号码的校验\nconst phoneReg = /^[1][3,4,5,6,7,8,9][0-9]{9}$/"
     },
@@ -929,7 +929,7 @@
       "tag": ".JS",
       "markdown": true,
       "title": "常用的js函数1",
-      "modify_at": 1625738879707,
+      "modify_at": 1636710412454,
       "create_at": 1562565200612,
       "desc": "by 2019 at 2019/07/08<br>````\nconst debounce = (fn, delay) => {// 节流函数\n        let delays = delay || 500;\n        let timer;"
     },

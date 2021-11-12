@@ -88,7 +88,7 @@ console.log(intReg.test(intNum1)) // true
 const intNum2 = 12345.1
 console.log(intReg.test(intNum2)) // false
 
-10、小数的校验
+10、小数或者整数的校验
 const floatReg = /^[-\+]?\d+(\.\d+)?$/
 
 const floatNum = 1234.5
