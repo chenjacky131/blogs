@@ -1,0 +1,43 @@
+Jenkins前端自动部署，Jenkins安装在本地，用于方便部署测试
+----------
+
+by 彭泥马 at 2021/11/23
+
+
+##### 1.安装JDK和Jenkins
+
+##### 2.配置
+
+
+###### 安装Publish Over SSH
+1. 点击Manage Jenkins
+2. 点击System Configuration下的Manage Plugins
+3. 点击可选插件，上方输入Publish Over SSH 
+4. 勾选之后，点击Install without restart
+
+###### ssh配置
+1. 点击Manage Jenkins
+2. 点击System Configuration下的Configure System
+3. 滚轮滚至最下方Publish over SSH处，里面有个SSH Servers，点击下方的新增按钮
+4. .
+![ssh-1](https://github.com/chenjacky131/Collection/raw/master/ssh-1.png)
+5. 如果服务器端口非默认的22端口，也可以点击高级去修改
+6. 最后点击Test Configuration测试下，能否连上
+![ssh-2](https://github.com/chenjacky131/Collection/raw/master/ssh-2.png)
+
+###### 新建Item
+1. 在Dashbord主界面，点击新建Item，输入任务名称，选择Freestyle project
+
+###### 配置任务项
+1. 源码管理中选择Git，并配置你的Git项目地址，用户，分支
+
+![git-1](https://github.com/chenjacky131/Collection/raw/master/git-1.png)
+
+2. 构建环境中勾选Send files or execute commands over SSH after the build runs,并添加服务器
+![goujian-1](https://github.com/chenjacky131/Collection/raw/master/goujian-1.png)
+
+3. 构建中，选择并输入你的脚本命令
+![goujian-2](https://github.com/chenjacky131/Collection/raw/master/goujian-2.png)
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
