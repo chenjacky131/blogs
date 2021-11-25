@@ -1,0 +1,27 @@
+Vue3中使用event bus来在全局进行事件的传递
+----------
+
+by jack at 2021/11/25
+
+##### 1. 安装
+````
+ npm install --save mitt
+
+````
+##### 2. 创建bus.js
+````
+import mitt from 'mitt'
+const bus = {}
+const emitter = mitt()
+bus.$on = emitter.on
+bus.$off = emitter.off
+bus.$emit = emitter.emit
+export default bus
+````
+
+##### 3. 配置到全局属性$bus上
+
+##### 4. 开始使用
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
