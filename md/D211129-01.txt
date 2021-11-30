@@ -1,0 +1,104 @@
+React采坑日记
+----------
+
+by jack at 2021/11/29
+
+##### 1. 使用react-redux的Provider来方便在组件中使用redux
+````
+import { Provider } from 'react-redux'  //  使组件中能够读取store
+
+// 然后把APP组件用Provider包起来
+  <Provider store={store}>
+    <App />
+  </Provider>
+````
+###### store里面
+````
+import { configureStore } from '@reduxjs/toolkit'
+import counterReducer from 'store/features/counter/counterSlice'  //  counter相关的状态
+export default configureStore({
+  reducer: {
+    counter: counterReducer //  创建counter模块
+  }
+})
+````
+###### couter里面
+````
+import { createSlice } from '@reduxjs/toolkit'
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    value: 0
+  },
+  reducers: {
+    increment: state => {
+      state.value += 1
+    },
+    decrement: state => {
+      state.value -= 1
+    },
+    incrementByAmount: (state, action) => {
+      state.value += action.payload
+    }
+  }
+})
+export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export default counterSlice.reducer
+````
+###### 组件里面
+````
+import { useDispatch, useSelector } from 'react-redux' //  通过useDiapatch来使用状态的方法
+import { decrement, increment } from 'store/features/counter/counterSlice' // 使用状态的方法
+const dispatch = useDispatch()
+
+//  dispatch(increment())调用状态
+//  const count = useSelector((state) => state.counter.value)读取状态
+````
+##### 2. 使用axios
+###### 安装
+````
+ npm install react-axios
+ npm install axios
+ npm install prop-types
+
+````
+###### 使用
+````
+import { Get } from 'react-axios'
+<Get url="http://39.106.100.236/TIANWU-AREA-SETTING/userArea/findTotalArea"
+     params={{companyId: '496'}}
+     config={{
+       headers: {
+        menuCode: 'ship certificate_list',
+        token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb21wYW55SWQiOjQ5NiwiYWNjb3VudE5hbWUiOiJ4bWNzIiwicGhvbmUiOiIxMzE1NDI2NjcyMCIsImNvbXBhbnlOYW1lIjoi6ZW_55ub5Y-RIiwiaXNzIjoidHciLCJpc1N1cGVyQWRtaW4iOmZhbHNlLCJpc0FkbWluIjpmYWxzZSwidXNlck5hbWUiOiLljqbpl6jmtYvor5UiLCJ0aXRsZSI6Iua1t-mhuui-vua1t-S4iuaZuuiDveeuoeeQhuezu-e7nyIsImV4cCI6MTYzODI1NzIzOSwidXNlcklkIjoxMzAsInRva2VuIjoiQXlFWHNRc0FJTGs9In0.saoFUzmriAw_utPhRTmv0-QC7LOwiPcqPY4-DjnDzp8'
+       }
+     }}
+    >{
+      (error, response, isLoading, onReload) => {
+        if(error){
+          return (<div>出错</div>)
+        }else if(isLoading){
+          return (<div>Loading...</div>)
+        }else if(response !== null){
+          const items = response.data.result.map((item) => <li key={item.id}>{item.name}</li>)
+          return(<div><ul>{items}</ul> <button onClick={() => onReload({params: {refresh: true}})}>Refresh</button></div>)
+        }
+        return (<div>default message before request is made.</div>)
+      }
+    }</Get>  
+````
+###### 使用表单数据
+````
+
+  const fd = new FormData()
+  fd.append('userdata', JSON.stringify({"name":"测试1","latlngs":[[{"lat":24.423948148020287,"lng":118.14559936523439},{"lat":24.424573464584423,"lng":118.17237854003908},{"lat":24.435203371934847,"lng":118.14285278320314}]],"rangeType":1,"lv":1}))
+  fd.append('companyId', 496)
+
+   {headers:{
+     'Content-Type': 'application/x-www-form-urlencoded'
+    }}
+   
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
