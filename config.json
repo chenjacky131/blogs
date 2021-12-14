@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1638240703370,
+  "last_modify": 1639472571749,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D211214-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "input[type=\"file\"]类型的组件值的清空",
+      "modify_at": 1639472571749,
+      "create_at": 1639472405026,
+      "desc": "by jack at 2021/12/14"
+    },
+    {
+      "path": "md/D211202-01.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "Git记住用户名和密码",
+      "modify_at": 1638407671266,
+      "create_at": 1638407615901,
+      "desc": "by jack at 2021/12/02<br>长期存储密码：\n````\ngit config --global credential.helper store"
+    },
     {
       "path": "md/D211129-01.txt",
       "tag": ".React",
@@ -569,7 +587,7 @@
       "tag": ".Git",
       "markdown": true,
       "title": "Git常用命令",
-      "modify_at": 1636623154815,
+      "modify_at": 1638498396392,
       "create_at": 1617671829107,
       "desc": "by jack at 2021/04/06"
     },

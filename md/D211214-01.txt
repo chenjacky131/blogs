@@ -1,0 +1,9 @@
+input[type="file"]类型的组件值的清空
+----------
+
+by jack at 2021/12/14
+
+在外面包裹一个form元素，然后调用form元素的reset()方法来清空它的值，从而使change事件在选择同个文件时得以生效
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

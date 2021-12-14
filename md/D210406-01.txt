@@ -80,6 +80,7 @@ git push --delete origin [remoteBranchName]
 
 ````
 git reset --hard HEAD^(对应的版本号,不写版本号直接恢复到最近的一个提交)
+git push origin HEAD --force // 强制推送到远端,确保远端的东西可以直接覆盖
 ````
 ##### 14.提交当前分支到远程并设置它的upstream
 

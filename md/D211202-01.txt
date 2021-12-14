@@ -1,0 +1,12 @@
+Git记住用户名和密码
+----------
+
+by jack at 2021/12/02
+
+长期存储密码：
+````
+git config --global credential.helper store
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
