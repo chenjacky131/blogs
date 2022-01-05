@@ -1,0 +1,866 @@
+航道的画法
+----------
+
+by jack at 2021/07/01
+
+##### 航道工具函数文件
+
+````
+
+/*
+ * @Author: jack chen
+ * @Date: 2021-08-05 16:38:42
+ * @LastEditTime: 2021-12-13 16:28:18
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \small-ship-web\src\utils\shipChannel.js
+ */
+import angleRadian from "@/utils/angleRadian"
+import { divIcon } from "leaflet";
+let shipChannelUtils = {
+  /**
+  * 根据一个经纬度及距离角度，算出另外一个经纬度
+  * @param {*} lon 经度 113.3960698
+  * @param {*} lat 纬度 22.941386
+  * @param {*} brng 方位角 45 ---- 正北方：000°或360° 正东方：090° 正南方：180° 正西方：270°
+  * @param {*} dist 90000距离(米)
+  */
+  getLonAndLat(lon, lat, brng, dist) {
+    //大地坐标系资料WGS-84 极坐标长半径a=6378137 极坐标短半径b=6356752.3142 扁率f=1/298.2572236
+    var a = 6378137;
+    var b = 6356752.314245179;
+    var f = 1 / 298.257223563;
+    var lon1 = lon * 1;
+    var lat1 = lat * 1;
+    var s = dist;
+    var alpha1 = angleRadian.rad(brng);
+    var sinAlpha1 = Math.sin(alpha1);
+    var cosAlpha1 = Math.cos(alpha1);
+    var tanU1 = (1 - f) * Math.tan(angleRadian.rad(lat1));
+    var cosU1 = 1 / Math.sqrt((1 + tanU1 * tanU1)),
+      sinU1 = tanU1 * cosU1;
+    var sigma1 = Math.atan2(tanU1, cosAlpha1);
+    var sinAlpha = cosU1 * sinAlpha1;
+    var cosSqAlpha = 1 - sinAlpha * sinAlpha;
+    var uSq = cosSqAlpha * (a * a - b * b) / (b * b);
+    var A = 1 + uSq / 16384 * (4096 + uSq * (- 768 + uSq * (320 - 175 * uSq)));
+    var B = uSq / 1024 * (256 + uSq * (- 128 + uSq * (74 - 47 * uSq)));
+    var sigma = s / (b * A),
+      sigmaP = 2 * Math.PI;
+    while (Math.abs(sigma - sigmaP) > 1e-12) {
+      var cos2SigmaM = Math.cos(2 * sigma1 + sigma);
+      var sinSigma = Math.sin(sigma);
+      var cosSigma = Math.cos(sigma);
+      var deltaSigma = B * sinSigma * (cos2SigmaM + B / 4 * (cosSigma * (- 1 + 2 * cos2SigmaM * cos2SigmaM) - B / 6 * cos2SigmaM * (- 3 + 4 * sinSigma * sinSigma) * (- 3 + 4 * cos2SigmaM * cos2SigmaM)));
+      sigmaP = sigma;
+      sigma = s / (b * A) + deltaSigma;
+    }
+    var tmp = sinU1 * sinSigma - cosU1 * cosSigma * cosAlpha1;
+    var lat2 = Math.atan2(sinU1 * cosSigma + cosU1 * sinSigma * cosAlpha1, (1 - f) * Math.sqrt(sinAlpha * sinAlpha + tmp * tmp));
+    var lambda = Math.atan2(sinSigma * sinAlpha1, cosU1 * cosSigma - sinU1 * sinSigma * cosAlpha1);
+    var C = f / 16 * cosSqAlpha * (4 + f * (4 - 3 * cosSqAlpha));
+    var L = lambda - (1 - C) * f * sinAlpha * (sigma + C * sinSigma * (cos2SigmaM + C * cosSigma * (- 1 + 2 * cos2SigmaM * cos2SigmaM)));
+    var revAz = Math.atan2(sinAlpha, -tmp); // final bearing
+    var lonLatObj = {
+      lon: lon1 + angleRadian.deg(L),
+      lat: angleRadian.deg(lat2)
+    }
+  
+    return lonLatObj;
+  },  
+  /**
+   * @description: 通过经纬度获取旋转的角度,0度为北边
+   * @param {Object}} lnglat1:经纬度对象包括lng和lat属性
+   * @param {Object}} lnglat2:经纬度对象包括lng和lat属性
+   * @return {Number} 返回旋转角度
+   */
+   _getRotateAngle(lnglat1, lnglat2) {
+    let course = 0;
+    if (lnglat2.lng == lnglat1.lng) {
+      if (lnglat2.lat > lnglat1.lat) {
+        course = 0;
+      } else {
+        course = 180;
+      }
+    } else {
+      let tan = Math.atan((lnglat2.lat - lnglat1.lat) / (lnglat2.lng - lnglat1.lng)) * 180 / Math.PI;
+
+      if (tan > 0) {
+        if ((lnglat2.lng - lnglat1.lng) < 0) {
+          course = 270 - tan;
+        } else {
+          course = 90 - tan;
+        }
+      } else {
+        if ((lnglat2.lng - lnglat1.lng) > 0) {
+          course = -tan + 90;
+        } else {
+          course = 270 - tan;
+        }
+      }
+    }
+    return course;
+  },
+  /**
+   * @description: 航线所有方位的判断
+   * @param {Object} param:需要求的函数的参数对象
+   * @param {String} type:需要求的函数名称(halfAngle:对角线一半的角度,cornerAngle:对角线的地理角度,bevelLength:对角线的长度)
+   * @return {Number} 返回对应函数需要的数据
+   */
+  _allDirection(param, type) {
+    if (param.angle1 >= 270 && param.angle1 <= 360) { //  线段一在西北角
+      if (param.angle2 >= 270 && param.angle2 <= 360) { //  线段二也在西北角
+        if (param.angle1 >= param.angle2) {
+          if (type === 'halfAngle') {
+            return (360 - (param.angle1 - param.angle2)) / 2
+          }else if(type === 'cornerAngle'){
+            return (param.halfAngle - (360 - param.angle1))
+          }else if(type === 'bevelLength'){
+            return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+          }
+        } else {
+          if (type === 'halfAngle') {
+            return (param.angle2 - param.angle1) / 2
+          }else if(type === 'cornerAngle'){
+            return (param.halfAngle + param.angle1)
+          }else if(type === 'bevelLength'){
+            return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+          }
+        }
+      } else if (param.angle2 >= 0 && param.angle2 <= 90) { //  线段二在东北角
+        if (type === 'halfAngle') {
+          return (360 - (param.angle1 - param.angle2)) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.halfAngle + param.angle1)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(param.halfAngle))
+        }
+      } else if (param.angle2 >= 90 && param.angle2 <= 180) { //  线段二在东南角
+        if (type === 'halfAngle') {
+          return (360 - (param.angle1 - param.angle2)) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle2 - param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(param.halfAngle))
+        }
+      } else { //  线段二在西南角
+        if (type === 'halfAngle') {
+          return (360 - (param.angle1 - param.angle2)) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle2 - param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+        }
+      }
+    } else if (param.angle1 >= 0 && param.angle1 <= 90) { //  线段一在东北角
+      if (param.angle2 >= 270 && param.angle2 <= 360) { //  线段二西北角
+        if (type === 'halfAngle') {
+          return (param.angle2 - param.angle1) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle1 + param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+        }
+      } else if (param.angle2 >= 0 && param.angle2 <= 90) { //  线段二也在东北角
+        if (param.angle1 >= param.angle2) {
+          if (type === 'halfAngle') {
+            return (360 - (param.angle1 - param.angle2)) / 2
+          }else if(type === 'cornerAngle'){
+            return (param.angle1 + param.halfAngle)
+          }else if(type === 'bevelLength'){
+            return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+          }
+        } else {
+          if (type === 'halfAngle') {
+            return (param.angle2 - param.angle1) / 2
+          }else if(type === 'cornerAngle'){
+            return (param.angle1 + param.halfAngle)
+          }else if(type === 'bevelLength'){
+            return (param.dis) / Math.sin(angleRadian.rad(param.halfAngle))
+          }
+        }
+      } else if (param.angle2 >= 90 && param.angle2 <= 180) { //  线段二在东南角
+        if (type === 'halfAngle') {
+          return (param.angle2 - param.angle1) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle1 + param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(param.halfAngle))
+        }
+      } else { //  线段二在西南角
+        if (type === 'halfAngle') {
+          return (param.angle2 - param.angle1) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle1 + param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+        }
+      }
+    } else if (param.angle1 >= 90 && param.angle1 <= 180) { //  线段一在东南角
+      if (param.angle2 >= 270 && param.angle2 <= 360) { //  线段二西北角
+        if (type === 'halfAngle') {
+          return (param.angle2 - param.angle1) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle1 + param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+        }
+      } else if (param.angle2 >= 0 && param.angle2 <= 90) { //  线段二在东北角
+        if (type === 'halfAngle') {
+          return (360 - (param.angle1 - param.angle2)) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle1 + param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+        }
+      } else if (param.angle2 >= 90 && param.angle2 <= 180) { //  线段二也在东南角
+        if (param.angle1 >= param.angle2) {
+          if (type === 'halfAngle') {
+            return (360 - (param.angle1 - param.angle2)) / 2
+          }else if(type === 'cornerAngle'){
+            return (param.angle1 + param.halfAngle)
+          }else if(type === 'bevelLength'){
+            return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+          }
+        } else {
+          if (type === 'halfAngle') {
+            return (param.angle2 - param.angle1) / 2
+          }else if(type === 'cornerAngle'){
+            return (param.angle1 + param.halfAngle)
+          }else if(type === 'bevelLength'){
+            return (param.dis) / Math.sin(angleRadian.rad(param.halfAngle))
+          }
+        }
+      } else { //  线段二在西南角
+        if (type === 'halfAngle') {
+          return (param.angle2 - param.angle1) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle1 + param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(param.halfAngle))
+        }
+      }
+    } else { //  线段一在西南角
+      if (param.angle2 >= 270 && param.angle2 <= 360) { //  线段二西北角        
+        if (type === 'halfAngle') {
+          return (param.angle2 - param.angle1) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle1 + param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(param.halfAngle))
+        }
+      } else if (param.angle2 >= 0 && param.angle2 <= 90) { //  线段二在东北角
+        if (type === 'halfAngle') {
+          return (360 - (param.angle1 - param.angle2)) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle1 + param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(param.halfAngle))
+        }
+      } else if (param.angle2 >= 90 && param.angle2 <= 180) { //  线段二在东南角
+        if (type === 'halfAngle') {
+          return (360 - (param.angle1 - param.angle2)) / 2
+        }else if(type === 'cornerAngle'){
+          return (param.angle1 + param.halfAngle)
+        }else if(type === 'bevelLength'){
+          return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+        }
+      } else { //  线段二也在西南角
+        if (param.angle1 >= param.angle2) {
+          if (type === 'halfAngle') {
+            return (360 - (param.angle1 - param.angle2)) / 2
+          }else if(type === 'cornerAngle'){
+            return (param.angle2 - param.halfAngle)
+          }else if(type === 'bevelLength'){
+            return (param.dis) / Math.sin(angleRadian.rad(180 - param.halfAngle))
+          }
+        } else {
+          if (type === 'halfAngle') {
+            return (param.angle2 - param.angle1) / 2
+          }else if(type === 'cornerAngle'){
+            return (param.angle1 + param.halfAngle)
+          }else if(type === 'bevelLength'){
+            return (param.dis) / Math.sin(angleRadian.rad(param.halfAngle))
+          }
+        }
+      }
+    }
+  },
+  /**
+   * @description: 修正地理角度
+   * @param {Number} deg: 数学角度
+   * @return {Number} 修正后的地理角度
+   */  
+  _fixDeg(deg){
+    if(deg > 360){
+      return deg - 360
+    }else if(deg < 0){
+      return deg + 360
+    }else{
+      return deg
+    }
+  }, 
+  resetMap(layer,type,codeCopy){ //  切换地图时重置经纬度
+    if(([3,4,5,6].includes(type))&&[0,2].includes(codeCopy)){ //  从海图切换到地图或者卫星图
+      let latlngs = ''
+      for(let key in layer._layers){
+        latlngs = layer._layers[key].getLatLngs()
+        if(!layer._layers[key].oldLatlng2){
+          layer._layers[key].oldLatlng2 = latlngs              
+        }
+        let transformedLatlng = ''
+        if(latlngs.length > 1){ //  航线
+          transformedLatlng = latlngs.map(item => {
+            const newLatlng = L.GPS.transform(item.lat, item.lng)
+            return {
+              lat: newLatlng[0],
+              lng: newLatlng[1]
+            }
+          })
+          if(transformedLatlng.length > 0){
+            layer._layers[key].setLatLngs(transformedLatlng)
+          }
+        }else if(latlngs.length === 1){ //  航道
+          let shipChannelInnerLatlng = latlngs[0][0]
+          transformedLatlng = [[]]
+          transformedLatlng[0][0] = shipChannelInnerLatlng.map(item => {
+            const newLatlng = L.GPS.transform(item.lat, item.lng)
+            return {
+              lat: newLatlng[0],
+              lng: newLatlng[1]
+            }
+          })
+          if(transformedLatlng.length > 0){
+            layer._layers[key].setLatLngs(transformedLatlng)
+          }          
+        }
+      }             
+    }else if((type===0 || type === 2)&&[0,2].includes(codeCopy)){ //  卫星图和地图之间互切
+      return
+    }else{  //  卫星图和地图切到海图
+      for(let key in layer._layers){
+        if(layer._layers[key].oldLatlng2){
+          layer._layers[key].setLatLngs(layer._layers[key].oldLatlng2)
+        }
+      }
+    }
+  }
+}
+export default shipChannelUtils
+
+````
+
+##### 航道类函数
+
+````
+import { wkt } from "leaflet-omnivore"
+import LoongShipMap from "@/utils/loongShipMap"
+import {message} from "ant-design-vue"
+import shipChannelUtils from '@/utils/shipChannel'
+import {toRaw} from 'vue'
+import {degMinSecToLatlng} from '@/utils/latlngUtils'
+import { defaultStyleDataArr } from '@/utils/constant';
+import { defaultStyleData } from '@/utils/constant';
+class ShipChannel {
+  constructor() {
+    this.shipChannelList = []  //  航道列表
+    this.shipChannelFeatureGroupMap = new Map()  //  航道图形对象的集合，集合里面分obj对象和layer图层两个属性
+    this.currentEditingChannelFeatureGroup = {
+      obj:{
+        shipChannelLine: '',
+        shipChannelArea: ''
+      },
+      layer: L.featureGroup([])
+    }  //  当前正在编辑的航道图形对象
+    this.drawObj = ''  //  当前绘制的leaflet.draw对象，只有在新增的时候用到
+    this.isShipChannelEditing = false
+    this.shipChannelLinePoints = []  //  航道中线经纬度点
+    this.shipChannelPoints = []  //  航道经纬度点，此点用于绘图，不是按顺序的经纬度点
+    this.shipChannelFakeUp = []  //  扩展航道上部分，此点用于绘图，不是按顺序的经纬度点
+    this.shipChannelFakeDown = []  //  扩展航道下部分，此点用于绘图，不是按顺序的经纬度点
+    this.shipChannelLayer = '' //  区域的经纬度点，用户接口传参
+    this.shipChannelFakeUpLayer = '' //  区域上部虚拟区域的经纬度点，用户接口传参
+    this.shipChannelFakeDownLayer = '' //  区域下部虚拟区域的经纬度点，用户接口传参
+    this.shipChannelWidth = '' //  航道宽度
+    this.fakeChannelWidth = 2000  // 隐藏航道的宽度
+    this.tempLatlngs = []  //  暂时存放航道经纬度的数组
+    this.shipChannelWidthLines = []  //  存放每段线段宽度的线段数组
+    this.shipChannelLengthLines = [] //  存放每段线段长度的线段数组
+  }
+  init(component) { //  初始化方法，把调用的组件传递进来
+    this.component = component
+  }
+  show(item) {  //  查看航道
+    // 查看区域
+    this.component.toggleStatusChannel = ''
+    const userId = JSON.parse(sessionStorage.getItem('userInfo')).userId
+    item.isShow = !item.isShow
+    if(item.isShow){
+      localStorage.removeItem(`channel-${userId}-${item.tsChannelAreaId}-hide`)
+    }else{
+      localStorage.setItem(`channel-${userId}-${item.tsChannelAreaId}-hide`, true)
+    }
+    if (this.currentEditingChannelFeatureGroup.layer) {  //  移除掉编辑时显示的航道图形对象
+      this.removeShipChannelLayer(this.currentEditingChannelFeatureGroup.layer)
+    }
+    // 当前要显示或者隐藏的航道图形对象
+    let shipChannelFeature = this.shipChannelFeatureGroupMap.get(item.tsChannelAreaId) && this.shipChannelFeatureGroupMap.get(item.tsChannelAreaId).layer || undefined
+    let shipChannelObj = {}
+    // 如果查看当前区域
+    if (item.isShow === true) {
+      if(!shipChannelFeature){  //  如果没有创建过
+        try {
+          const styleData = JSON.parse(item.styleData)
+          let styleData2 = {
+            ...defaultStyleData
+          }
+          for (const key in styleData) {
+            if (defaultStyleDataArr.some(v => v == key))  styleData2[key] = styleData[key]
+          }
+          item.styleData = JSON.stringify(styleData2)
+        } catch (e) {
+          console.log(e)
+        }
+        let styleData = JSON.parse(item.styleData)
+        const geomtryCenter = wkt.parse(item.geomtryCenter).setStyle({ ...styleData, shipChannel: true })
+        const geomtryLine = wkt.parse(item.geomtryLine).setStyle({ ...styleData, weight: 1, color: styleData.color})
+        let sAlayer = ''
+        let sLlayer = ''
+        for (let key in geomtryCenter._layers) {
+          sAlayer = geomtryCenter._layers[key]
+        }
+        for (let key in geomtryLine._layers) {
+          sLlayer = geomtryLine._layers[key]
+        }
+        sAlayer.layerTypeName = 'shipChannel'
+        sLlayer.layerTypeName = 'shipChannelLine'
+        if(styleData.textValue === 1 || !styleData.textValue){
+          sLlayer._text = item.channelName
+        }else{
+          sAlayer._text = item.channelName
+        }
+        shipChannelObj = {
+          shipChannelArea: sAlayer,
+          shipChannelLine: sLlayer
+        }
+        shipChannelFeature = L.featureGroup([shipChannelObj.shipChannelArea,shipChannelObj.shipChannelLine])
+        let tempObj = this.generateShipChannel(JSON.parse(item.latlngList))
+        tempObj.shipChannelWidthLines.map(item => {
+          item.layer.layerTypeName = 'shipChannelLine'
+          item.layer._text_type = 'distance'
+          item.layer.setStyle({color: styleData.color, backupColor: styleData.color, weight: 1, dashArray: '2,2'})
+          item.layer._text = item.width + 'm'
+          shipChannelFeature.addLayer(item.layer)
+        })
+        tempObj.shipChannelLengthLines.map(item => {
+          item.layer.layerTypeName = 'shipChannelLine'
+          item.layer._text_type = 'distance'
+          item.layer._text_attr = 'length'
+          item.layer.setStyle({color: 'transparent', backupColor: styleData.color, weight: 1})
+          item.layer._text = item.length + 'm'
+          shipChannelFeature.addLayer(item.layer)
+        })
+        // 储存区域对象
+        this.shipChannelFeatureGroupMap.set(item.tsChannelAreaId, { obj: shipChannelObj, layer: shipChannelFeature })
+      }
+      // 将航道图形对象添加至地图
+      this.addShipChannelLayer(shipChannelFeature)
+    } else {// 如果关闭当前航道     
+      this.removeShipChannelLayer(shipChannelFeature)
+      this.shipChannelFeatureGroupMap.delete(item.tsChannelAreaId)
+      shipChannelFeature = undefined
+    }
+  }
+  edit(item) {  //  编辑航道
+    let self = this
+    this.component.toggleStatusChannel = ''
+    const userId = JSON.parse(sessionStorage.getItem('userInfo')).userId
+    localStorage.removeItem(`channel-${userId}-${item.tsChannelAreaId}-hide`)
+    const component = this.component
+    // 编辑之前获取当前item的样式，并填充到 this.styleData 里    
+    try {
+      const styleData = JSON.parse(item.styleData)
+      let styleData2 = {
+        ...defaultStyleData
+      }
+      for (const key in styleData) {
+        if (defaultStyleDataArr.some(v => v == key))  styleData2[key] = styleData[key]
+      }
+      item.styleData = JSON.stringify(styleData2)
+    } catch (e) {
+      console.log(e)
+    }
+    let styleData = JSON.parse(item.styleData)
+    this.shipChannelLinePoints = []
+    // 当前要编辑的航道图形对象
+    let shipChannelFeature = this.shipChannelFeatureGroupMap.get(item.tsChannelAreaId) && this.shipChannelFeatureGroupMap.get(item.tsChannelAreaId).layer || undefined
+    if(shipChannelFeature){ //  如果是在显示状态点的编辑，需要移除掉显示的航道图形
+      this.removeShipChannelLayer(shipChannelFeature, item.tsChannelAreaId)
+    }
+    let tempObj = this.generateShipChannel(JSON.parse(item.latlngList))
+    this.currentEditingChannelFeatureGroup.obj.shipChannelLine = tempObj.shipChannelLine
+    this.currentEditingChannelFeatureGroup.obj.shipChannelArea = tempObj.shipChannel
+    if(styleData.textValue === 1){
+      this.currentEditingChannelFeatureGroup.obj.shipChannelLine._text = item.channelName
+    }else{
+      this.currentEditingChannelFeatureGroup.obj.shipChannelArea._text = item.channelName
+    }
+    this.currentEditingChannelFeatureGroup.obj.shipChannelArea.layerTypeName = 'shipChannel'
+    this.currentEditingChannelFeatureGroup.obj.shipChannelLine.layerTypeName = 'shipChannelLine'
+    this.currentEditingChannelFeatureGroup.layer = L.featureGroup([tempObj.shipChannelLine, tempObj.shipChannel])
+    tempObj.shipChannelWidthLines.map(item => {
+      item.layer.layerTypeName = 'shipChannelLine'
+      item.layer._text_type = 'distance'
+      item.layer.setStyle({color: styleData.color, backupColor: styleData.color, weight: 1, dashArray: '2,2'})
+      item.layer._text = item.width + 'm'
+      this.currentEditingChannelFeatureGroup.layer.addLayer(item.layer)
+    })
+    tempObj.shipChannelLengthLines.map(item => {
+      item.layer.layerTypeName = 'shipChannelLine'
+      item.layer._text_type = 'distance'
+      item.layer._text_attr = 'length'
+      item.layer.setStyle({color: 'transparent', backupColor: styleData.color, weight: 1})
+      item.layer._text = item.length + 'm'
+      this.currentEditingChannelFeatureGroup.layer.addLayer(item.layer)
+    })
+    //  预览
+    LoongShipMap.$map.fitBounds(tempObj.shipChannelLine.getBounds())
+    tempObj.shipChannelLine.setStyle({...styleData, weight:1, color: styleData.color})
+    tempObj.shipChannel.setStyle({...styleData, shipChannel: true})
+    LoongShipMap.$map.addLayer(toRaw(this.currentEditingChannelFeatureGroup.layer))
+    component.$store.commit('shipChannel/SET_CURRENT_EDITING_OBJ', {
+      ...component.$store.state.shipChannel.currentEditingObj,
+      shipChannelName: item.channelName,
+      tsChannelAreaId: item.tsChannelAreaId,
+      styleData: styleData,
+      latlngList: JSON.parse(item.latlngList),
+      shipChannelWidthLines: tempObj.shipChannelWidthLines,
+      shipChannelLengthLines: tempObj.shipChannelLengthLines,
+      isHidden: item.isHidden,
+      isEmergency: item.isEmergency
+    })
+    // 设置当前区域为展示状态
+    item.isShow = true
+  }
+  clearLayer(){ //  清除编辑时生成的层，清空变量
+    if(this.currentEditingChannelFeatureGroup.layer){
+      LoongShipMap.$map.removeLayer(toRaw(this.currentEditingChannelFeatureGroup.layer))
+      if(this.shipChannelLayer){
+        LoongShipMap.$map.removeLayer(toRaw(this.shipChannelLayer))
+        LoongShipMap.$map.removeLayer(toRaw(this.shipChannelFakeUpLayer))
+        LoongShipMap.$map.removeLayer(toRaw(this.shipChannelFakeDownLayer))
+        this.shipChannelLayer = undefined
+        this.shipChannelFakeUpLayer = undefined
+        this.shipChannelFakeDownLayer = undefined
+      }      
+    }
+    this.shipChannelLinePoints = []
+    this.shipChannelPoints = []
+    this.shipChannelFakeUp = []
+    this.shipChannelFakeDown = []
+    this.tempLatlngs = []
+    this.resetCurrentEditingChannelFeatureGroup()
+  }
+  addShipChannelLayer(shipChannel) {
+    LoongShipMap.$map.addLayer(toRaw(shipChannel))
+    LoongShipMap.$map.fitBounds(shipChannel.getBounds())
+  }
+  removeShipChannelLayer(shipChannel, id) {
+    LoongShipMap.$map.removeLayer(toRaw(shipChannel))
+    if (id) {
+      this.shipChannelFeatureGroupMap.delete(id)
+    }
+  }
+  resetCurrentEditingChannelFeatureGroup(){  //  重置当前编辑对象
+    this.currentEditingChannelFeatureGroup = {
+      obj:{
+        shipChannelLine: '',
+        shipChannelArea: ''
+      },
+      layer: L.featureGroup([])
+    }
+  }
+  resetDrawingVar(){  //  重置之前绘制的变量
+    this.shipChannelLinePoints = []
+    this.shipChannelLinePoints = []
+    this.shipChannelPoints = []
+    this.shipChannelFakeUp = []
+    this.shipChannelFakeDown = []
+    this.shipChannelWidthLines = []
+    this.shipChannelLengthLines = []
+  }
+  generateShipChannel(latlngList){ //  生成航道数据
+    if(latlngList.length < 2){
+      message.destroy()
+      message.warn({ content: "至少需要两个点才能绘制航道", duration: 1 });
+      return false
+    }
+    let temp = latlngList.map(item => {
+      return {
+        lat: degMinSecToLatlng(item.lat,'lat'),
+        lng: degMinSecToLatlng(item.lng,'lng'),
+        widthOne: item.widthOne,
+        widthTwo: item.widthTwo
+      }
+    })
+    return this.generateShipChannelObj(temp)
+  }
+  /**
+   * @description: 航道绘制的函数
+   * @param {Array} arr:绘制时的航线坐标信息数组
+   * @return {undefined}
+   */
+  generateShipChannelObj(arr) { //  航道绘制函数
+    this.resetDrawingVar()
+    if(this.currentEditingChannelFeatureGroup.layer){
+      LoongShipMap.$map.removeLayer(toRaw(this.currentEditingChannelFeatureGroup.layer))
+    }
+    let returnObj = {}
+    arr.map((item, index) => {
+      this.shipChannelLinePoints.push(item)
+      if (index === arr.length - 1) {
+        returnObj = this.shipChannelCalculating(this.shipChannelLinePoints, true, index)
+      } else {
+        this.shipChannelCalculating(this.shipChannelLinePoints,undefined, index)
+      }
+    })
+    return returnObj
+  }
+  /**
+   * @description: 航道的计算部分
+   * @param {Array} lineArr:航线点经纬度数组
+   * @param {Boolean} closeArea:是否需要闭合区域以及绘制
+   * @param {Number} index:当前点的序号
+   * @return {undefined}
+   */    
+  shipChannelCalculating(lineArr, closeArea, index){ //  航线计算部分
+    let lastPoint = ''  //  上个点
+    let thisPoint = ''  //  这个点
+    let middlePoint = '' // 每段的中间点
+    let lastLastPoint = ''  //  上两个点
+    let targetPoint1Up = '' //  航线扩展点上部分
+    let targetPoint1Down = '' //  航线扩展点下部分
+    let targetPoint2Up = '' //  航线扩展点上部分
+    let targetPoint2Down = '' //  航线扩展点下部分
+    let targetPoint1UpUp = '' // 隐藏航道上部分
+    let targetPoint1DownDown = '' //  隐藏航道下部分
+    let targetPoint2UpUp = '' //  隐藏航道上部分
+    let targetPoint2DownDown = '' //  隐藏航道下部分
+    let oldTargetPoint2Up = ''  //  上一个点的替换点上
+    let oldTargetPoint2Down = ''  //  上一个点的替换点下
+    let oldTargetPoint2UpUp = ''  //  上一个扩展点的替换点上
+    let oldTargetPoint2DownDown = ''  //  上一个扩展点的替换点下
+    let targetPointMiddleUp = ''  //  每段航道宽度的上线段点
+    let targetPointMiddleDown = ''  //  每段航道宽度的下线段点
+    let assistShipChannelLineStart = '' //  用于显示每段航道长度的线段起点
+    let assistShipChannelLineEnd = '' //  用于显示每段航道长度的线段终点
+    let pointAngle = 0 // 起点和终点的角度
+    let pointAngelCorner = 0  //  拐角的地理角度
+    let dis1 = 0// 第一段航道的上宽度
+    let dis2 = 0// 第一段航道的下宽度
+    let dis3 = 0// 第二段航道的上宽度
+    let dis4 = 0// 第二段航道的下宽度
+    if (lineArr.length >= 2) {  //  当点超过两个的时候才开始画航线
+      for (let i = 0; i < lineArr.length; i++) {
+        if (i === lineArr.length - 2) { //  新增线段的起点
+          lastPoint = lineArr[i]
+          if(lineArr.length > 2){
+            dis1 = Number(lineArr[i].widthOne)
+            dis2 = Number(lineArr[i].widthTwo)
+          }
+        }
+        if (i === lineArr.length - 1) { //  新增线段的终点
+          thisPoint = lineArr[i]     
+          if(lineArr.length == 2){
+            dis1 = Number(lineArr[i].widthOne)
+            dis2 = Number(lineArr[i].widthTwo)
+          }else{
+            dis3 = Number(lineArr[i].widthOne)
+            dis4 = Number(lineArr[i].widthTwo)
+          }     
+        }
+        if (lineArr.length >= 3 && i === lineArr.length - 3) { //  新增线段前置的点
+          lastLastPoint = lineArr[i]
+        }
+      }
+      //  ''转成字符串 +转成number类型
+      middlePoint = {
+        lat: '' + (+lastPoint.lat + +thisPoint.lat) /  2,
+        lng: '' + (+lastPoint.lng + +thisPoint.lng) /  2,
+        widthOne: thisPoint.widthOne,
+        widthTwo: thisPoint.widthTwo
+      }
+      if (lineArr.length === 2) { //  航线只有两个点的时候
+        pointAngle = shipChannelUtils._getRotateAngle(lastPoint, thisPoint) <= 90 ? shipChannelUtils._getRotateAngle(lastPoint, thisPoint) - 90 + 360 : shipChannelUtils._getRotateAngle(lastPoint, thisPoint) - 90  //  垂直于航线的角度
+        targetPoint1Up = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngle, dis1)
+        targetPoint1UpUp = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngle, dis1 + this.fakeChannelWidth)
+        targetPoint1Down = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngle >= 180 ? pointAngle - 180 : pointAngle + 180, dis2)
+        targetPoint1DownDown = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngle >= 180 ? pointAngle - 180 : pointAngle + 180, dis2 + this.fakeChannelWidth)
+        targetPoint2Up = shipChannelUtils.getLonAndLat(thisPoint.lng, thisPoint.lat, pointAngle, dis1)
+        targetPoint2UpUp = shipChannelUtils.getLonAndLat(thisPoint.lng, thisPoint.lat, pointAngle, dis1 + this.fakeChannelWidth)
+        targetPoint2Down = shipChannelUtils.getLonAndLat(thisPoint.lng, thisPoint.lat, pointAngle >= 180 ? pointAngle - 180 : pointAngle + 180, dis2)
+        targetPoint2DownDown = shipChannelUtils.getLonAndLat(thisPoint.lng, thisPoint.lat, pointAngle >= 180 ? pointAngle - 180 : pointAngle + 180, dis2 + this.fakeChannelWidth)        
+        targetPointMiddleUp = shipChannelUtils.getLonAndLat(middlePoint.lng, middlePoint.lat, pointAngle, dis1)
+        targetPointMiddleDown = shipChannelUtils.getLonAndLat(middlePoint.lng, middlePoint.lat, pointAngle >= 180 ? pointAngle - 180 : pointAngle + 180, dis2)
+      } else {  //  航线超过两个点后
+        pointAngle = shipChannelUtils._getRotateAngle(lastPoint, thisPoint) <= 90 ?
+          shipChannelUtils._getRotateAngle(lastPoint, thisPoint) - 90 + 360 :
+          shipChannelUtils._getRotateAngle(lastPoint, thisPoint) - 90  //  垂直于航线的角度
+        let angle1 = shipChannelUtils._getRotateAngle(lastPoint, lastLastPoint)
+        let angle2 = shipChannelUtils._getRotateAngle(lastPoint, thisPoint)
+        let halfAngle = shipChannelUtils._allDirection({ angle1: angle1, angle2: angle2 }, 'halfAngle')
+        let bevelLength1 = 0 //  第一部分航道夹角对角线的长度
+        let bevelLength2 = 0 //  第二部分航道夹角对角线的长度
+        let bevelLength3 = 0 //  第三部分航道夹角对角线的长度
+        let bevelLength4 = 0 //  第四部分航道夹角对角线的长度
+        let bevelFakeLength1 = 0 //  第一部分扩展航道夹角对角线的宽度
+        let bevelFakeLength2 = 0 //  第二部分扩展航道夹角对角线的宽度
+        let bevelFakeLength3 = 0 //  第三部分扩展航道夹角对角线的宽度
+        let bevelFakeLength4 = 0 //  第四部分扩展航道夹角对角线的宽度
+        pointAngelCorner = shipChannelUtils._fixDeg(shipChannelUtils._allDirection({ angle1: angle1, angle2: angle2, halfAngle: halfAngle }, 'cornerAngle'))
+        bevelLength1 = shipChannelUtils._allDirection({ dis: dis1, angle1: angle1, angle2: angle2, pointAngelCorner: pointAngelCorner, halfAngle: halfAngle }, 'bevelLength')
+        bevelLength2 = shipChannelUtils._allDirection({ dis: dis2, angle1: angle1, angle2: angle2, pointAngelCorner: pointAngelCorner, halfAngle: halfAngle }, 'bevelLength')
+        bevelLength3 = shipChannelUtils._allDirection({ dis: dis3, angle1: angle1, angle2: angle2, pointAngelCorner: pointAngelCorner, halfAngle: halfAngle }, 'bevelLength')
+        bevelLength4 = shipChannelUtils._allDirection({ dis: dis4, angle1: angle1, angle2: angle2, pointAngelCorner: pointAngelCorner, halfAngle: halfAngle }, 'bevelLength')
+        bevelFakeLength1 = shipChannelUtils._allDirection({ dis: dis1 + this.fakeChannelWidth, angle1: angle1, angle2: angle2, pointAngelCorner: pointAngelCorner, halfAngle: halfAngle }, 'bevelLength')
+        bevelFakeLength2 = shipChannelUtils._allDirection({ dis: dis2 + this.fakeChannelWidth, angle1: angle1, angle2: angle2, pointAngelCorner: pointAngelCorner, halfAngle: halfAngle }, 'bevelLength')
+        bevelFakeLength3 = shipChannelUtils._allDirection({ dis: dis3 + this.fakeChannelWidth, angle1: angle1, angle2: angle2, pointAngelCorner: pointAngelCorner, halfAngle: halfAngle }, 'bevelLength')
+        bevelFakeLength4 = shipChannelUtils._allDirection({ dis: dis4 + this.fakeChannelWidth, angle1: angle1, angle2: angle2, pointAngelCorner: pointAngelCorner, halfAngle: halfAngle }, 'bevelLength')
+        //  折角
+        oldTargetPoint2Up = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngelCorner, bevelLength1)
+        oldTargetPoint2Down = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngelCorner >= 180 ? pointAngelCorner - 180 : pointAngelCorner + 180, bevelLength2)
+        oldTargetPoint2UpUp = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngelCorner, bevelFakeLength1)
+        oldTargetPoint2DownDown = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngelCorner >= 180 ? pointAngelCorner - 180 : pointAngelCorner + 180, bevelFakeLength2)
+
+        targetPoint1Up = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngelCorner, bevelLength3)
+        targetPoint1UpUp = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngelCorner, bevelFakeLength3)
+        targetPoint1Down = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngelCorner >= 180 ? pointAngelCorner - 180 : pointAngelCorner + 180, bevelLength4)
+        targetPoint1DownDown = shipChannelUtils.getLonAndLat(lastPoint.lng, lastPoint.lat, pointAngelCorner >= 180 ? pointAngelCorner - 180 : pointAngelCorner + 180, bevelFakeLength4)
+        //  折角结束
+        targetPoint2Up = shipChannelUtils.getLonAndLat(thisPoint.lng, thisPoint.lat, pointAngle, dis3)
+        targetPoint2UpUp = shipChannelUtils.getLonAndLat(thisPoint.lng, thisPoint.lat, pointAngle, dis3 + this.fakeChannelWidth)
+        targetPoint2Down = shipChannelUtils.getLonAndLat(thisPoint.lng, thisPoint.lat, pointAngle >= 180 ? pointAngle - 180 : pointAngle + 180, dis4)
+        targetPoint2DownDown = shipChannelUtils.getLonAndLat(thisPoint.lng, thisPoint.lat, pointAngle >= 180 ? pointAngle - 180 : pointAngle + 180, dis4 + this.fakeChannelWidth)
+        //  替换上一段的末端上下点
+        if(index > 1){
+          this.shipChannelPoints[index - 2][1] = oldTargetPoint2Up
+          this.shipChannelPoints[index - 2][2] = oldTargetPoint2Down
+
+          this.shipChannelFakeUp[index - 2][1] = oldTargetPoint2UpUp
+          this.shipChannelFakeUp[index - 2][2] = oldTargetPoint2Up
+
+          this.shipChannelFakeDown[index - 2][1] = oldTargetPoint2Down
+          this.shipChannelFakeDown[index - 2][2] = oldTargetPoint2DownDown
+        }
+        targetPointMiddleUp = shipChannelUtils.getLonAndLat(middlePoint.lng, middlePoint.lat, pointAngle, dis3)
+        targetPointMiddleDown = shipChannelUtils.getLonAndLat(middlePoint.lng, middlePoint.lat, pointAngle >= 180 ? pointAngle - 180 : pointAngle + 180, dis4)
+      }
+      assistShipChannelLineStart = lastPoint
+      assistShipChannelLineEnd = thisPoint
+      //  往航道区域里面塞点
+      this.shipChannelPoints.push([
+        targetPoint1Up,
+        targetPoint2Up,
+        targetPoint2Down,
+        targetPoint1Down
+      ])
+      this.shipChannelFakeUp.push([
+        targetPoint1UpUp,
+        targetPoint2UpUp,
+        targetPoint2Up,
+        targetPoint1Up
+      ])
+      this.shipChannelFakeDown.push([
+        targetPoint1Down,
+        targetPoint2Down,
+        targetPoint2DownDown,
+        targetPoint1DownDown
+      ])
+      this.shipChannelWidthLines.push({
+        layer: L.polyline([targetPointMiddleDown, targetPointMiddleUp]),
+        width: +middlePoint.widthOne + +middlePoint.widthTwo
+      })
+      this.shipChannelLengthLines.push({
+        layer: L.polyline([assistShipChannelLineStart, assistShipChannelLineEnd]),
+        length: Math.round(LoongShipMap.$map.distance(assistShipChannelLineStart, assistShipChannelLineEnd))
+      })
+      if(closeArea){
+        let latlngs = []  //  航道区域点经纬度数组
+        let latlngsUp = []  //  上边隐藏区域的经纬度
+        let letlangsDown = [] //  下边隐藏区域的经纬度
+        if (this.shipChannelPoints.length === 1) { //  航线只有两个点的时候
+          latlngs.push(this.shipChannelPoints[0][0])
+          latlngs.push(this.shipChannelPoints[0][1])
+          latlngs.push(this.shipChannelPoints[0][2])
+          latlngs.push(this.shipChannelPoints[0][3])
+
+          latlngsUp.push(this.shipChannelFakeUp[0][0])
+          latlngsUp.push(this.shipChannelFakeUp[0][1])
+          latlngsUp.push(this.shipChannelFakeUp[0][2])
+          latlngsUp.push(this.shipChannelFakeUp[0][3])
+
+          letlangsDown.push(this.shipChannelFakeDown[0][0])
+          letlangsDown.push(this.shipChannelFakeDown[0][1])
+          letlangsDown.push(this.shipChannelFakeDown[0][2])
+          letlangsDown.push(this.shipChannelFakeDown[0][3])
+        } else {
+          for (let i = 0; i < this.shipChannelPoints.length; i++) {  //  正向取航线上面的点
+            if (i === this.shipChannelPoints.length - 1) {
+              latlngs.push(this.shipChannelPoints[i][0])
+              latlngs.push(this.shipChannelPoints[i][1])
+              latlngs.push(this.shipChannelPoints[i][2])
+              latlngs.push(this.shipChannelPoints[i][3])
+
+              latlngsUp.push(this.shipChannelFakeUp[i][0])
+              latlngsUp.push(this.shipChannelFakeUp[i][1])
+              latlngsUp.push(this.shipChannelFakeUp[i][2])
+              latlngsUp.push(this.shipChannelFakeUp[i][3])
+
+              letlangsDown.push(this.shipChannelFakeDown[i][0])
+              letlangsDown.push(this.shipChannelFakeDown[i][1])
+              letlangsDown.push(this.shipChannelFakeDown[i][2])
+              letlangsDown.push(this.shipChannelFakeDown[i][3])
+            } else {
+              latlngs.push(this.shipChannelPoints[i][0])
+              latlngs.push(this.shipChannelPoints[i][1])
+              latlngsUp.push(this.shipChannelFakeUp[i][0])
+              latlngsUp.push(this.shipChannelFakeUp[i][1])
+              letlangsDown.push(this.shipChannelFakeDown[i][0])
+              letlangsDown.push(this.shipChannelFakeDown[i][1])
+            }
+          }
+          for (let i = this.shipChannelPoints.length - 2; i >= 0; i--) { //  逆向取航线下面的点
+            latlngs.push(this.shipChannelPoints[i][2])
+            latlngs.push(this.shipChannelPoints[i][3])
+            latlngsUp.push(this.shipChannelFakeUp[i][2])
+            latlngsUp.push(this.shipChannelFakeUp[i][3])
+            letlangsDown.push(this.shipChannelFakeDown[i][2])
+            letlangsDown.push(this.shipChannelFakeDown[i][3])
+          }
+        }        
+        latlngs.push(this.shipChannelPoints[0][0]) //  封闭多边形
+        latlngsUp.push(this.shipChannelFakeUp[0][0]) //  封闭多边形
+        letlangsDown.push(this.shipChannelFakeDown[0][0]) //  封闭多边形
+        let tempLineArr = lineArr.map(item => {
+          return {
+            lat: item.lat,
+            lng: item.lng
+          }
+        })
+        return{
+          shipChannelLine: L.polyline(tempLineArr),
+          shipChannel: L.polygon(latlngs),
+          shipChannelFakeUpLayer: L.polygon(latlngsUp),
+          shipChannelFakeDownLayer: L.polygon(letlangsDown),
+          shipChannelWidthLines: this.shipChannelWidthLines,
+          shipChannelLengthLines: this.shipChannelLengthLines
+        }
+      }
+    }
+  }  
+}
+export default new ShipChannel
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
