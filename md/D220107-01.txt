@@ -1,0 +1,33 @@
+关闭占用端口的进程
+----------
+
+by jack at 2022/01/07
+
+##### 查看端口占用的情况
+
+````
+netstat -ano
+````
+
+##### 根据PID查找启动此端口的应用
+
+````
+tasklist|findstr "(PID)"
+````
+
+##### 关闭根据上面PID查出来的应用
+
+````
+taskkill /f /t /im node.exe(查出来的应用名，该应用下的所有端口都将关闭)
+````
+
+#### 只关闭指定的端口
+
+````
+taskkill /pid (PID) /f
+
+// 有时候当我们输入这个指令时，会提示我们没有权限，这时候，我们只需要以管理员身份运行cmd就可以了。
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
