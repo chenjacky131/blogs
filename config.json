@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1641545334663,
+  "last_modify": 1643082805623,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220125-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "vue不是内部或外部命令,也不是可运行的程序",
+      "modify_at": 1643082805623,
+      "create_at": 1643082690577,
+      "desc": "by jack at 2022/01/25<br>````\n//  把npm的路径添加到环境变量->系统变量-> Path里面就可以了\nC:\\Users\\Administrator\\AppData\\Roaming\\npm"
+    },
     {
       "path": "md/D220107-01.txt",
       "tag": ".遇到的问题",

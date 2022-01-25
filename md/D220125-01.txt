@@ -1,0 +1,12 @@
+vue不是内部或外部命令,也不是可运行的程序
+----------
+
+by jack at 2022/01/25
+
+````
+//  把npm的路径添加到环境变量->系统变量-> Path里面就可以了
+C:\Users\Administrator\AppData\Roaming\npm
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
