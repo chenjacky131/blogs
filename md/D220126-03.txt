@@ -1,0 +1,11 @@
+vue项目环境变量的一些知识点
+----------
+
+by jack at 2022/01/26
+
+###### 1. .env.*的文件能被vue-cli识别
+###### 2. 以.env.local.*为名的配置文件不会被加入到版本管理
+###### 3. 以````VUE_APP_````开头的变量在js中能访问````process.env.VUE_APP_````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,0 +1,11 @@
+axios请求的一些知识点
+----------
+
+by jack at 2022/01/26
+
+##### 1. 可以用cancel token取消ajax请求
+##### 2. 可以用qs插件的qs.stringify来格式化成表单的数据提交
+##### 3. 请求响应拦截器可以修改请求头等信息
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
