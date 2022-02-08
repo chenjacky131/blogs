@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1643180921403,
+  "last_modify": 1644288175209,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220128-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "Vue3使用vueuse工具包报错的问题",
+      "modify_at": 1643358371499,
+      "create_at": 1643358181901,
+      "desc": "by jack at 2022/01/28<br>````\n//  在vue.config.js里面添加\n  configureWebpack:{\n    module:{\n      rules:[{\n        test:/.mjs$/,\n        include: /node_modules/,\n        type: 'javascript/auto'\n      }]"
+    },
     {
       "path": "md/D220126-04.txt",
       "tag": ".JS",

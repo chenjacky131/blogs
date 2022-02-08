@@ -1,0 +1,20 @@
+Vue3使用vueuse工具包报错的问题
+----------
+
+by jack at 2022/01/28
+
+````
+//  在vue.config.js里面添加
+  configureWebpack:{
+    module:{
+      rules:[{
+        test:/\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto'
+      }]
+    }
+  }
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
