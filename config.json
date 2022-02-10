@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1644288175209,
+  "last_modify": 1644464908714,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220210-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "颜色拾取插件，可选择透明色",
+      "modify_at": 1644464908714,
+      "create_at": 1644464775569,
+      "desc": "by xxx(忘记从哪里拷贝来的了) at 2022/02/10<br>````"
+    },
     {
       "path": "md/D220128-01.txt",
       "tag": ".Vue",
