@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1644464908714,
+  "last_modify": 1644832725318,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220214-01.txt",
+      "tag": ".Nginx",
+      "markdown": true,
+      "title": "Nginx常用命令",
+      "modify_at": 1644832725318,
+      "create_at": 1644832062806,
+      "desc": "by jack at 2022/02/14"
+    },
     {
       "path": "md/D220210-01.txt",
       "tag": ".Vue",

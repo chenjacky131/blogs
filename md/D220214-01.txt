@@ -1,0 +1,24 @@
+Nginx常用命令
+----------
+
+by jack at 2022/02/14
+
+
+##### 1. 查看Nginx安装目录
+````
+nginx -t
+````
+
+##### 2. 查看Nginx实际调用文件
+````
+ps aux|grep nginx
+````
+
+##### 3.重启Nginx
+````
+// 进入Nginx调用目录，上面第2部
+./nginx -s reload
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
