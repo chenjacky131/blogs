@@ -1,0 +1,25 @@
+执行*.sh脚本提示权限不足的解决办法
+----------
+
+by jack at 2022/02/17
+
+````
+一、为所有 .sh 脚本添加执行权限
+chmod u+x *.sh，表示对当前目录下的file.sh文件的所有者增加可执行权限。
+
+u 代表所有者；
+x 代表执行权限；
++ 表示增加权限;
+*.sh 表示当前目录下所有 .sh 文件。
+二、为指定 .sh 脚本添加执行权限
+chmod u+x file1.sh，表示对当前目录下的 file1.sh 文件的所有者增加可执行权限。
+
+u 代表所有者；
+x 代表执行权限；
++ 表示增加权限；
+file1 表示指定的脚本文件。
+用以上两种方法授权后，在查看执行就可以啦
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

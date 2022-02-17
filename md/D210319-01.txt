@@ -3,6 +3,7 @@
 
 by jack at 2021/03/19
 
+在git项目根文件夹新建webhooks文件夹，里面建webhooks.js、webhooks.sh
 
 ````javascript
 // webhooks.js
