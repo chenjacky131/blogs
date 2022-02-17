@@ -3,7 +3,7 @@
 
 by jack at 2022/02/17
 
-##### 1. 解压到D:/SoftWare/mysql-*.*.*
+##### 1. 解压到D:/SoftWare/mysql-版本号
 ##### 2. 在文件夹里面添加配置文件my.ini
 ````
 [mysqld]

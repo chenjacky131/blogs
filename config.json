@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1645083308897,
+  "last_modify": 1645084013386,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -29,7 +29,7 @@
       "tag": ".Linux",
       "markdown": true,
       "title": "安装MySQL压缩包",
-      "modify_at": 1645080386842,
+      "modify_at": 1645084013386,
       "create_at": 1645064690770,
       "desc": "by jack at 2022/02/17<br>````\n[mysqld]"
     },
