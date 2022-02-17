@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1645084013386,
+  "last_modify": 1645084217556,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -11,9 +11,9 @@
       "tag": ".Linux",
       "markdown": true,
       "title": "执行*.sh脚本提示权限不足的解决办法",
-      "modify_at": 1645083308897,
+      "modify_at": 1645084217556,
       "create_at": 1645083245155,
-      "desc": "by jack at 2022/02/17<br>````\n一、为所有 .sh 脚本添加执行权限\nchmod u+x *.sh，表示对当前目录下的file.sh文件的所有者增加可执行权限。"
+      "desc": "by jack at 2022/02/17 15:50<br>````\n一、为所有 .sh 脚本添加执行权限\nchmod u+x *.sh，表示对当前目录下的file.sh文件的所有者增加可执行权限。"
     },
     {
       "path": "md/D220217-02.txt",
