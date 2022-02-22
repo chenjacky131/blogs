@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1645084861271,
+  "last_modify": 1645521279194,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220222-01.txt",
+      "tag": ".CSS",
+      "markdown": true,
+      "title": "去除number类型输入框的上下箭头",
+      "modify_at": 1645521279194,
+      "create_at": 1645521168721,
+      "desc": "by jack at 2022/02/22"
+    },
     {
       "path": "md/D220217-03.txt",
       "tag": ".Linux",

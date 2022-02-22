@@ -1,0 +1,16 @@
+去除number类型输入框的上下箭头
+----------
+
+by jack at 2022/02/22
+
+````
+::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+}
+::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+}
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
