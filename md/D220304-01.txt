@@ -1,0 +1,32 @@
+前端下载后端返回的文件
+----------
+
+by jack at 2022/03/04
+
+##### 学习了一种后台传输文件流，前台使用blob方法接收文件流
+
+````
+//  需要指定相应类型为blob文件流类型
+      exportCSV(this.exportOpt, {
+        responseType:'blob'
+      }).then(res => {
+        this.downLoadCsv(res)
+      })
+// 通过window.URL.createObjectURL生成下载地址，在通过a标签的点击事件实现下载
+    downLoadCsv(data){              
+      if (!data) {
+        return
+      }
+      let url = window.URL.createObjectURL(data);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.download = `作业记录-${dayjs().format('YYYY-MM-DD HH:mm:ss')}.csv`;
+      a.href = url;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
