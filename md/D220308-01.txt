@@ -1,4 +1,4 @@
-node与node-sass的版本兼容问题4
+node与node-sass的版本兼容问题
 ----------
 
 by jack at 2022/03/08
