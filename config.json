@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1646703910648,
+  "last_modify": 1646707324607,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -10,10 +10,10 @@
       "path": "md/D220308-01.txt",
       "tag": ".Node",
       "markdown": true,
-      "title": "node与node-sass的版本兼容问题",
-      "modify_at": 1646703910648,
+      "title": "node与node-sass的版本兼容问题1",
+      "modify_at": 1646707324607,
       "create_at": 1646703850868,
-      "desc": "by jack at 2022/03/08<br>````\nnode16+ 对应的node-sass,sass-loader版本"
+      "desc": "by jack at 2022/03/08"
     },
     {
       "path": "md/D220307-01.txt",
