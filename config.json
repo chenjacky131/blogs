@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1646708033323,
+  "last_modify": 1646708252408,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220308-02.txt",
+      "tag": ".服务器",
+      "markdown": true,
+      "title": "Linux自带的后台运行的命令",
+      "modify_at": 1646708252408,
+      "create_at": 1646708097669,
+      "desc": "by jakc at 2022/03/08<br>````\nnohup node webhook.js  //  后台运行webhook.js\ntail-f nohupout  //  查看nohpu的输出日志"
+    },
     {
       "path": "md/D220308-01.txt",
       "tag": ".Node",

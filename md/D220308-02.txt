@@ -1,0 +1,12 @@
+Linux自带的后台运行的命令
+----------
+
+by jakc at 2022/03/08
+
+````
+nohup node webhook.js  //  后台运行webhook.js
+tail-f nohupout  //  查看nohpu的输出日志
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
