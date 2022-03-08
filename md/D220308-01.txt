@@ -1,0 +1,14 @@
+node与node-sass的版本兼容问题
+----------
+
+by jack at 2022/03/08
+
+````
+node16+ 对应的node-sass,sass-loader版本
+
+"sass-loader": "^10.2.0",
+"node-sass": "^6.0.1",
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
