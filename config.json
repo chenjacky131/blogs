@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1646708252408,
+  "last_modify": 1646709672045,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -11,9 +11,9 @@
       "tag": ".服务器",
       "markdown": true,
       "title": "Linux自带的后台运行的命令",
-      "modify_at": 1646708252408,
+      "modify_at": 1646709621364,
       "create_at": 1646708097669,
-      "desc": "by jakc at 2022/03/08<br>````\nnohup node webhook.js  //  后台运行webhook.js\ntail-f nohupout  //  查看nohpu的输出日志"
+      "desc": "by jakc at 2022/03/08"
     },
     {
       "path": "md/D220308-01.txt",
@@ -892,7 +892,7 @@
       "tag": ".Linux",
       "markdown": true,
       "title": "Linux常用命令",
-      "modify_at": 1616155036802,
+      "modify_at": 1646709672045,
       "create_at": 1612629499313,
       "desc": "by jacky at 2021/02/07<br>1.查找文件位置"
     },
