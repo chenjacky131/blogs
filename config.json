@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1646709672045,
+  "last_modify": 1646731656290,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220308-03.txt",
+      "tag": ".Node",
+      "markdown": true,
+      "title": "yarn的一些操作",
+      "modify_at": 1646731656290,
+      "create_at": 1646731615416,
+      "desc": "by jack at 2022/03/08<br>````\n查看当前源"
+    },
     {
       "path": "md/D220308-02.txt",
       "tag": ".服务器",

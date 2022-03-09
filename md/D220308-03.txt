@@ -1,0 +1,22 @@
+yarn的一些操作
+----------
+
+by jack at 2022/03/08
+
+````
+查看当前源
+
+yarn config get registry
+
+临时修yran源
+yarn save package_name --registry https://registry.npm.taobao.org/
+
+修改yarn源为taobao源
+yarn config set registry https://registry.npm.taobao.org/
+
+修改yarn源为官方源
+yarn config set registry https://registry.yarnpkg.com
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
