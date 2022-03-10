@@ -13,6 +13,10 @@ lsof -i:端口号
 ````
 sudo kill -9 $(lsof -i:端口号 -t)
 ````
+````
+查看进程
+ps -aux | grep [应用名、服务名]
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
