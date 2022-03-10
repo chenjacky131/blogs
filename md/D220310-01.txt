@@ -1,0 +1,11 @@
+gem下载插件报错的处理(windows)
+----------
+
+by jack at 2022/03/10
+
+Unable to download data from https://rubygems.org/ - SSL_connect returned=1 errno=0 state=error: certificate verify failed
+
+报这个错好像是rubygems的版本问题，在 https://rubygems.org/pages/download 下载最新的，然后按里面的提示操作就好了。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

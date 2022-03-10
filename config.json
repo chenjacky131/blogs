@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1646731656290,
+  "last_modify": 1646893251110,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220310-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "gem下载插件报错的处理(windows)",
+      "modify_at": 1646893251110,
+      "create_at": 1646884824480,
+      "desc": "by jack at 2022/03/10<br>Unable to download data from https://rubygems.org/ - SSL_connect returned=1 errno=0 state=error: certificate verify failed"
+    },
     {
       "path": "md/D220308-03.txt",
       "tag": ".Node",
