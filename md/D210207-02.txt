@@ -99,7 +99,7 @@ tail -f filename 会把 filename 文件里的最尾部的内容显示在屏幕�
 ````
 13.查看进程
 ````
-ps -aux | grep [程序名称]
+ps -aux | grep [程序名称] 
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
