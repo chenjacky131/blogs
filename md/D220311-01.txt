@@ -8,6 +8,8 @@ pm2 start app.js  // 启动node进程
 pm2 stop [进程名]  // 停止node进程
 pm2 delete [进程名]  // 删除进程
 pm2 logs [进程名] --lines 1000  //  查看改进程的实时日志,显示1000条
+pm2 save //  保存当前已经启动的服务
+pm2 startup  //  设置开机自启的配置
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
