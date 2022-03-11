@@ -1,0 +1,14 @@
+pm2进程守护的操作
+----------
+
+by jack at 2022/03/11
+
+````
+pm2 start app.js  // 启动node进程
+pm2 stop [进程名]  // 停止node进程
+pm2 delete [进程名]  // 删除进程
+pm2 logs [进程名] --lines 1000  //  查看改进程的实时日志,显示1000条
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

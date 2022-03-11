@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1646965107475,
+  "last_modify": 1646965440423,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220311-01.txt",
+      "tag": ".Node",
+      "markdown": true,
+      "title": "pm2进程守护的操作",
+      "modify_at": 1646965440423,
+      "create_at": 1646965202685,
+      "desc": "by jack at 2022/03/11<br>````\npm2 start app.js  // 启动node进程\npm2 stop [进程名]  // 停止node进程\npm2 delete [进程名]  // 删除进程\npm2 logs [进程名] --lines 1000  //  查看改进程的实时日志,显示1000条"
+    },
     {
       "path": "md/D220310-01.txt",
       "tag": ".遇到的问题",
