@@ -97,6 +97,10 @@ cat file_name
 tail -f filename 会把 filename 文件里的最尾部的内容显示在屏幕上，并且不断刷新，
 只要 filename 更新就可以看到最新的文件内容。
 ````
+13.查看进程
+````
+ps -aux | grep [程序名称]
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
