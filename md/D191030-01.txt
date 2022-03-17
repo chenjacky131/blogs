@@ -11,6 +11,8 @@ by jacky at 2019/10/30
 <br>
 . Class的一些用法，怎么继承，静态方法，
 <br>
+. 节流函数throttle和防抖函数debounce
+<br>
 . 移动端响应式用的是什么方式实现的（rem还是百分比什么的）
 <br>
 . 页面性能优化要怎么做（代码压缩，雪碧图减少请求,首屏优化，减少不必要的数据渲染，本地存储localStorage,sessionStorage）
