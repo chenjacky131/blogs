@@ -1,0 +1,26 @@
+调试技巧
+----------
+
+by jack at 2022/03/22
+
+````
+// alert骨灰级调试
+alert('我是弹出的信息')
+// console最常用的调试
+console.log('调试信息')
+console.table([['a','b','c'],[1,2,3]]) //  表格形似输出
+console.table([{a:1,b:2,c:3}])  //  效果和上面一样
+console.dir(obj)  // dir方法用来对一个对象进行检查（inspect），并以易于阅读和打印的格式显示。
+console.log('%c测试文案', 'font-size: 40px;text-shadow: 2px 2px 5px green') // 增加样式
+
+// JS调试
+// 1. source里面打断点
+// 2.  debugger语句代码里面打断点
+// 3.  dom断点
+
+//  ajax调试 XHR Breakpoints
+//  Event Listener Breakpoints,事件监听调试
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
