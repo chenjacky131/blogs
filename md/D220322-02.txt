@@ -1,0 +1,17 @@
+HTML5新标签属性data-*
+----------
+
+by jack at 2022/03/22
+
+````
+//  注意点，dataset赋值会比getAttribute慢，数据多的情况不建议使用
+//  读取
+dom.dataset.property 
+// 赋值
+dom.dataset.property = 'value'
+// 删除
+delete dom.dataset.property
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

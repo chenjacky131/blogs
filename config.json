@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1647502066635,
+  "last_modify": 1647931160257,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220322-02.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "HTML5新标签属性data-*",
+      "modify_at": 1647931160257,
+      "create_at": 1647930476297,
+      "desc": "by jack at 2022/03/22<br>````\n//  注意点，dataset赋值会比getAttribute慢，数据多的情况不建议使用\n//  读取\ndom.dataset.property \n// 赋值\ndom.dataset.property = 'value'\n// 删除\ndelete dom.dataset.property"
+    },
+    {
+      "path": "md/D220322-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "Javascript操作className类",
+      "modify_at": 1647919922466,
+      "create_at": 1647919699722,
+      "desc": "by jack at 2022/03/22<br>````\n//  HTML5的新方法\ndocument.getElementById(\"MyElement\").classList.add('class');"
+    },
     {
       "path": "md/D220311-01.txt",
       "tag": ".Node",

@@ -1,0 +1,19 @@
+Javascript操作className类
+----------
+
+by jack at 2022/03/22
+
+````
+//  HTML5的新方法
+document.getElementById("MyElement").classList.add('class');
+
+document.getElementById("MyElement").classList.remove('class');
+
+if ( document.getElementById("MyElement").classList.contains('class') )
+
+document.getElementById("MyElement").classList.toggle('class');
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
