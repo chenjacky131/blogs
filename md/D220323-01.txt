@@ -1,0 +1,22 @@
+数组赋值，操作赋值数组后，不改变原数组的赋值方法(对象也适用)
+----------
+
+by jack at 2022/03/23
+
+````
+// 1. 赋值对象或者数组
+JSON.parse(JSON.stringify(arr))
+// 2. 如果数组里面是对象，需要遍历赋值，让后对象用Object.assign({},...obj)来赋值
+[...arr]
+// 3. 赋值对象
+{...obj}
+// 4. 赋值对象
+Object.assign({},{...obj})
+// 5.赋值数组
+arr.slice()
+// 6.赋值数组
+[].concat(arr)
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

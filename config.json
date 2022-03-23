@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1647933786185,
+  "last_modify": 1648018181144,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220323-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "数组赋值，操作赋值数组后，不改变原数组的赋值方法(对象也适用)",
+      "modify_at": 1648018181144,
+      "create_at": 1648017220631,
+      "desc": "by jack at 2022/03/23<br>````\n// 1. 赋值对象或者数组\nJSON.parse(JSON.stringify(arr))\n// 2. 如果数组里面是对象，需要遍历赋值，让后对象用Object.assign({},...obj)来赋值\n[...arr]\n// 3. 赋值对象\n{...obj}\n// 4. 赋值对象\nObject.assign({},{...obj})"
+    },
     {
       "path": "md/D220322-03.txt",
       "tag": ".前端",
@@ -158,14 +167,6 @@
       "modify_at": 1643358371499,
       "create_at": 1643358181901,
       "desc": "by jack at 2022/01/28<br>````\n//  在vue.config.js里面添加\n  configureWebpack:{\n    module:{\n      rules:[{\n        test:/.mjs$/,\n        include: /node_modules/,\n        type: 'javascript/auto'\n      }]"
-    },
-    {
-      "path": "md/D220126-04.txt",
-      "tag": ".JS",
-      "markdown": true,
-      "title": "D220126-04.txt",
-      "modify_at": 1643180921403,
-      "create_at": 1643180921403
     },
     {
       "path": "md/D220126-03.txt",
