@@ -3,8 +3,8 @@
 
 by jack at 2022/03/22
 
+##### alert骨灰级调试
 ````
-// alert骨灰级调试
 alert('我是弹出的信息')
 // console最常用的调试
 console.log('调试信息')
@@ -12,14 +12,29 @@ console.table([['a','b','c'],[1,2,3]]) //  表格形似输出
 console.table([{a:1,b:2,c:3}])  //  效果和上面一样
 console.dir(obj)  // dir方法用来对一个对象进行检查（inspect），并以易于阅读和打印的格式显示。
 console.log('%c测试文案', 'font-size: 40px;text-shadow: 2px 2px 5px green') // 增加样式
+````
+##### JS调试
 
-// JS调试
+````
 // 1. source里面打断点
 // 2.  debugger语句代码里面打断点
 // 3.  dom断点
+````
 
+##### 其它调试
+````
 //  ajax调试 XHR Breakpoints
 //  Event Listener Breakpoints,事件监听调试
+````
+##### Chrome的network面板的过滤
+````
+/*
+在Filter过滤框输入过滤条件进行过滤。
+一般过滤，输入要过滤的请求名称。
+高级过滤，输入横杆(-)会出现提示，使用自带的一些过滤方法,使用的时候不需要输入横杆，横杆只是给你提示系统有哪些自带的过滤方法。
+过个过滤条件用空格隔开
+*/ 
+
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>

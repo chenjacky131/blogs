@@ -1,0 +1,41 @@
+搜索引擎使用技巧(Baidu)
+----------
+
+by jack at 2022/03/24
+
+##### 1. 精准搜索
+加英文状态的双引号 "搜索词"
+
+##### 2. 不允许分词
+加英文状态的括号 (搜索词)
+
+##### 3. 加号
+两个搜索词都必须出现 搜索词1+搜索词2
+
+##### 4. 减号
+搜索结果排除一些词 搜索词 -排除的词
+
+##### 5. 限定搜索
+intitle:搜索词
+
+##### 6. 限定网址
+site:xxx.com 搜索词
+
+##### 7. 限定url
+
+inurl:xxx.com 搜索词
+
+##### 8. 限定博客
+blog:搜索词
+
+##### 9. 限定文件类型
+filetype:txt 搜索词
+
+##### 10. 检索网站收录量
+site:xxx.com
+
+##### 11. 检索反链
+domain:xxx.com
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

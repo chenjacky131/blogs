@@ -1,0 +1,31 @@
+搜索引擎使用技巧(Google)
+----------
+
+by jack at 2022/03/24
+
+##### 1. 准确搜索
+加个英文状态的双引号，在搜索词为有空格分开的单词时，尤为好用
+
+##### 2. 排除关键词
+加个英文状态的减号(-)后面更要排除的关键词
+
+##### 3. 使用或的逻辑进行搜索
+两个关键词中间加OR来进行或的逻辑搜索
+
+##### 4. 在站内进行搜索
+使用(site:xxx.com 搜索关键词)来在xxx.com站内进行精准搜索
+
+##### 5. 用*号进行模糊搜索
+architect* 你所得到的反馈结果将会是所有包含 architect、architectural、architecture、architected、architecting 以及其他所有以「architect」作为开头的词汇的条目。
+
+##### 6. 在网页标题、链接和主体中搜索关键词
+intitle: 关键词 inurl:关键词 intext:关键词
+
+##### 7. 搜索相关网站
+related: xxx.com
+
+##### 8. 终极技能
+搜索技巧的组合使用，技巧之间加空格
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
