@@ -14,6 +14,7 @@ by jack at 2021/10/12
 8:注释工具-koroFileHeader
 9:实时预览网页-Live Server
 10:跳转到定义(支持别名@跳转):别名路径跳转
+11: 英文拼写检查 - code spell checker
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>

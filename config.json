@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1648092577378,
+  "last_modify": 1648694409074,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -281,7 +281,7 @@
       "tag": ".前端",
       "markdown": true,
       "title": "打造好用的VsCode",
-      "modify_at": 1636359665383,
+      "modify_at": 1648694409074,
       "create_at": 1634021600573,
       "desc": "by jack at 2021/10/12<br>````\n1:主题-Materia Theme\n2:图标主题-Material Icon Theme\n3:语法提示-Vetur\n4:括号着色-Bracket Pair Colorizer\n5:变量名推荐-Codelf \n6:Git辅助工具-GitLens\n7:简体中文插件包-Chinese (Simplified)\n8:注释工具-koroFileHeader"
     },
@@ -812,7 +812,7 @@
       "tag": ".Git",
       "markdown": true,
       "title": "Git常用命令",
-      "modify_at": 1638498396392,
+      "modify_at": 1648608109142,
       "create_at": 1617671829107,
       "desc": "by jack at 2021/04/06"
     },

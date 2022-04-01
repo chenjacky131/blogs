@@ -99,6 +99,14 @@ git branch --merged
 ````
 git cherry-pick [log_commit(要合并的分支那次提交的log_commit码)]
 ````
+
+##### 17. 强制合并某个分支的内容到当前分支
+
+````
+git reset --hard [branchName(要合并过来的分支)]
+git push origin [branchName(当前的分支)] --force
+
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
