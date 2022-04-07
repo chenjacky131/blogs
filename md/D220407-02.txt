@@ -1,0 +1,58 @@
+自定义主题样式
+----------
+
+by jack at jack/04/07
+
+##### 1. 思路
+通过css自定义变量来实现，应为js可以随时更改css自定义变量，从而实时修改主题样式。
+
+##### 2.知识点
+````
+//  定义
+--variables
+
+//  在样式中使用
+var(--variables)
+
+//  作用域root伪类中定义的作用域，在html标签内的所有地方都能访问
+:root{
+  --variables: '#f00';
+}
+
+//  备用值,当自定义属性值无效或者未指定时(unset)，备用值生效
+var(--variables,'#0f0')
+
+//  自定义属性区分大小写，下面的为定义了两个不同的自定义属性
+--variables:'#f00';
+--VARIABLES:'#0f0';
+
+//  受级联关系影响,p中的自定义属性优先级比根里面的高
+:root{
+  --variables: '#f00';
+}
+p{
+  --variables: '#0f0';
+}
+
+//  通过JavaScript获取自定义属性值
+const ele = document.querySelector('html');
+const cssStyles = getComputedStyle(ele);
+const cssValue = String(cssStyles.getProperValue('--variables')).trim();
+
+//  通过JavaScript改变自定义属性的值
+ele.style.setProperty('--variables','#fff');
+
+//  浏览器支持,在不支持的浏览器可以写supports外的兼容样式
+section{
+  color:#00f;
+}
+@supports(--css: variables) {
+  section{
+    --my-var:'#f00';
+    color: var(--my-var);
+  }
+}
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
