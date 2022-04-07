@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1648694409074,
+  "last_modify": 1649317964039,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220407-01.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "表单校验插件validatorjs中文文档",
+      "modify_at": 1649317964039,
+      "create_at": 1649300141061,
+      "desc": "by jack at 2022/04/07<br>````\n// 引入插件\nimport * as Validator from 'validatorjs';\n//  引入语言文件\nimport zh from 'validatorjs/src/lang/zh';\n//  设置语言\nValidator.useLang('zh');\n//  设置错误提示信息为插件自带的语言提示\n// Validator.setMessages('zh', zh);"
+    },
     {
       "path": "md/D220324-02.txt",
       "tag": ".教程",
