@@ -1,0 +1,70 @@
+一行代码实现样式布局
+----------
+
+by jac at 2022/04/08
+
+##### 1. 垂直水平居中
+````
+// html
+<div class="content">测试文字</div>
+//  scss
+.content{
+  height:100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+````
+##### 2. 堆叠式布局
+````
+// html
+  <div class="content">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+//  scss
+.content{
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .box{
+    background: #0f0;
+    flex: 0 1 150px;
+    margin: 5px;
+  }
+}
+````
+
+##### 3. 侧边栏布局
+````
+// html
+  <div class="parent">
+    <div class="section yellow" contenteditable>
+    Min: 150px / Max: 25%
+    </div>
+    <div class="section purple" contenteditable>
+      This element takes the second grid position (1fr), meaning
+      it takes up the rest of the remaining space.
+    </div>
+  </div>
+
+//  scss
+.parent{
+  width:100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(150px, 25%) 1fr;
+  .yellow{
+    background: yellow;
+  }
+  .purple{
+    background: purple;
+  }
+}
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

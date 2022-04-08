@@ -1,11 +1,38 @@
 {
   "version": "1.0",
-  "last_modify": 1649322150276,
+  "last_modify": 1649412047753,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220408-03.txt",
+      "tag": ".CSS",
+      "markdown": true,
+      "title": "Grid(网格)布局二维布局，比flex强大",
+      "modify_at": 1649412047753,
+      "create_at": 1649411112420,
+      "desc": "by jack at 2022/04/08<br>````\n每个值用空格隔开，除了使用绝对单位，还可以使用百分比。\nrepeat(个数,数值),repeat"
+    },
+    {
+      "path": "md/D220408-02.txt",
+      "tag": ".CSS",
+      "markdown": true,
+      "title": "Flex(柔性)布局，一维布局",
+      "modify_at": 1649411269670,
+      "create_at": 1649409976313,
+      "desc": "by jack at 2022/04/08<br>````\nflex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。"
+    },
+    {
+      "path": "md/D220408-01.txt",
+      "tag": ".CSS",
+      "markdown": true,
+      "title": "一行代码实现样式布局",
+      "modify_at": 1649412046346,
+      "create_at": 1649408609824,
+      "desc": "by jac at 2022/04/08<br>````\n// html"
+    },
     {
       "path": "md/D220407-02.txt",
       "tag": ".教程",
