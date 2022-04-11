@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1649412047753,
+  "last_modify": 1649660730358,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -11,9 +11,9 @@
       "tag": ".CSS",
       "markdown": true,
       "title": "Grid(网格)布局二维布局，比flex强大",
-      "modify_at": 1649412047753,
+      "modify_at": 1649660730358,
       "create_at": 1649411112420,
-      "desc": "by jack at 2022/04/08<br>````\n每个值用空格隔开，除了使用绝对单位，还可以使用百分比。\nrepeat(个数,数值),repeat"
+      "desc": "by jack at 2022/04/08<br>````\n每个值用空格隔开，除了使用绝对单位，还可以使用百分比。"
     },
     {
       "path": "md/D220408-02.txt",
