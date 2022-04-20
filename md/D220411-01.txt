@@ -1,0 +1,15 @@
+CSS新特性aspect-ratio
+----------
+
+by jack at 2022/04/11
+
+````
+//  设置宽高比为4比3
+.item{
+ width:100%;
+ aspect-ratio:4 / 3;
+}
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
