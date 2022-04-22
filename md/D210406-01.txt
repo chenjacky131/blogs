@@ -120,6 +120,10 @@ git push origin 新分支名称
 git branch --set-upstream-to origin/新分支名称
 
 ````
+##### 19. 恢复删除的分支
+````
+git checkout -b <分支名> <commit ID(删除那个分支返回的hash)>
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

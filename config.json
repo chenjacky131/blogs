@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1650419001559,
+  "last_modify": 1650595948681,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220421-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "JS常见内存泄漏和解决方法",
+      "modify_at": 1650511360954,
+      "create_at": 1650510218687,
+      "desc": "by jack at 2022/04/21<br>````\nfunction foo() {\na = 'test'\n}\n// 上面的写法等价于\nfunction foo() {\nwindow.a = 'test'\n}"
+    },
     {
       "path": "md/D220411-01.txt",
       "tag": ".CSS",
@@ -866,7 +875,7 @@
       "tag": ".Git",
       "markdown": true,
       "title": "Git常用命令",
-      "modify_at": 1650419001559,
+      "modify_at": 1650595948681,
       "create_at": 1617671829107,
       "desc": "by jack at 2021/04/06"
     },
