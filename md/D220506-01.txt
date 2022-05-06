@@ -14,6 +14,7 @@ Save All Resources:  网页资源下载插件，会按原目录结构整理
 Tampermonkey: 油猴，插件之母
 Wappalyzer - Technology profiler: 网页技术嗅探插件，可以查看改网站使用了什么框架和插件
 草料二维码-快速生码和解码工具:  二维码相关的插件
+SingleFile:  将一个完整的页面保存到单个 HTML 文件中
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
