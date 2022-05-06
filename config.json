@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1650595948681,
+  "last_modify": 1651824638289,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220506-01.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "谷歌扩展插件收藏",
+      "modify_at": 1651824638289,
+      "create_at": 1651824058893,
+      "desc": "by jack at 2022/05/06<br>````\nGithubX:  github上加星项目的分类管理插件\nChrono下载管理器:  下载器插件\nConvertio:  格式转换插件\nGitZip for github:  下载github文件夹的插件\nGoogle 翻译:  翻译插件\nKeptab:  标签分组插件\nSave All Resources:  网页资源下载插件，会按原目录结构整理\nTampermonkey: 油猴，插件之母"
+    },
     {
       "path": "md/D220421-01.txt",
       "tag": ".JS",
