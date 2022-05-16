@@ -1,0 +1,28 @@
+缓存的一些知识点
+----------
+
+by jack at 2022/05/10
+
+##### 1. 主要分为网络缓存和数据缓存
+
+##### 2. 强缓存优先于协商缓存, 强缓存中的Cache-Control优先于Expires, 协商缓存中的etag优先于last-modified.
+
+##### 3. 离线缓存指将页面资源缓存到本地, 使页面在离线环境下也可以进行访问. 离线缓存目前有两种实现方式, 一种manifest实现的离线缓存, 另一种是通过Service Worker实现的离线缓存
+
+##### 4. Cookie大小一般不超过4KB
+
+##### 5. SessionStorage和LocalStorage大小一般不超过5MB
+
+##### 6. WebSql和IndexedDB可以存储比较大数据了的数据
+````
+WebSql && IndexedDB 相当于后端的数据库, WebSql是关系型数据库, 类似于mysql,
+
+ IndexedDB是非关系型数据库, 类似于mongodb; WebSql && IndexedDB的存储容量和
+
+硬盘大小直接挂钩, 可以满足我们存储大容量的数据。
+
+WebSql && IndexedDB目前只有在pc端的谷歌浏览器兼容性比较好
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

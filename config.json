@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1651825087618,
+  "last_modify": 1652667414691,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220510-01.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "缓存的一些知识点",
+      "modify_at": 1652667414691,
+      "create_at": 1652167713047,
+      "desc": "by jack at 2022/05/10<br>````\nWebSql && IndexedDB 相当于后端的数据库, WebSql是关系型数据库, 类似于mysql,"
+    },
     {
       "path": "md/D220506-01.txt",
       "tag": ".前端",
@@ -1070,7 +1079,7 @@
     },
     {
       "path": "md/D200715-01.txt",
-      "tag": ".算法题",
+      "tag": ".前端",
       "markdown": true,
       "title": "用队列实现树的广度遍历（Breadth First Search）",
       "modify_at": 1594804150279,
@@ -1124,7 +1133,7 @@
     },
     {
       "path": "md/D200112-01.txt",
-      "tag": ".移动端",
+      "tag": ".前端",
       "markdown": true,
       "title": "移动端响应式函数",
       "modify_at": 1578810098125,
@@ -1241,7 +1250,7 @@
     },
     {
       "path": "md/D190928-02.txt",
-      "tag": ".移动端",
+      "tag": ".前端",
       "markdown": true,
       "title": "ios阻止双击页面缩放",
       "modify_at": 1569641842493,
@@ -1250,7 +1259,7 @@
     },
     {
       "path": "md/D190928-01.txt",
-      "tag": ".移动端",
+      "tag": ".前端",
       "markdown": true,
       "title": "ios端click事件不生效的情况",
       "modify_at": 1569641311411,
@@ -1313,7 +1322,7 @@
     },
     {
       "path": "md/D190130-03.txt",
-      "tag": ".移动端",
+      "tag": ".前端",
       "markdown": true,
       "title": "移动端上拉加载更多实例，基于iscroll",
       "modify_at": 1548840192479,
@@ -1340,7 +1349,7 @@
     },
     {
       "path": "md/D190111-02.txt",
-      "tag": ".移动端",
+      "tag": ".前端",
       "markdown": true,
       "title": "移动端自定义tap事件以及点透的问题",
       "modify_at": 1547177142490,
@@ -1349,7 +1358,7 @@
     },
     {
       "path": "md/D190111-01.txt",
-      "tag": ".移动端",
+      "tag": ".前端",
       "markdown": true,
       "title": "移动端发生两次点击的情况",
       "modify_at": 1547176940631,
@@ -1385,7 +1394,7 @@
     },
     {
       "path": "md/D181227-03.txt",
-      "tag": ".算法题",
+      "tag": ".前端",
       "markdown": true,
       "title": "比较数组之间的不同元素",
       "modify_at": 1545903446199,
@@ -1691,7 +1700,7 @@
     },
     {
       "path": "md/D180718-02.txt",
-      "tag": ".算法题",
+      "tag": ".前端",
       "markdown": true,
       "title": "Roman Numeral Converter",
       "modify_at": 1531898561180,
@@ -1700,7 +1709,7 @@
     },
     {
       "path": "md/D180718-01.txt",
-      "tag": ".算法题",
+      "tag": ".前端",
       "markdown": true,
       "title": "Cash Register",
       "modify_at": 1531897097816,
