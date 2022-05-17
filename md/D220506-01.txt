@@ -15,6 +15,9 @@ Tampermonkey: 油猴，插件之母
 Wappalyzer - Technology profiler: 网页技术嗅探插件，可以查看改网站使用了什么框架和插件
 草料二维码-快速生码和解码工具:  二维码相关的插件
 SingleFile:  将一个完整的页面保存到单个 HTML 文件中
+AdBlock: 广告拦截(拦截 YouTube、Facebook、Twitch 和所有您喜爱的网站上的弹出窗口、广告和恼人的横幅广告（就连视频广告也可以移除！）)
+SuperCopy: 在禁止复制、禁止右键、禁止选择的站点，一键复制，一键粘贴，一键选择，启用右键，启用复制，启用选择，启用粘贴
+Octotree: GitHub code tree
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
