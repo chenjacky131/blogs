@@ -124,6 +124,14 @@ git branch --set-upstream-to origin/新分支名称
 ````
 git checkout -b <分支名> <commit ID(删除那个分支返回的hash)>
 ````
+##### 20. 添加远程仓库地址
+````
+git remote add <origin(映射的仓库名称)><仓库地址>
+````
+##### 21. 删除远程仓库地址
+````
+git remote remove <origin(创建的名字)>
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

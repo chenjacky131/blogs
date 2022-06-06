@@ -1,0 +1,47 @@
+ReadwoodJS全栈框架
+----------
+
+by jack at 2022/05/20
+
+##### 1. 创建项目
+````
+yarn create redwood-app ./redwoodblog
+````
+##### 2. 启动项目
+````
+yarn redwood dev
+````
+##### 3. 新增页面并配置路由
+````
+yarn redwood generate page home /
+````
+##### 3. 新增布局页面
+````
+//  g是generate的缩写
+yarn redwood g layout blog
+````
+##### 4. 数据库和架构同步
+````
+//  rw是redwood的缩写
+yarn rw prisma migrate dev
+````
+##### 5. 打开数据库的操作页面
+````
+yarn rw prisma studio
+````
+##### 6. 生成博客的增删改查页面
+````
+yarn rw g scaffold post
+````
+##### 7. 生成元件(CELL)
+````
+yarn rw g cell Articles
+````
+##### 7. 生成数据库接口
+````
+yarn rw g sdl Contact [--no-crud](可选参数，只生成Type不生成接口)
+````
+
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
