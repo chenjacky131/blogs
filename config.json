@@ -1,17 +1,44 @@
 {
   "version": "1.0",
-  "last_modify": 1654595521697,
+  "last_modify": 1655802874113,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
     {
+      "path": "md/D220621-02.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "npm publish 提示403",
+      "modify_at": 1655802874113,
+      "create_at": 1655802722263,
+      "desc": "by jackchen at 2022/06/21<br>有可能有多种原因，具体看报错提示信息，我的提示没有权限发布这个仓库，原因是package.json的name"
+    },
+    {
+      "path": "md/D220621-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "npm登录提示403",
+      "modify_at": 1655802513130,
+      "create_at": 1655802397256,
+      "desc": "by jack at 2022/06/21<br>因为设置了淘宝的镜像地址，换回原来的就好了\n````\nnpm config set registry https://registry.npmjs.org"
+    },
+    {
+      "path": "md/D220620-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "解决 Cannot use import statement outside a module 问题",
+      "modify_at": 1655715030861,
+      "create_at": 1655714875210,
+      "desc": "by jack at 2022/06/20"
+    },
+    {
       "path": "md/D220607-01.txt",
       "tag": ".教程",
       "markdown": true,
       "title": "ThreeJs学习日记",
-      "modify_at": 1654595521697,
+      "modify_at": 1654673627951,
       "create_at": 1654564543421,
       "desc": "by jack at 2022/06/07<br>````\n/**"
     },
@@ -191,7 +218,7 @@
       "tag": ".Node",
       "markdown": true,
       "title": "yarn的一些操作",
-      "modify_at": 1646731656290,
+      "modify_at": 1655715227050,
       "create_at": 1646731615416,
       "desc": "by jack at 2022/03/08<br>````\n查看当前源"
     },
@@ -389,7 +416,7 @@
       "tag": ".前端",
       "markdown": true,
       "title": "打造好用的VsCode",
-      "modify_at": 1648694409074,
+      "modify_at": 1654826581396,
       "create_at": 1634021600573,
       "desc": "by jack at 2021/10/12<br>````\n1:主题-Materia Theme\n2:图标主题-Material Icon Theme\n3:语法提示-Vetur\n4:括号着色-Bracket Pair Colorizer\n5:变量名推荐-Codelf \n6:Git辅助工具-GitLens\n7:简体中文插件包-Chinese (Simplified)\n8:注释工具-koroFileHeader"
     },
@@ -839,7 +866,7 @@
       "tag": ".JS",
       "markdown": true,
       "title": "CommonJS和ES6 Module的一些区别",
-      "modify_at": 1618476395158,
+      "modify_at": 1655714798489,
       "create_at": 1618475189810,
       "desc": "by jack at 2021/04/15<br>````\n// 导出模块内容可以用以下两种方式，效果一样，但是不能混用"
     },

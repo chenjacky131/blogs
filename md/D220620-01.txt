@@ -1,0 +1,8 @@
+解决 Cannot use import statement outside a module 问题
+----------
+
+by jack at 2022/06/20
+
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

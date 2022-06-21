@@ -80,21 +80,32 @@ controls.addEventListener('change', render);
 // 正二十面体
 // var geometry = new THREE.IcosahedronGeometry(50);
 ````
-##### 4. 材料
+##### 4. 材质
 ````
-/** 镜面反射材料
+/** 镜面反射材质
+ * PointsMaterial 点材质 
+ * LineBasicMaterial 线基础材质
+ * LineDashedMaterial 虚线材质
  * MeshBasicMaterial	基础网格材质，不受光照影响的材质
  * MeshLambertMaterial	Lambert网格材质，与光照有反应，漫反射
  * MeshPhongMaterial	高光Phong材质,与光照有反应
  * MeshStandardMaterial	PBR物理材质，相比较高光Phong材质可以更好的模拟金属、玻璃等效果
+ * MeshPhysicalMaterial PBR材质
+ * SpriteMaterial  精灵Sprite材质
+ * RawShaderMaterial  自定义着色器材质
+ * ShaderMaterial 自定义着色器材质
+ * 
+ * 材质与模型对象关系
+ * 点材质->点模型[Points]
+ * 线材质->线条类型模型[Line,LineLoop,LineSegments]
+ * 网格材质->网格模型[Mesh]，骨骼网格模型[SkinnedMesh]
+ * 精灵材质->精灵模型[Sprite]
  */
-const material = new THREE.MeshPhongMaterial({
+const material = new THREE.Material({ // 所有材料的父类，以下属性为共有属性
   color: 0xff0000,
-  specular:0xffffff,  //  高光颜色
-  shininess:12//  光照强度系数
-});
-const material = new THREE.MeshStandardMaterial({
-  color: 0xff0000
+  side: THREE.DoubleSide, // FrontSide前面，BackSide背面，DoubleSide两面
+  transparent: true, // opacity属性需要设置transparent为true才能生效
+  opacity: 0.5,
 });
 ````
 ##### 5. 光源
@@ -116,6 +127,7 @@ scene.add(point2);
 //  环境光
 const ambient = new THREE.AmbientLight(0x444444);
 scene.add(ambient);
+//  基类Light,颜色属性color,强度属性intensity
 ````
 ##### 6. 自定义几何体
 ````
@@ -191,6 +203,15 @@ var indexes = new Uint16Array([
 ])
 // 索引数据赋值给几何体的index属性
 geometry.index = new THREE.BufferAttribute(indexes, 1); //1个为一组
+````
+##### 11. 几何体旋转、缩放、平移变换
+````
+//  创建一个缓存几何对象
+const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
+geometry.scale(2,2,2);
+geometry.translate(50, 0,0);
+geometry.rotateX(Math.PI / 4);  // 居中：偏移的几何体居中
+geometry.center();  // 居中：偏移的几何体居中
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>

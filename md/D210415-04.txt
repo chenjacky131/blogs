@@ -39,13 +39,18 @@ export default name;
 
 #### 区别
 ````
-commonjs为动态的，es6module为静态的
+1. commonjs为动态的，es6module为静态的
 
-es6module:ES6 Module的导入、导出语句都是声明式，它不支持导入的路径是一个表达式，并且导入、导出语句必须位于模块的顶层作用域（比如不能放在if语句中）
+2. es6module:ES6 Module的导入、导出语句都是声明式，它不支持导入的路径是一个表达式，
+   并且导入、导出语句必须位于模块的顶层作用域（比如不能放在if语句中）
 
-commonjs:require的模块路径可以动态指定，支持传入一个表达式，我们甚至可以通过if语句判断是否加载某个模块
+3. commonjs:require的模块路径可以动态指定，支持传入一个表达式，我们甚至可以通过if语句判断是否加载某个模块
 
-commonjs为值拷贝，es6module为动态映射，并且是只读的。
+4. commonjs为值拷贝，es6module为动态映射，并且是只读的。
+
+5. import/export 只能在模块顶层使用，不能在函数、判断语句等代码块之中引用；require/exports 可以。
+
+6. ES6 模块可以在 import 引用语句前使用模块，CommonJS 则需要先引用后使用
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>

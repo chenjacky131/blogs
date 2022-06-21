@@ -1,0 +1,10 @@
+npm publish 提示403
+----------
+
+by jackchen at 2022/06/21
+
+有可能有多种原因，具体看报错提示信息，我的提示没有权限发布这个仓库，原因是package.json的name
+字段和市场上现有的包冲突了
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
