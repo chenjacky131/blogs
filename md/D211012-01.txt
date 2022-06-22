@@ -16,6 +16,7 @@ by jack at 2021/10/12
 10:跳转到定义(支持别名@跳转):别名路径跳转
 11: 英文拼写检查 - code spell checker
 12: 自动生成注释 - Mintlify Doc Writer
+13: 读取.editorconfig的配置来覆盖编辑器的配置 - EditorConfig for VS Code
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
