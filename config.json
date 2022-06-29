@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1655881197812,
+  "last_modify": 1656492320752,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220629-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "对象深拷贝的trick",
+      "modify_at": 1656492320752,
+      "create_at": 1656492150744,
+      "desc": "by jack at 2022/06/29<br>````\nlet obj = {\n  subObj: {\n    name: 'tom'\n  }\n}\nlet deepCloneObj = JSON.parse(JSON.stringify(obj));"
+    },
     {
       "path": "md/D220621-02.txt",
       "tag": ".遇到的问题",
