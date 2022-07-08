@@ -17,6 +17,7 @@ by jack at 2021/10/12
 11: 英文拼写检查 - code spell checker
 12: 自动生成注释 - Mintlify Doc Writer
 13: 读取.editorconfig的配置来覆盖编辑器的配置 - EditorConfig for VS Code
+14:代码检查、代码格式化工具 - Prettier
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
