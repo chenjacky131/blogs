@@ -4,7 +4,6 @@
 by jacky at 2018/12/24
 ***
 ````javascript
-// 方法一
 var clone = function (obj) { 
     if(obj === null) return null
     if(typeof obj !== 'object') return obj
@@ -20,15 +19,6 @@ var clone = function (obj) {
     }  
     return newObj; 
 };
-
-// 方法二
-Object.prototype.clone = function() {
-  var o = this.constructor === Array ? [] : {};
-  for (var e in this) {
-    o[e] = typeof this[e] === "object" ? this[e].clone() : this[e];
-  }
-  return o;
-}
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
