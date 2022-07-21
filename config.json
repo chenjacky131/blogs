@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1658111587773,
+  "last_modify": 1658395496328,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220721-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "sort排序问题",
+      "modify_at": 1658395496328,
+      "create_at": 1658395437238,
+      "desc": "by jack at 2022/07/21<br>````\n[6,10].sort()  // [10,6] 默认按字符串对比的形式排序"
+    },
     {
       "path": "md/D220629-01.txt",
       "tag": ".JS",
@@ -425,7 +434,7 @@
       "tag": ".前端",
       "markdown": true,
       "title": "打造好用的VsCode",
-      "modify_at": 1657268463777,
+      "modify_at": 1658384805665,
       "create_at": 1634021600573,
       "desc": "by jack at 2021/10/12<br>````\n1:主题-Materia Theme\n2:图标主题-Material Icon Theme\n3:语法提示-Vetur\n4:括号着色-Bracket Pair Colorizer\n5:变量名推荐-Codelf \n6:Git辅助工具-GitLens\n7:简体中文插件包-Chinese (Simplified)\n8:注释工具-koroFileHeader"
     },
