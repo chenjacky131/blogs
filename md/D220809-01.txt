@@ -1,0 +1,9 @@
+configuration has an unknown property ‘jsonpFunction‘
+----------
+
+by jack at 2022/08/09
+
+**报错原因：**在2020-10-10发布的webpack 5中已将 output.jsonpFunction 更名为 output.chunkLoadingGlobal
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
