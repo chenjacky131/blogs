@@ -1,0 +1,77 @@
+前端知识体系概括
+----------
+
+by jack at 2022/08/16
+
+
+##### 1.基础
+  a. CSS
+
+    i. 弹性布局(float,flex,grid）
+
+    ii. 媒体查询(viewport，@media)
+
+    iii. 选择器
+
+    iv. 预处理器(less,scss,stylus)
+  b. JAVASCRIPT
+
+    i. 原型链、this(apply,call,bind)、正则ES5-ES12
+
+    ii. DOM(事件绑定、冒泡模型、事件委托(代理))
+
+    iii. BOM(window,location,navigator,history)
+
+    iv. 工具库loadash
+  c. 浏览器
+
+    i. 存储(cookie,localStorage,sessionStorage,)
+  
+    ii. 网络协议(http,https,TCP)
+
+    iii. 跨域(本地代理服务器proxy,JsonP)
+
+    iv. 机制(事件机制、事件循环机制、加载和渲染机制(加载过程、渲染过程、重排/重绘）、运行机制(JS引擎、内存机制、垃圾回收)）
+
+##### 2. 框架
+    a. Vue.js
+
+      i. 基础(数据、指令、缓存、插槽)
+
+      ii. 全家桶(vuex、vue-router、axios)
+
+      iii. 组件化(通信、element-ui、高价组件)
+
+     b. 服务端渲染(vue nuxt.js)
+
+     c. 数据可书画(Echarts, Antv)
+
+##### 3. 微信
+
+    a. 公众号
+
+    b. 小程序
+
+##### 4. NodeJS
+
+##### 5. 前端安全
+
+    a. 授权认证(oAuth2,JWT)
+
+    b. 安全攻防(XSS、XSRF)
+
+    c. 漏洞、爬虫对抗、持久化攻击、SQL注入
+
+##### 6. 设计模式
+
+##### 7. 算法和数据结构
+
+##### 8. 工程化
+
+    a. 规范化(eslint、git、jsdoc)
+
+    b. 自动化(vue-cli,vite)
+    
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
