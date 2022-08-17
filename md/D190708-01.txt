@@ -110,6 +110,11 @@ function myTofixed(value, number) {
     return str.substring(str.length - 6, str.length)
   }
 ````
+
+##### 7. 保留知道位小数精简版
+````
+const toFixed = (n, fixed) => ~~(Math.pow(10, fixed) * n) / Math.pow(10, fixed);
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
