@@ -1,0 +1,30 @@
+Blender基础入门
+----------
+
+by jack at 2022/08/23
+
+````
+LMB:鼠标左键
+RMB:鼠标右键
+MMB:鼠标中键
+````
+##### 1. 常用快捷键
+1. 按住MMB并移动鼠标: 旋转视图
+2. 同时按住shift+MMB并移动鼠标: 平移视图
+3. G:移动物体
+4. N:切换侧边栏
+5. shift+A:添加物体快捷键
+6. ctrl+C:快速回到默认位置
+7. ctrl+MMB/ctrl+tab:循环切换tabs
+8. T:切换显示工具栏
+9. tab:在物体模式和编辑模式切换
+10. ~:弹出快速查看3D视图的菜单(前后左右上下)
+11. shit+spacebar: 弹出工具栏
+12. Q: 快速收藏夹
+13. F9: 调整上一步操作
+14. shit+R:重复上一步
+15. view->navigation->flyNavigation: 飞行器模式浏览
+16. view->navigation->walkNavigation: 第一人称浏览(wsad控制移动，鼠标控制视图方向)
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

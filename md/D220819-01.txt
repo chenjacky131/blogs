@@ -1,0 +1,62 @@
+发布npm插件
+----------
+
+by jack at 2022/08/19
+
+##### 1. 初始化git
+````
+git init .
+````
+
+##### 2. 新建package.json
+````
+npm init -y
+// name 即npm项目包名，发布到npm时就是取的这个name名，你自己取个语义化的名字，和已有的npm库不能重复；
+// version 版本号，更新npm包时必须修改一个更高的版本号后才能成功发布到npm，版本号最好遵循npm版本管理规范；
+// description 包的描述，发布到npm后你搜索该npm包时，在搜索联想列表里会显示在包名的下方，作为描述说明；
+// main 入口文件路径，在你通过import或require引用该npm包时就是引入的该路径的文件；
+````
+
+##### 3. 添加LICENSE协议
+LICENSE即开源协议文件，这里使用MIT协议类型。
+把Copyright (c) 2022 Jack Chen 改成你的时间姓名
+````
+MIT License
+
+Copyright (c) 2022 Jack Chen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+````
+
+##### 4. 关联github仓库地址
+````
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chenjacky131/Jack-Test.git"
+  }  
+````
+
+##### 5. 发布npm包
+````
+npm publish
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

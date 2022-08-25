@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1660723702597,
+  "last_modify": 1661395335850,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220823-01.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "Blender基础入门",
+      "modify_at": 1661395335850,
+      "create_at": 1661239204131,
+      "desc": "by jack at 2022/08/23"
+    },
+    {
+      "path": "md/D220819-01.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "发布npm插件",
+      "modify_at": 1660892871014,
+      "create_at": 1660891356265,
+      "desc": "by jack at 2022/08/19<br>````\nnpm init -y\n// name 即npm项目包名，发布到npm时就是取的这个name名，你自己取个语义化的名字，和已有的npm库不能重复；\n// version 版本号，更新npm包时必须修改一个更高的版本号后才能成功发布到npm，版本号最好遵循npm版本管理规范；"
+    },
     {
       "path": "md/D220816-01.txt",
       "tag": ".前端",
