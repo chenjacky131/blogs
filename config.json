@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1661395335850,
+  "last_modify": 1662107793790,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220902-01.txt",
+      "tag": ".服务器",
+      "markdown": true,
+      "title": "mysql的一些命令",
+      "modify_at": 1662107793790,
+      "create_at": 1662107418397,
+      "desc": "by jack at 2022/09/02<br>````\n// 查看mysql安装目录\nwhich mysqld"
+    },
     {
       "path": "md/D220823-01.txt",
       "tag": ".教程",

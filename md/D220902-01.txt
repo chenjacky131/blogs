@@ -1,0 +1,18 @@
+mysql的一些命令
+----------
+
+by jack at 2022/09/02
+
+````
+// 查看mysql安装目录
+which mysqld
+
+// 查看mysql配置文件
+/usr/sbin/mysqld(上一步查出来的安装目录) --verbose --help |grep -A 1 'Default options'
+
+// 重启mysql
+service mysqld restart
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
