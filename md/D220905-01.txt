@@ -16,27 +16,44 @@ setLocale({
         switch(path){
           case 'age':
             name = '年龄';
+            break;
+          case 'angle':
+            name = '角度'
+            break;
         }
         if(originalValue === ''){ //  数字格式的非空
           return `${name}不能为空`
         }else{  //  数字格式的格式不正确
-          return `${name}年龄格式不正确`
+          return `${name}格式不正确`
         }
-      }   
-
+      }else if(type === 'date'){
+        return '日期格式不正确'
+      }
     },
   }
 });
 /**
- * @description: 自定义方法是否相等
+ * @description: 自定义方法是否相等(数字和字符串)
  * @param {*} matchName 要对比的字段名
  * @param {*} errorMessage 错误后的提示信息
  * @return {*}
  */
-yup.addMethod(yup.string, "isEqual", function (matchName, errorMessage) {
+yup.addMethod(yup.mixed, "isEqual", function (matchName, errorMessage) {
   return this.test(`test-name`, errorMessage, function (value) {
     const { path, parent,createError } = this;
     return parent[matchName] === value ? true : createError({ path, message: errorMessage });
+  });
+});
+/**
+ * @description: 自定义方法是否相等(日期)
+ * @param {*} matchName 要对比的字段名
+ * @param {*} errorMessage 错误后的提示信息
+ * @return {*}
+ */
+yup.addMethod(yup.date, "isEqual", function (matchName, errorMessage) {
+  return this.test(`test-name`, errorMessage, function (value) {
+    const { path, parent,createError } = this;
+    return new Date(parent[matchName]) === value ? true : createError({ path, message: errorMessage });
   });
 });
 /**
@@ -71,6 +88,10 @@ let _schema = yup.object().shape({  //  示例schema
   age: yup.number().min(18, '未成年误入').max(35, '你已超龄'),
   identification: yup.mixed().isChId('身份证号码有误'),
   email: yup.string().email('邮箱格式不正确'),
+  website: yup.string().url('网址格式错误'),
+  exactDay: yup.date(),
+  birthday: yup.date().min(yup.ref('exactDay'), '日期必须在1992-01-02以后').max('2022-09-06','日期必须在2022-09-06以前'),
+  partner: yup.string().oneOf(['tom','jacky','harry'], '不是合伙人')
 });
 ````
 
