@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1662544199880,
+  "last_modify": 1663037525248,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -1721,7 +1721,7 @@
       "tag": ".JS",
       "markdown": true,
       "title": "常用的js函数2",
-      "modify_at": 1623832566109,
+      "modify_at": 1663037525248,
       "create_at": 1542174673854,
       "desc": "by jacky at 2018/11/14<br>```javascript\n    function m_isString(obj){\n      return Object.prototype.toString.call(obj) === '[object String]';\n    }\n    function m_isNumber(obj){\n      return Object.prototype.toString.call(obj) === '[object Number]';\n    }\n    function m_isBoolean(obj){"
     },
