@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1663127083403,
+  "last_modify": 1663127995939,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -11,7 +11,7 @@
       "tag": ".JS",
       "markdown": true,
       "title": "Typescript知识点",
-      "modify_at": 1663127083403,
+      "modify_at": 1663127995939,
       "create_at": 1663052304371,
       "desc": "by jack at 2022/09/13"
     },
