@@ -1,0 +1,79 @@
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key='auto0'>
+  <div $=".pinp.doc_info.title" sty__='{{"fontWeight":"600"}}' no-show='' left='{-250}' top='{-100}' klass='default-large-small p1-p2-p3-p0 visible-auto-hidden align_center-right-default S3' data-group.optid='pinp/blogs/steps' width='{500}'>Test
+</div>
+  <div $=".pinp.doc_info.desc" no-show='{1}' left='{-200}' top='{100}' klass='default-large-small p1-p2-p3-p0 visible-auto-hidden align_center-right-default' data-group.optid='pinp/blogs/steps' width='{400}'>Abstract of the slide ...</div>
+  <div $=Div data-group.optid='pinp/blogs/steps' width='{400}' klass='default-large-small align_center-right-default p1-p2-p3-p0 visible-auto-hidden' left='{-200}' top='{-60}'>
+    <div class='rewgt-static'><p>By jack at 2022/09/14</p></div>
+  </div>
+  <div $=".pinp.doc_info.thumb" sty__='{{"background":"url(lib/res/slideshow.jpg) no-repeat center","backgroundSize":"100% 100%"}}' no-show='{1}' left='{-70}' top='{-8}' klass='default-large-small p1-p2-p3-p0 visible-auto-hidden default-align_center-right' data-group.optid='pinp/blogs/step4' width='{140}' height='{100}'></div>
+  <div $=P width='{300}' height='{260}' data-dsn-sizes='line1' $for='' left='{-102}' top='{-16}' data-group.optid='pinp/blogs/step1'>
+    <span $=".pinp.charts.line" key='line1' $style='{width:duals(-1).width+&#39;px&#39;,height:duals(-1).height+&#39;px&#39;}'>labels=One,Two,Three,Four,Five,Six,Seven
+title.text=
+legend.display=true
+scales.yAxes.0.stacked=false
+scales.yAxes.0.gridLines.display=true
+scales.xAxes.0.gridLines.display=true
+---
+
+label=Item A
+fill=true
+lineTension=0.4
+borderWidth=2
+65 59 80 81 56 55 40
+---
+label=Item B
+fill=false
+lineTension=0
+borderWidth=2
+75 89 70 91 40 48 32
+</span>
+  </div>
+  <div $=P width='{300}' height='{260}' data-dsn-sizes='line1' $for='' left='{506}' top='{-63}' data-group.optid='pinp/blogs/step1'>
+    <span $=".pinp.charts.line" key='line1' $style='{width:duals(-1).width+&#39;px&#39;,height:duals(-1).height+&#39;px&#39;}'>labels=One,Two,Three,Four,Five,Six,Seven
+title.text=
+legend.display=true
+scales.yAxes.0.stacked=true
+scales.yAxes.0.gridLines.display=false
+scales.xAxes.0.gridLines.display=false
+---
+
+label=Item A
+fill=true
+lineTension=0.4
+borderWidth=2
+65 59 80 81 56 55 40
+---
+label=Item B
+fill=true
+lineTension=0.4
+borderWidth=2
+75 89 70 91 40 48 32
+</span>
+  </div>
+  <div $=P width='{300}' height='{260}' data-dsn-sizes='pie1' $for='' left='{-525}' top='{-338}' data-group.optid='pinp/blogs/step1'>
+    <span $=".pinp.charts.pie" key='pie1' $style='{width:duals(-1).width+&#39;px&#39;,height:duals(-1).height+&#39;px&#39;}'>labels=One,Two,Three,Four,Five,Six
+title.text=
+legend.display=true
+legend.position=right
+legend.showPercent=false
+---
+
+backgroundColor=
+64 12 30 82 56 36
+</span>
+  </div>
+  <div $=P width='{300}' height='{260}' data-dsn-sizes='polarArea1' $for='' left='{144}' top='{-341}' data-group.optid='pinp/blogs/step1'>
+    <span $=".pinp.charts.polarArea" key='polarArea1' $style='{width:duals(-1).width+&#39;px&#39;,height:duals(-1).height+&#39;px&#39;}'>labels=One,Two,Three,Four,Five,Six
+title.text=
+legend.display=true
+scale.gridLines.display=true
+scale.ticks.display=true
+---
+
+backgroundColor=
+65 59 80 81 56 55
+</span>
+  </div>
+</div>
+<div $=ScenePage key='auto1'></div>

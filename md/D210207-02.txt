@@ -101,6 +101,12 @@ tail -f filename 会把 filename 文件里的最尾部的内容显示在屏幕�
 ````
 ps -aux | grep [程序名称]
 ````
+14.搜索文本
+````
+//  在当前目录递归搜索txt文字
+grep "txt" ./ -r
+
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

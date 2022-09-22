@@ -1,11 +1,39 @@
 {
   "version": "1.0",
-  "last_modify": 1663127995939,
+  "last_modify": 1663809735397,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D220914-04.txt",
+      "tag": "",
+      "markdown": false,
+      "title": "Function,构造函数以及实例的关系图",
+      "modify_at": 1663148966622,
+      "create_at": 1663148268252,
+      "desc": "Abstract of the slide ...",
+      "thumb": "lib/res/slideshow.jpg"
+    },
+    {
+      "path": "md/D220914-02.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "面试复习计划",
+      "modify_at": 1663138072521,
+      "create_at": 1663138045496,
+      "desc": "by jack at 2022/09/14"
+    },
+    {
+      "path": "md/D220914-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "script中async和defer的区别",
+      "modify_at": 1663138006502,
+      "create_at": 1663137331491,
+      "desc": "by jakc at 2022/09/14<br>````\nscript ：会阻碍 HTML 解析，只有下载好并执行完脚本才会继续解析 HTML。\nasync script ：解析 HTML 过程中进行脚本的异步下载，下载成功立马执行，有可能会阻断 HTML 的解析。\ndefer script：完全不会阻碍 HTML 的解析，解析完成之后再按照顺序执行脚本。"
+    },
     {
       "path": "md/D220913-01.txt",
       "tag": ".JS",
@@ -281,7 +309,7 @@
       "tag": ".Node",
       "markdown": true,
       "title": "pm2进程守护的操作",
-      "modify_at": 1646965699884,
+      "modify_at": 1663809735397,
       "create_at": 1646965202685,
       "desc": "by jack at 2022/03/11"
     },
@@ -1181,7 +1209,7 @@
       "tag": ".Linux",
       "markdown": true,
       "title": "Linux常用命令",
-      "modify_at": 1646965107475,
+      "modify_at": 1663809560914,
       "create_at": 1612629499313,
       "desc": "by jacky at 2021/02/07<br>1.查找文件位置"
     },

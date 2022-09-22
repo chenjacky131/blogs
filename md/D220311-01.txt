@@ -10,6 +10,7 @@ pm2 delete [进程名]  // 删除进程
 pm2 logs [进程名] --lines 1000  //  查看改进程的实时日志,显示1000条
 pm2 save //  保存当前已经启动的服务
 pm2 startup  //  设置开机自启的配置
+pm2 status  //  查看当前在运行的状态
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>

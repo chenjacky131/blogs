@@ -1,0 +1,11 @@
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key='auto0'>
+  <div $=".pinp.doc_info.title" sty__='{{"fontWeight":"600"}}' no-show='' left='{-250}' top='{-100}' klass='default-large-small p1-p2-p3-p0 visible-auto-hidden align_center-right-default S3' data-group.optid='pinp/blogs/steps' width='{563}'>Function,构造函数以及实例的关系图</div>
+  <div $=".pinp.doc_info.desc" no-show='{1}' left='{-200}' top='{100}' klass='default-large-small p1-p2-p3-p0 visible-auto-hidden align_center-right-default' data-group.optid='pinp/blogs/steps' width='{400}'>Abstract of the slide ...</div>
+  <div $=".pinp.doc_info.thumb" sty__='{{"background":"url(lib/res/slideshow.jpg) no-repeat center","backgroundSize":"100% 100%"}}' no-show='{1}' left='{-70}' top='{-8}' klass='default-large-small p1-p2-p3-p0 visible-auto-hidden default-align_center-right' data-group.optid='pinp/blogs/step4' width='{140}' height='{100}'></div>
+</div>
+<div $=ScenePage key='auto1'>
+  <div $=P klass='default-large-small hidden-visible-auto' data-group.optid='rewgt/shadow-slide/steps' left='{-372}' top='{-240}'>
+    <span $=Img src='md/res/D171120-01/objectProperty.png' sty__='{{"width":"750px","height":"535px"}}'></span>
+  </div>
+</div>
