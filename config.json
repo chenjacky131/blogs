@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1663817270984,
+  "last_modify": 1664267437378,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -29,10 +29,10 @@
       "path": "md/D220914-02.txt",
       "tag": ".前端",
       "markdown": true,
-      "title": "面试复习计划",
-      "modify_at": 1663138072521,
+      "title": "html+css+js复习概括",
+      "modify_at": 1664267437378,
       "create_at": 1663138045496,
-      "desc": "by jack at 2022/09/14"
+      "desc": "by jack at 2022/09/27<br>如何理解HTML语义化"
     },
     {
       "path": "md/D220914-01.txt",
@@ -114,15 +114,6 @@
       "modify_at": 1658395496328,
       "create_at": 1658395437238,
       "desc": "by jack at 2022/07/21<br>````\n[6,10].sort()  // [10,6] 默认按字符串对比的形式排序"
-    },
-    {
-      "path": "md/D220629-01.txt",
-      "tag": ".JS",
-      "markdown": true,
-      "title": "对象深拷贝的trick",
-      "modify_at": 1656492320752,
-      "create_at": 1656492150744,
-      "desc": "by jack at 2022/06/29<br>````\nlet obj = {\n  subObj: {\n    name: 'tom'\n  }\n}\nlet deepCloneObj = JSON.parse(JSON.stringify(obj));"
     },
     {
       "path": "md/D220621-02.txt",
@@ -1848,9 +1839,9 @@
       "tag": ".教程",
       "markdown": true,
       "title": "对象的深拷贝",
-      "modify_at": 1658111587773,
+      "modify_at": 1664267429498,
       "create_at": 1536378070519,
-      "desc": "by jacky at 2018/12/24<br>````javascript\nvar clone = function (obj) { \n    if(obj === null) return null\n    if(typeof obj !== 'object') return obj\n    if(obj.constructor===Date) return new Date(obj)\n    if(obj.constructor === RegExp) return new RegExp(obj)\n    var newObj = new obj.constructor ();  //保持继承链\n    for (var key in obj) {"
+      "desc": "by jacky at 2018/12/24\n````\n/**"
     },
     {
       "path": "md/D180903-02.txt",
