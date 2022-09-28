@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1664267580946,
+  "last_modify": 1664349438692,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -30,7 +30,7 @@
       "tag": ".前端",
       "markdown": true,
       "title": "html+css+js复习概括",
-      "modify_at": 1664267580946,
+      "modify_at": 1664349438692,
       "create_at": 1663138045496,
       "desc": "by jack at 2022/09/27<br>如何理解HTML语义化"
     },
@@ -1443,9 +1443,9 @@
       "tag": ".JS",
       "markdown": true,
       "title": "常用的js函数1",
-      "modify_at": 1660723702597,
+      "modify_at": 1664347661337,
       "create_at": 1562565200612,
-      "desc": "by 2019 at 2019/07/08<br>````\nconst debounce = (fn, delay) => {// 节流函数\n        let delays = delay || 500;\n        let timer;"
+      "desc": "by 2019 at 2019/07/08<br>````\n  /**"
     },
     {
       "path": "md/D190619-01.txt",

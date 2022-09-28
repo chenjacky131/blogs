@@ -128,7 +128,8 @@ by jack at 2022/09/27
   8. 行高，父元素行高如果写了百分比，子元素的行高继承的是父元素的font-size*百分比算出来的值。
 
 ###### 三、Javascript
-  1. 数据类型
+
+  a. 数据类型
 
     . JavaScript的基本数据类型包括Undefined，Null，Boolean，String，Number，Object，Symbol，BigInt，其中Symbol和BigInt为ES6新增的数据类型。Symbol代表独一无二的值，最大的用法是用来定义对象的唯一属性名。BigInt可代表任意大小的整数。
 
@@ -143,6 +144,7 @@ by jack at 2022/09/27
     . 判断数组的方法，Array.isArray(arr),arr.__proto__ === Array.prototype,arr instanceof Array,Object.prototype.toString.call(arr) === '[object Array]';
 
     . 深拷贝
+
 ````
 /**
  * @description: 对象的深拷贝
@@ -181,6 +183,185 @@ function deep(obj = {}, map = new Map()){
   }
   return result;
 }
+````
+    . 误差范围，由于JavaScript在做计算的时候，会被转成二进制，在做对阶运算是，可能发送数丢失的情况。
+
+````
+function isEqual(a,b){
+  return Math.abs(a-b) < Number.EPSILON;
+}
+````
+
+  b. 闭包: 每当创建一个函数，闭包就会在函数创建的同时被创建出来。可以在一个内层函数中，访问到外层函数的作用域。闭包的应用：
+
+````
+// 函数作为参数被传递
+function print(fn){
+  const a = 200;
+  fn();
+}
+const a = 100;
+function fn(){
+  console.log(a)
+}
+print(fn);  // 100
+
+// 函数作为返回值被返回
+function create(){
+  const a = 100;
+  return function(){
+    console.log(a)
+  }
+}
+const fn = create();
+fn();// 100
+
+````
+
+  闭包自由变量的查找是在函数定义的地方向上级作用域查找。而不是在函数执行的地方。
+
+##### 四、web存储
+  . cookie:4kb,每次请求都会携带，通过document.cookie修改。
+
+  . sessionStorage: 5M，标签页关闭时销毁。
+
+  . localStorage:5M，手动删除时销毁。
+
+##### 五、HTTP
+
+  . 强缓存：Cache-Control，有max-age:缓存最大过期时间，秒。no-cache:可以在客户端存储资源，每次都必须去服务器做新鲜度校验，来决定是否从服务器获取资源(200)还是从客户端获取资源(304)。no-store:永远都从服务器获取资源。
+
+  . 协商缓存: 资源标识，在response-header中，有两种，Last-Modified:资源的最后修改时间，请求时会通过if-Modified-Since进行对比。Etag:资源的唯一标识，一个字符串，相当于指纹,请求时会通过if-None-Match进行对比。
+
+  . 优先使用Etag，Last-Modified只能精确到秒级，如果资源被重复生成，而内容不变，则Etag更精确。
+
+  . 三种操作对HTTP缓存的影响：正常点击连接和前进后退，强缓存和协商缓存都有效。f5刷新页面，强缓存失效，协商缓存有效。ctrl+f5强制刷新，强缓存和协商缓存都失效。
+
+  . HTTP2有哪些改进:头部压缩、多路复用、服务器推送。
+
+##### 六、Webpack
+
+  1. 作用
+
+    . 模块化打包:将不同模块打包在一起，包装它们直接的引用正确、执行有序。
+
+    . 编译兼容:通过各种loader，可以轻松的帮我们处理各种兼容代码，我们还可以使用各种新特性。
+
+    . 能力扩展:通过plugin，我们可以实现按需加载，代码压缩等，提高自动化程度，增加效率。
+
+##### 七、性能优化
+
+  1. 代码层面
+
+    . 防抖和节流(resize,scroll,input)
+
+    . 减少重排重绘
+
+    . 事件委托，批量的事件可以绑定到父元素上
+
+    . css方头部，js放底部
+
+    . 减少DOM操作
+
+    . 按需加载
+
+  2. 构建层面
+
+    . 压缩代码
+
+    . 开启gzip压缩
+
+    . 常用库使用cdn服务
+
+  3. 其它
+
+    . 图片压缩
+
+    . 使用HTTP缓存
+
+##### 八、常见手写
+
+  1. 防抖
+````
+  /**
+   * @description: 防抖函数(带立即执行和取消功能)
+   * @param {*} func  需要包装防抖的函数
+   * @param {*} wait  等待时间
+   * @param {*} immediate 是否立即执行
+   * @return {*} result 返回值
+   */  
+  function debounce(func, wait, immediate){
+    let timer, result;
+    let debounced = function(){
+      let context = this; //  绑定this
+      let args = arguments; //  获取参数
+      if(timer) clearTimeout(timer);
+      if(immediate){
+        //  如果已经执行过了，timer有值，则不再执行
+        let callNow = !timer;
+        timer = setTimeout(() => {
+          timer = null;
+        }, wait);
+        if(callNow) result = func.apply(context, args);
+      }else{
+        timer = setTimeout(function(){
+          func.apply(context, args);
+        }, wait);        
+      }
+      return result;
+    }
+    debounced.cancel = function(){
+      clearTimeout(timer);
+      timer = null;
+    }
+    return debounced;
+  }
+````
+  2. 节流
+````
+
+  /**
+   * @description: 节流函数
+   * @param {*} func  需要包装节流的函数
+   * @param {*} wait  等待时间
+   * @param {*} options 只有三种情况{leading:false}不立即执行或{trailing:false}最后一次不执行或{}都执行
+   * @return {*}
+   */  
+  function throttle(func, wait, options){
+    let timeout,context,args,result;
+    let previous = 0;
+    if(!options) options = {};
+    let later = function(){
+      previous = options.leading === false ? 0 : +new Date();
+      timeout = null;
+      func.apply(context, args);
+      if(!timeout) context = args = null;
+    };
+    let throttled = function(){
+      let now = +new Date();
+      if(!previous && options.leading === false) previous = now;
+      let remaining = wait - (now - previous);      
+      context = this;
+      args = arguments;
+      if(remaining <= 0 || remaining > wait) {
+        if(timeout){
+          clearTimeout(timeout);
+          timeout = null;
+        }
+        previous = now;
+        func.apply(context, args);
+        if(!timeout) context = args = null;
+      }else if(!timeout && options.trailing !== false){
+        timeout = setTimeout(later, remaining);
+      }
+    }
+    throttled.cancel = function(){
+      clearTimeout(timeout);
+      timeout = null;
+      previous = 0;
+    }
+    return throttled;
+  }
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
