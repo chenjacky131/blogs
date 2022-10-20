@@ -1,0 +1,68 @@
+Vite配置cdn
+----------
+
+by jakc at 2022/09/28
+
+###### 安装插件
+````
+npm i -D roolup-plugin-commonjs roolup-plugin-external-globals
+````
+
+###### 配置vite.config.js
+````
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import commonjs from "rollup-plugin-commonjs";
+import externalGlobals from "rollup-plugin-external-globals";
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    vue(),
+  ],
+  build: {
+    rollupOptions: {
+      external: ['vue','dayjs'],
+      plugins: [
+        commonjs(),
+        externalGlobals({
+          vue: 'Vue',
+          dayjs: 'dayjs'
+        })
+        /*
+          externalGlobals({
+            jquery: "$"
+          })          
+          上面的配置把
+          import jq from "jquery";          
+          console.log(jq(".test"));
+          转换成
+          console.log($(".test"));
+        */
+      ]
+    }
+  }
+})
+
+````
+###### 在html.js中引入cdn资源
+````
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.16/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.5/dayjs.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

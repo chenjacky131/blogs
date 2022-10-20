@@ -1,0 +1,17 @@
+事件循环event loop
+----------
+
+by jack at 2022/10/20
+
+````
+1. 主线程中代码从上到下执行
+2. 遇到异步加入事件队列
+3. 主线程完成后执行事件队列代码
+4. 其中promise传入函数中的参数中函数体里的代码会立即执行
+5. async/await中await表达式会立即执行
+6. 事件队列中会先执行微任务(MicroStack):nextTick, Promise,Async/await
+7. 然后执行宏任务(MacroStack):setTimeout,setInterval,Ajax,Dom事件
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
