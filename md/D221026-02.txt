@@ -1,0 +1,60 @@
+Docker的使用
+----------
+
+by jack at 2022/10/26
+
+##### 1.在项目根目录，新建名为Dockerfile(没有后缀)的配置文件
+
+````
+# 第一阶段下载依赖
+FROM node:16-buster-slim as dependency
+
+LABEL description="A demo Dockerfile for build my hello world"
+
+COPY . /var/web/
+
+WORKDIR /var/web
+
+RUN apt remove -y cmdtest \
+apt remove -y yarn \
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+apt update \
+apt install yarn 
+
+RUN set -x \
+  && yarn install 
+
+# 第二阶段
+FROM node:16-buster-slim as builder
+
+COPY --from=0 /var/web /var/web
+
+WORKDIR /var/web
+
+RUN set -x \
+  && yarn run build
+
+# 第三阶段
+FROM nginx:1.23.1-alpine as prod
+
+EXPOSE 80
+COPY --from=1 /var/web/dist /usr/share/nginx/html
+CMD [ "nginx", "-g", "daemon off;" ]
+
+````
+##### 2.构建镜像
+在项目根目录执行下面的构建语句
+````
+docker build -t hello-world3 . --no-cache
+//  -t是标签，创建名为hello-world3的镜像
+````
+
+##### 3.创建容器
+````
+docker run -d -p 80:80 --name my-container1 hello-world3
+//  --name是容器的标签，hello-world3为镜像的名字
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1666229175489,
+  "last_modify": 1666772697618,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D221026-02.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "Docker的使用",
+      "modify_at": 1666772697618,
+      "create_at": 1666768787891,
+      "desc": "by jack at 2022/10/26<br>````"
+    },
+    {
+      "path": "md/D221026-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "win10安装Docker失败，提示Component CommunityInstaller.EnableFeaturesAction failed:",
+      "modify_at": 1666765070142,
+      "create_at": 1666749048875,
+      "desc": "by jack at 2022/10/26"
+    },
     {
       "path": "md/D221020-01.txt",
       "tag": ".JS",

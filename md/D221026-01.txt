@@ -1,0 +1,24 @@
+win10安装Docker失败，提示Component CommunityInstaller.EnableFeaturesAction failed: 
+----------
+
+by jack at 2022/10/26
+
+````
+//  完整的报错信息
+Component CommunityInstaller.EnableFeaturesAction failed: 
+   在 CommunityInstaller.InstallWorkflow.<DoHandleD4WPackageAsync>d__30.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 CommunityInstaller.InstallWorkflow.<DoProcessAsync>d__23.MoveNext()
+````
+在控制面板->程序->启用或关闭Windows功能里面勾选Hyper-V和适用于Linux的Windows子系统。如果打开启用或关闭Windows功能很慢的话，运行。
+
+````
+window受保护系统文件修复指令:Sfc /scannow
+
+````
+ 然后就可以顺利安装了
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
