@@ -55,6 +55,10 @@ docker build -t hello-world3 . --no-cache
 docker run -d -p 80:80 --name my-container1 hello-world3
 //  --name是容器的标签，hello-world3为镜像的名字
 ````
+##### 4.进入容器的命令行
+````
+docker exec -it 容器名称或容器id /bin/sh
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
