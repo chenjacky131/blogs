@@ -1,0 +1,203 @@
+Canvas绘制雷达图
+----------
+
+by jack at 2022/11/03
+
+````
+
+/* canvas-radar.js
+ * @Author: 'ccw' 'chencw@cniship.com'
+ * @Date: 2022-11-03 09:36:42
+ * @LastEditors: 'ccw' 'chencw@cniship.com'
+ * @LastEditTime: 2022-11-03 17:25:23
+ * @FilePath: \ship-integration\src\views\fleet\component\SailingRealTime\index.js
+ * @Description: 雷达底图，此处的坐标系为Canvas的坐标系，x轴正数部分位于右边，y轴正数部分位于上边
+ */
+/**
+ * @description:  画雷达
+ * @param {Object} ctx 画布的context对象
+ * @param {Number} w 画布宽度
+ * @param {Number} h 画布高度
+ * @param {Object} options 雷达配置项，circleStep:同心圆之间的宽度，radius:内同心圆的半径
+ * @param {Number} radius  中心同心圆的半径
+ * @param {Number} circleNumber  同心圆个数，不包括最外圈的刻度圆
+ * @return {*}
+ */
+export const drawRadar = (ctx, w, h, options) => {
+  options = Object.assign({
+    circleStep:40,
+    radius: 40,
+    circleNumber: 6
+  }, options);
+  let {circleStep, radius, circleNumber } = options;
+  const _baseRadius = radius;
+  ctx.save();
+  const x = w / 2;
+  const y = h / 2;
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = 1;
+  while(radius <= _baseRadius + circleStep * circleNumber){ //  画同心圆
+    ctx.beginPath();
+    ctx.arc(x,y,radius,0,Math.PI * 2);
+    radius += circleStep;
+    ctx.stroke();
+    ctx.closePath();
+  }
+  //  画中线
+  ctx.beginPath();
+  ctx.moveTo(x,y);
+  ctx.lineTo(x, y - _baseRadius - circleStep * circleNumber);
+  ctx.stroke();
+  ctx.closePath();
+  //  画刻度
+  let rotate = 0;
+  function drawScale(){
+    ctx.save()
+    ctx.beginPath();
+    ctx.rotate(Math.PI / 180 * rotate); //  旋转
+    if(rotate%10 === 0){  //  整十的刻度
+      ctx.moveTo(0, - _baseRadius - circleStep * circleNumber - 1);
+      ctx.lineTo(0, - _baseRadius -(circleStep * circleNumber + 10) - 1);
+      ctx.stroke();
+      //  画刻度值
+      const text = ctx.measureText(rotate);
+      ctx.fillStyle = '#fff';
+      ctx.fillText(rotate, -text.width/2, - _baseRadius - (circleStep * circleNumber + 10) - 11);
+      //  画三角形箭头
+      if(rotate % 30 === 0){
+        ctx.beginPath();
+        ctx.moveTo(-4, - _baseRadius - circleStep * circleNumber);
+        ctx.lineTo(0, - _baseRadius - (circleStep * circleNumber + 10) - circleNumber);
+        ctx.lineTo(4, - _baseRadius - circleStep * circleNumber);
+        ctx.fill();
+      }
+    }else if(rotate%5 === 0){ //  5的倍速的刻度
+      ctx.moveTo(0, - _baseRadius - circleStep * circleNumber - 1);
+      ctx.lineTo(0, - _baseRadius - (circleStep * circleNumber + 5) - 1);
+    }else{
+      ctx.moveTo(0, - _baseRadius - circleStep * circleNumber - 1);
+      ctx.lineTo(0, - _baseRadius - (circleStep * circleNumber + 2) - 1);
+    }
+    ctx.stroke();
+    ctx.closePath();
+    rotate++;
+    if(rotate < 360){
+      ctx.restore();
+      drawScale();
+    }
+  }
+  ctx.save();
+  ctx.translate(x,y); //  移到同心圆的中心开始画
+  drawScale();
+  ctx.restore();
+  ctx.restore();
+}
+/**
+ * @description:  在雷达上画船
+ * @param {Object} ctx 画布的context对象
+ * @param {Number} w 画布宽度
+ * @param {Number} h 画布高度
+ * @param {Object} options 在雷达上绘制的船的配置,distance: 到雷达中心的距离，course:船的航行方向，
+ * direction: 船相对于雷达中心的方位，radius:雷达上船圆点的半径，courseLineLength:船航行方向线的长度
+ * @return {*}
+ */
+export const drawShipOnRadar = (ctx,w,h, options) => {
+  options = Object.assign({
+    distance:0,
+    course: 0,
+    direction: 0,
+    radius:5,
+    courseLineLength: 0
+  }, options);
+  const {direction, distance, radius, course, courseLineLength} = options;
+  const {x: shipX, y: shipY} = calculateXY(direction, distance); //  计算船方位
+  const {x: courseX, y: courseY} = calculateXY(course, courseLineLength); //  计算方向线的方位
+  ctx.save();
+  ctx.translate(w/2,h/2);
+  ctx.fillStyle = 'red';
+  ctx.beginPath();
+  ctx.arc(shipX, shipY, radius,0,Math.PI*2)
+  ctx.fill();
+  drawCourseLine(ctx,shipX,shipY, courseX, courseY);
+  ctx.restore();
+};
+/**
+ * @description: 计算坐标
+ * @param {Number} direction 相对于雷达中心的方位
+ * @param {Number} distance  相对于雷达中心的距离
+ * @return {Object} x:x坐标，y:y坐标
+ */
+const calculateXY = (direction, distance) => {
+  let x = 0;
+  let y = 0;
+  let calcAngle = 0;
+  if(direction >= 0 && direction < 90){
+    //  右上方
+    calcAngle = direction;
+    x = Math.sin(Math.PI/180 * calcAngle) * distance;
+    y = -Math.cos(Math.PI/180 * calcAngle) * distance;
+  }else if(direction >= 90 && direction < 180){
+    //  右下方
+    calcAngle = direction - 90;
+    x = Math.cos(Math.PI/180 * calcAngle) * distance;
+    y = Math.sin(Math.PI/180 * calcAngle) * distance;
+  }else if(direction >= 180 && direction < 270){
+    //  左下方
+    calcAngle = direction - 180;
+    x = -Math.sin(Math.PI/180 * calcAngle) * distance;
+    y = Math.cos(Math.PI/180 * calcAngle) * distance;
+  }else{
+    //  左上方
+    calcAngle = direction - 270;
+    x = -Math.sin(Math.PI/180 * calcAngle) * distance;
+    y = -Math.cos(Math.PI/180 * calcAngle) * distance;
+  }
+  return {
+    x: x,
+    y: y,
+  }
+}
+/**
+ * @description: 航线方向线
+ * @param {Object} ctx 画布的context对象
+ * @param {Number} shipX 船的x坐标
+ * @param {Number} shipY 船的y坐标
+ * @param {Number} courseX 船航向末端的x坐标
+ * @param {Number} courseY 船航向末端的y坐标
+ * @return {*}
+ */
+const drawCourseLine = (ctx,shipX,shipY, courseX, courseY) => {  //
+  ctx.strokeStyle = 'yellow';
+  ctx.beginPath();
+  ctx.moveTo(shipX, shipY);
+  ctx.lineTo(shipX + courseX, shipY + courseY);
+  ctx.stroke();
+};
+
+````
+##### 使用
+````
+// vue中使用
+import { drawRadar, drawShipOnRadar } from 'canvas-radar.js';
+const radarCanvas = ref(null);
+onMounted(() => {
+  const canvas = radarCanvas.value;
+  const w = canvas.width;
+  const h = canvas.height;
+  const ctx = canvas.getContext('2d');
+  drawRadar(ctx, w, h, {
+    circleStep:35, 
+    radius: 35,
+    circleNumber: 5
+  });
+  drawShipOnRadar(ctx,w,h, {
+    distance:40, 
+    course: 18, 
+    direction: 315,
+    radius: 5,
+    courseLineLength: 10,
+  });
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
