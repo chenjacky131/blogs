@@ -19,6 +19,24 @@ ps aux|grep nginx
 // 进入Nginx调用目录，上面第2部
 ./nginx -s reload
 ````
+##### 4. 查看nginx运行状态
+````
+ ps  -ef | grep nginx
+ 或者
+ systemctl status nginx.service
+````
+##### 5. 启动Nginx
+````
+systemctl start nginx.service
+````
+##### 6. 停止Nginx
+````
+systemctl stop nginx.service
+````
+##### 7. 重载Nginx
+````
+systemctl reload nginx.service
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
