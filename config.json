@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1669877763790,
+  "last_modify": 1670227614122,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D221205-01.txt",
+      "tag": ".JS",
+      "markdown": true,
+      "title": "可选链和空值合并运算符",
+      "modify_at": 1670227614122,
+      "create_at": 1670227336985,
+      "desc": "by jakc at 2022/12/05<br>````\n//  可选链?.\nconst adventurer = {\n  name: 'Alice',\n  cat: {\n    name: 'Dinah'\n  }\n};"
+    },
     {
       "path": "md/D221103-01.txt",
       "tag": ".JS",
