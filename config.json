@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1670227614122,
+  "last_modify": 1671075295878,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D221215-02.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "vue-router的webhistory模式刷新页面后404的问题",
+      "modify_at": 1671075295878,
+      "create_at": 1671075073104,
+      "desc": "by jack at 2022/12/15<br>服务器的Nginx需要配置\n````\nlocation / {\n  try_files $uri $uri/ /index.html;\n}\n//  如果是部署到子目录，需要相应的添加子目录路径，如\nlocation /subDirectory {\n  try_files $uri $uri/ /subDirectory/index.html;\n}"
+    },
+    {
+      "path": "md/D221215-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "类型“ImportMeta”上不存在属性“env”",
+      "modify_at": 1671072933432,
+      "create_at": 1671072876312,
+      "desc": "by jack at 2022/12/15<br>在 tsconfig.json 文件中添加如下配置即可\n“types”: [ “vite/client” ]"
+    },
     {
       "path": "md/D221205-01.txt",
       "tag": ".JS",

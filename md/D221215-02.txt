@@ -1,0 +1,19 @@
+vue-router的webhistory模式刷新页面后404的问题
+----------
+
+by jack at 2022/12/15
+
+服务器的Nginx需要配置
+````
+location / {
+  try_files $uri $uri/ /index.html;
+}
+//  如果是部署到子目录，需要相应的添加子目录路径，如
+location /subDirectory {
+  try_files $uri $uri/ /subDirectory/index.html;
+}
+````
+如果是vite打包到服务器子页面，需要修改base: '/subDirectory'
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

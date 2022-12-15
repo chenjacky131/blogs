@@ -1,0 +1,12 @@
+类型“ImportMeta”上不存在属性“env”
+----------
+
+by jack at 2022/12/15
+
+在 tsconfig.json 文件中添加如下配置即可
+“types”: [ “vite/client” ]
+
+记得重启编辑器
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
