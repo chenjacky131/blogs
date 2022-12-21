@@ -1,0 +1,155 @@
+Node教程
+----------
+
+by jack at 2022/12/21
+
+##### 创建服务器
+````
+var http = require('http');
+
+http.createServer(function (request, response) {
+
+    // 发送 HTTP 头部 
+    // HTTP 状态值: 200 : OK
+    // 内容类型: text/plain
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+
+    // 发送响应数据 "Hello World"
+    response.end('Hello World\n');
+}).listen(8888);
+
+// 终端打印如下信息
+console.log('Server running at http://127.0.0.1:8888/');
+````
+##### 查看全局安装的npm包信息
+````
+npm list -g
+````
+##### 使用cnpm代替npm
+````
+npm install -g cnpm --registry=https://registry.npmmirror.com
+````
+##### 事件处理程序eventEmitter1
+````
+const events = require('events');
+//  创建eventEmitter对象
+const eventEmitter = new events.EventEmitter();
+//  创建事件处理程序
+const connectHandler = function connected(){
+  console.log('连接成功');
+  //  触发data_received事件
+  eventEmitter.emit('data_received');
+}
+//  绑定connection事件处理程序
+eventEmitter.on('connection', connectHandler);
+//  使用匿名函数绑定data_received事件
+eventEmitter.on('data_received', function(){
+  console.log('数据接收成功');
+})
+//  触发connection事件
+eventEmitter.emit('connection');
+console.log('程序执行完毕')
+````
+##### 事件处理程序eventEmitter2
+````
+//  EventEmitter支持若干个事件监听器
+const events = require('events');
+const event = new events.EventEmitter();
+event.on('some_event', function(arg1, arg2){
+  console.log('事件1触发', arg1, arg2)
+})
+event.on('some_event', function(arg1, arg2){
+  console.log('事件2触发', arg1, arg2)
+})
+setTimeout(() => {
+  event.emit('some_event', '参数1', '参数2')
+}, 1000);
+console.log(event.listenerCount('some_event'))
+````
+##### Buffer
+````
+const buf = Buffer.from('runoob','ascii');
+console.log(buf.toString('hex'));
+console.log(buf.toString('base64'));
+````
+##### 读取流
+````
+//  读取流
+const fse = require("fs-extra");
+let data = '';
+//  创建可读流
+const readeStream = fse.createReadStream('./node/BufferExample1.js');
+//  设置编码为utf-8
+readeStream.setEncoding('UTF8');
+//  处理流事件
+readeStream.on('data', (chunk) => {
+  data += chunk;
+});
+readeStream.on('end', () => {
+  console.log('读取到的数据:',data);
+});
+readeStream.on('error', (err) => {
+  console.log(err.stack)
+})
+console.log('程序执行完毕')
+````
+##### 写入流
+````
+//  写入流
+const fse = require('fs-extra')
+let data = '测试文字'
+//  创建一个写入流
+const writeStream = fse.createWriteStream('output.txt')
+//  使用utf-8编码写入数据
+writeStream.write(data, 'UTF8');
+//  标记文件末尾
+writeStream.end()
+//  处理流事件
+writeStream.on('finish', () => {
+  console.log('写入完成')
+})
+writeStream.on('error', (err) => {
+  console.log(err.stack)
+})
+console.log('程序执行完毕')
+
+````
+##### 管道流
+````
+//  管道流
+const fse = require('fs-extra')
+//  创建一个可读流
+const readStream = fse.createReadStream('./node/demo.txt')
+//  创建一个可写流
+const writeStream = fse.createWriteStream('./node/demo_copy.txt')
+//  管道读取操作
+readStream.pipe(writeStream)
+console.log('程序执行完毕')
+````
+##### 链式流
+````
+//  链式流压缩文件
+const fse = require('fs-extra')
+const zlib = require('zlib')
+fse.createReadStream('./node/demo.txt')
+  .pipe(zlib.createGzip())
+  .pipe(fse.createWriteStream('./node/test.txt.gz'))
+console.log('文件压缩完成')
+````
+##### 链式流解压文件
+````
+//  链式流解压文件
+const fse = require('fs-extra')
+const zlib = require('zlib')
+fse.createReadStream('./node/test.txt.gz')
+  .pipe(zlib.createGunzip())
+  .pipe(fse.createWriteStream('test.txt'));
+console.log('文件解压完成')
+````
+##### 模块系统
+````
+//  如果要对外暴露属性或方法，就用 exports 就行，要暴露对象(类似class，包含了很多属性和方法)，就用 module.exports。
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
