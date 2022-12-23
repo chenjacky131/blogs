@@ -150,6 +150,24 @@ console.log('文件解压完成')
 ````
 //  如果要对外暴露属性或方法，就用 exports 就行，要暴露对象(类似class，包含了很多属性和方法)，就用 module.exports。
 ````
+##### 全局对象
+````
+setTimeout
+clearTimeout
+setInterval
+clearInterval
+console
+process
+````
+##### 常用工具
+````
+util.callbackify: 转成成异常优先回调风格
+util.inherits:对象的继承
+util.inspect：将任意对象转换为字符串
+uitl.isArray: 判断数组
+util.isRegExp:判断正则
+util.isDate: 判断日期
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
