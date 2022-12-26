@@ -1,0 +1,13 @@
+MongoDB连接报1053错误的问题
+----------
+
+by jack at 2022/12/23
+
+1.执行命令sc delete MongoDB删除原有服务
+
+2.重新加载mongod的配置文件,执行命令mongod --install -f "D:\MongoDB\bin\mongod.cfg"(配置文件所在目录)
+
+3..启动MongoDB服务
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
