@@ -1,0 +1,10 @@
+Could not open a connection to your authentication agent
+----------
+
+by jack at 2022/12/27
+
+执行如下命令　ssh-agent bash
+然后再执行 ssh-add ~/.ssh/id_ras 即可。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

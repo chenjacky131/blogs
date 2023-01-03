@@ -1,0 +1,13 @@
+wx.navigateTo跳转没有反应的问题
+----------
+
+by jack at 2022/12/29
+````
+wx.navigateTo({
+  url:'page/login/login
+})  // 这样跳转无效，page前面需要加/斜杆
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

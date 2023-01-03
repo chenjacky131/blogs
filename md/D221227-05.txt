@@ -1,0 +1,45 @@
+Linux安卓mongodb教程
+----------
+
+by jack at 2022/12/27
+
+1.下载所有的包,下载地址https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.2/x86_64/RPMS 
+下载命令wget [包名地址]
+````
+mongodb-org-server为mongodb的服务端安装包
+如果需要命令行连接 mongoDB，则需要安装 shell
+如果需要一些附加工具，例如数据导入导出，则需要安装 tool 程序包
+如果要部署集群，则还需要安装 mongos 程序包
+````
+2.安卓mongodb服务
+````
+//  依次执行
+rpm -ivh mongodb-org-server-4.2.19-1.el7.x86_64.rpm
+rpm -ivh mongodb-org-shell-4.2.19-1.el7.x86_64.rpm
+rpm -ivh mongodb-org-tools-4.2.19-1.el7.x86_64.rpm
+````
+3.修改配置文件
+````
+//  创建文件夹，父文件夹不存在时需要先创建父文件夹
+mkdir /home/mongodb/data
+mkdir /home/mongodb/log
+//  新建log文件
+touch /home/mongodb/log/mongod.log
+//  设置用户读写权限
+chown -R mongod:mongod /home/mongodb
+//  修改配合文件
+vim /etc/mongod.conf
+systemLog:->path: /home/mongodb/log/mongod.log		// 日志路径
+storage:->dbPath: /home/mongodb/data			// 数据文件存储路径
+````
+4.启动mongod服务
+````
+启动 systemctl start mongod
+重启 systemctl restart mongod
+停止 systemctl stop mongod
+查看状态 systemctl status mongod
+查看版本 mongod -version
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

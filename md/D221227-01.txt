@@ -1,0 +1,13 @@
+module ‘@babel/runtime/helpers/interopRequireDefault.js‘ is not defined报错解决方法
+----------
+
+by jack at 2022/12/27
+
+使用async/await报错
+解决方法，删除app.json中的以下配置即可
+````
+"lazyCodeLoading": "requiredComponents"
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,0 +1,13 @@
+Content-Type的类型
+----------
+
+by jack at 2022/12/28
+````
+application/x-www-form-urlencoded  // 原生表单如果不设置enctype,就以这种方式提交
+multipart/form-data  //  使用表单提交文件是，设置enctype="multipart/form-data"，则以此种方式提交
+application/json  //  json数据格式
+text/xml  //  http传输协议
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

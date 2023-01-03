@@ -1,0 +1,25 @@
+使用git clone 出现 Permission denied 解决办法
+----------
+
+by jack at 2022/12/27
+
+1.检查本地ssh key是否存在,若存在，则跳过生成key的步骤
+````
+ls ~/.ssh/
+````
+2.生成ssh key
+````
+ssh-keygen -t rsa -b 2048 -C "自己的邮箱地址"
+````
+3.添加ssh key至ssh-agent
+````
+eval ssh-agent //  若果返回以下，表示启用中Agent pid 12033
+````
+4.拷贝生成的ssh key
+````
+cat ~/.ssh/*.pub
+````
+5.添加到git里面的sshkey即可
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

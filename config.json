@@ -1,11 +1,92 @@
 {
   "version": "1.0",
-  "last_modify": 1671788602961,
+  "last_modify": 1672303368354,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D221229-03.txt",
+      "tag": ".小程序",
+      "markdown": true,
+      "title": "小程序中，请求不会自动带上cookie的解决办法",
+      "modify_at": 1672303368354,
+      "create_at": 1672303176623,
+      "desc": "by jack at 2022/12/29<br>登录成功的时候，把session存到storage里"
+    },
+    {
+      "path": "md/D221229-02.txt",
+      "tag": ".小程序",
+      "markdown": true,
+      "title": "wx.navigateTo跳转没有反应的问题",
+      "modify_at": 1672298405060,
+      "create_at": 1672298276498,
+      "desc": "by jack at 2022/12/29\n````\nwx.navigateTo({\n  url:'page/login/login\n})  // 这样跳转无效，page前面需要加/斜杆"
+    },
+    {
+      "path": "md/D221229-01.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "响应头set-cookie没生效的问题",
+      "modify_at": 1672283853504,
+      "create_at": 1672283709957,
+      "desc": "by jack at 2022/12/29<br>同源的情况下才能设置cookie,所以本地项目的前台请求需要设置代理才能访问设置成功"
+    },
+    {
+      "path": "md/D221228-01.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "Content-Type的类型",
+      "modify_at": 1672216484975,
+      "create_at": 1672216232915,
+      "desc": "by jack at 2022/12/28\n````\napplication/x-www-form-urlencoded  // 原生表单如果不设置enctype,就以这种方式提交\nmultipart/form-data  //  使用表单提交文件是，设置enctype=\"multipart/form-data\"，则以此种方式提交\napplication/json  //  json数据格式\ntext/xml  //  http传输协议"
+    },
+    {
+      "path": "md/D221227-05.txt",
+      "tag": ".服务器",
+      "markdown": true,
+      "title": "Linux安卓mongodb教程",
+      "modify_at": 1672131019659,
+      "create_at": 1672130624752,
+      "desc": "by jack at 2022/12/27<br>1.下载所有的包,下载地址https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.2/x86_64/RPMS \n下载命令wget [包名地址]"
+    },
+    {
+      "path": "md/D221227-04.txt",
+      "tag": ".服务器",
+      "markdown": true,
+      "title": "/lib64/libm.so.6: version `GLIBC_2.27‘ not found (required by node)",
+      "modify_at": 1672129467359,
+      "create_at": 1672129424449,
+      "desc": "by jack at 2022/12/27"
+    },
+    {
+      "path": "md/D221227-03.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "使用git clone 出现 Permission denied 解决办法",
+      "modify_at": 1672127376841,
+      "create_at": 1672126786941,
+      "desc": "by jack at 2022/12/27<br>1.检查本地ssh key是否存在,若存在，则跳过生成key的步骤"
+    },
+    {
+      "path": "md/D221227-02.txt",
+      "tag": ".服务器",
+      "markdown": true,
+      "title": "Could not open a connection to your authentication agent",
+      "modify_at": 1672127057239,
+      "create_at": 1672126758580,
+      "desc": "by jack at 2022/12/27<br>执行如下命令　ssh-agent bash"
+    },
+    {
+      "path": "md/D221227-01.txt",
+      "tag": ".小程序",
+      "markdown": true,
+      "title": "module ‘@babel/runtime/helpers/interopRequireDefault.js‘ is not defined报错解决方法",
+      "modify_at": 1672124282082,
+      "create_at": 1672124207904,
+      "desc": "by jack at 2022/12/27<br>使用async/await报错\n解决方法，删除app.json中的以下配置即可\n````\n\"lazyCodeLoading\": \"requiredComponents\""
+    },
     {
       "path": "md/D221223-01.txt",
       "tag": ".服务器",

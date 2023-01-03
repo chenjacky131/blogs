@@ -1,0 +1,20 @@
+小程序中，请求不会自动带上cookie的解决办法
+----------
+
+by jack at 2022/12/29
+
+登录成功的时候，把session存到storage里
+````
+wx.setStorageSync('session-id', res.header['Set-Cookie'])
+````
+请求的时候把session值放入请求头的cookie里就可以了 
+````
+wx.request({ 
+  header:{
+    'cookie': wx.getStorageSync('session-id')
+  }
+}）
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
