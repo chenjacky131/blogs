@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1672303368354,
+  "last_modify": 1672904696961,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -210,9 +210,9 @@
       "tag": ".JS",
       "markdown": true,
       "title": "script中async和defer的区别",
-      "modify_at": 1663138006502,
+      "modify_at": 1672904599069,
       "create_at": 1663137331491,
-      "desc": "by jakc at 2022/09/14<br>````\nscript ：会阻碍 HTML 解析，只有下载好并执行完脚本才会继续解析 HTML。\nasync script ：解析 HTML 过程中进行脚本的异步下载，下载成功立马执行，有可能会阻断 HTML 的解析。\ndefer script：完全不会阻碍 HTML 的解析，解析完成之后再按照顺序执行脚本。"
+      "desc": "by jakc at 2022/09/14"
     },
     {
       "path": "md/D220913-01.txt",
@@ -1578,7 +1578,7 @@
       "tag": ".前端",
       "markdown": true,
       "title": "前端面试问题",
-      "modify_at": 1660633467716,
+      "modify_at": 1672904696961,
       "create_at": 1572406042587,
       "desc": "by jacky at 2019/10/30<br>面试问题："
     },

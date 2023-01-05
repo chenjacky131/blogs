@@ -12,6 +12,7 @@ var 和 let 的区别？
 <br>
 . http请求什么情况下会携带cookie？domain字段，Secure字段，path 
 <br>
+. script的async和defer和不加这两个属性，加载和执行顺序有什么区别?
 . 节流函数throttle和防抖函数debounce
 <br>
 . 移动端响应式用的是什么方式实现的（rem还是百分比什么的）
