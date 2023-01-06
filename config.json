@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1672904696961,
+  "last_modify": 1672971084165,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230106-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "Vue2响应式问题",
+      "modify_at": 1672971084165,
+      "create_at": 1672968568863,
+      "desc": "by jack at 2023/01/06<br>````\n第1种情况可以通过数组的splice方法或者Vue.set(arr, index, value)来实现"
+    },
     {
       "path": "md/D221229-03.txt",
       "tag": ".小程序",

@@ -1,0 +1,26 @@
+Vue2响应式问题
+----------
+
+by jack at 2023/01/06
+
+##### 以下方式的数据修改，页面将不会响应
+````
+1. 利用索引直接设置一个数组的值时
+2. 修改数组的长度时
+3. 对象属性的添加和删除
+````
+##### 解决方法
+````
+第1种情况可以通过数组的splice方法或者Vue.set(arr, index, value)来实现
+第2种情况可以通过splice(newLength)来实现
+第3种也可以用Vue.set和Vue.delete
+````
+
+##### 响应式原理
+````
+通过Obje.defineProperty来实现，对对象属性的读取会触发getter,对对象属性的赋值
+会触发setter。Object.defineProperty监听不到数组的push，pop这些操作，所以对这些方法进行了重写。
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
