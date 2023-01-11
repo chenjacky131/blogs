@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1672971084165,
+  "last_modify": 1673419905637,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230111-02.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "调整窗口大小指令",
+      "modify_at": 1673419905637,
+      "create_at": 1673419790665,
+      "desc": "by jack at 2023/01/11<br>````"
+    },
+    {
+      "path": "md/D230111-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "拖动窗口指令vue3版",
+      "modify_at": 1673419784738,
+      "create_at": 1673419671139,
+      "desc": "by jack at 2023/1/11<br>```\n//  使用 v-drag:title加参数知道拖动哪个元素，默认拖动整个el,script中使用定义vDrag等于导入的dirDrag\nexport const dirDrag = {\n  mounted:(el, binding) => {\n    let dragElement = el;\n    if(binding.arg){\n      dragElement = el.querySelector(.${binding.arg}`);\n    }\n    //  设置初始样式,el不能有margin,不然计算结果会有误差，出现的结果就是鼠标点击刚移动时，会有一个位移的动作"
+    },
     {
       "path": "md/D230106-01.txt",
       "tag": ".Vue",
