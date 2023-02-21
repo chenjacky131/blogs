@@ -1,0 +1,44 @@
+WebWork以及offScreenCanvas的使用
+----------
+
+by jack at 2023/02/21
+
+##### 引入
+````
+import Worker from 'worker-loader!./worker.js';  //  worder-loader内联调用文件夹里的worker.js文件
+````
+##### 离屏canvas
+````
+const canvas = document.createElement('canvas');
+let offscreen = canvas.transferControlToOffscreen();
+/* data为需要用webwoker计算的数据，在外面包装包，
+webworker里面的环境与主线程有区别，不能调用dom等等 */  
+worker.postMessage({canvas: offscreen, data:data}, [offscreen]);  
+worker.addEventListener('message', (e) => {
+  const createImageFromBlob = blob => { // 二进格式图片转成正常的图片
+    const image = new Image();
+    image.src = URL.createObjectURL(blob);
+    return image;
+  };
+  const data = e.data;
+  const img = createImageFromBlob(data);
+  /*  终止worker进程，window.navigator.hardwareConcurrency
+   可以查看运行线程上的cpu处理器数量，worker数量不能超过这个 */ 
+  worker.terminate();  
+});
+````
+
+##### woker.js文件
+````
+onmessage = async function(e){
+  const {canvas, data} = e.data;  //  获取传进来的离屏canvas和data
+  const blob = await canvas.convertToBlob({
+    type: "image/png",quality: 1
+  });  //  画布转成二进制图片
+  postMessage(blob);  //  向主进程传数据
+}
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
