@@ -1,17 +1,35 @@
 {
   "version": "1.0",
-  "last_modify": 1676972034651,
+  "last_modify": 1677035686268,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
     {
+      "path": "md/D230222-01.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "WebWork以及offScreenCanvas的使用2(二进制格式数据imageBitmap)",
+      "modify_at": 1677035686268,
+      "create_at": 1677035524916,
+      "desc": "by jack at 2023/02/22<br>````\n//  画很多矩形\nlet offscreen,ctx;\n// 监听主线程发的信息\nonmessage = function (e) {\n  if(e.data.msg == 'init'){\n    init();"
+    },
+    {
+      "path": "md/D230221-02.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "谷歌浏览器查看fps和GPU内存使用情况",
+      "modify_at": 1676973502842,
+      "create_at": 1676973442091,
+      "desc": "by jack at 2023/02/21<br>````\n打开F12调试工具\n输入command + shift + p\n输入frame, 找到show frames per second FPS meter，然后回"
+    },
+    {
       "path": "md/D230221-01.txt",
       "tag": ".前端",
       "markdown": true,
-      "title": "WebWork以及offScreenCanvas的使用",
-      "modify_at": 1676972034651,
+      "title": "WebWork以及offScreenCanvas的使用1(二进制格式数据blob)",
+      "modify_at": 1677035514031,
       "create_at": 1676971267953,
       "desc": "by jack at 2023/02/21<br>````\nconst canvas = document.createElement('canvas');\nlet offscreen = canvas.transferControlToOffscreen();\n/* data为需要用webwoker计算的数据，在外面包装包，"
     },

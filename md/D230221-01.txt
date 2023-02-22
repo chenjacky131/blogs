@@ -1,4 +1,4 @@
-WebWork以及offScreenCanvas的使用
+WebWork以及offScreenCanvas的使用1(二进制格式数据blob)
 ----------
 
 by jack at 2023/02/21

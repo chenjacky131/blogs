@@ -1,0 +1,13 @@
+谷歌浏览器查看fps和GPU内存使用情况
+----------
+
+by jack at 2023/02/21
+
+````
+打开F12调试工具
+输入command + shift + p
+输入frame, 找到show frames per second FPS meter，然后回
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

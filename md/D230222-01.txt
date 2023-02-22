@@ -1,0 +1,47 @@
+
+WebWork以及offScreenCanvas的使用2(二进制格式数据imageBitmap)
+----------
+
+by jack at 2023/02/22
+
+##### worker.js
+````
+//  画很多矩形
+let offscreen,ctx;
+// 监听主线程发的信息
+onmessage = function (e) {
+  if(e.data.msg == 'init'){
+    init();
+    draw();
+  }
+}
+
+function init() {
+  offscreen = new OffscreenCanvas(400, 400);
+  ctx = offscreen.getContext("2d");
+}
+// 绘制图形
+function draw() {
+   ctx.clearRect(0,0,offscreen.width,offscreen.height);
+   for(var i = 0;i < 10000;i ++){
+    for(var j = 0;j < 1000;j ++){
+      ctx.fillRect(i*3,j*3,2,2);
+    }
+  }
+  const imageBitmap = offscreen.transferToImageBitmap();  
+  // 传送给主线程
+  postMessage({imageBitmap:imageBitmap},[imageBitmap]);
+}
+````
+##### 主线程中的代码
+````
+import Worker from 'worker-loader!./worker.js'
+const worker = new Worker();
+worker.postMessage({msg: 'init'});
+worker.onmessage = function(e){
+  ctx.drawImage(e.data.imageBitmap,0,0);  //  用主线程中的ctx来画图片
+}
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
