@@ -66,7 +66,7 @@ mv source_file(文件) dest_file(文件)
 9.解压文件
 
 ````
-tar -xvf file.tar //解压 tar包
+tar -xvf file.tar //解压 tar包(tar.xz也可以)
 
 tar -xzvf file.tar.gz //解压tar.gz
 

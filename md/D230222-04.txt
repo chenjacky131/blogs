@@ -1,0 +1,17 @@
+Linux下安装cnpm
+----------
+
+by jakc at 2023/02/22
+
+##### 下载
+````
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+````
+##### 全局配置cnpm
+````
+// /usr/locall/bin/cnpm如有之前有存在，先删除
+sudo ln -s /home/xhl/node-v16.9.1-linux-x64/bin/cnpm /usr/local/bin/cnpm
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

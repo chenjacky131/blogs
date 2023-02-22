@@ -1,0 +1,29 @@
+Linux下安装node
+----------
+
+by jack at 2023/02/22
+
+##### 下载安装包
+````
+wget https://nodejs.org/dist/v14.15.1/node-v14.15.1-linux-x64.tar.xz
+````
+##### 解压
+````
+tar -xvf node-v14.15.1-linux-x64.tar.xz
+````
+
+##### 配置环境变量
+````
+vi /etc/profile
+最后加上这句话：export PATH=$PATH:/usr/local/node/bin
+让新加的配置生效：source /etc/profile
+````
+##### 配软连接
+````
+相当于全局变量，在任何文件夹都能查看版本信息
+ln -s /usr/local/node/bin/node /usr/local/bin/
+ln -s /usr/local/node/bin/npm /usr/local/bin/
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

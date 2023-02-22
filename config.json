@@ -1,11 +1,47 @@
 {
   "version": "1.0",
-  "last_modify": 1677035686268,
+  "last_modify": 1677049353371,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230222-05.txt",
+      "tag": ".Linux",
+      "markdown": true,
+      "title": "配置软连接，类似Windows中的环境变量",
+      "modify_at": 1677049353371,
+      "create_at": 1677049283526,
+      "desc": "by jack at 2023/02/22<br>````\n//  第一个Wie对应的bin目录，第二个为全局执行的目录\n ln -s /home/node/node_global/bin/yarn /usr/local/bin/"
+    },
+    {
+      "path": "md/D230222-04.txt",
+      "tag": ".Linux",
+      "markdown": true,
+      "title": "Linux下安装cnpm",
+      "modify_at": 1677049106487,
+      "create_at": 1677048982554,
+      "desc": "by jakc at 2023/02/22<br>````\n// /usr/locall/bin/cnpm如有之前有存在，先删除\nsudo ln -s /home/xhl/node-v16.9.1-linux-x64/bin/cnpm /usr/local/bin/cnpm"
+    },
+    {
+      "path": "md/D230222-03.txt",
+      "tag": ".Linux",
+      "markdown": true,
+      "title": "Linux下安装nvm,node版本管理工具",
+      "modify_at": 1677048838700,
+      "create_at": 1677048513540,
+      "desc": "by jack at 2023/02/22"
+    },
+    {
+      "path": "md/D230222-02.txt",
+      "tag": ".Linux",
+      "markdown": true,
+      "title": "Linux下安装node",
+      "modify_at": 1677048493312,
+      "create_at": 1677048324393,
+      "desc": "by jack at 2023/02/22"
+    },
     {
       "path": "md/D230222-01.txt",
       "tag": ".前端",
@@ -1434,7 +1470,7 @@
       "tag": ".Linux",
       "markdown": true,
       "title": "Linux常用命令",
-      "modify_at": 1663809560914,
+      "modify_at": 1677037044058,
       "create_at": 1612629499313,
       "desc": "by jacky at 2021/02/07<br>1.查找文件位置"
     },

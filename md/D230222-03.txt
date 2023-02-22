@@ -1,0 +1,28 @@
+Linux下安装nvm,node版本管理工具
+----------
+
+by jack at 2023/02/22
+
+##### 下载包
+````
+wget https://github.com/nvm-sh/nvm/archive/refs/tags/v0.39.1.tar.gz
+````
+##### 解压
+````
+tar -xzvf v0.39.1.tar.gz 
+````
+##### 配置bashrc文件
+````
+vim ~/.bashrc
+
+export NVM_DIR="/data/home/lin/soft/nvm-0.39.1"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+````
+##### 刷新配置
+````
+source ~/.bashrc
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

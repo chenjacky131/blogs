@@ -1,0 +1,12 @@
+配置软连接，类似Windows中的环境变量
+----------
+
+by jack at 2023/02/22
+
+````
+//  第一个Wie对应的bin目录，第二个为全局执行的目录
+ ln -s /home/node/node_global/bin/yarn /usr/local/bin/
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
