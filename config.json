@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1677049353371,
+  "last_modify": 1677746179856,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230302-01.txt",
+      "tag": ".Vue",
+      "markdown": true,
+      "title": "image-webpack-loader安装报错的问题",
+      "modify_at": 1677746179856,
+      "create_at": 1677745944026,
+      "desc": "by jack at 2023/03/02<br>Error: pngquant failed to build, make sure that libpng-dev is installed\n这种情况其实就是系统环境缺了一个 dll文件, 导致 去安装 pngquant插件的时候报错\n````\n解决办法："
+    },
     {
       "path": "md/D230222-05.txt",
       "tag": ".Linux",
@@ -327,7 +336,7 @@
       "tag": ".服务器",
       "markdown": true,
       "title": "mysql的一些命令",
-      "modify_at": 1663812717317,
+      "modify_at": 1677058358252,
       "create_at": 1662107418397,
       "desc": "by jack at 2022/09/02<br>````\n// 查看mysql安装目录\nwhich mysqld"
     },

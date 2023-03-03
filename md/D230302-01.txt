@@ -1,0 +1,21 @@
+image-webpack-loader安装报错的问题
+----------
+
+by jack at 2023/03/02
+
+Error: pngquant failed to build, make sure that libpng-dev is installed
+这种情况其实就是系统环境缺了一个 dll文件, 导致 去安装 pngquant插件的时候报错
+````
+解决办法：
+
+前往 https://pngquant.org/ 下载pngquant库
+在Downloade里面找到Binary for Windows
+解压压缩包至C:\Windows\System32目录下
+管理员身份运行pngquant.exe
+以管理员运行pngquant.exe的时候，可能会遇到缺少vcruntime140.dll库的提示
+从微软官方下载Visual C++ Redistributable for Visual Studio 2015。
+地址：https://www.microsoft.com/zh-cn/download/details.aspx?id=48145
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
