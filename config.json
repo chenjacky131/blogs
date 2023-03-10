@@ -1,11 +1,29 @@
 {
   "version": "1.0",
-  "last_modify": 1677746179856,
+  "last_modify": 1678327015241,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230309-01.txt",
+      "tag": ".Node",
+      "markdown": true,
+      "title": "yarn安装插件时报An unexpected error occurred: \"EPERM: operation not permitted的错误",
+      "modify_at": 1678327015241,
+      "create_at": 1678326960935,
+      "desc": "by jack at 2023/03/09"
+    },
+    {
+      "path": "md/D230306-01.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "画布（canvas）的measureText计算有偏差",
+      "modify_at": 1678068757376,
+      "create_at": 1678068690256,
+      "desc": "by jack at 2023/03/06"
+    },
     {
       "path": "md/D230302-01.txt",
       "tag": ".Vue",

@@ -1,0 +1,9 @@
+yarn安装插件时报An unexpected error occurred: "EPERM: operation not permitted的错误
+----------
+
+by jack at 2023/03/09
+
+需要把运行中的项目停掉，然后重新安装
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

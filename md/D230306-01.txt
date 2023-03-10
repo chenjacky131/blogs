@@ -1,0 +1,9 @@
+画布（canvas）的measureText计算有偏差
+----------
+
+by jack at 2023/03/06
+
+需要设置好字体之后再去调用这个方法
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
