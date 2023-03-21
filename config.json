@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1678327015241,
+  "last_modify": 1679390070790,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230321-01.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "Html5的一些计算宽高的新特性",
+      "modify_at": 1679390070790,
+      "create_at": 1679389971959,
+      "desc": "by jack at 2023/03/21<br>````\nvideo.videoWidth;\nvideo.videoHeight;"
+    },
     {
       "path": "md/D230309-01.txt",
       "tag": ".Node",

@@ -1,0 +1,18 @@
+Html5的一些计算宽高的新特性
+----------
+
+by jack at 2023/03/21
+
+##### 获取图片的真实宽高
+````
+image.naturalWidth;
+image.naturalHeight;
+````
+##### 获取视频的宽高
+````
+video.videoWidth;
+video.videoHeight;
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
