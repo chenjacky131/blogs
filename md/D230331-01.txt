@@ -1,0 +1,14 @@
+git提交代码时提示WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+----------
+
+by jack at 2023/03/31
+
+````
+ssh-keygen -R github.com // 把什么缓存清了就可以
+
+或者手动去C:\Users\Administrator\.ssh\known_hosts
+把github.com **** 那行删了就行
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

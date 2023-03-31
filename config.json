@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1679390070790,
+  "last_modify": 1680254094834,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230331-01.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "git提交代码时提示WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!",
+      "modify_at": 1680254094834,
+      "create_at": 1680253925056,
+      "desc": "by jack at 2023/03/31<br>````\nssh-keygen -R github.com // 把什么缓存清了就可以"
+    },
     {
       "path": "md/D230321-01.txt",
       "tag": ".前端",
