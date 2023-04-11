@@ -132,6 +132,12 @@ git remote add <origin(映射的仓库名称)><仓库地址>
 ````
 git remote remove <origin(创建的名字)>
 ````
+##### 22. 标签相关
+````
+在github上，标签（tags）通常用于给代码库打上语义化的版本号。版本号可以让用户更好地理解和使用代码库的不同版本，而标签则是这些版本号的代表。除了版本号，标签也可以作为一种分类方式，在多个项目中共享相同的标签，方便搜索和浏览相关主题的代码库。
+git push --delete origin tagname  //  删除远程标签
+git tag -d tagname  //  删除本地标签
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

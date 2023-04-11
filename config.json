@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1680254094834,
+  "last_modify": 1681177558834,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230411-01.txt",
+      "tag": ".前端",
+      "markdown": true,
+      "title": "SVG知识点",
+      "modify_at": 1681177558834,
+      "create_at": 1681177367663,
+      "desc": "by jack at 2023/04/11"
+    },
     {
       "path": "md/D230331-01.txt",
       "tag": ".Git",
@@ -1362,7 +1371,7 @@
       "tag": ".Git",
       "markdown": true,
       "title": "Git常用命令",
-      "modify_at": 1653442095458,
+      "modify_at": 1680573164490,
       "create_at": 1617671829107,
       "desc": "by jack at 2021/04/06"
     },
