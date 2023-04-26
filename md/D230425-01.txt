@@ -1,0 +1,20 @@
+服务器生成秘钥的步骤
+----------
+
+by jack at 2023/04/25
+
+在 Linux 系统中，您可以通过以下步骤配置 SSH 密钥登录：
+
+1. 为当前用户生成公钥和私钥。在终端中运行以下命令：`ssh-keygen -t rsa`
+   您可以设置密钥的名称、路径和密码等选项。如果留空，则采用默认值。
+
+2. 将公钥添加到远程服务器的授权文件（authorized_keys）中。在终端中运行以下命令：`ssh-copy-id username@remote_server_ip_address`
+   将 "username" 替换为您要登录的用户名，将 "remote_server_ip_address" 替换为远程服务器的 IP 地址或主机名。
+
+3. 测试 SSH 密钥登录。在终端中运行以下命令以连接到远程服务器：`ssh username@remote_server_ip_address`
+   如果一切正常，您应该可以直接登录到远程服务器，无需输入密码。
+
+请注意，在使用 SSH 密钥登录时，请务必保护好您的私钥，并确保将其保存在安全位置。如果您的私钥被泄露，黑客可能会使用它来访问您的服务器并执行恶意操作。
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
