@@ -1,11 +1,38 @@
 {
   "version": "1.0",
-  "last_modify": 1682386645287,
+  "last_modify": 1688010254392,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230629-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "NVM安装node报错",
+      "modify_at": 1688010254392,
+      "create_at": 1688010012277,
+      "desc": "by jack at 2023/06/29<br>安装node时报"
+    },
+    {
+      "path": "md/D230509-01.txt",
+      "tag": ".教程",
+      "markdown": true,
+      "title": "GLSL ES 入门",
+      "modify_at": 1683615637225,
+      "create_at": 1683613990913,
+      "desc": "by jack at 2023/05/09<br>````\n// unifirm，它可以在顶点和片元着色器中使用，它是全局的\nconst colorLocation = gl.getUniformLocation(program, 'u_color')  //  获取\n/\n  赋值，4f 代表是 4 个浮点数，也就是 rgba，需要注意 OpenGL 中颜色值的范围不是\n  0 到 255，而是 0 到 1\n/"
+    },
+    {
+      "path": "md/D230505-01.txt",
+      "tag": ".服务器",
+      "markdown": true,
+      "title": "记录Jenkins安装",
+      "modify_at": 1683279864942,
+      "create_at": 1683279717583,
+      "desc": "by jack at 2023/05/05"
+    },
     {
       "path": "md/D230425-01.txt",
       "tag": ".服务器",
@@ -480,7 +507,7 @@
       "tag": "WebGL一些API的说明.教程",
       "markdown": true,
       "title": "WebGL的一些API说明",
-      "modify_at": 1653901004307,
+      "modify_at": 1683614519579,
       "create_at": 1653900514166,
       "desc": "by jack at 2022/05/30<br>````\n/*"
     },
@@ -1380,7 +1407,7 @@
       "tag": ".Git",
       "markdown": true,
       "title": "Git常用命令",
-      "modify_at": 1680573164490,
+      "modify_at": 1683250603798,
       "create_at": 1617671829107,
       "desc": "by jack at 2021/04/06"
     },

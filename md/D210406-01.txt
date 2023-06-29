@@ -138,6 +138,10 @@ git remote remove <origin(创建的名字)>
 git push --delete origin tagname  //  删除远程标签
 git tag -d tagname  //  删除本地标签
 ````
+##### 23. 查看关联的远程分支
+````
+git branch -vv
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

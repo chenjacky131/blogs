@@ -1,0 +1,45 @@
+记录Jenkins安装
+----------
+
+by jack at 2023/05/05
+
+##### 1: 错误: 无法验证 pkg.jenkins.io 的由 “/C=US/O=Let's Encrypt/CN=R3” 颁发的证书:
+````
+  颁发的证书已经过期。
+安装新的 CA 证书sudo yum install ca-certificates
+更新证书存储库
+  sudo update-ca-trust force-enable 
+  sudo update-ca-trust extract
+验证证书是否已安装 ls -la /etc/pki/ca-trust/source/anchors/
+````
+##### 2: Jenkins相关目录
+````
+/var/cache/yum/x86_64/7/jenkins
+/var/cache/jenkins
+/var/lib/yum/repos/x86_64/7/jenkins
+/var/lib/jenkins
+/var/log/jenkins
+/etc/sysconfig/jenkins
+/etc/logrotate.d/jenkins
+/etc/rc.d/init.d/jenkins
+/usr/bin/jenkins
+/usr/share/jenkins
+````
+##### 3：Java相关目录
+````
+/CloudResetPwdUpdateAgent/depend/jre1.8.0_131/bin/java
+/home/CloudResetPwdAgent/CloudResetPwdUpdateAgent.Linux/CloudResetPwdUpdateAgent/depend/jre1.8.0_131/bin/java
+/var/lib/alternatives/java
+/etc/java
+/etc/pki/java
+/etc/pki/ca-trust/extracted/java
+/etc/alternatives/java
+/usr/bin/java
+/usr/lib/java
+/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64/bin/java
+/usr/share/java
+````
+##### 4.管理员密码存放位置:/var/lib/jenkins/secrets/initialAdminPassword
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

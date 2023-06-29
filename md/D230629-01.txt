@@ -1,0 +1,19 @@
+NVM安装node报错
+----------
+
+by jack at 2023/06/29
+
+安装node时报
+````
+Could not retrieve https://nodejs.org/dist/latest/SHASUMS256.txt.
+Get https://nodejs.org/dist/latest/SHASUMS256.txt: dial tcp 104.20.23.46:443: i/o 
+````
+解决方法：
+在nvm的安装路径下找到settings.txt文件，如果没有，可以新建一个，其实这个文件可以理解为nvm的配置文件。打开settings.txt后，添加下面的2行代码,就设置成了国内的服务的源：
+````
+node_mirror:npm.taobao.org/mirrors/node/
+npm_mirror:npm.taobao.org/mirrors/npm/
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

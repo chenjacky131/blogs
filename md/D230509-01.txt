@@ -1,0 +1,87 @@
+GLSL ES 入门
+----------
+
+by jack at 2023/05/09
+
+##### GLSL ES(graphics library shading language embeded system)着色器语言，有点像C语言，在webgl中使用的是2.0版本，webgl2中使用的是3.0版本
+
+##### 向着色器传递数据
+````
+// unifirm，它可以在顶点和片元着色器中使用，它是全局的
+const colorLocation = gl.getUniformLocation(program, 'u_color')  //  获取
+/*
+  赋值，4f 代表是 4 个浮点数，也就是 rgba，需要注意 OpenGL 中颜色值的范围不是
+  0 到 255，而是 0 到 1
+*/  
+gl.uniform4f(colorLocation, 0.93, 0, 0.56, 1)
+
+// attribute,只能用在顶点着色器，被用来表示逐顶点信息
+const positionLocation = gl.getAttribLocation(program, 'a_position') 
+const positionBuffer = gl.createBuffer() 
+gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer) 
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+    0, 0.5,
+    0.5, 0,
+    -0.5, -0.5
+]), gl.STATIC_DRAW)
+gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0)
+gl.enableVertexAttribArray(positionLocation);
+````
+
+##### 矩阵和矢量
+````
+vec2、vec3 和 vec4 代表 2、3 和 4 个浮点数的矢量。
+
+ivec2、ivec3 和 ivec4 整数版本。
+
+bvec2、bvec3 和 bvec4 布尔版本。
+
+mat2、mat3 和 mat4 2x2、3x3 和 4x4 的矩阵。
+````
+##### 分支和循环(if和for)和js一样
+````
+if (true) {} else if (true) {} else {}
+for (int i = 0; i < 3; i++) {
+	continue; // 或 break
+}
+````
+##### 函数
+````
+/*
+  每个着色器中都必须有个 main 函数，它会被自动执行，函数
+  的返回值写在函数名前，没返回值就为 void。 
+*/
+float add(float a, float b) {
+	return a + b;
+}
+
+//  如果函数定义在调用之后则需要先声明该函数
+float add(float a, float b); // 声明
+void main() {
+	float c = add(1., 1.);
+}
+float add(float a, float b) {
+	return a + b;
+}
+/*
+  另外函数参数还有限定词。
+  in 默认，表示像函数传入参数。
+  const in 和 in 一样，但是不能修改。
+  out 在函数中被赋值，并被传出。
+  inout 传入参数，在函数中被赋值，并被传出。
+*/
+void add(in float a, in float b, out float answer) {
+	answer = a + b; // 不使用 return 而用 out
+}
+//  GLSL 中还有一些内置函数，例如 sin, cos, pow, abs 等等。
+````
+#####  精度限定词
+````
+mediump float size; // 声明一个中精度浮点数
+highp int len; // 声明一个高精度整数
+lowp vec4 v; // 低精度矢量
+precision mediump float; // 浮点数全部使用中精度
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -27,6 +27,7 @@ by jack at 2022/05/30
  * first: 指定从哪个点开始绘制。
  * count: 指定绘制需要使用到多少个点。
 ````
+##### 3.坐标系使用的是数学中的直角坐标系，远点为0，边界为-1到1
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
