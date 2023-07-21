@@ -213,6 +213,16 @@ geometry.translate(50, 0,0);
 geometry.rotateX(Math.PI / 4);  // 居中：偏移的几何体居中
 geometry.center();  // 居中：偏移的几何体居中
 ````
+##### 12. BufferGeometry顶点复用问题
+````
+在使用 BufferGeometry 的 indices 属性来绘制图形时，需要按照一定的规则来设置顶点的索引位置。具体规则如下：
+
+1. 每个三角形需要使用三个顶点，即每个索引组的大小必须为3；
+2. 顶点的索引位置从0开始，每个顶点的位置依次加1；
+3. 在绘制图形时，按照逆时针方向定义三角形的顶点，这样可以保证法线方向的正确性。
+
+在实际使用过程中，可以根据需要灵活地设置顶点索引来创建不同的图形。同时，也需要注意设置顶点索引时的正确性，以避免出现渲染错误或崩溃的情况。
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
