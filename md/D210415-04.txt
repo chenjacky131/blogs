@@ -35,6 +35,8 @@ export default name;
 
 默认导入: import diyName from './es6_export.js';  // import { default as diyName} from ...;
 
+混合导入：import diyName, {name} from './es6_export.js'; 
+
 ````
 
 #### 区别

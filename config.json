@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1689911546075,
+  "last_modify": 1690775429519,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -1326,7 +1326,7 @@
       "tag": ".JS",
       "markdown": true,
       "title": "CommonJS和ES6 Module的一些区别",
-      "modify_at": 1655714798489,
+      "modify_at": 1690775429519,
       "create_at": 1618475189810,
       "desc": "by jack at 2021/04/15<br>````\n// 导出模块内容可以用以下两种方式，效果一样，但是不能混用"
     },
