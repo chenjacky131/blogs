@@ -1,0 +1,9 @@
+Maplibre-gl-js地图库的问题
+----------
+
+by jack at 2023/09/07
+
+1. map.getStyle().layers获取不到自定义图层，需要用map.style._layers
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

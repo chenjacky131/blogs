@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1690775429519,
+  "last_modify": 1694052977123,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D230907-01.txt",
+      "tag": ".遇到的问题",
+      "markdown": true,
+      "title": "Maplibre-gl-js地图库的问题",
+      "modify_at": 1694052977123,
+      "create_at": 1694052170971,
+      "desc": "by jack at 2023/09/07"
+    },
     {
       "path": "md/D230629-01.txt",
       "tag": ".遇到的问题",
