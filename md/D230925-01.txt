@@ -1,0 +1,23 @@
+TBT(Total Blocking Time)总阻塞时间与性能优化
+----------
+
+by jack at 2023/09/25
+
+1. 长任务: 在主线程上运行超过 50 毫秒的任务。出现长任务时主线程都被视作"阻塞状态"
+
+2. TTI(Time To Interactive) 会在主线程至少有五秒钟没有长任务时，认为页面具备"可靠交互性"。
+
+3. 为了提供良好的用户体验，网站在普通移动硬件上进行测试时，应该努力将总阻塞时间控制在300 毫秒以内。
+
+4. 减少第三方代码的影响
+
+5. 减少 JavaScript 执行时间
+
+6. 最小化主线程工作
+
+7. 保持较低的请求数和较小的传输大小
+
+[TBT参考链接](https://web.dev/tbt/?utm_source=devtools 'TBT相关的知识点和优化建议')
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
