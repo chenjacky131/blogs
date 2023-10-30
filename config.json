@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_modify": 1695610857237,
+  "last_modify": 1698654192037,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
@@ -651,7 +651,7 @@
       "tag": ".前端",
       "markdown": true,
       "title": "调试技巧",
-      "modify_at": 1648089038673,
+      "modify_at": 1695632145480,
       "create_at": 1647931598899,
       "desc": "by jack at 2022/03/22<br>````\nalert('我是弹出的信息')\n// console最常用的调试\nconsole.log('调试信息')\nconsole.table([['a','b','c'],[1,2,3]]) //  表格形似输出\nconsole.table([{a:1,b:2,c:3}])  //  效果和上面一样\nconsole.dir(obj)  // dir方法用来对一个对象进行检查（inspect），并以易于阅读和打印的格式显示。\nconsole.log('%c测试文案', 'font-size: 40px;text-shadow: 2px 2px 5px green') // 增加样式"
     },
@@ -1425,7 +1425,7 @@
       "tag": ".Git",
       "markdown": true,
       "title": "Git常用命令",
-      "modify_at": 1683250603798,
+      "modify_at": 1698654192037,
       "create_at": 1617671829107,
       "desc": "by jack at 2021/04/06"
     },

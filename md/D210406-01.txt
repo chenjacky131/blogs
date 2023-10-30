@@ -142,6 +142,10 @@ git tag -d tagname  //  删除本地标签
 ````
 git branch -vv
 ````
+##### 24. 导出git提交记录
+````
+git log > commits.txt
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>

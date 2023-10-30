@@ -12,6 +12,7 @@ console.table([['a','b','c'],[1,2,3]]) //  表格形似输出
 console.table([{a:1,b:2,c:3}])  //  效果和上面一样
 console.dir(obj)  // dir方法用来对一个对象进行检查（inspect），并以易于阅读和打印的格式显示。
 console.log('%c测试文案', 'font-size: 40px;text-shadow: 2px 2px 5px green') // 增加样式
+console.time('代码耗时');console.timeEnd('代码耗时');  //  查看代码运行耗时(输出格式为代码耗时 ***ms)
 ````
 ##### JS调试
 
