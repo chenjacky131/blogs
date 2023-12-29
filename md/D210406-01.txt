@@ -122,7 +122,9 @@ git branch --set-upstream-to origin/新分支名称
 ````
 ##### 19. 恢复删除的分支
 ````
-git checkout -b <分支名> <commit ID(删除那个分支返回的hash)>
+git reflog 查看最近30天的本地修改记录
+找到要恢复分支最新的一条提交，复制那条提交的hash
+git checkout -b <分支名> <commit ID>
 ````
 ##### 20. 添加远程仓库地址
 ````
