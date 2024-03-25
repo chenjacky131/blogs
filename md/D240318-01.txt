@@ -1,0 +1,24 @@
+项目初始化注意实现
+----------
+
+by jack at 2024/03/18
+````
+1. 切换vue版本时，入口文件需要修改成对应的引入写法
+
+2. 使用UI框架Vant Weapp
+
+  a. 通过yarn安装，根目录需要有package.json文件，
+     然后吧node_modules/@vant/dist移动到wxcomponents（微信小程序组件文件夹）
+  b. 在pages.json->globalStyle->usingComponents中配置(按需引入)
+    "van-button": "/wxcomponents/@vant/weapp/dist/button/index"
+
+3. 小程序不支持dom操作时，可以用renderjs来实现，用app开发，新建项目的时候用uni-ui模板创建项目
+
+4. 调试跨域可以用运行到内置浏览器就不会有跨域问题
+
+5. 调用renderjs模式下路径不能使用别名路径
+
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
