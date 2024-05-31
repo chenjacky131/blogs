@@ -148,6 +148,11 @@ git branch -vv
 ````
 git log > commits.txt
 ````
+
+##### 25. 丢弃本地的修改
+````
+git reset --hard
+````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
 <div $=ScenePage key="auto0"></div>
 <div $=ScenePage key="auto1" no-show="1"></div>
