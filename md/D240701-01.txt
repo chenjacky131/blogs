@@ -1,0 +1,38 @@
+同时生成多个ssh密钥
+----------
+
+by jack at 2024/07/01
+
+##### 1. 生成SSH Key
+````
+cd 用户/.ssh # 没有该文件夹新建一个
+ssh-keygen -t rsa -C '[邮箱]' -f 用户/.ssh/id_rsa_github
+````
+##### 2. 在相应的代码管理平台添加生成的公钥
+复制 用户/.ssh/id_rsa_github.pub里面的内容，然后到代码管理平台添加这个公钥
+
+##### 3. 配置git访问不同host使用不同的密钥
+在 用户/.ssh/路径下手动创建config文件（没有后缀）,文件里面的内容如下
+````
+# github
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile C:/Users/[用户]/.ssh/id_ras_github
+
+# gitlab
+Host gitlab.***.com # hostName的别名
+HostName gitlab.***.com # 目标主机的主机名
+Port: 自定义的端口号（默认为22，可不配置）
+User: 自定义的用户名（默认git，可不配置）
+PreferredAuthentications publickey # 指定优先使用哪种方式验证，支持密码和密钥验证方式
+IdentityFile C:/Users/[用户]/.ssh/id_rsa_gitlab # 指定本次连接使用的密钥文件
+````
+##### 4. 验证是否设置成功
+````
+ssh -T git@github.com
+ssh -T git@gitlab.***.com # 如需指定端口号 -p 具体端口名
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

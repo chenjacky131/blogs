@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1717127016883,
+  "last_modify": 1719818927471,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D240701-01.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "同时生成多个ssh密钥",
+      "modify_at": 1719818927471,
+      "create_at": 1719817253577,
+      "desc": "by jack at 2024/07/01<br>复制 用户/.ssh/id_rsa_github.pub里面的内容，然后到代码管理平台添加这个公钥"
+    },
     {
       "path": "md/D240318-01.txt",
       "tag": ".uni-app",
