@@ -1,0 +1,14 @@
+修改gitignore文件不生效的问题
+----------
+
+by jack at 2024/07/02
+
+因为已经加入到缓存里了，需要执行下面的命令
+````
+git rm -r --cached .
+git add .
+git commit -m 'clear cached'
+````
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1719818927471,
+  "last_modify": 1719889528739,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D240702-01.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "修改gitignore文件不生效的问题",
+      "modify_at": 1719889528739,
+      "create_at": 1719889415981,
+      "desc": "by jack at 2024/07/02<br>因为已经加入到缓存里了，需要执行下面的命令\n````\ngit rm -r --cached .\ngit add .\ngit commit -m 'clear cached'"
+    },
     {
       "path": "md/D240701-01.txt",
       "tag": ".Git",
