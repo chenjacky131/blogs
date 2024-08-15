@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1719889528739,
+  "last_modify": 1722309052740,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D240730-01.txt",
+      "tag": ".Node",
+      "markdown": true,
+      "title": "Node16升级到18",
+      "modify_at": 1722309052740,
+      "create_at": 1722308802440,
+      "desc": "by jack at 2024/07/30<br>删除-locak的锁包文件"
+    },
     {
       "path": "md/D240702-01.txt",
       "tag": ".Git",
