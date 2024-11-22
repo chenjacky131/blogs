@@ -1,13 +1,77 @@
-CSS新特性aspect-ratio
+一行CSS解决难题
 ----------
 
-by jack at 2022/04/11
-
+by jack at 2024/11/22
+##### 纵横比
 ````
 //  设置宽高比为4比3
 .item{
  width:100%;
  aspect-ratio:4 / 3;
+}
+````
+
+##### 对象适配
+````
+.item{
+    aspect-ratio: 9 / 16;
+    max-block-size: 800px;  // 类似最大高度
+    object-fit: cover;  // 类似backgrou-size,常用的有有contain, cover, scale-down
+}
+````
+##### 边距内联
+````
+.item{
+ maring-inline: auto;  //  相当于margin-left: auto;margin-right:auto;
+}
+````
+##### 文本下划线的一些属性
+````
+a:not([class]) {
+  text-underline-offset: 0.25em;  //  改变下划线里文字的距离
+  text-decoration-color: #f00;  //  下划线颜色
+  text-decoration-thickness: 20px;  //  下划线大小
+  text-decoration-style: wavy;  //  下划线类型：有虚线，圆点虚线，双线，波浪线等
+}
+````
+##### 轮廓偏移
+````
+.item{
+  outline-offset: 10px;  //  正数位于元素外部，负数位于元素内部
+}
+````
+##### 滚动边距顶部
+````
+[id] {
+  scroll-margin-top: 2rem;  //  当激活锚链接时，跳转到锚点后，锚点距离顶部的距离
+}
+````
+##### 配色方案
+````
+// <meta name="color-scheme" content="light dark">这个设置也可以
+:root{
+  color-scheme: light dark;  //  启用配色方案。谷歌浏览器开发者工具界面ctrl+P输入color-sheme可以看到配色切换的指令
+}
+button{
+  color: light;  //  可以单独指定配色方案
+}
+````
+##### 强调色
+````
+:root{
+  accent-color: red;  //  改变表单的配色
+}
+````
+##### 宽度适合内容
+````
+p{
+ width:fit-content;
+}
+````
+##### 滚动行为
+````
+.item{
+  overscroll-behavior: contain;  //  滚动到元素底部后，继续滚动，还是停止底部，页面不跟随滚动。
 }
 ````
 <!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
