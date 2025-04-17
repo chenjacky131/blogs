@@ -1,0 +1,9 @@
+stderr: No ED25519 host key is known for
+----------
+
+by jack at 2025/01/03
+
+把生成的 .ssh，搬运到 C:\Windows\System32\config\systemprofile
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>
