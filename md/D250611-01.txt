@@ -1,0 +1,14 @@
+更新代码后显示： unable to unlink old ‘xxx/xxx/xx’ : invalid argument
+----------
+
+by jack at 2025/06/11
+
+&nbsp;
+
+##### 问题原因：
+ 要提交或更新的文件被系统线程占用
+##### 解决方法：
+把相关服务暂停，重新pull代码
+<!-- SLIDE PAGES V1.0, DO NOT CHANGE THIS LINE. -->
+<div $=ScenePage key="auto0"></div>
+<div $=ScenePage key="auto1" no-show="1"></div>

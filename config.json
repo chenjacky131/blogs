@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1735870013381,
+  "last_modify": 1749608147397,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D250611-01.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "更新代码后显示： unable to unlink old ‘xxx/xxx/xx’ : invalid argument",
+      "modify_at": 1749608147397,
+      "create_at": 1749608098680,
+      "desc": "by jack at 2025/06/11<br>要提交或更新的文件被系统线程占用"
+    },
     {
       "path": "md/D250103-01.txt",
       "tag": ".前端",
