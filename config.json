@@ -1,11 +1,20 @@
 {
   "version": "1.0",
-  "last_modify": 1749608147397,
+  "last_modify": 1785721689598,
   "user_name": "rewgt",
   "imported_repos": [],
   "repos_name": "blogs",
   "repos_desc": "Jack's Blog",
   "doc_list": [
+    {
+      "path": "md/D260803-01.txt",
+      "tag": ".Git",
+      "markdown": true,
+      "title": "批量改写全部历史提交姓名(官方脚本)",
+      "modify_at": 1785721689598,
+      "create_at": 1785721623124,
+      "desc": "by jack at 2026/08/03<br>```bash\ngit filter-branch --env-filter '\nOLD_NAME=\"旧名字\"\nOLD_EMAIL=\"旧邮箱@shturl.\"\nNEW_NAME=\"新名字\"\nNEW_EMAIL=\"新邮箱@shturl.\"\nif [ \"$GIT_COMMITTER_NAME\" = \"$OLD_NAME\" ] || [ \"$GIT_COMMITTER_EMAIL\" = \"$OLD_EMAIL\" ]; then\n    export GIT_COMMITTER_NAME=\"$NEW_NAME\""
+    },
     {
       "path": "md/D250611-01.txt",
       "tag": ".Git",
